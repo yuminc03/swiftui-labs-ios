@@ -69,7 +69,7 @@ struct ThirdExample: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        ZStack {
             isShow ? Color.black.opacity(0.3).ignoresSafeArea() : Color.clear.ignoresSafeArea()
             
             VStack {
@@ -85,20 +85,24 @@ struct ThirdExample: View {
                 Spacer()
             }
             
-            if isShow {
-                TransitionView(isShow: $isShow, routineButtonsStatus: $routineButtonsStatus)
-                    .padding(.top, 30)
-                    .padding(.bottom, 60)
-                    .background(Color.white)
-                    .frame(width: UIScreen.main.bounds.width, height: 500)
-                    .cornerRadius(20)
-                    .transition(
-                        .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom))
-                    )
-                    .animation(.spring())
-                
+            VStack {
+                Spacer()
+                if isShow {
+                    TransitionView(isShow: $isShow, routineButtonsStatus: $routineButtonsStatus)
+                        .padding(.top, 30)
+                        .padding(.bottom, 60)
+                        .background(Color.white)
+                        .frame(width: UIScreen.main.bounds.width, height: 500)
+                        .cornerRadius(20)
+                        .transition(
+                            .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom))
+                        )
+                        .animation(.spring())
+                }
+            }
+            
+            if routineButtonsStatus.contains(false) {
                 AlertView(isShow: $isShow, type: .water)
-
             }
         }
         .background(Color.white)
@@ -245,13 +249,6 @@ struct TransitionView: View {
             
             ZStack {
                 isAlertShow ? Color.black.opacity(0.3).ignoresSafeArea() : Color.clear.ignoresSafeArea()
-                
-//                if isAlertShow {
-//                    AlertView(isShow: $isAlertShow)
-//                        .background(Color.white)
-//                        .frame(width: UIScreen.main.bounds.width - 40, height: 293)
-//                        .cornerRadius(20)
-//                }
             }
         }
     }
