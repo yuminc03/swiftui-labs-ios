@@ -19,6 +19,7 @@ struct TitleView: View {
             Spacer()
             Button(action: {
                 vm.isRoutinePopupShow.toggle()
+                vm.routineButtonsStatus = Array(repeating: true, count: 6)
             }) {
                 Image(systemName: "xmark")
                     .foregroundColor(.black)

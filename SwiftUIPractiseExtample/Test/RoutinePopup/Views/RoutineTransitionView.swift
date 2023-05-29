@@ -25,6 +25,11 @@ struct RoutineTransitionView: View {
                 vm.isAlertShow ? Color.black.opacity(0.3).ignoresSafeArea() : Color.clear.ignoresSafeArea()
             }
         }
+        .padding(.top, 30)
+        .padding(.bottom, 60)
+        .background(Color.white)
+        .frame(width: UIScreen.main.bounds.width, height: 500)
+        .cornerRadius(20)
     }
 }
 

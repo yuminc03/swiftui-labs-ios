@@ -32,15 +32,12 @@ struct RoutinePopupExample: View {
                 Spacer()
                 if vm.isRoutinePopupShow {
                     RoutineTransitionView()
-                        .padding(.top, 30)
-                        .padding(.bottom, 60)
-                        .background(Color.white)
-                        .frame(width: UIScreen.main.bounds.width, height: 500)
-                        .cornerRadius(20)
                         .transition(
                             .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom))
                         )
-                        .animation(.spring())
+                        .animation(
+                            .spring()
+                        )
                 }
             }
             
@@ -48,10 +45,10 @@ struct RoutinePopupExample: View {
                let type = RoutineType(rawValue: currentSelectedIndex),
                vm.routineButtonsStatus[currentSelectedIndex] == false {
                 AlertView(type: type)
-                .animation(
-                    .easeInOut,
-                    value: vm.routineButtonsStatus[currentSelectedIndex]
-                )
+                    .animation(
+                        .easeInOut,
+                        value: vm.routineButtonsStatus[currentSelectedIndex]
+                    )
             }
         }
         .background(Color.white)
