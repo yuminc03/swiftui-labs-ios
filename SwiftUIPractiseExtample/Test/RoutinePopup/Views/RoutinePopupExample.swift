@@ -10,6 +10,12 @@ import SwiftUI
 struct RoutinePopupExample: View {
     
     @StateObject private var vm = RoutinePopupVM()
+    @AppStorage("water") var isWaterEnabled: Bool?
+    @AppStorage("stretch") var isStretchEnabled: Bool?
+    @AppStorage("cardio") var isCardioEnabled: Bool?
+    @AppStorage("muscle") var isMuscleEnabled: Bool?
+    @AppStorage("drinking") var isDrinkingEnabled: Bool?
+    @AppStorage("smoking") var isSmokingEnabled: Bool?
     
     var body: some View {
         ZStack {
@@ -17,6 +23,11 @@ struct RoutinePopupExample: View {
             
             VStack {
                 Button("팝업 보이기", action: {
+                    vm.routineButtonsStatus = [
+                        isWaterEnabled ?? false, isStretchEnabled ?? false,
+                        isCardioEnabled ?? false, isMuscleEnabled ?? false,
+                        isDrinkingEnabled ?? false, isSmokingEnabled ?? false
+                    ]
                     vm.isRoutinePopupShow.toggle()
                 })
                 .foregroundColor(.white)
@@ -33,7 +44,10 @@ struct RoutinePopupExample: View {
                 if vm.isRoutinePopupShow {
                     RoutineTransitionView()
                         .transition(
-                            .asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom))
+                            .asymmetric(
+                                insertion: .move(edge: .bottom),
+                                removal: .move(edge: .bottom)
+                            )
                         )
                         .animation(
                             .spring()
