@@ -35,7 +35,11 @@ struct RoutineTransitionView: View {
 
 struct RoutineTransitionView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineTransitionView()
-            .environmentObject(RoutinePopupVM())
+        ZStack {
+            Color.black
+            RoutineTransitionView()
+                .environmentObject(RoutinePopupVM())
+        }
+        .ignoresSafeArea()
     }
 }
