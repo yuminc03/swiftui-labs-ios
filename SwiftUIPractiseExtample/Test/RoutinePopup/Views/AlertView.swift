@@ -14,12 +14,7 @@ struct AlertView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 0)
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height
-                )
-                .foregroundColor(.black.opacity(0.3))
+            Color.black.opacity(0.3)
                 .ignoresSafeArea()
             VStack(spacing: 40) {
                 Text("안내")
