@@ -24,6 +24,7 @@
 		8DBB147C2A07F42B00E8B3A2 /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147B2A07F42B00E8B3A2 /* ListExample.swift */; };
 		8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExample.swift */; };
 		8DC8FBDB2A095E6D002558EF /* RoutinePopupExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8FBDA2A095E6D002558EF /* RoutinePopupExample.swift */; };
+		8DDB211E2A38ED6A009C12D0 /* SegmentedTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8DBB147B2A07F42B00E8B3A2 /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 		8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeAreaRegionsExample.swift; sourceTree = "<group>"; };
 		8DC8FBDA2A095E6D002558EF /* RoutinePopupExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePopupExample.swift; sourceTree = "<group>"; };
+		8DDB211D2A38ED6A009C12D0 /* SegmentedTodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				05A3C31729FB9391009839BB /* FirstExample.swift */,
 				8D39CAF62A0000440083D6D7 /* SecondExample.swift */,
 				8D8638002A24694F0041A0AC /* RoutinePopup */,
+				8DDB211D2A38ED6A009C12D0 /* SegmentedTodos.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				8D04D2012A0691BA005BD5F0 /* TextFieldExample.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExample.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
+				8DDB211E2A38ED6A009C12D0 /* SegmentedTodos.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
 				05A3C31829FB9391009839BB /* FirstExample.swift in Sources */,
 				8DC8FBDB2A095E6D002558EF /* RoutinePopupExample.swift in Sources */,
