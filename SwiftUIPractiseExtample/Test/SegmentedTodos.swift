@@ -15,13 +15,8 @@ struct SegmentedTodos: View {
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Picker", selection: $selection) {
-                    ForEach(filterOption.indices) { index in
-                        Text(filterOption[index])
-                        
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
+                segmentPicker
+                
             }
             .padding()
             .navigationTitle("TODO!")
@@ -40,5 +35,18 @@ struct SecondView: View {
 struct SegmentedTodos_Previews: PreviewProvider {
     static var previews: some View {
         SegmentedTodos()
+    }
+}
+
+extension SegmentedTodos {
+    
+    var segmentPicker: some View {
+        Picker(selection: $selection, label: Text("Picker")) {
+            ForEach(filterOption.indices) { index in
+                Text(filterOption[index])
+                    .tag(filterOption[index])
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
     }
 }
