@@ -9,17 +9,26 @@ import SwiftUI
 
 struct SegmentedTodos: View {
     
-    @State private var selection: String = "todos"
-    private let filterOption = ["todos", "photos"]
+    enum Selection: String {
+        case todos
+        case photos
+    }
+    @State private var selection: String = Selection.todos.rawValue
+    private let filterOption = [
+        Selection.todos.rawValue,
+        Selection.photos.rawValue
+    ]
     
     var body: some View {
         NavigationView {
             VStack {
                 segmentPicker
-                
+                gridView
             }
             .padding()
-            .navigationTitle("TODO!")
+            .navigationTitle(
+                selection == Selection.todos.rawValue ? "TODO!" : "Photo"
+            )
         }
     }
 }
@@ -48,5 +57,14 @@ extension SegmentedTodos {
             }
         }
         .pickerStyle(SegmentedPickerStyle())
+    }
+    
+    var gridView: some View {
+        LazyVGrid(columns: []) {
+            
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 600)
+        .background(Color.black)
     }
 }
