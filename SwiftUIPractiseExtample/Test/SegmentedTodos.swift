@@ -15,10 +15,10 @@ struct SegmentedTodos: View {
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Picker", selection: $selection) {
+                Picker(selection: $selection, label: Text("Picker")) {
                     ForEach(filterOption.indices) { index in
                         Text(filterOption[index])
-                        
+                            .tag(filterOption[index])
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
