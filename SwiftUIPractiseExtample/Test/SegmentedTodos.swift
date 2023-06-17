@@ -18,6 +18,10 @@ struct SegmentedTodos: View {
         Selection.todos.rawValue,
         Selection.photos.rawValue
     ]
+    private let columns: [GridItem] = [
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center)
+    ]
     
     var body: some View {
         NavigationView {
@@ -48,7 +52,6 @@ struct SegmentedTodos_Previews: PreviewProvider {
 }
 
 extension SegmentedTodos {
-    
     var segmentPicker: some View {
         Picker(selection: $selection, label: Text("Picker")) {
             ForEach(filterOption.indices) { index in
@@ -60,11 +63,32 @@ extension SegmentedTodos {
     }
     
     var gridView: some View {
-        LazyVGrid(columns: []) {
-            
+        VStack {
+            LazyVGrid(columns: columns) {
+                todoComponent
+            }
+            .padding(20)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 600)
-        .background(Color.black)
+    }
+    
+    var todoComponent: some View {
+        ZStack {
+            VStack {
+                Image(systemName: "person.fill.questionmark")
+                    .resizable()
+                    .foregroundColor(Color("gray_B0B0B0"))
+                    .scaledToFit()
+                    .padding(.horizontal, 20)
+                    .padding(.top, 30)
+                Text("0")
+                    .foregroundColor(.black)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.black, lineWidth: 10)
+                .frame(height: 200)
+        }
     }
 }
