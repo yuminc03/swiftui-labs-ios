@@ -63,11 +63,13 @@ extension SegmentedTodos {
     }
     
     var gridView: some View {
-        VStack {
-            LazyVGrid(columns: columns) {
-                todoComponent
+        ScrollView(.vertical) {
+            VStack {
+                LazyVGrid(columns: columns) {
+                    todoComponent
+                }
+                .padding(20)
             }
-            .padding(20)
         }
     }
     

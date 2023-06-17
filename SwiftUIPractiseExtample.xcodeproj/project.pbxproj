@@ -65,13 +65,53 @@
 		8D04D1FB2A063160005BD5F0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				05A3C31729FB9391009839BB /* FirstExample.swift */,
-				8D39CAF62A0000440083D6D7 /* SecondExample.swift */,
+				8D4D3D2C2A3DE161009A64F6 /* RectanglePicture */,
+				8D4D3D2D2A3DE172009A64F6 /* ManagementProfile */,
 				8D8638002A24694F0041A0AC /* RoutinePopup */,
-				8DDB211D2A38ED6A009C12D0 /* SegmentedTodos.swift */,
-				8D4D3D2A2A3DDF5D009A64F6 /* NetworkManager.swift */,
+				8D4D3D2E2A3DE190009A64F6 /* Todos */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		8D4D3D2C2A3DE161009A64F6 /* RectanglePicture */ = {
+			isa = PBXGroup;
+			children = (
+				05A3C31729FB9391009839BB /* FirstExample.swift */,
+			);
+			path = RectanglePicture;
+			sourceTree = "<group>";
+		};
+		8D4D3D2D2A3DE172009A64F6 /* ManagementProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8D39CAF62A0000440083D6D7 /* SecondExample.swift */,
+			);
+			path = ManagementProfile;
+			sourceTree = "<group>";
+		};
+		8D4D3D2E2A3DE190009A64F6 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D3D2F2A3DE1AE009A64F6 /* Network */,
+				8D4D3D302A3DE1BD009A64F6 /* Views */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
+		8D4D3D2F2A3DE1AE009A64F6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D3D2A2A3DDF5D009A64F6 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8D4D3D302A3DE1BD009A64F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB211D2A38ED6A009C12D0 /* SegmentedTodos.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8D658A5629EEE30300928C68 = {
