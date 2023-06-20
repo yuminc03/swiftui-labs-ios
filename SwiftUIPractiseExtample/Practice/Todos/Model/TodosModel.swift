@@ -7,13 +7,9 @@
 
 import Foundation
 
-struct TodosModel: Decodable {
-    let model: TodoModel
-    
-    struct TodoModel: Decodable {
-        let userId: Int
-        let id: Int
-        let title: String
-        let completed: Bool
-    }
+struct TodoModel: Decodable, Identifiable {
+    let userId: Int
+    let id: Int
+    let title: String
+    let completed: Bool
 }
