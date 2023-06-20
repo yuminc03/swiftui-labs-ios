@@ -22,6 +22,7 @@ struct SegmentedTodos: View {
         GridItem(.flexible(), spacing: 20, alignment: .center),
         GridItem(.flexible(), spacing: 20, alignment: .center)
     ]
+    @StateObject private var vm = SegmentedTodosVM()
     
     var body: some View {
         NavigationView {
@@ -64,33 +65,12 @@ extension SegmentedTodos {
     
     var gridView: some View {
         ScrollView(.vertical) {
-            VStack {
-                LazyVGrid(columns: columns) {
-                    todoComponent
+            LazyVGrid(columns: columns) {
+                ForEach(vm.todoResponse.indices) { index in
+                    TodosGridComponent(model: vm.todoResponse[index])
                 }
-                .padding(20)
             }
-        }
-    }
-    
-    var todoComponent: some View {
-        ZStack {
-            VStack {
-                Image(systemName: "person.fill.questionmark")
-                    .resizable()
-                    .foregroundColor(Color("gray_B0B0B0"))
-                    .scaledToFit()
-                    .padding(.horizontal, 20)
-                    .padding(.top, 30)
-                Text("0")
-                    .foregroundColor(.black)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Spacer()
-            }
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(.black, lineWidth: 10)
-                .frame(height: 200)
+            .padding(20)
         }
     }
 }

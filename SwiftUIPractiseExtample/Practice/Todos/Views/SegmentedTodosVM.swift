@@ -7,23 +7,26 @@
 import Foundation
 
 @MainActor
-final class SegmentedTodosVM {
+final class SegmentedTodosVM: ObservableObject {
     
     private let networkManager = NetworkManager()
-    @Published private(set) var todoResponse: Result<TodosModel, NetworkError>?
+    @Published private(set) var todoResponse = [TodoModel]()
+    
+    init() {
+        requestTodos()
+    }
     
     /// todo 데이터 요청
-    func requestTodos() {
+    private func requestTodos() {
         Task {
             do {
                 let api = TypiCodeAPI.todo
-                let model = try await networkManager.request(request: api, model: TodosModel.self)
-                todoResponse = .success(model)
+                let model = try await networkManager.request(request: api, model: [TodoModel].self)
+                todoResponse = model
+                print("requestTodos() Success")
                 
-            } catch let error as NetworkError {
-                todoResponse = .failure(error)
             } catch {
-                todoResponse = .failure(.unknown)
+                print("Error in requestTodos()")
             }
         }
     }
