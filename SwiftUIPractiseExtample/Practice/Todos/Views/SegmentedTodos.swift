@@ -19,8 +19,8 @@ struct SegmentedTodos: View {
         Selection.photos.rawValue
     ]
     private let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: 20, alignment: .center),
-        GridItem(.flexible(), spacing: 20, alignment: .center)
+        GridItem(.flexible(), spacing: 30, alignment: .center),
+        GridItem(.flexible(), spacing: 30, alignment: .center)
     ]
     @StateObject private var vm = SegmentedTodosVM()
     
@@ -66,11 +66,11 @@ extension SegmentedTodos {
     var gridView: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: columns) {
-                ForEach(vm.todoResponse.indices) { index in
-                    TodosGridComponent(model: vm.todoResponse[index])
+                ForEach(0 ..< vm.todos.count, id: \.self) { index in
+                    TodosGridComponent(model: vm.todos[index])
                 }
             }
-            .padding(20)
+            .padding([.leading, .trailing], 20)
         }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 final class SegmentedTodosVM: ObservableObject {
     
     private let networkManager = NetworkManager()
-    @Published private(set) var todoResponse = [TodoModel]()
+    @Published private(set) var todos = [TodoModel]()
     
     init() {
         requestTodos()
@@ -22,7 +22,7 @@ final class SegmentedTodosVM: ObservableObject {
             do {
                 let api = TypiCodeAPI.todo
                 let model = try await networkManager.request(request: api, model: [TodoModel].self)
-                todoResponse = model
+                todos = model
                 print("requestTodos() Success")
                 
             } catch {
