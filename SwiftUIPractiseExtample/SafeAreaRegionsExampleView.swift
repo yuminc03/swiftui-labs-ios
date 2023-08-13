@@ -1,5 +1,5 @@
 //
-//  SafeAreaRegionsExample.swift
+//  SafeAreaRegionsExampleView.swift
 //  SwiftUIPractiseExtample
 //
 //  Created by Yumin Chu on 2023/05/06.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SafeAreaRegionsExample: View {
+struct SafeAreaRegionsExampleView: View {
     @State private var name: String = ""
     
     var body: some View {
@@ -47,6 +47,6 @@ struct SafeAreaRegionsExample: View {
 
 struct SafeAreaRegionsExample_Previews: PreviewProvider {
     static var previews: some View {
-        SafeAreaRegionsExample()
+        SafeAreaRegionsExampleView()
     }
 }
