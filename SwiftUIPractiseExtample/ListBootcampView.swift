@@ -1,5 +1,5 @@
 //
-//  ListBootcamp.swift
+//  ListBootcampView.swift
 //  SwiftuiThinkingBootcamp
 //
 //  Created by Yumin Chu on 2023/05/07.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListBootcamp: View {
+struct ListBootcampView: View {
 
     @State var fruits: [String] = [
         "apple", "orange", "banana", "peach"
@@ -85,8 +85,8 @@ struct ListBootcamp: View {
     }
 }
 
-struct ListBootcamp_Previews: PreviewProvider {
+struct ListBootcampView_Previews: PreviewProvider {
     static var previews: some View {
-        ListBootcamp()
+        ListBootcampView()
     }
 }

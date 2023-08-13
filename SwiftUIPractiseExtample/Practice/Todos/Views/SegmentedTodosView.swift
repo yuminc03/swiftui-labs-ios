@@ -1,5 +1,5 @@
 //
-//  SegmentedTodos.swift
+//  SegmentedTodosView.swift
 //  SwiftUIPractiseExtample
 //
 //  Created by Yumin Chu on 2023/06/14.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SegmentedTodos: View {
+struct SegmentedTodosView: View {
     
     enum Selection: String {
         case todos
@@ -46,13 +46,13 @@ struct SecondView: View {
     }
 }
 
-struct SegmentedTodos_Previews: PreviewProvider {
+struct SegmentedTodosView_Previews: PreviewProvider {
     static var previews: some View {
-        SegmentedTodos()
+        SegmentedTodosView()
     }
 }
 
-extension SegmentedTodos {
+extension SegmentedTodosView {
     var segmentPicker: some View {
         Picker(selection: $selection, label: Text("Picker")) {
             ForEach(filterOption.indices) { index in

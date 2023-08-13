@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoutinePopupExample: View {
+struct RoutinePopupExampleView: View {
     
     @StateObject private var vm = RoutinePopupVM()
     @AppStorage("water") var isWaterEnabled: Bool?
@@ -71,8 +71,8 @@ struct RoutinePopupExample: View {
     }
 }
 
-struct ThirdExample_Previews: PreviewProvider {
+struct RoutinePopupExampleView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutinePopupExample()
+        RoutinePopupExampleView()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextFieldExample: View {
+struct TextFieldExampleView: View {
     
     @State private var userNameText = PersonNameComponents()
     
@@ -25,8 +25,8 @@ struct TextFieldExample: View {
     }
 }
 
-struct TextFieldExampoe_Previews: PreviewProvider {
+struct SafeAreaRegionsExampleView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldExample()
+        TextFieldExampleView()
     }
 }
