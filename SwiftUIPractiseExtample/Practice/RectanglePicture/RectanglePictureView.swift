@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FirstExample: View {
+struct RectanglePictureView: View {
     var body: some View {
         VStack(spacing: 10, content: {
             HStack(spacing: 0) {
@@ -65,9 +65,9 @@ struct FirstExample: View {
     }
 }
 
-struct FirstExample_Previews: PreviewProvider {
+struct RectanglePictureView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstExample()
+        RectanglePictureView()
             .previewLayout(.sizeThatFits)
     }
 }

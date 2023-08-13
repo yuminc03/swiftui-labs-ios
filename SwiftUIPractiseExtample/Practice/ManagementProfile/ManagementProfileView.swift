@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondExample: View {
+struct ManagementProfileView: View {
     
     var body: some View {
         VStack {
@@ -35,14 +35,14 @@ struct SecondExample: View {
     }
 }
 
-struct SecondExample_Previews: PreviewProvider {
+struct ManagementProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondExample()
+        ManagementProfileView()
             .previewLayout(.sizeThatFits)
     }
 }
 
-extension SecondExample {
+extension ManagementProfileView {
     
     var profileImage: some View {
         Image("photo1")
