@@ -28,31 +28,30 @@ struct ListBootcampView: View {
                         .font(.headline)
                         .foregroundColor(.pink)
                 ) {
-                    ForEach(0 ..< 500) { num in
-                        Text("\(num)")
-                            .font(.caption)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 10)
-                        if num == 2 || num == 5 {
-                            Image(systemName: "heart.fill")
-                        }
-                    }
-//                    ForEach(fruits, id: \.self) { fruit in // \.self == id
-//                        Text(fruit.capitalized)
+//                    ForEach(0 ..< 500) { num in
+//                        Text("\(num)")
 //                            .font(.caption)
-//                            .foregroundColor(.white)
-//                            .padding(.vertical)
+//                            .foregroundColor(.black)
+//                            .padding(.vertical, 10)
+//                        if num == 2 || num == 5 {
+//                            Image(systemName: "heart.fill")
+//                        }
 //                    }
-//                    .onDelete(perform: delete)
-//                    .onMove(perform: move)
-//                    .listRowBackground(Color.orange)
+                    ForEach(fruits, id: \.self) { fruit in // \.self == id
+                        Text(fruit.capitalized)
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .padding(.vertical)
+                    }
+                    .onDelete(perform: delete)
+                    .onMove(perform: move)
+                    .listRowBackground(Color.orange)
                 }
-                
-//                Section(header: Text("Veggies")) {
-//                    ForEach(veggies, id: \.self) { veggie in
-//                        Text(veggie.capitalized) // 첫글자를 대문자로 표시
-//                    }
-//                }
+                Section(header: Text("Veggies")) {
+                    ForEach(veggies, id: \.self) { veggie in
+                        Text(veggie.capitalized) // 첫글자를 대문자로 표시
+                    }
+                }
             }
             .accentColor(.purple)
 //            // iOS, iPad의 스타일이 서로 다를 수 있어 테스트를 해야함

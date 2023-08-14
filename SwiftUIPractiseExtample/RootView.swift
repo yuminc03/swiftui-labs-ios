@@ -40,6 +40,13 @@ struct RootView: View {
                         Text("Todos")
                     }
                 }
+                Section("🍊 TCA Challenge") {
+                    NavigationLink {
+                        KeyPadView()
+                    } label: {
+                        Text("KeyPad")
+                    }
+                }
             }
             .navigationTitle("SwiftUI Practise")
         }
