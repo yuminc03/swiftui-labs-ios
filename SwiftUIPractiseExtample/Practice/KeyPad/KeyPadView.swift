@@ -36,8 +36,16 @@ struct KeyPadView: View {
                     }
                 }
             }
+            .gesture(
+                DragGesture()
+                    .onChanged { _ in
+                        viewStore.send(.didTapDeleteButton)
+                    }
+            )
             .frame(maxWidth: .infinity)
-            .frame(height: UIScreen.main.bounds.height * 0.25)
+            .frame(height: UIScreen.main.bounds.height * 0.1)
+            .padding(.vertical, 20)
+            
             VStack {
                 HStack(spacing: 20) {
                     NumberView(numberText: "1", bottomText: "")
