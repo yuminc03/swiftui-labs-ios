@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUIPractiseExtampleApp: App {
     var body: some Scene {
         WindowGroup {
-            SegmentedTodosView()
+            RootView()
         }
     }
 }

@@ -33,6 +33,10 @@
 		8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */; };
 		8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
+		8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC9192A89FD68006C7988 /* KeyPadView.swift */; };
+		8DEFC91C2A89FD6E006C7988 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91B2A89FD6E006C7988 /* NumberView.swift */; };
+		8DEFC91E2A89FD73006C7988 /* SpecialCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */; };
+		8DEFC9202A89FF08006C7988 /* KeyPadReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91F2A89FF08006C7988 /* KeyPadReducer.swift */; };
 		8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +66,10 @@
 		8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeAreaRegionsExampleView.swift; sourceTree = "<group>"; };
 		8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePopupExampleView.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
+		8DEFC9192A89FD68006C7988 /* KeyPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadView.swift; sourceTree = "<group>"; };
+		8DEFC91B2A89FD6E006C7988 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialCharacterView.swift; sourceTree = "<group>"; };
+		8DEFC91F2A89FF08006C7988 /* KeyPadReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadReducer.swift; sourceTree = "<group>"; };
 		8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosGridComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,7 @@
 				8D4D3D2D2A3DE172009A64F6 /* ManagementProfile */,
 				8D8638002A24694F0041A0AC /* RoutinePopup */,
 				8D4D3D2E2A3DE190009A64F6 /* Todos */,
+				8DEFC9122A89EB0E006C7988 /* KeyPad */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -214,6 +223,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8DEFC9122A89EB0E006C7988 /* KeyPad */ = {
+			isa = PBXGroup;
+			children = (
+				8DEFC91F2A89FF08006C7988 /* KeyPadReducer.swift */,
+				8DEFC9192A89FD68006C7988 /* KeyPadView.swift */,
+				8DEFC91B2A89FD6E006C7988 /* NumberView.swift */,
+				8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */,
+			);
+			path = KeyPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,7 +318,10 @@
 				8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
+				8DEFC9202A89FF08006C7988 /* KeyPadReducer.swift in Sources */,
+				8DEFC91E2A89FD73006C7988 /* SpecialCharacterView.swift in Sources */,
 				8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */,
+				8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
 				05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */,
 				8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */,
@@ -315,6 +338,7 @@
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
 				8D8638102A24702D0041A0AC /* SaveButtonView.swift in Sources */,
+				8DEFC91C2A89FD6E006C7988 /* NumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
