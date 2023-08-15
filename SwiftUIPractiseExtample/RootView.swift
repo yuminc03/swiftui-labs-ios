@@ -32,6 +32,11 @@ struct RootView: View {
                     } label: {
                         Text("Counter")
                     }
+                    NavigationLink {
+                        ContactsFeatureView()
+                    } label: {
+                        Text("Contacts")
+                    }
                 }
                 Section("🍎 iOS Team Challenge") {
                     NavigationLink(destination: RectanglePictureView()) {
