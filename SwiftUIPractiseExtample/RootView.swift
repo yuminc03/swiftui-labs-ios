@@ -26,6 +26,23 @@ struct RootView: View {
                         Text("List")
                     }
                 }
+                Section("🍈 SwiftUI Concepts Tutorials") {
+                    NavigationLink {
+                        ExploringSwiftUIApp()
+                    } label: {
+                        Text("Exploring SwiftUI")
+                    }
+                    NavigationLink {
+                        SpecifyingViewHierarchy()
+                    } label: {
+                        Text("Specifying View Hierarchy")
+                    }
+                    NavigationLink {
+                        RefactorTheCustomScenes()
+                    } label: {
+                        Text("Refactor the code to use custom scenes")
+                    }
+                }
                 Section("🍑 TCA Tutorials") {
                     NavigationLink {
                         CounterFeatureView()
