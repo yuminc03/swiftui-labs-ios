@@ -76,4 +76,65 @@ final class SwiftUIPractiseExtampleTests: XCTestCase {
             $0.factString = "0 is a good number."
         }
     }
+    
+    func testAddFlow() async {
+        let store = TestStore(initialState: ContactsFeature.State()) {
+            ContactsFeature()
+        } withDependencies: {
+            $0.uuid = .incrementing
+        }
+        
+        await store.send(.didTapAddButton) {
+            $0.destination = .addContact(
+                AddContactFeature.State(contact: Contact(id: UUID(0), name: ""))
+            )
+        }
+        await store.send(.destination(.presented(.addContact(.setName("Blob Jr."))))) {
+            $0.$destination[case: /ContactsFeature.Destination.State.addContact]?.contact.name = "Blob Jr."
+        }
+        await store.send(.destination(.presented(.addContact(.didTapSaveButton))))
+        await store.receive(
+            .destination(
+                .presented(.addContact(.delegate(.saveContact(Contact(id: UUID(0), name: "Blob Jr.")))))
+            )
+        ) {
+            $0.contacts = [
+                Contact(id: UUID(0), name: "Blob Jr.")
+            ]
+        }
+        await store.receive(.destination(.dismiss)) {
+            $0.destination = nil
+        }
+    }
+    
+    func testAddFlowNonExhaustive() async {
+        let store = TestStore(initialState: ContactsFeature.State()) {
+            ContactsFeature()
+        } withDependencies: {
+            $0.uuid = .incrementing
+        }
+        store.exhaustivity = .off
+        
+        await store.send(.didTapAddButton)
+        await store.send(.destination(.presented(.addContact(.setName("Blob Jr.")))))
+        await store.send(.destination(.presented(.addContact(.didTapSaveButton))))
+        await store.skipReceivedActions()
+        store.assert {
+            $0.contacts = [
+                Contact(id: UUID(0), name: "Blob Jr.")
+            ]
+            $0.destination = nil
+        }
+    }
+    
+    func testDeleteContact() async {
+        let store = TestStore(initialState: ContactsFeature.State(
+            contacts: [
+                Contact(id: UUID(0), name: "Blob"),
+                Contact(id: UUID(0), name: "Blob Jr.")
+            ]
+        )) {
+            ContactsFeature()
+        }
+    }
 }
