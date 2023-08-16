@@ -20,35 +20,60 @@ final class SwiftUIPractiseExtampleTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
     func testCounter() async {
         let store = TestStore(initialState: CounterFeature.State()) {
             CounterFeature()
         }
         
-        await store.send(.didTapDecrementButton) {
+        await store.send(.didTapIncrementButton) {
             $0.count = 1
         }
         
-        await store.send(.didTapIncrementButton) {
+        await store.send(.didTapDecrementButton) {
             $0.count = 0
         }
     }
     
+    func testTimer() async {
+        let clock = TestClock()
+        let store = TestStore(initialState: CounterFeature.State()) {
+            CounterFeature()
+        } withDependencies: {
+            $0.continuousClock = clock
+        }
+        
+        await store.send(.didTapTimerButton) {
+            $0.isTimerRunning = true
+        }
+        
+        await clock.advance(by: .seconds(1))
+        await store.receive(.timerTick) {
+            $0.count = 1
+        }
+//        await store.receive(.timerTick, timeout: .seconds(2)) {
+//            $0.count = 1
+//        }
+        
+        await store.send(.didTapTimerButton) {
+            $0.isTimerRunning = false
+        }
+    }
     
+    func testNumberFact() async {
+        let store = TestStore(initialState: CounterFeature.State()) {
+            CounterFeature()
+        } withDependencies: {
+            $0.numberFact.fetch = { "\($0) is a good number." }
+        }
+        
+        await store.send(.didTapFactButton) {
+            $0.isLoading = true
+        }
+        
+        await store.receive(.factResponse("0 is a good number.")) {
+            $0.isLoading = false
+            $0.factString = "0 is a good number."
+        }
+    }
 }
