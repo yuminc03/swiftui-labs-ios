@@ -62,6 +62,19 @@
 		8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */; };
 		8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D9E2A8D1168005581DC /* Event.swift */; };
 		8DCF2DA12A8D118D005581DC /* EventTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DA02A8D118D005581DC /* EventTile.swift */; };
+		8DCF2DA42A8D1650005581DC /* TrainCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DA32A8D1650005581DC /* TrainCar.swift */; };
+		8DCF2DA62A8D16F6005581DC /* DefaultSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DA52A8D16F6005581DC /* DefaultSpacing.swift */; };
+		8DCF2DA82A8D1765005581DC /* SpecificSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DA72A8D1765005581DC /* SpecificSpacing.swift */; };
+		8DCF2DAB2A8D17BB005581DC /* ScaledSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DAA2A8D17BB005581DC /* ScaledSpacing.swift */; };
+		8DCF2DAD2A8D1834005581DC /* ZeroSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DAC2A8D1834005581DC /* ZeroSpacing.swift */; };
+		8DCF2DB02A8D1872005581DC /* DefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DAF2A8D1872005581DC /* DefaultPadding.swift */; };
+		8DCF2DB22A8D18FA005581DC /* PaddingSomeEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DB12A8D18FA005581DC /* PaddingSomeEdges.swift */; };
+		8DCF2DB42A8D192E005581DC /* SpecificPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DB32A8D192E005581DC /* SpecificPadding.swift */; };
+		8DCF2DB62A8D194A005581DC /* PaddingTheContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DB52A8D194A005581DC /* PaddingTheContainer.swift */; };
+		8DCF2DB92A8D1990005581DC /* AddingSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DB82A8D1990005581DC /* AddingSpacer.swift */; };
+		8DCF2DBB2A8D19D5005581DC /* AddingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DBA2A8D19D5005581DC /* AddingPlaceholder.swift */; };
+		8DCF2DBD2A8D1A13005581DC /* StackingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DBC2A8D1A13005581DC /* StackingPlaceholder.swift */; };
+		8DCF2DBF2A8D1A8D005581DC /* TrainCarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DBE2A8D1A8D005581DC /* TrainCarContentView.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
 		8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC9192A89FD68006C7988 /* KeyPadView.swift */; };
 		8DEFC91C2A89FD6E006C7988 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91B2A89FD6E006C7988 /* NumberView.swift */; };
@@ -138,6 +151,19 @@
 		8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrain.swift; sourceTree = "<group>"; };
 		8DCF2D9E2A8D1168005581DC /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8DCF2DA02A8D118D005581DC /* EventTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTile.swift; sourceTree = "<group>"; };
+		8DCF2DA32A8D1650005581DC /* TrainCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCar.swift; sourceTree = "<group>"; };
+		8DCF2DA52A8D16F6005581DC /* DefaultSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSpacing.swift; sourceTree = "<group>"; };
+		8DCF2DA72A8D1765005581DC /* SpecificSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificSpacing.swift; sourceTree = "<group>"; };
+		8DCF2DAA2A8D17BB005581DC /* ScaledSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledSpacing.swift; sourceTree = "<group>"; };
+		8DCF2DAC2A8D1834005581DC /* ZeroSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSpacing.swift; sourceTree = "<group>"; };
+		8DCF2DAF2A8D1872005581DC /* DefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPadding.swift; sourceTree = "<group>"; };
+		8DCF2DB12A8D18FA005581DC /* PaddingSomeEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSomeEdges.swift; sourceTree = "<group>"; };
+		8DCF2DB32A8D192E005581DC /* SpecificPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPadding.swift; sourceTree = "<group>"; };
+		8DCF2DB52A8D194A005581DC /* PaddingTheContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTheContainer.swift; sourceTree = "<group>"; };
+		8DCF2DB82A8D1990005581DC /* AddingSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingSpacer.swift; sourceTree = "<group>"; };
+		8DCF2DBA2A8D19D5005581DC /* AddingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlaceholder.swift; sourceTree = "<group>"; };
+		8DCF2DBC2A8D1A13005581DC /* StackingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingPlaceholder.swift; sourceTree = "<group>"; };
+		8DCF2DBE2A8D1A8D005581DC /* TrainCarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCarContentView.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
 		8DEFC9192A89FD68006C7988 /* KeyPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadView.swift; sourceTree = "<group>"; };
 		8DEFC91B2A89FD6E006C7988 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -179,21 +205,21 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
-		8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */ = {
+		8D261E692A8CEAFC0029D7C2 /* ScalingViewToComplementText */ = {
 			isa = PBXGroup;
 			children = (
 				8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */,
 			);
-			path = KeyboardBubble;
+			path = ScalingViewToComplementText;
 			sourceTree = "<group>";
 		};
-		8D261E6C2A8D08D80029D7C2 /* CaptionedPhoto */ = {
+		8D261E6C2A8D08D80029D7C2 /* LayeringContent */ = {
 			isa = PBXGroup;
 			children = (
 				8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */,
 				8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */,
 			);
-			path = CaptionedPhoto;
+			path = LayeringContent;
 			sourceTree = "<group>";
 		};
 		8D2C03CF2A8B3DE400F0131E /* Basic */ = {
@@ -203,13 +229,14 @@
 				8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */,
 				8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */,
 				8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */,
-				8DCF2D9D2A8D10DE005581DC /* Event */,
-				8DCF2D992A8D0E21005581DC /* TrainCars */,
-				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
 				8D2C03D02A8B40BC00F0131E /* Counter */,
 				8D2C03EA2A8B8B1200F0131E /* Contacts */,
-				8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */,
-				8D261E6C2A8D08D80029D7C2 /* CaptionedPhoto */,
+				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
+				8D261E692A8CEAFC0029D7C2 /* ScalingViewToComplementText */,
+				8D261E6C2A8D08D80029D7C2 /* LayeringContent */,
+				8DCF2D9D2A8D10DE005581DC /* HideView */,
+				8DCF2D992A8D0E21005581DC /* OrganizingAligningContentStack */,
+				8DCF2DA22A8D15B3005581DC /* AdjustingSpaceViews */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -408,21 +435,65 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8DCF2D992A8D0E21005581DC /* TrainCars */ = {
+		8DCF2D992A8D0E21005581DC /* OrganizingAligningContentStack */ = {
 			isa = PBXGroup;
 			children = (
 				8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */,
 			);
-			path = TrainCars;
+			path = OrganizingAligningContentStack;
 			sourceTree = "<group>";
 		};
-		8DCF2D9D2A8D10DE005581DC /* Event */ = {
+		8DCF2D9D2A8D10DE005581DC /* HideView */ = {
 			isa = PBXGroup;
 			children = (
 				8DCF2D9E2A8D1168005581DC /* Event.swift */,
 				8DCF2DA02A8D118D005581DC /* EventTile.swift */,
 			);
-			path = Event;
+			path = HideView;
+			sourceTree = "<group>";
+		};
+		8DCF2DA22A8D15B3005581DC /* AdjustingSpaceViews */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2DA32A8D1650005581DC /* TrainCar.swift */,
+				8DCF2DBE2A8D1A8D005581DC /* TrainCarContentView.swift */,
+				8DCF2DB72A8D1981005581DC /* Spacer */,
+				8DCF2DAE2A8D1863005581DC /* Padding */,
+				8DCF2DA92A8D17B3005581DC /* Spacing */,
+			);
+			path = AdjustingSpaceViews;
+			sourceTree = "<group>";
+		};
+		8DCF2DA92A8D17B3005581DC /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2DA52A8D16F6005581DC /* DefaultSpacing.swift */,
+				8DCF2DA72A8D1765005581DC /* SpecificSpacing.swift */,
+				8DCF2DAA2A8D17BB005581DC /* ScaledSpacing.swift */,
+				8DCF2DAC2A8D1834005581DC /* ZeroSpacing.swift */,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		8DCF2DAE2A8D1863005581DC /* Padding */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2DAF2A8D1872005581DC /* DefaultPadding.swift */,
+				8DCF2DB12A8D18FA005581DC /* PaddingSomeEdges.swift */,
+				8DCF2DB32A8D192E005581DC /* SpecificPadding.swift */,
+				8DCF2DB52A8D194A005581DC /* PaddingTheContainer.swift */,
+			);
+			path = Padding;
+			sourceTree = "<group>";
+		};
+		8DCF2DB72A8D1981005581DC /* Spacer */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2DB82A8D1990005581DC /* AddingSpacer.swift */,
+				8DCF2DBA2A8D19D5005581DC /* AddingPlaceholder.swift */,
+				8DCF2DBC2A8D1A13005581DC /* StackingPlaceholder.swift */,
+			);
+			path = Spacer;
 			sourceTree = "<group>";
 		};
 		8DEFC9122A89EB0E006C7988 /* KeyPad */ = {
@@ -553,29 +624,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCF2DA42A8D1650005581DC /* TrainCar.swift in Sources */,
 				8DCF2D962A8D0934005581DC /* CaptionedPhoto.swift in Sources */,
 				8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */,
 				8D658A6529EEE30300928C68 /* TextFontExampleView.swift in Sources */,
 				8D2C03F32A8B8B6200F0131E /* ContactsFeatureView.swift in Sources */,
 				8D6806C32A892A27000FAC57 /* RootView.swift in Sources */,
 				8D4AF2412A8BA5980008FEE3 /* AlternativeContentView.swift in Sources */,
+				8DCF2DA82A8D1765005581DC /* SpecificSpacing.swift in Sources */,
 				8D2C03F62A8B8B6200F0131E /* ContactsFeature.swift in Sources */,
+				8DCF2DBB2A8D19D5005581DC /* AddingPlaceholder.swift in Sources */,
 				8D4AF2312A8B9ACC0008FEE3 /* Journal.swift in Sources */,
 				8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */,
 				8D2C03F52A8B8B6200F0131E /* AddContactView.swift in Sources */,
 				8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */,
+				8DCF2DB42A8D192E005581DC /* SpecificPadding.swift in Sources */,
 				8DCF2D982A8D0ADA005581DC /* CaptionedPhotoContentView.swift in Sources */,
+				8DCF2DA62A8D16F6005581DC /* DefaultSpacing.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
 				8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */,
 				8DEFC9202A89FF08006C7988 /* KeyPadReducer.swift in Sources */,
 				8DEFC91E2A89FD73006C7988 /* SpecialCharacterView.swift in Sources */,
 				8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */,
+				8DCF2DAD2A8D1834005581DC /* ZeroSpacing.swift in Sources */,
 				8D4AF2382A8B9B050008FEE3 /* DateView.swift in Sources */,
+				8DCF2DB02A8D1872005581DC /* DefaultPadding.swift in Sources */,
+				8DCF2DB62A8D194A005581DC /* PaddingTheContainer.swift in Sources */,
 				8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */,
 				8D4AF2392A8B9B050008FEE3 /* DetailView.swift in Sources */,
+				8DCF2DBF2A8D1A8D005581DC /* TrainCarContentView.swift in Sources */,
 				8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
+				8DCF2DB92A8D1990005581DC /* AddingSpacer.swift in Sources */,
 				8D4AF2252A8B966F0008FEE3 /* ExploringSwiftUIApp.swift in Sources */,
 				05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */,
 				8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */,
@@ -585,6 +666,7 @@
 				8D2C03F82A8B8B6200F0131E /* ContactDetailView.swift in Sources */,
 				8D8638082A246F100041A0AC /* AlertView.swift in Sources */,
 				8D4AF22B2A8B9A0F0008FEE3 /* ContentView.swift in Sources */,
+				8DCF2DAB2A8D17BB005581DC /* ScaledSpacing.swift in Sources */,
 				8D4AF2342A8B9AEE0008FEE3 /* JournalEntryListItem.swift in Sources */,
 				8D86380A2A246F590041A0AC /* RoutinePopupVM.swift in Sources */,
 				8D4AF22C2A8B9A0F0008FEE3 /* SettingsView.swift in Sources */,
@@ -594,6 +676,7 @@
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
 				8D39CAF72A0000440083D6D7 /* ManagementProfileView.swift in Sources */,
 				0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */,
+				8DCF2DBD2A8D1A13005581DC /* StackingPlaceholder.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
@@ -604,6 +687,7 @@
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
 				8D4AF2432A8BB69A0008FEE3 /* RefactorTheCustomScenes.swift in Sources */,
 				8D4AF23B2A8B9B100008FEE3 /* JournalEntry.swift in Sources */,
+				8DCF2DB22A8D18FA005581DC /* PaddingSomeEdges.swift in Sources */,
 				8D8638102A24702D0041A0AC /* SaveButtonView.swift in Sources */,
 				8D2C03D62A8B40F400F0131E /* View+.swift in Sources */,
 				8D2C03F42A8B8B6200F0131E /* ContactDetailFeature.swift in Sources */,
