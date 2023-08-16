@@ -60,6 +60,8 @@
 		8DCF2D962A8D0934005581DC /* CaptionedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */; };
 		8DCF2D982A8D0ADA005581DC /* CaptionedPhotoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */; };
 		8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */; };
+		8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D9E2A8D1168005581DC /* Event.swift */; };
+		8DCF2DA12A8D118D005581DC /* EventTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2DA02A8D118D005581DC /* EventTile.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
 		8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC9192A89FD68006C7988 /* KeyPadView.swift */; };
 		8DEFC91C2A89FD6E006C7988 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91B2A89FD6E006C7988 /* NumberView.swift */; };
@@ -134,6 +136,8 @@
 		8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhoto.swift; sourceTree = "<group>"; };
 		8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhotoContentView.swift; sourceTree = "<group>"; };
 		8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrain.swift; sourceTree = "<group>"; };
+		8DCF2D9E2A8D1168005581DC /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8DCF2DA02A8D118D005581DC /* EventTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTile.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
 		8DEFC9192A89FD68006C7988 /* KeyPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadView.swift; sourceTree = "<group>"; };
 		8DEFC91B2A89FD6E006C7988 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */,
 				8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */,
 				8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */,
+				8DCF2D9D2A8D10DE005581DC /* Event */,
 				8DCF2D992A8D0E21005581DC /* TrainCars */,
 				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
 				8D2C03D02A8B40BC00F0131E /* Counter */,
@@ -411,6 +416,15 @@
 			path = TrainCars;
 			sourceTree = "<group>";
 		};
+		8DCF2D9D2A8D10DE005581DC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2D9E2A8D1168005581DC /* Event.swift */,
+				8DCF2DA02A8D118D005581DC /* EventTile.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		8DEFC9122A89EB0E006C7988 /* KeyPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +579,7 @@
 				8D4AF2252A8B966F0008FEE3 /* ExploringSwiftUIApp.swift in Sources */,
 				05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */,
 				8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */,
+				8DCF2DA12A8D118D005581DC /* EventTile.swift in Sources */,
 				8D4AF2272A8B989D0008FEE3 /* SpecifyingViewHierarchy.swift in Sources */,
 				8D4D3D382A3E0477009A64F6 /* TodosModel.swift in Sources */,
 				8D2C03F82A8B8B6200F0131E /* ContactDetailView.swift in Sources */,
@@ -573,6 +588,7 @@
 				8D4AF2342A8B9AEE0008FEE3 /* JournalEntryListItem.swift in Sources */,
 				8D86380A2A246F590041A0AC /* RoutinePopupVM.swift in Sources */,
 				8D4AF22C2A8B9A0F0008FEE3 /* SettingsView.swift in Sources */,
+				8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */,
 				8D4D3D2B2A3DDF5D009A64F6 /* NetworkManager.swift in Sources */,
 				8D2C03F22A8B8B6200F0131E /* AddContactFeature.swift in Sources */,
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
