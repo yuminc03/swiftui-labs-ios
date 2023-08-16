@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514F7692A8C568A000498FD /* NumberFactClient.swift */; };
 		05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C31729FB9391009839BB /* RectanglePictureView.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
+		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
 		8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D22A8B40F400F0131E /* CounterFeature.swift */; };
 		8D2C03D62A8B40F400F0131E /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D32A8B40F400F0131E /* View+.swift */; };
@@ -55,6 +57,9 @@
 		8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */; };
 		8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */; };
 		8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */; };
+		8DCF2D962A8D0934005581DC /* CaptionedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */; };
+		8DCF2D982A8D0ADA005581DC /* CaptionedPhotoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */; };
+		8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
 		8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC9192A89FD68006C7988 /* KeyPadView.swift */; };
 		8DEFC91C2A89FD6E006C7988 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91B2A89FD6E006C7988 /* NumberView.swift */; };
@@ -75,8 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0514F7692A8C568A000498FD /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
+		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 		8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeatureView.swift; sourceTree = "<group>"; };
 		8D2C03D22A8B40F400F0131E /* CounterFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		8D2C03D32A8B40F400F0131E /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -124,6 +131,9 @@
 		8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBootcampView.swift; sourceTree = "<group>"; };
 		8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeAreaRegionsExampleView.swift; sourceTree = "<group>"; };
 		8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePopupExampleView.swift; sourceTree = "<group>"; };
+		8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhoto.swift; sourceTree = "<group>"; };
+		8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhotoContentView.swift; sourceTree = "<group>"; };
+		8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrain.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
 		8DEFC9192A89FD68006C7988 /* KeyPadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadView.swift; sourceTree = "<group>"; };
 		8DEFC91B2A89FD6E006C7988 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -165,6 +175,23 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
+		8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */ = {
+			isa = PBXGroup;
+			children = (
+				8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */,
+			);
+			path = KeyboardBubble;
+			sourceTree = "<group>";
+		};
+		8D261E6C2A8D08D80029D7C2 /* CaptionedPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2D952A8D0934005581DC /* CaptionedPhoto.swift */,
+				8DCF2D972A8D0ADA005581DC /* CaptionedPhotoContentView.swift */,
+			);
+			path = CaptionedPhoto;
+			sourceTree = "<group>";
+		};
 		8D2C03CF2A8B3DE400F0131E /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +199,12 @@
 				8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */,
 				8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */,
 				8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */,
+				8DCF2D992A8D0E21005581DC /* TrainCars */,
 				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
 				8D2C03D02A8B40BC00F0131E /* Counter */,
 				8D2C03EA2A8B8B1200F0131E /* Contacts */,
+				8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */,
+				8D261E6C2A8D08D80029D7C2 /* CaptionedPhoto */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -184,6 +214,7 @@
 			children = (
 				8D2C03D22A8B40F400F0131E /* CounterFeature.swift */,
 				8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */,
+				0514F7692A8C568A000498FD /* NumberFactClient.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -372,6 +403,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8DCF2D992A8D0E21005581DC /* TrainCars */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */,
+			);
+			path = TrainCars;
+			sourceTree = "<group>";
+		};
 		8DEFC9122A89EB0E006C7988 /* KeyPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCF2D962A8D0934005581DC /* CaptionedPhoto.swift in Sources */,
 				8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */,
 				8D658A6529EEE30300928C68 /* TextFontExampleView.swift in Sources */,
 				8D2C03F32A8B8B6200F0131E /* ContactsFeatureView.swift in Sources */,
@@ -510,6 +550,7 @@
 				8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */,
 				8D2C03F52A8B8B6200F0131E /* AddContactView.swift in Sources */,
 				8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */,
+				8DCF2D982A8D0ADA005581DC /* CaptionedPhotoContentView.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
 				8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */,
@@ -519,6 +560,7 @@
 				8D4AF2382A8B9B050008FEE3 /* DateView.swift in Sources */,
 				8DEFC91A2A89FD68006C7988 /* KeyPadView.swift in Sources */,
 				8D4AF2392A8B9B050008FEE3 /* DetailView.swift in Sources */,
+				8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
 				8D4AF2252A8B966F0008FEE3 /* ExploringSwiftUIApp.swift in Sources */,
 				05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */,
@@ -535,10 +577,12 @@
 				8D2C03F22A8B8B6200F0131E /* AddContactFeature.swift in Sources */,
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
 				8D39CAF72A0000440083D6D7 /* ManagementProfileView.swift in Sources */,
+				0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
 				8D8638062A246EDD0041A0AC /* RoutineTransitionView.swift in Sources */,
+				8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */,
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4AF2352A8B9AEE0008FEE3 /* JournalEntryView.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
@@ -569,7 +613,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -591,7 +635,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -728,6 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
@@ -752,7 +797,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,6 +809,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
@@ -788,7 +834,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

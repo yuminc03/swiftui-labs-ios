@@ -27,13 +27,15 @@ struct ContactsFeature: Reducer {
         }
     }
     
+    @Dependency(\.uuid) var uuid
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .didTapAddButton:
                 state.destination = .addContact(
                     AddContactFeature.State(
-                        contact: Contact(id: UUID(), name: "")
+                        contact: Contact(id: uuid(), name: "")
                     )
                 )
                 return .none
