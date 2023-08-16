@@ -10,6 +10,7 @@
 		0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514F7692A8C568A000498FD /* NumberFactClient.swift */; };
 		05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C31729FB9391009839BB /* RectanglePictureView.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
+		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
 		8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D22A8B40F400F0131E /* CounterFeature.swift */; };
 		8D2C03D62A8B40F400F0131E /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D32A8B40F400F0131E /* View+.swift */; };
@@ -79,6 +80,7 @@
 		0514F7692A8C568A000498FD /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
+		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 		8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeatureView.swift; sourceTree = "<group>"; };
 		8D2C03D22A8B40F400F0131E /* CounterFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		8D2C03D32A8B40F400F0131E /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
+		8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */ = {
+			isa = PBXGroup;
+			children = (
+				8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */,
+			);
+			path = KeyboardBubble;
+			sourceTree = "<group>";
+		};
 		8D2C03CF2A8B3DE400F0131E /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +187,7 @@
 				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
 				8D2C03D02A8B40BC00F0131E /* Counter */,
 				8D2C03EA2A8B8B1200F0131E /* Contacts */,
+				8D261E692A8CEAFC0029D7C2 /* KeyboardBubble */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -543,6 +554,7 @@
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
 				8D8638062A246EDD0041A0AC /* RoutineTransitionView.swift in Sources */,
+				8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */,
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4AF2352A8B9AEE0008FEE3 /* JournalEntryView.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
@@ -732,10 +744,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPractiseExtample/Info.plist;
@@ -756,7 +769,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -768,10 +781,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPractiseExtample/Info.plist;
@@ -792,7 +806,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
