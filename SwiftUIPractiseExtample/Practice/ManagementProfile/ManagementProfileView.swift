@@ -30,7 +30,8 @@ struct ManagementProfileView: View {
                     Spacer()
                 }
             }
-            .frame(width: .infinity, height: 330)
+            .frame(height: 330)
+            Spacer()
         }
     }
 }
@@ -131,6 +132,6 @@ struct PersonalInfoView: View {
                 Spacer()
             }
         }
-        .frame(width: .infinity, alignment: .leading)
+        .frame(alignment: .leading)
     }
 }

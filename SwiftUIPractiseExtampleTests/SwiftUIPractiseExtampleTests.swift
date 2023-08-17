@@ -93,11 +93,9 @@ final class SwiftUIPractiseExtampleTests: XCTestCase {
             $0.$destination[case: /ContactsFeature.Destination.State.addContact]?.contact.name = "Blob Jr."
         }
         await store.send(.destination(.presented(.addContact(.didTapSaveButton))))
-        await store.receive(
-            .destination(
-                .presented(.addContact(.delegate(.saveContact(Contact(id: UUID(0), name: "Blob Jr.")))))
-            )
-        ) {
+        await store.receive(.destination(
+            .presented(.addContact(.delegate(.saveContact(Contact(id: UUID(0), name: "Blob Jr.")))))
+        )) {
             $0.contacts = [
                 Contact(id: UUID(0), name: "Blob Jr.")
             ]
@@ -131,10 +129,19 @@ final class SwiftUIPractiseExtampleTests: XCTestCase {
         let store = TestStore(initialState: ContactsFeature.State(
             contacts: [
                 Contact(id: UUID(0), name: "Blob"),
-                Contact(id: UUID(0), name: "Blob Jr.")
+                Contact(id: UUID(1), name: "Blob Jr.")
             ]
         )) {
             ContactsFeature()
+        }
+        
+        await store.send(.didTapDeleteButton(id: UUID(1))) {
+            $0.destination = .alert(.deleteConfirmation(id: UUID(1)))
+        }
+        
+        await store.send(.destination(.presented(.alert(.confirmDeletion(id: UUID(1)))))) {
+            $0.contacts.remove(id: UUID(1))
+            $0.destination = nil
         }
     }
 }

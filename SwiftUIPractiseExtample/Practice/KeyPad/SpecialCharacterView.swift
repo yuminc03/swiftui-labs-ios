@@ -10,6 +10,7 @@ import SwiftUI
 struct SpecialCharacterView: View {
     
     let character: String
+    let backgroundColor: Color
     
     var body: some View {
         Circle()
@@ -17,7 +18,7 @@ struct SpecialCharacterView: View {
                 width: (UIScreen.main.bounds.width - 120) / 3,
                 height: (UIScreen.main.bounds.width - 120) / 3
             )
-            .foregroundColor(Color("gray_D8D8D8"))
+            .foregroundColor(backgroundColor)
             .overlay(alignment: .center) {
                 Text(character)
                     .font(.largeTitle)
@@ -28,6 +29,13 @@ struct SpecialCharacterView: View {
 
 struct SpecialCharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        SpecialCharacterView(character: "﹡")
+        ZStack {
+            Color.black
+            SpecialCharacterView(
+                character: "﹡",
+                backgroundColor: Color("gray_D8D8D8")
+            )
+        }
+        .ignoresSafeArea()
     }
 }

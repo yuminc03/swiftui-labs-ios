@@ -13,11 +13,13 @@ struct KeyPadReducer: Reducer {
     
     struct State: Equatable {
         var numberString = ""
+        var selectedTab = 3
     }
     
     enum Action {
         case didTapNumberButton(String)
         case didTapDeleteButton
+        case didTapTabItem(Int)
     }
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
@@ -73,6 +75,10 @@ struct KeyPadReducer: Reducer {
             
             let endIndex = state.numberString.index(before: state.numberString.endIndex)
             state.numberString = String(state.numberString[state.numberString.startIndex ..< endIndex])
+            return .none
+            
+        case let .didTapTabItem(index):
+            state.selectedTab = index
             return .none
         }
     }

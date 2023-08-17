@@ -16,7 +16,7 @@ struct ContactDetailFeature: Reducer {
         let contact: Contact
     }
     
-    enum Action {
+    enum Action: Equatable {
         case alert(PresentationAction<Alert>)
         case delegate(Delegate)
         case didTapDeleteButton
