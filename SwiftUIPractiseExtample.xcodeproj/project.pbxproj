@@ -54,6 +54,8 @@
 		057D335D2A8DBC8B00524075 /* RegularTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D335A2A8DBC8B00524075 /* RegularTitleView.swift */; };
 		057D335E2A8DBC8B00524075 /* CompactTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D335B2A8DBC8B00524075 /* CompactTitleView.swift */; };
 		057D33612A8DBD9900524075 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33602A8DBD9900524075 /* StarRating.swift */; };
+		057D33662A8DD98B00524075 /* MaintainAdaptableSizeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */; };
+		057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */; };
 		05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C31729FB9391009839BB /* RectanglePictureView.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
 		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
@@ -188,6 +190,8 @@
 		057D335A2A8DBC8B00524075 /* RegularTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTitleView.swift; sourceTree = "<group>"; };
 		057D335B2A8DBC8B00524075 /* CompactTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactTitleView.swift; sourceTree = "<group>"; };
 		057D33602A8DBD9900524075 /* StarRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
+		057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainAdaptableSizeInView.swift; sourceTree = "<group>"; };
+		057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrainContentView.swift; sourceTree = "<group>"; };
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
@@ -402,6 +406,27 @@
 			path = CustomControls;
 			sourceTree = "<group>";
 		};
+		057D33632A8DD8AE00524075 /* AppPrinciples */ = {
+			isa = PBXGroup;
+			children = (
+				8D4AF2242A8B966F0008FEE3 /* ExploringSwiftUIApp.swift */,
+				8D4AF2262A8B989D0008FEE3 /* SpecifyingViewHierarchy.swift */,
+				8D4AF2422A8BB69A0008FEE3 /* RefactorTheCustomScenes.swift */,
+				8D4AF22F2A8B9AC60008FEE3 /* Models */,
+				8D4AF2282A8B99AF0008FEE3 /* Subviews */,
+			);
+			path = AppPrinciples;
+			sourceTree = "<group>";
+		};
+		057D33642A8DD94B00524075 /* TCATutorial */ = {
+			isa = PBXGroup;
+			children = (
+				8D2C03D02A8B40BC00F0131E /* Counter */,
+				8D2C03EA2A8B8B1200F0131E /* Contacts */,
+			);
+			path = TCATutorial;
+			sourceTree = "<group>";
+		};
 		8D04D1FB2A063160005BD5F0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,15 +463,8 @@
 				8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */,
 				8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */,
 				8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */,
-				057D32F92A8DA92600524075 /* DrivingChangesWithState */,
-				8D2C03D02A8B40BC00F0131E /* Counter */,
-				8D2C03EA2A8B8B1200F0131E /* Contacts */,
+				057D33642A8DD94B00524075 /* TCATutorial */,
 				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
-				8D261E692A8CEAFC0029D7C2 /* ScalingViewToComplementText */,
-				8D261E6C2A8D08D80029D7C2 /* LayeringContent */,
-				8DCF2D9D2A8D10DE005581DC /* HideView */,
-				8DCF2D992A8D0E21005581DC /* OrganizingAligningContentStack */,
-				8DCF2DA22A8D15B3005581DC /* AdjustingSpaceViews */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -485,11 +503,14 @@
 		8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				8D4AF2242A8B966F0008FEE3 /* ExploringSwiftUIApp.swift */,
-				8D4AF2262A8B989D0008FEE3 /* SpecifyingViewHierarchy.swift */,
-				8D4AF2422A8BB69A0008FEE3 /* RefactorTheCustomScenes.swift */,
-				8D4AF22F2A8B9AC60008FEE3 /* Models */,
-				8D4AF2282A8B99AF0008FEE3 /* Subviews */,
+				057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */,
+				057D33632A8DD8AE00524075 /* AppPrinciples */,
+				8D261E692A8CEAFC0029D7C2 /* ScalingViewToComplementText */,
+				8D261E6C2A8D08D80029D7C2 /* LayeringContent */,
+				8DCF2D992A8D0E21005581DC /* OrganizingAligningContentStack */,
+				8DCF2D9D2A8D10DE005581DC /* HideView */,
+				8DCF2DA22A8D15B3005581DC /* AdjustingSpaceViews */,
+				057D32F92A8DA92600524075 /* DrivingChangesWithState */,
 			);
 			path = SwiftUIConceptTutorial;
 			sourceTree = "<group>";
@@ -649,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				8DCF2D9B2A8D0E2F005581DC /* IfElseTrain.swift */,
+				057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */,
 			);
 			path = OrganizingAligningContentStack;
 			sourceTree = "<group>";
@@ -897,6 +919,7 @@
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
 				8DCF2DB92A8D1990005581DC /* AddingSpacer.swift in Sources */,
 				8D4AF2252A8B966F0008FEE3 /* ExploringSwiftUIApp.swift in Sources */,
+				057D33662A8DD98B00524075 /* MaintainAdaptableSizeInView.swift in Sources */,
 				05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */,
 				057D33562A8DBC4E00524075 /* RecipeDirectionsView.swift in Sources */,
 				057D335D2A8DBC8B00524075 /* RegularTitleView.swift in Sources */,
@@ -923,6 +946,7 @@
 				057D33572A8DBC4E00524075 /* RecipeIngredientsView.swift in Sources */,
 				0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */,
 				8DCF2DBD2A8D1A13005581DC /* StackingPlaceholder.swift in Sources */,
+				057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,

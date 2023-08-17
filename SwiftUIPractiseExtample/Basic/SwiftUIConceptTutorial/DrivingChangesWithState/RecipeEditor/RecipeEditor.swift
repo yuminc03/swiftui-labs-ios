@@ -41,12 +41,6 @@ struct RecipeEditor: View {
     }
 }
 
-//struct RecipeEditor_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecipeEditor(config: <#Binding<RecipeEditorConfig>#>)
-//    }
-//}
-
 extension RecipeEditor {
     
     private var editorTitle: String {
