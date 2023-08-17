@@ -31,6 +31,7 @@ struct ManagementProfileView: View {
                 }
             }
             .frame(height: 330)
+            Spacer()
         }
     }
 }

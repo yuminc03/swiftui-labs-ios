@@ -56,7 +56,6 @@
 		057D33612A8DBD9900524075 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33602A8DBD9900524075 /* StarRating.swift */; };
 		057D33662A8DD98B00524075 /* MaintainAdaptableSizeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */; };
 		057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */; };
-		057D336A2A8DF06600524075 /* ClearCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33692A8DF06600524075 /* ClearCircleView.swift */; };
 		05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C31729FB9391009839BB /* RectanglePictureView.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
 		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
@@ -130,6 +129,8 @@
 		8DEFC91E2A89FD73006C7988 /* SpecialCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */; };
 		8DEFC9202A89FF08006C7988 /* KeyPadReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFC91F2A89FF08006C7988 /* KeyPadReducer.swift */; };
 		8DEFC9222A8A6938006C7988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */; };
+		8DF7A4042A8E37D200BA2350 /* CallGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7A4032A8E37D200BA2350 /* CallGreenView.swift */; };
+		8DF7A4062A8E383A00BA2350 /* DeleteNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7A4052A8E383A00BA2350 /* DeleteNumberView.swift */; };
 		8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,7 +194,6 @@
 		057D33602A8DBD9900524075 /* StarRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainAdaptableSizeInView.swift; sourceTree = "<group>"; };
 		057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrainContentView.swift; sourceTree = "<group>"; };
-		057D33692A8DF06600524075 /* ClearCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCircleView.swift; sourceTree = "<group>"; };
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
@@ -268,6 +268,8 @@
 		8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialCharacterView.swift; sourceTree = "<group>"; };
 		8DEFC91F2A89FF08006C7988 /* KeyPadReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadReducer.swift; sourceTree = "<group>"; };
 		8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DF7A4032A8E37D200BA2350 /* CallGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallGreenView.swift; sourceTree = "<group>"; };
+		8DF7A4052A8E383A00BA2350 /* DeleteNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberView.swift; sourceTree = "<group>"; };
 		8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosGridComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -737,7 +739,8 @@
 				8DEFC9192A89FD68006C7988 /* KeyPadView.swift */,
 				8DEFC91B2A89FD6E006C7988 /* NumberView.swift */,
 				8DEFC91D2A89FD73006C7988 /* SpecialCharacterView.swift */,
-				057D33692A8DF06600524075 /* ClearCircleView.swift */,
+				8DF7A4032A8E37D200BA2350 /* CallGreenView.swift */,
+				8DF7A4052A8E383A00BA2350 /* DeleteNumberView.swift */,
 			);
 			path = KeyPad;
 			sourceTree = "<group>";
@@ -920,7 +923,6 @@
 				8DCF2DBF2A8D1A8D005581DC /* TrainCarContentView.swift in Sources */,
 				8DCF2D9C2A8D0E2F005581DC /* IfElseTrain.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
-				057D336A2A8DF06600524075 /* ClearCircleView.swift in Sources */,
 				8DCF2DB92A8D1990005581DC /* AddingSpacer.swift in Sources */,
 				8D4AF2252A8B966F0008FEE3 /* ExploringSwiftUIApp.swift in Sources */,
 				057D33662A8DD98B00524075 /* MaintainAdaptableSizeInView.swift in Sources */,
@@ -943,6 +945,7 @@
 				057D33022A8DADE500524075 /* RecipeEditorForm.swift in Sources */,
 				8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */,
 				8D4D3D2B2A3DDF5D009A64F6 /* NetworkManager.swift in Sources */,
+				8DF7A4062A8E383A00BA2350 /* DeleteNumberView.swift in Sources */,
 				8D2C03F22A8B8B6200F0131E /* AddContactFeature.swift in Sources */,
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
 				8D39CAF72A0000440083D6D7 /* ManagementProfileView.swift in Sources */,
@@ -958,6 +961,7 @@
 				8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */,
 				057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */,
 				057D33082A8DB16500524075 /* SidebarView.swift in Sources */,
+				8DF7A4042A8E37D200BA2350 /* CallGreenView.swift in Sources */,
 				057D33132A8DB8CE00524075 /* RecipeListItemView.swift in Sources */,
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4AF2352A8B9AEE0008FEE3 /* JournalEntryView.swift in Sources */,
@@ -1160,7 +1164,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPractiseExtample/Info.plist;
@@ -1197,7 +1201,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractiseExtample/Preview Content\"";
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIPractiseExtample/Info.plist;

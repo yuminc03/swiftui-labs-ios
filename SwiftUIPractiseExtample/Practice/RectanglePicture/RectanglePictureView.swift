@@ -9,59 +9,63 @@ import SwiftUI
 
 struct RectanglePictureView: View {
     var body: some View {
-        VStack(spacing: 10, content: {
-            HStack(spacing: 0) {
+        ZStack {
+            Color.black
+            VStack(spacing: 10, content: {
                 HStack(spacing: 0) {
-                    Rectangle()
-                        .fill(.red)
-                        .frame(width: 150, height: 220)
-                    Rectangle()
-                        .frame(width: 10, height: 220)
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 180, height: 220)
-                }
-            }
-            HStack(spacing: 0) {
-                Rectangle()
-                    .fill(.white)
-                    .frame(width: 150, height: 220)
-                Rectangle()
-                    .frame(width: 10, height: 1)
-                VStack(spacing: 0) {
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 120, height: 190)
-                    Rectangle()
-                        .fill(.black)
-                        .frame(width: 120, height: 10)
                     HStack(spacing: 0) {
                         Rectangle()
-                            .fill(.yellow)
-                            .frame(width: 70, height: 20)
+                            .fill(.red)
+                            .frame(width: 150, height: 220)
                         Rectangle()
-                            .frame(width: 10, height: 1)
+                            .frame(width: 10, height: 220)
                         Rectangle()
-                            .frame(width: 40, height: 20)
+                            .fill(.white)
+                            .frame(width: 180, height: 220)
                     }
                 }
-                Rectangle()
-                    .fill(.black)
-                    .frame(width: 10, height: 1)
-                VStack(spacing: 0) {
-                    Rectangle()
-                        .fill(.blue)
-                        .frame(width: 50, height: 70)
-                    Rectangle()
-                        .fill(.black)
-                        .frame(width: 51, height: 10)
+                HStack(spacing: 0) {
                     Rectangle()
                         .fill(.white)
-                        .frame(width: 50, height: 140)
+                        .frame(width: 150, height: 220)
+                    Rectangle()
+                        .frame(width: 10, height: 1)
+                    VStack(spacing: 0) {
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 120, height: 190)
+                        Rectangle()
+                            .fill(.black)
+                            .frame(width: 120, height: 10)
+                        HStack(spacing: 0) {
+                            Rectangle()
+                                .fill(.yellow)
+                                .frame(width: 70, height: 20)
+                            Rectangle()
+                                .frame(width: 10, height: 1)
+                            Rectangle()
+                                .frame(width: 40, height: 20)
+                        }
+                    }
+                    Rectangle()
+                        .fill(.black)
+                        .frame(width: 10, height: 1)
+                    VStack(spacing: 0) {
+                        Rectangle()
+                            .fill(.blue)
+                            .frame(width: 50, height: 70)
+                        Rectangle()
+                            .fill(.black)
+                            .frame(width: 51, height: 10)
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 50, height: 140)
+                    }
                 }
-            }
-        })
-        .background(Color.black)
+            })
+            .background(Color.black)
+        }
+        .ignoresSafeArea()
     }
 }
 

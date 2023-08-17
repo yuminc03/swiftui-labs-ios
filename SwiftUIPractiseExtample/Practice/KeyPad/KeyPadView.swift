@@ -48,27 +48,7 @@ struct KeyPadView: View {
                     if viewStore.numberString.isEmpty == false {
                         Text(viewStore.numberString)
                             .font(.largeTitle)
-                        Menu {
-                            Button {
-                                
-                            } label: {
-                                Label(
-                                    "새로운 연락처 등록",
-                                    systemImage: "person.crop.circle"
-                                )
-                            }
-                            Button {
-                                
-                            } label: {
-                                Label(
-                                    "기존의 연락처에 추가",
-                                    systemImage: "person.crop.circle.badge.plus"
-                                )
-                            }
-                        } label: {
-                            Text("번호 추가")
-                                .font(.title2)
-                        }
+                        addContactMenu
                     }
                 }
                 .gesture(
@@ -129,7 +109,7 @@ struct KeyPadView: View {
                     }
                     .padding(.vertical, 5)
                     HStack(spacing: 20) {
-                        SpecialCharacterView(character: "﹡")
+                        SpecialCharacterView(character: "﹡", backgroundColor: Color("gray_D8D8D8"))
                             .onTapGesture {
                                 viewStore.send(.didTapNumberButton("﹡"))
                             }
@@ -137,35 +117,25 @@ struct KeyPadView: View {
                             .onTapGesture {
                                 viewStore.send(.didTapNumberButton("0"))
                             }
-                        SpecialCharacterView(character: "#")
+                        SpecialCharacterView(character: "#", backgroundColor: Color("gray_D8D8D8"))
                             .onTapGesture {
                                 viewStore.send(.didTapNumberButton("#"))
                             }
                     }
                     .padding(.vertical, 5)
                     HStack(spacing: 20) {
-                        ClearCircleView()
-                        Image(systemName: "phone.circle.fill")
-                            .resizable()
-                            .frame(
-                                width: (UIScreen.main.bounds.width - 120) / 3,
-                                height: (UIScreen.main.bounds.width - 120) / 3
-                            )
-                            .symbolRenderingMode(.multicolor)
+                        SpecialCharacterView(character: "", backgroundColor: .clear)
+                        CallGreenView()
                         if viewStore.numberString.isEmpty == false {
-                            ClearCircleView()
+                            SpecialCharacterView(character: "", backgroundColor: .clear)
                                 .overlay(alignment: .center) {
-                                    Image(systemName: "delete.left.fill")
-                                        .symbolRenderingMode(.hierarchical)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 40, height: 40)
+                                    DeleteNumberView()
                                         .onTapGesture {
                                             viewStore.send(.didTapDeleteButton)
                                         }
                                 }
                         } else {
-                            ClearCircleView()
+                            SpecialCharacterView(character: "", backgroundColor: .clear)
                         }
                     }
                     .padding(.vertical, 5)
@@ -189,5 +159,31 @@ struct KeyPadView: View {
 struct KeyPadView_Previews: PreviewProvider {
     static var previews: some View {
         KeyPadView()
+    }
+}
+
+extension KeyPadView {
+    
+    var addContactMenu: some View {
+        Menu {
+            Button {
+            } label: {
+                Label(
+                    "새로운 연락처 등록",
+                    systemImage: "person.crop.circle"
+                )
+            }
+            
+            Button {
+            } label: {
+                Label(
+                    "기존의 연락처에 추가",
+                    systemImage: "person.crop.circle.badge.plus"
+                )
+            }
+        } label: {
+            Text("번호 추가")
+                .font(.title2)
+        }
     }
 }
