@@ -14,7 +14,7 @@ struct AddContactFeature: Reducer {
         var contact: Contact
     }
     
-    enum Action {
+    enum Action: Equatable {
         case didTapCancelButton
         case didTapSaveButton
         case setName(String)

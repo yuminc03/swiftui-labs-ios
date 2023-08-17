@@ -17,7 +17,7 @@ struct ContactsFeature: Reducer {
         var path = StackState<ContactDetailFeature.State>()
     }
     
-    enum Action {
+    enum Action: Equatable {
         case didTapAddButton
         case didTapDeleteButton(id: Contact.ID)
         case destination(PresentationAction<Destination.Action>)
@@ -52,15 +52,7 @@ struct ContactsFeature: Reducer {
                 return .none
                 
             case let .didTapDeleteButton(id: id):
-                state.destination = .alert(
-                    AlertState {
-                        TextState("Are you sure?")
-                    } actions: {
-                        ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
-                            TextState("Delete")
-                        }
-                    }
-                )
+                state.destination = .alert(.deleteConfirmation(id: id))
                 return .none
                 
             case let .path(.element(id: id, action: .delegate(.confirmDeletion))):
@@ -93,7 +85,7 @@ extension ContactsFeature {
             case alert(AlertState<ContactsFeature.Action.Alert>)
         }
         
-        enum Action {
+        enum Action: Equatable {
             case addContact(AddContactFeature.Action)
             case alert(ContactsFeature.Action.Alert)
         }
@@ -109,4 +101,16 @@ extension ContactsFeature {
 struct Contact: Equatable, Identifiable {
     let id: UUID
     var name: String
+}
+
+extension AlertState where Action == ContactsFeature.Action.Alert {
+    static func deleteConfirmation(id: UUID) -> Self {
+        Self {
+            TextState("Are you sure?")
+        } actions: {
+            ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+                TextState("Delete")
+            }
+        }
+    }
 }
