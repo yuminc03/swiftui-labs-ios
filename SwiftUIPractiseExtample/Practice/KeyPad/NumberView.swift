@@ -37,6 +37,10 @@ struct NumberView: View {
 
 struct NumberView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberView(numberText: "2", bottomText: "A B C")
+        ZStack {
+            Color.black
+            NumberView(numberText: "2", bottomText: "A B C")
+        }
+        .ignoresSafeArea()
     }
 }
