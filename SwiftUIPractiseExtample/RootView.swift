@@ -119,6 +119,7 @@ struct RootView: View {
                 Section("🍊 TCA Challenge") {
                     NavigationLink {
                         KeyPadView()
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("KeyPad")
                     }

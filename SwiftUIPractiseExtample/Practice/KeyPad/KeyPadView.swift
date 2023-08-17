@@ -18,97 +18,133 @@ struct KeyPadView: View {
         self.store = Store(
             initialState: KeyPadReducer.State()) {
             KeyPadReducer()
+                    ._printChanges()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
     }
     
     var body: some View {
-        VStack(alignment: .center) {
-            VStack(spacing: 20) {
-                Text(viewStore.numberString)
-                    .font(.largeTitle)
-                if viewStore.numberString.isEmpty == false {
-                    Button {
-                        
-                    } label: {
-                        Text("번호 추가")
-                            .font(.title2)
+        TabView(selection: viewStore.binding(
+            get: \.selectedTab,
+            send: KeyPadReducer.Action.didTapTabItem
+        )) {
+            Text("First")
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("즐겨찾기")
+                }
+            Text("Second")
+                .tabItem {
+                    Image(systemName: "clock.fill")
+                    Text("최근 통화")
+                }
+            Text("Third")
+                .tabItem {
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("연락처")
+                }
+            VStack(alignment: .center) {
+                VStack(spacing: 20) {
+                    if viewStore.numberString.isEmpty == false {
+                        Text(viewStore.numberString)
+                            .font(.largeTitle)
+                        Menu {
+                            Button {
+                                
+                            } label: {
+                                Label(
+                                    "새로운 연락처 등록",
+                                    systemImage: "person.crop.circle"
+                                )
+                            }
+                            Button {
+                                
+                            } label: {
+                                Label(
+                                    "기존의 연락처에 추가",
+                                    systemImage: "person.crop.circle.badge.plus"
+                                )
+                            }
+                        } label: {
+                            Text("번호 추가")
+                                .font(.title2)
+                        }
                     }
                 }
-            }
-            .gesture(
-                DragGesture()
-                    .onChanged { _ in
-                        viewStore.send(.didTapDeleteButton)
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            viewStore.send(.didTapDeleteButton)
+                        }
+                )
+                .frame(maxWidth: .infinity)
+                .frame(height: UIScreen.main.bounds.height * 0.1)
+                .padding(.vertical, 20)
+                .animation(.spring())
+                
+                VStack {
+                    HStack(spacing: 20) {
+                        NumberView(numberText: "1", bottomText: "")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("1"))
+                            }
+                        NumberView(numberText: "2", bottomText: "A B C")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("2"))
+                            }
+                        NumberView(numberText: "3", bottomText: "D E F")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("3"))
+                            }
                     }
-            )
-            .frame(maxWidth: .infinity)
-            .frame(height: UIScreen.main.bounds.height * 0.1)
-            .padding(.vertical, 20)
-            
-            VStack {
-                HStack(spacing: 20) {
-                    NumberView(numberText: "1", bottomText: "")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("1"))
-                        }
-                    NumberView(numberText: "2", bottomText: "A B C")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("2"))
-                        }
-                    NumberView(numberText: "3", bottomText: "D E F")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("3"))
-                        }
-                }
-                .padding(.vertical, 5)
-                HStack(spacing: 20) {
-                    NumberView(numberText: "4", bottomText: "G H I")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("4"))
-                        }
-                    NumberView(numberText: "5", bottomText: "J K L")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("5"))
-                        }
-                    NumberView(numberText: "6", bottomText: "M N O")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("6"))
-                        }
-                }
-                .padding(.vertical, 5)
-                HStack(spacing: 20) {
-                    NumberView(numberText: "7", bottomText: "P Q R S")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("7"))
-                        }
-                    NumberView(numberText: "8", bottomText: "T U V")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("8"))
-                        }
-                    NumberView(numberText: "9", bottomText: "W X Y Z")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("9"))
-                        }
-                }
-                .padding(.vertical, 5)
-                HStack(spacing: 20) {
-                    SpecialCharacterView(character: "﹡")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("﹡"))
-                        }
-                    NumberView(numberText: "0", bottomText: "+")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("0"))
-                        }
-                    SpecialCharacterView(character: "#")
-                        .onTapGesture {
-                            viewStore.send(.didTapNumberButton("#"))
-                        }
-                }
-                .padding(.vertical, 5)
-                HStack(spacing: 20) {
-                    ZStack {
+                    .padding(.vertical, 5)
+                    HStack(spacing: 20) {
+                        NumberView(numberText: "4", bottomText: "G H I")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("4"))
+                            }
+                        NumberView(numberText: "5", bottomText: "J K L")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("5"))
+                            }
+                        NumberView(numberText: "6", bottomText: "M N O")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("6"))
+                            }
+                    }
+                    .padding(.vertical, 5)
+                    HStack(spacing: 20) {
+                        NumberView(numberText: "7", bottomText: "P Q R S")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("7"))
+                            }
+                        NumberView(numberText: "8", bottomText: "T U V")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("8"))
+                            }
+                        NumberView(numberText: "9", bottomText: "W X Y Z")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("9"))
+                            }
+                    }
+                    .padding(.vertical, 5)
+                    HStack(spacing: 20) {
+                        SpecialCharacterView(character: "﹡")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("﹡"))
+                            }
+                        NumberView(numberText: "0", bottomText: "+")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("0"))
+                            }
+                        SpecialCharacterView(character: "#")
+                            .onTapGesture {
+                                viewStore.send(.didTapNumberButton("#"))
+                            }
+                    }
+                    .padding(.vertical, 5)
+                    HStack(spacing: 20) {
+                        ClearCircleView()
                         Image(systemName: "phone.circle.fill")
                             .resizable()
                             .frame(
@@ -116,23 +152,36 @@ struct KeyPadView: View {
                                 height: (UIScreen.main.bounds.width - 120) / 3
                             )
                             .symbolRenderingMode(.multicolor)
-                        
-                        HStack {
-                            Spacer()
-                            Image(systemName: "delete.left.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 30)
-                                .symbolRenderingMode(.hierarchical)
-                                .padding(.horizontal, (UIScreen.main.bounds.width - 120) / 5)
-                                .onTapGesture {
-                                    viewStore.send(.didTapDeleteButton)
+                        if viewStore.numberString.isEmpty == false {
+                            ClearCircleView()
+                                .overlay(alignment: .center) {
+                                    Image(systemName: "delete.left.fill")
+                                        .symbolRenderingMode(.hierarchical)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 40, height: 40)
+                                        .onTapGesture {
+                                            viewStore.send(.didTapDeleteButton)
+                                        }
                                 }
+                        } else {
+                            ClearCircleView()
                         }
                     }
+                    .padding(.vertical, 5)
+                    .animation(.spring())
                 }
-                .padding(.vertical, 5)
             }
+            .padding(.bottom, 10)
+            .tabItem {
+                Image(systemName: "circle.grid.3x3.fill")
+                Text("키패드")
+            }
+            Text("Fifth")
+                .tabItem {
+                    Image(systemName: "recordingtape")
+                    Text("음성 사서함")
+                }
         }
     }
 }
