@@ -33,28 +33,34 @@ struct KeyPadView: View {
                     Image(systemName: "star.fill")
                     Text("즐겨찾기")
                 }
+                .tag(0)
             Text("Second")
                 .tabItem {
                     Image(systemName: "clock.fill")
                     Text("최근 통화")
                 }
+                .tag(1)
             Text("Third")
                 .tabItem {
                     Image(systemName: "person.crop.circle.fill")
                     Text("연락처")
                 }
+                .tag(2)
             VStack(alignment: .center) {
                 VStack(spacing: 20) {
                     if viewStore.numberString.isEmpty == false {
                         Text(viewStore.numberString)
                             .font(.largeTitle)
+                            .animation(.none)
                         addContactMenu
                     }
                 }
                 .gesture(
                     DragGesture()
                         .onEnded { value in
-                            viewStore.send(.didTapDeleteButton)
+                            if value.translation.width > 0 {
+                                viewStore.send(.didTapDeleteButton)
+                            }
                         }
                 )
                 .frame(maxWidth: .infinity)
@@ -147,11 +153,13 @@ struct KeyPadView: View {
                 Image(systemName: "circle.grid.3x3.fill")
                 Text("키패드")
             }
+            .tag(3)
             Text("Fifth")
                 .tabItem {
                     Image(systemName: "recordingtape")
                     Text("음성 사서함")
                 }
+                .tag(4)
         }
     }
 }
