@@ -47,14 +47,7 @@ struct KeyPadView: View {
                 }
                 .tag(2)
             VStack(alignment: .center) {
-                VStack(spacing: 20) {
-                    if viewStore.numberString.isEmpty == false {
-                        Text(viewStore.numberString)
-                            .font(.largeTitle)
-                            .animation(.none)
-                        addContactMenu
-                    }
-                }
+                inputTextContainerView
                 .gesture(
                     DragGesture()
                         .onEnded { value in
@@ -63,90 +56,8 @@ struct KeyPadView: View {
                             }
                         }
                 )
-                .frame(maxWidth: .infinity)
-                .frame(height: UIScreen.main.bounds.height * 0.1)
-                .padding(.vertical, 20)
-                .animation(.spring())
                 
-                VStack {
-                    HStack(spacing: 20) {
-                        NumberView(numberText: "1", bottomText: "")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("1"))
-                            }
-                        NumberView(numberText: "2", bottomText: "A B C")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("2"))
-                            }
-                        NumberView(numberText: "3", bottomText: "D E F")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("3"))
-                            }
-                    }
-                    .padding(.vertical, 5)
-                    HStack(spacing: 20) {
-                        NumberView(numberText: "4", bottomText: "G H I")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("4"))
-                            }
-                        NumberView(numberText: "5", bottomText: "J K L")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("5"))
-                            }
-                        NumberView(numberText: "6", bottomText: "M N O")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("6"))
-                            }
-                    }
-                    .padding(.vertical, 5)
-                    HStack(spacing: 20) {
-                        NumberView(numberText: "7", bottomText: "P Q R S")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("7"))
-                            }
-                        NumberView(numberText: "8", bottomText: "T U V")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("8"))
-                            }
-                        NumberView(numberText: "9", bottomText: "W X Y Z")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("9"))
-                            }
-                    }
-                    .padding(.vertical, 5)
-                    HStack(spacing: 20) {
-                        SpecialCharacterView(character: "﹡", backgroundColor: Color("gray_D8D8D8"))
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("﹡"))
-                            }
-                        NumberView(numberText: "0", bottomText: "+")
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("0"))
-                            }
-                        SpecialCharacterView(character: "#", backgroundColor: Color("gray_D8D8D8"))
-                            .onTapGesture {
-                                viewStore.send(.didTapNumberButton("#"))
-                            }
-                    }
-                    .padding(.vertical, 5)
-                    HStack(spacing: 20) {
-                        SpecialCharacterView(character: "", backgroundColor: .clear)
-                        CallGreenView()
-                        if viewStore.numberString.isEmpty == false {
-                            SpecialCharacterView(character: "", backgroundColor: .clear)
-                                .overlay(alignment: .center) {
-                                    DeleteNumberView()
-                                        .onTapGesture {
-                                            viewStore.send(.didTapDeleteButton)
-                                        }
-                                }
-                        } else {
-                            SpecialCharacterView(character: "", backgroundColor: .clear)
-                        }
-                    }
-                    .padding(.vertical, 5)
-                    .animation(.spring())
-                }
+                numberPadView
             }
             .padding(.bottom, 10)
             .tabItem {
@@ -192,6 +103,103 @@ extension KeyPadView {
         } label: {
             Text("번호 추가")
                 .font(.title2)
+        }
+    }
+    
+    var inputTextContainerView: some View {
+        VStack(spacing: 20) {
+            if viewStore.numberString.isEmpty == false {
+                Text(viewStore.numberString)
+                    .font(.largeTitle)
+                    .animation(.none)
+                addContactMenu
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: UIScreen.main.bounds.height * 0.1)
+        .padding(.vertical, 20)
+        .animation(.spring())
+    }
+    
+    var numberPadView: some View {
+        VStack {
+            HStack(spacing: 20) {
+                NumberView(numberText: "1", bottomText: "")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("1"))
+                    }
+                NumberView(numberText: "2", bottomText: "A B C")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("2"))
+                    }
+                NumberView(numberText: "3", bottomText: "D E F")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("3"))
+                    }
+            }
+            .padding(.vertical, 5)
+            HStack(spacing: 20) {
+                NumberView(numberText: "4", bottomText: "G H I")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("4"))
+                    }
+                NumberView(numberText: "5", bottomText: "J K L")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("5"))
+                    }
+                NumberView(numberText: "6", bottomText: "M N O")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("6"))
+                    }
+            }
+            .padding(.vertical, 5)
+            HStack(spacing: 20) {
+                NumberView(numberText: "7", bottomText: "P Q R S")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("7"))
+                    }
+                NumberView(numberText: "8", bottomText: "T U V")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("8"))
+                    }
+                NumberView(numberText: "9", bottomText: "W X Y Z")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("9"))
+                    }
+            }
+            .padding(.vertical, 5)
+            HStack(spacing: 20) {
+                SpecialCharacterView(character: "﹡", backgroundColor: Color("gray_D8D8D8"))
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("﹡"))
+                    }
+                NumberView(numberText: "0", bottomText: "+")
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("0"))
+                    }
+                SpecialCharacterView(character: "#", backgroundColor: Color("gray_D8D8D8"))
+                    .onTapGesture {
+                        viewStore.send(.didTapNumberButton("#"))
+                    }
+            }
+            .padding(.vertical, 5)
+            HStack(spacing: 20) {
+                SpecialCharacterView(character: "", backgroundColor: .clear)
+                CallGreenView()
+                if viewStore.numberString.isEmpty == false {
+                    SpecialCharacterView(character: "", backgroundColor: .clear)
+                        .overlay(alignment: .center) {
+                            DeleteNumberView()
+                                .onTapGesture {
+                                    viewStore.send(.didTapDeleteButton)
+                                }
+                        }
+                } else {
+                    SpecialCharacterView(character: "", backgroundColor: .clear)
+                }
+            }
+            .padding(.vertical, 5)
+            .animation(.spring())
         }
     }
 }
