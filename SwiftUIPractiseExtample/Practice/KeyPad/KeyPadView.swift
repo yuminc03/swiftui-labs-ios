@@ -51,13 +51,16 @@ struct KeyPadView: View {
                     if viewStore.numberString.isEmpty == false {
                         Text(viewStore.numberString)
                             .font(.largeTitle)
+                            .animation(.none)
                         addContactMenu
                     }
                 }
                 .gesture(
                     DragGesture()
                         .onEnded { value in
-                            viewStore.send(.didTapDeleteButton)
+                            if value.translation.width > 0 {
+                                viewStore.send(.didTapDeleteButton)
+                            }
                         }
                 )
                 .frame(maxWidth: .infinity)
