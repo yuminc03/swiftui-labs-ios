@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DB3519E2A90A9A4001AB679 /* KeyPadReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */; };
+		8DB351A32A90AA65001AB679 /* CallGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A12A90AA65001AB679 /* CallGreenView.swift */; };
+		8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3519F2A90AA64001AB679 /* NumberView.swift */; };
+		8DB351A52A90AA65001AB679 /* DeleteNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */; };
+		8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */; };
+		8DB351AE2A90ABE7001AB679 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB351AD2A90ABE7001AB679 /* ComposableArchitecture */; };
 		8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */; };
 		8DEE4C2C2A90A31000DA6CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */; };
 		8DEE4C2E2A90A31100DA6CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DEE4C2D2A90A31100DA6CFE /* Assets.xcassets */; };
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadReducer.swift; sourceTree = "<group>"; };
+		8DB3519F2A90AA64001AB679 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialCharacterView.swift; sourceTree = "<group>"; };
+		8DB351A12A90AA65001AB679 /* CallGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallGreenView.swift; sourceTree = "<group>"; };
+		8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberView.swift; sourceTree = "<group>"; };
 		8DEE4C262A90A31000DA6CFE /* KeyPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadApp.swift; sourceTree = "<group>"; };
 		8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB351AE2A90ABE7001AB679 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +83,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DB351A72A90AA98001AB679 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DB3519F2A90AA64001AB679 /* NumberView.swift */,
+				8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */,
+				8DB351A12A90AA65001AB679 /* CallGreenView.swift */,
+				8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8DEE4C1D2A90A31000DA6CFE = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */,
+				8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */,
 				8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */,
+				8DB351A72A90AA98001AB679 /* Views */,
 				8DEE4C2D2A90A31100DA6CFE /* Assets.xcassets */,
 				8DEE4C2F2A90A31100DA6CFE /* Preview Content */,
 			);
@@ -143,6 +168,9 @@
 			dependencies = (
 			);
 			name = KeyPad;
+			packageProductDependencies = (
+				8DB351AD2A90ABE7001AB679 /* ComposableArchitecture */,
+			);
 			productName = KeyPad;
 			productReference = 8DEE4C262A90A31000DA6CFE /* KeyPad.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +243,9 @@
 				Base,
 			);
 			mainGroup = 8DEE4C1D2A90A31000DA6CFE;
+			packageReferences = (
+				8DB351AC2A90ABE7001AB679 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 8DEE4C272A90A31000DA6CFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB351A52A90AA65001AB679 /* DeleteNumberView.swift in Sources */,
+				8DB3519E2A90A9A4001AB679 /* KeyPadReducer.swift in Sources */,
 				8DEE4C2C2A90A31000DA6CFE /* ContentView.swift in Sources */,
+				8DB351A32A90AA65001AB679 /* CallGreenView.swift in Sources */,
+				8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */,
 				8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */,
+				8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DB351AC2A90ABE7001AB679 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DB351AD2A90ABE7001AB679 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DB351AC2A90ABE7001AB679 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DEE4C1E2A90A31000DA6CFE /* Project object */;
 }
