@@ -24,53 +24,17 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView(selection: viewStore.binding(
-            get: \.selectedTab,
-            send: KeyPadReducer.Action.didTapTabItem
-        )) {
-            Text("First")
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("즐겨찾기")
-                }
-                .tag(0)
-            Text("Second")
-                .tabItem {
-                    Image(systemName: "clock.fill")
-                    Text("최근 통화")
-                }
-                .tag(1)
-            Text("Third")
-                .tabItem {
-                    Image(systemName: "person.crop.circle.fill")
-                    Text("연락처")
-                }
-                .tag(2)
-            VStack(alignment: .center) {
-                inputTextContainerView
-                .gesture(
-                    DragGesture()
-                        .onEnded { value in
-                            if value.translation.width > 0 {
-                                viewStore.send(.didTapDeleteButton)
-                            }
+        VStack(alignment: .center) {
+            inputTextContainerView
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        if value.translation.width > 0 {
+                            viewStore.send(.didTapDeleteButton)
                         }
-                )
-                
-                numberPadView
-            }
-            .padding(.bottom, 10)
-            .tabItem {
-                Image(systemName: "circle.grid.3x3.fill")
-                Text("키패드")
-            }
-            .tag(3)
-            Text("Fifth")
-                .tabItem {
-                    Image(systemName: "recordingtape")
-                    Text("음성 사서함")
-                }
-                .tag(4)
+                    }
+            )
+            numberPadView
         }
     }
 }
