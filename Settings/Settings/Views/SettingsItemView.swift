@@ -63,20 +63,20 @@ extension SettingsItemView {
                 Image(systemName: imageName)
                     .resizable()
                     .foregroundColor(.white)
-                    .padding(.horizontal, 5)
+                    .padding(.horizontal, 8)
                     .padding(.vertical, 10)
             }
     }
     
     private var contents: some View {
         Text(title)
-            .font(.title2)
+            .font(.title3)
             .foregroundColor(.black)
     }
     
     private var rightContents: some View {
         Text(rightText)
-            .font(.title2)
+            .font(.title3)
             .foregroundColor(.gray)
     }
 }

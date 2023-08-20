@@ -7,8 +7,19 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct ContentView: View {
-    @State private var isOn = false
+    
+    private let store: StoreOf<SettingsReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<SettingsReducer>
+    
+    init() {
+        self.store = Store(initialState: SettingsReducer.State()) {
+            SettingsReducer()
+        }
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         NavigationView {
@@ -27,6 +38,7 @@ struct ContentView: View {
                     SearchView()
                         .padding(.bottom)
                 }
+                
                 Section {
                     NavigationLink {
                         
@@ -38,8 +50,13 @@ struct ContentView: View {
                         )
                     }
                 }
+                
                 Section {
-                    Toggle(isOn: $isOn) {
+                    Toggle(
+                        isOn: viewStore.binding(
+                            get: \.isAirplainSwitchOn,
+                            send: .didTapAirplainModeSwitch($0))
+                    ) {
                         SettingsItemView(
                             imageName: "airplane",
                             squareColor: .orange,
@@ -89,35 +106,35 @@ struct ContentView: View {
                         
                     } label: {
                         SettingsItemView(
-                            imageName: "vpn",
+                            imageName: "lock.fill",
                             squareColor: .blue,
                             title: "VPN",
                             rightText: "연결 안 됨"
                         )
                     }
                 }
-            }
-            
-            Section {
-                NavigationLink {
-                    
-                } label: {
-                    SettingsItemView(imageName: "bell.badge", squareColor: .red, title: "알림")
-                }
-                NavigationLink {
-                    
-                } label: {
-                    SettingsItemView(imageName: "speaker.wave.3.fill", squareColor: .pink, title: "사운드 및 햅틱")
-                }
-                NavigationLink {
-                    
-                } label: {
-                    SettingsItemView(imageName: "moon.fill", squareColor: .teal, title: "집중 모드")
-                }
-                NavigationLink {
-                    
-                } label: {
-                    SettingsItemView(imageName: "hourglass", squareColor: .teal, title: "스크린 타임")
+                
+                Section {
+                    NavigationLink {
+                        
+                    } label: {
+                        SettingsItemView(imageName: "bell.badge", squareColor: .red, title: "알림")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        SettingsItemView(imageName: "speaker.wave.3.fill", squareColor: .pink, title: "사운드 및 햅틱")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        SettingsItemView(imageName: "moon.fill", squareColor: .teal, title: "집중 모드")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        SettingsItemView(imageName: "hourglass", squareColor: .teal, title: "스크린 타임")
+                    }
                 }
             }
             
