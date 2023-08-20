@@ -14,6 +14,23 @@ struct KeyPadReducer: Reducer {
     struct State: Equatable {
         var numberString = ""
         var selectedTab = 3
+        let numbers = [
+            KeyPadNumberDTO(numberText: "1", smallText: " "),
+            KeyPadNumberDTO(numberText: "2", smallText: "A B C"),
+            KeyPadNumberDTO(numberText: "3", smallText: "D E F"),
+            KeyPadNumberDTO(numberText: "4", smallText: "G H I"),
+            KeyPadNumberDTO(numberText: "5", smallText: "J K L"),
+            KeyPadNumberDTO(numberText: "6", smallText: "M N O"),
+            KeyPadNumberDTO(numberText: "7", smallText: "P Q R S"),
+            KeyPadNumberDTO(numberText: "8", smallText: "T U V"),
+            KeyPadNumberDTO(numberText: "9", smallText: "W X Y "),
+            KeyPadNumberDTO(numberText: "﹡", smallText: ""),
+            KeyPadNumberDTO(numberText: "0", smallText: "+"),
+            KeyPadNumberDTO(numberText: "#", smallText: ""),
+            KeyPadNumberDTO(numberText: "", smallText: ""),
+            KeyPadNumberDTO(numberText: "call", smallText: ""),
+            KeyPadNumberDTO(numberText: "delete", smallText: "")
+        ]
     }
     
     enum Action {

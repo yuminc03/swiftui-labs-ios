@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8DB3519E2A90A9A4001AB679 /* KeyPadReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */; };
-		8DB351A32A90AA65001AB679 /* CallGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A12A90AA65001AB679 /* CallGreenView.swift */; };
+		8DB351A32A90AA65001AB679 /* CallGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A12A90AA65001AB679 /* CallGreenButton.swift */; };
 		8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3519F2A90AA64001AB679 /* NumberView.swift */; };
 		8DB351A52A90AA65001AB679 /* DeleteNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */; };
-		8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */; };
 		8DB351AE2A90ABE7001AB679 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB351AD2A90ABE7001AB679 /* ComposableArchitecture */; };
+		8DB351B12A90B123001AB679 /* KeyPadNumberDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351B02A90B123001AB679 /* KeyPadNumberDTO.swift */; };
 		8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */; };
 		8DEE4C2C2A90A31000DA6CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */; };
 		8DEE4C2E2A90A31100DA6CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DEE4C2D2A90A31100DA6CFE /* Assets.xcassets */; };
@@ -42,9 +42,9 @@
 /* Begin PBXFileReference section */
 		8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadReducer.swift; sourceTree = "<group>"; };
 		8DB3519F2A90AA64001AB679 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
-		8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialCharacterView.swift; sourceTree = "<group>"; };
-		8DB351A12A90AA65001AB679 /* CallGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallGreenView.swift; sourceTree = "<group>"; };
+		8DB351A12A90AA65001AB679 /* CallGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallGreenButton.swift; sourceTree = "<group>"; };
 		8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberView.swift; sourceTree = "<group>"; };
+		8DB351B02A90B123001AB679 /* KeyPadNumberDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadNumberDTO.swift; sourceTree = "<group>"; };
 		8DEE4C262A90A31000DA6CFE /* KeyPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadApp.swift; sourceTree = "<group>"; };
 		8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,11 +87,18 @@
 			isa = PBXGroup;
 			children = (
 				8DB3519F2A90AA64001AB679 /* NumberView.swift */,
-				8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */,
-				8DB351A12A90AA65001AB679 /* CallGreenView.swift */,
+				8DB351A12A90AA65001AB679 /* CallGreenButton.swift */,
 				8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8DB351AF2A90B100001AB679 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DB351B02A90B123001AB679 /* KeyPadNumberDTO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8DEE4C1D2A90A31000DA6CFE = {
@@ -120,6 +127,7 @@
 				8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */,
 				8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */,
 				8DEE4C2B2A90A31000DA6CFE /* ContentView.swift */,
+				8DB351AF2A90B100001AB679 /* Models */,
 				8DB351A72A90AA98001AB679 /* Views */,
 				8DEE4C2D2A90A31100DA6CFE /* Assets.xcassets */,
 				8DEE4C2F2A90A31100DA6CFE /* Preview Content */,
@@ -291,10 +299,10 @@
 				8DB351A52A90AA65001AB679 /* DeleteNumberView.swift in Sources */,
 				8DB3519E2A90A9A4001AB679 /* KeyPadReducer.swift in Sources */,
 				8DEE4C2C2A90A31000DA6CFE /* ContentView.swift in Sources */,
-				8DB351A32A90AA65001AB679 /* CallGreenView.swift in Sources */,
+				8DB351A32A90AA65001AB679 /* CallGreenButton.swift in Sources */,
 				8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */,
 				8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */,
-				8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */,
+				8DB351B12A90B123001AB679 /* KeyPadNumberDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
