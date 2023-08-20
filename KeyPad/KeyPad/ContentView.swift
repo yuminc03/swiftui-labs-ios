@@ -16,7 +16,7 @@ struct ContentView: View {
     private let columns = [
         GridItem(.flexible(), spacing: 20, alignment: .center),
         GridItem(.flexible(), spacing: 20, alignment: .center),
-        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center)
     ]
     
     init() {
@@ -87,7 +87,7 @@ extension ContentView {
         .frame(maxWidth: .infinity)
         .frame(height: UIScreen.main.bounds.height * 0.1)
         .padding(.vertical, 20)
-        .animation(.spring())
+        .animation(.spring(), value: viewStore.numberString)
     }
     
     var numberPadView: some View {
