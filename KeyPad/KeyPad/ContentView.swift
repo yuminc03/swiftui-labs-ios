@@ -155,10 +155,9 @@ extension ContentView {
                 if viewStore.numberString.isEmpty == false {
                     SpecialCharacterView(character: "", backgroundColor: .clear)
                         .overlay(alignment: .center) {
-                            DeleteNumberView()
-                                .onTapGesture {
-                                    viewStore.send(.didTapDeleteButton)
-                                }
+                            DeleteNumberView {
+                                viewStore.send(.didTapDeleteButton)
+                            }
                         }
                 } else {
                     SpecialCharacterView(character: "", backgroundColor: .clear)

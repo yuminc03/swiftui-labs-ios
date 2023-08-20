@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct DeleteNumberView: View {
+    
+    private let action: () -> Void
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+    }
+    
     var body: some View {
-        Image(systemName: "delete.left.fill")
-            .symbolRenderingMode(.hierarchical)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 40, height: 40)
+        Button {
+            action()
+        } label: {
+            Image(systemName: "delete.backward.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40, height: 40)
+                .foregroundColor(.black)
+                .symbolRenderingMode(.hierarchical)
+        }
     }
 }
 
 struct DeleteNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        DeleteNumberView()
+        DeleteNumberView {
+            print("action")
+        }
     }
 }
