@@ -149,7 +149,9 @@ extension ContentView {
             .padding(.vertical, 5)
             HStack(spacing: 20) {
                 SpecialCharacterView(character: "", backgroundColor: .clear)
-                CallGreenView()
+                CallGreenButton {
+                    print("call button action")
+                }
                 if viewStore.numberString.isEmpty == false {
                     SpecialCharacterView(character: "", backgroundColor: .clear)
                         .overlay(alignment: .center) {
