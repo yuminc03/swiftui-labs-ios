@@ -116,14 +116,6 @@ struct RootView: View {
                         Text("Todos")
                     }
                 }
-                Section("🍊 TCA Challenge") {
-                    NavigationLink {
-                        KeyPadView()
-                            .navigationBarBackButtonHidden(true)
-                    } label: {
-                        Text("KeyPad")
-                    }
-                }
             }
             .navigationTitle("SwiftUI Practise")
         }
