@@ -88,83 +88,80 @@ extension ContentView {
     var numberPadView: some View {
         VStack {
             HStack(spacing: 20) {
-                NumberView(numberText: "1", bottomText: "")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("1"))
-                    }
-                NumberView(numberText: "2", bottomText: "A B C")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("2"))
-                    }
-                NumberView(numberText: "3", bottomText: "D E F")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("3"))
-                    }
+                NumberView(numberText: "1", bottomText: "") {
+                    viewStore.send(.didTapNumberButton("1"))
+                }
+                NumberView(numberText: "2", bottomText: "A B C") {
+                    viewStore.send(.didTapNumberButton("2"))
+                }
+                NumberView(numberText: "3", bottomText: "D E F") {
+                    viewStore.send(.didTapNumberButton("3"))
+                }
             }
             .padding(.vertical, 5)
             HStack(spacing: 20) {
-                NumberView(numberText: "4", bottomText: "G H I")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("4"))
-                    }
-                NumberView(numberText: "5", bottomText: "J K L")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("5"))
-                    }
-                NumberView(numberText: "6", bottomText: "M N O")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("6"))
-                    }
+                NumberView(numberText: "4", bottomText: "G H I") {
+                    viewStore.send(.didTapNumberButton("4"))
+                }
+                NumberView(numberText: "5", bottomText: "J K L") {
+                    viewStore.send(.didTapNumberButton("5"))
+                }
+                NumberView(numberText: "6", bottomText: "M N O") {
+                    viewStore.send(.didTapNumberButton("6"))
+                }
             }
             .padding(.vertical, 5)
             HStack(spacing: 20) {
-                NumberView(numberText: "7", bottomText: "P Q R S")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("7"))
-                    }
-                NumberView(numberText: "8", bottomText: "T U V")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("8"))
-                    }
-                NumberView(numberText: "9", bottomText: "W X Y Z")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("9"))
-                    }
+                NumberView(numberText: "7", bottomText: "P Q R S") {
+                    viewStore.send(.didTapNumberButton("7"))
+                }
+                NumberView(numberText: "8", bottomText: "T U V") {
+                    viewStore.send(.didTapNumberButton("8"))
+                }
+                NumberView(numberText: "9", bottomText: "W X Y Z") {
+                    viewStore.send(.didTapNumberButton("9"))
+                }
             }
             .padding(.vertical, 5)
             HStack(spacing: 20) {
-                SpecialCharacterView(character: "﹡", backgroundColor: Color("gray_D8D8D8"))
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("﹡"))
-                    }
-                NumberView(numberText: "0", bottomText: "+")
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("0"))
-                    }
-                SpecialCharacterView(character: "#", backgroundColor: Color("gray_D8D8D8"))
-                    .onTapGesture {
-                        viewStore.send(.didTapNumberButton("#"))
-                    }
+                NumberView(numberText: "﹡", bottomText: "") {
+                    viewStore.send(.didTapNumberButton("﹡"))
+                }
+                NumberView(numberText: "0", bottomText: "+") {
+                    viewStore.send(.didTapNumberButton("0"))
+                }
+                NumberView(numberText: "#", bottomText: "") {
+                    viewStore.send(.didTapNumberButton("#"))
+                }
             }
             .padding(.vertical, 5)
             HStack(spacing: 20) {
-                SpecialCharacterView(character: "", backgroundColor: .clear)
+                clearView
                 CallGreenButton {
                     print("call button action")
                 }
                 if viewStore.numberString.isEmpty == false {
-                    SpecialCharacterView(character: "", backgroundColor: .clear)
-                        .overlay(alignment: .center) {
-                            DeleteNumberView {
-                                viewStore.send(.didTapDeleteButton)
-                            }
+                    clearView
+                    .overlay(alignment: .center) {
+                        DeleteNumberView {
+                            viewStore.send(.didTapDeleteButton)
                         }
+                    }
                 } else {
-                    SpecialCharacterView(character: "", backgroundColor: .clear)
+                    clearView
                 }
             }
             .padding(.vertical, 5)
             .animation(.spring())
         }
+    }
+    
+    var clearView: some View {
+        Circle()
+            .frame(
+                width: (UIScreen.main.bounds.width - 120) / 3,
+                height: (UIScreen.main.bounds.width - 120) / 3
+            )
+            .foregroundColor(.clear)
     }
 }

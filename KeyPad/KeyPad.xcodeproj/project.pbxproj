@@ -11,7 +11,6 @@
 		8DB351A32A90AA65001AB679 /* CallGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A12A90AA65001AB679 /* CallGreenButton.swift */; };
 		8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3519F2A90AA64001AB679 /* NumberView.swift */; };
 		8DB351A52A90AA65001AB679 /* DeleteNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */; };
-		8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */; };
 		8DB351AE2A90ABE7001AB679 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB351AD2A90ABE7001AB679 /* ComposableArchitecture */; };
 		8DB351B12A90B123001AB679 /* KeyPadNumberDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351B02A90B123001AB679 /* KeyPadNumberDTO.swift */; };
 		8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C292A90A31000DA6CFE /* KeyPadApp.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		8DB3519D2A90A9A4001AB679 /* KeyPadReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadReducer.swift; sourceTree = "<group>"; };
 		8DB3519F2A90AA64001AB679 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
-		8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialCharacterView.swift; sourceTree = "<group>"; };
 		8DB351A12A90AA65001AB679 /* CallGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallGreenButton.swift; sourceTree = "<group>"; };
 		8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNumberView.swift; sourceTree = "<group>"; };
 		8DB351B02A90B123001AB679 /* KeyPadNumberDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadNumberDTO.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				8DB3519F2A90AA64001AB679 /* NumberView.swift */,
-				8DB351A02A90AA64001AB679 /* SpecialCharacterView.swift */,
 				8DB351A12A90AA65001AB679 /* CallGreenButton.swift */,
 				8DB351A22A90AA65001AB679 /* DeleteNumberView.swift */,
 			);
@@ -306,7 +303,6 @@
 				8DB351A42A90AA65001AB679 /* NumberView.swift in Sources */,
 				8DEE4C2A2A90A31000DA6CFE /* KeyPadApp.swift in Sources */,
 				8DB351B12A90B123001AB679 /* KeyPadNumberDTO.swift in Sources */,
-				8DB351A62A90AA65001AB679 /* SpecialCharacterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
