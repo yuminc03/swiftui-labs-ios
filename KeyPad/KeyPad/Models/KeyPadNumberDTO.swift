@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct KeyPadNumberDTO: Equatable {
+struct KeyPadNumberDTO: Equatable, Identifiable {
+    let id = UUID().uuidString
     let numberText: String
     let smallText: String
 }

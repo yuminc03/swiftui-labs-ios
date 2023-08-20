@@ -21,10 +21,6 @@ struct CallGreenButton: View {
         } label: {
             Image(systemName: "phone.circle.fill")
                 .resizable()
-                .frame(
-                    width: (UIScreen.main.bounds.width - 120) / 3,
-                    height: (UIScreen.main.bounds.width - 120) / 3
-                )
                 .symbolRenderingMode(.multicolor)
         }
     }
@@ -37,6 +33,10 @@ struct CallGreenButton_Previews: PreviewProvider {
             CallGreenButton {
                 print("action")
             }
+            .frame(
+                width: (UIScreen.main.bounds.width - 120) / 3,
+                height: (UIScreen.main.bounds.width - 120) / 3
+            )
         }
         .ignoresSafeArea()
     }

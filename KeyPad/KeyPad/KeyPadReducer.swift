@@ -15,7 +15,7 @@ struct KeyPadReducer: Reducer {
         var numberString = ""
         var selectedTab = 3
         let numbers = [
-            KeyPadNumberDTO(numberText: "1", smallText: ""),
+            KeyPadNumberDTO(numberText: "1", smallText: " "),
             KeyPadNumberDTO(numberText: "2", smallText: "A B C"),
             KeyPadNumberDTO(numberText: "3", smallText: "D E F"),
             KeyPadNumberDTO(numberText: "4", smallText: "G H I"),
@@ -26,7 +26,10 @@ struct KeyPadReducer: Reducer {
             KeyPadNumberDTO(numberText: "9", smallText: "W X Y "),
             KeyPadNumberDTO(numberText: "﹡", smallText: ""),
             KeyPadNumberDTO(numberText: "0", smallText: "+"),
-            KeyPadNumberDTO(numberText: "#", smallText: "")
+            KeyPadNumberDTO(numberText: "#", smallText: ""),
+            KeyPadNumberDTO(numberText: "", smallText: ""),
+            KeyPadNumberDTO(numberText: "call", smallText: ""),
+            KeyPadNumberDTO(numberText: "delete", smallText: "")
         ]
     }
     

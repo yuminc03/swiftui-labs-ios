@@ -32,10 +32,6 @@ struct NumberView: View {
         } label: {
             HStack {
                 Circle()
-                    .frame(
-                        width: (UIScreen.main.bounds.width - 120) / 3,
-                        height: (UIScreen.main.bounds.width - 120) / 3
-                    )
                     .foregroundColor(backgroundColor)
                     .overlay(alignment: .center) {
                         VStack {
@@ -64,6 +60,10 @@ struct NumberView_Previews: PreviewProvider {
             NumberView(numberText: "2", bottomText: "A B C") {
                 print("action")
             }
+            .frame(
+                width: (UIScreen.main.bounds.width - 120) / 3,
+                height: (UIScreen.main.bounds.width - 120) / 3
+            )
         }
         .ignoresSafeArea()
     }

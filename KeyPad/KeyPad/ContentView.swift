@@ -11,8 +11,13 @@ import ComposableArchitecture
 
 struct ContentView: View {
     
-    let store: StoreOf<KeyPadReducer>
-    @ObservedObject var viewStore: ViewStoreOf<KeyPadReducer>
+    private let store: StoreOf<KeyPadReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<KeyPadReducer>
+    private let columns = [
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+    ]
     
     init() {
         self.store = Store(
@@ -87,73 +92,38 @@ extension ContentView {
     
     var numberPadView: some View {
         VStack {
-            HStack(spacing: 20) {
-                NumberView(numberText: "1", bottomText: "") {
-                    viewStore.send(.didTapNumberButton("1"))
-                }
-                NumberView(numberText: "2", bottomText: "A B C") {
-                    viewStore.send(.didTapNumberButton("2"))
-                }
-                NumberView(numberText: "3", bottomText: "D E F") {
-                    viewStore.send(.didTapNumberButton("3"))
-                }
-            }
-            .padding(.vertical, 5)
-            HStack(spacing: 20) {
-                NumberView(numberText: "4", bottomText: "G H I") {
-                    viewStore.send(.didTapNumberButton("4"))
-                }
-                NumberView(numberText: "5", bottomText: "J K L") {
-                    viewStore.send(.didTapNumberButton("5"))
-                }
-                NumberView(numberText: "6", bottomText: "M N O") {
-                    viewStore.send(.didTapNumberButton("6"))
-                }
-            }
-            .padding(.vertical, 5)
-            HStack(spacing: 20) {
-                NumberView(numberText: "7", bottomText: "P Q R S") {
-                    viewStore.send(.didTapNumberButton("7"))
-                }
-                NumberView(numberText: "8", bottomText: "T U V") {
-                    viewStore.send(.didTapNumberButton("8"))
-                }
-                NumberView(numberText: "9", bottomText: "W X Y Z") {
-                    viewStore.send(.didTapNumberButton("9"))
-                }
-            }
-            .padding(.vertical, 5)
-            HStack(spacing: 20) {
-                NumberView(numberText: "﹡", bottomText: "") {
-                    viewStore.send(.didTapNumberButton("﹡"))
-                }
-                NumberView(numberText: "0", bottomText: "+") {
-                    viewStore.send(.didTapNumberButton("0"))
-                }
-                NumberView(numberText: "#", bottomText: "") {
-                    viewStore.send(.didTapNumberButton("#"))
-                }
-            }
-            .padding(.vertical, 5)
-            HStack(spacing: 20) {
-                clearView
-                CallGreenButton {
-                    print("call button action")
-                }
-                if viewStore.numberString.isEmpty == false {
-                    clearView
-                    .overlay(alignment: .center) {
-                        DeleteNumberView {
-                            viewStore.send(.didTapDeleteButton)
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(viewStore.numbers) { number in
+                    if number.numberText.isEmpty {
+                        clearView
+                    } else if number.numberText == "call" {
+                        CallGreenButton {
+                            print("call button action")
                         }
                     }
-                } else {
-                    clearView
+                    else if number.numberText == "delete" {
+                        if viewStore.numberString.isEmpty == false {
+                            clearView
+                            .overlay(alignment: .center) {
+                                DeleteNumberView {
+                                    viewStore.send(.didTapDeleteButton)
+                                }
+                            }
+                        } else {
+                            clearView
+                        }
+                    } else {
+                        NumberView(
+                            numberText: number.numberText,
+                            bottomText: number.smallText
+                        ) {
+                            viewStore.send(.didTapNumberButton(number.numberText))
+                        }
+                    }
                 }
             }
-            .padding(.vertical, 5)
-            .animation(.spring())
         }
+        .padding(.horizontal, 40)
     }
     
     var clearView: some View {
