@@ -128,10 +128,6 @@ extension ContentView {
     
     var clearView: some View {
         Circle()
-            .frame(
-                width: (UIScreen.main.bounds.width - 120) / 3,
-                height: (UIScreen.main.bounds.width - 120) / 3
-            )
             .foregroundColor(.clear)
     }
 }
