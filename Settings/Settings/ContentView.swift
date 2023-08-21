@@ -20,7 +20,6 @@ struct ContentView: View {
                 ._printChanges()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
-        UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
     }
     
     var body: some View {
