@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SearchBarView.swift
 //  Settings
 //
 //  Created by Yumin Chu on 2023/08/20.
@@ -7,7 +7,17 @@
 
 import SwiftUI
 
-struct SearchView: View {
+import ComposableArchitecture
+
+struct SearchBarView: View {
+    
+    private let store: StoreOf<SearchBarReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<SearchBarReducer>
+    
+    init(store: StoreOf<SearchBarReducer>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         Label {
@@ -21,17 +31,21 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SearchView()
+            SearchBarView(
+                store: Store(
+                    initialState: SearchBarReducer.State(searchBarText: "검색")) {
+                SearchBarReducer()
+            })
         }
         .ignoresSafeArea()
     }
 }
 
-extension SearchView {
+extension SearchBarView {
     var searchImage: some View {
         Image(systemName: "magnifyingglass")
             .resizable()
@@ -41,7 +55,7 @@ extension SearchView {
     }
     
     var searchText: some View {
-        Text("검색")
+        Text(viewStore.searchBarText)
             .foregroundColor(.gray)
             .font(.title2)
     }

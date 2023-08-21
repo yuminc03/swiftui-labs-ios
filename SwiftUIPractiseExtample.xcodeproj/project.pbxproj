@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514F7692A8C568A000498FD /* NumberFactClient.swift */; };
+		051AFC8C2A92EA68006CB301 /* ContactsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC8B2A92EA68006CB301 /* ContactsReducer.swift */; };
+		051AFC8E2A92F304006CB301 /* ContactReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC8D2A92F304006CB301 /* ContactReducer.swift */; };
+		051AFC902A92F3D1006CB301 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC8F2A92F3D1006CB301 /* ContactsView.swift */; };
+		051AFC922A92F674006CB301 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC912A92F674006CB301 /* ContactView.swift */; };
+		051AFC942A931FDB006CB301 /* ContactDetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC932A931FDB006CB301 /* ContactDetailPageView.swift */; };
+		051AFC962A932030006CB301 /* ContactDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC952A932030006CB301 /* ContactDetailReducer.swift */; };
 		057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */; };
 		057D32FE2A8DA9A000524075 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FD2A8DA9A000524075 /* Recipe.swift */; };
 		057D33002A8DAD6800524075 /* RecipeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FF2A8DAD6800524075 /* RecipeEditor.swift */; };
@@ -57,7 +63,6 @@
 		057D33662A8DD98B00524075 /* MaintainAdaptableSizeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */; };
 		057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */; };
 		05A3C31829FB9391009839BB /* RectanglePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C31729FB9391009839BB /* RectanglePictureView.swift */; };
-		05B1A9752A8F246000B8D268 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B1A9742A8F246000B8D268 /* Timers.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
 		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
@@ -141,6 +146,12 @@
 
 /* Begin PBXFileReference section */
 		0514F7692A8C568A000498FD /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
+		051AFC8B2A92EA68006CB301 /* ContactsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsReducer.swift; sourceTree = "<group>"; };
+		051AFC8D2A92F304006CB301 /* ContactReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactReducer.swift; sourceTree = "<group>"; };
+		051AFC8F2A92F3D1006CB301 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		051AFC912A92F674006CB301 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		051AFC932A931FDB006CB301 /* ContactDetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailPageView.swift; sourceTree = "<group>"; };
+		051AFC952A932030006CB301 /* ContactDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailReducer.swift; sourceTree = "<group>"; };
 		057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditorConfig.swift; sourceTree = "<group>"; };
 		057D32FD2A8DA9A000524075 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		057D32FF2A8DAD6800524075 /* RecipeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditor.swift; sourceTree = "<group>"; };
@@ -190,7 +201,6 @@
 		057D33652A8DD98B00524075 /* MaintainAdaptableSizeInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainAdaptableSizeInView.swift; sourceTree = "<group>"; };
 		057D33672A8DE05B00524075 /* IfElseTrainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrainContentView.swift; sourceTree = "<group>"; };
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
-		05B1A9742A8F246000B8D268 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 		8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeatureView.swift; sourceTree = "<group>"; };
@@ -283,6 +293,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051AFC8A2A92EA52006CB301 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				051AFC8B2A92EA68006CB301 /* ContactsReducer.swift */,
+				051AFC8F2A92F3D1006CB301 /* ContactsView.swift */,
+				051AFC8D2A92F304006CB301 /* ContactReducer.swift */,
+				051AFC912A92F674006CB301 /* ContactView.swift */,
+				051AFC952A932030006CB301 /* ContactDetailReducer.swift */,
+				051AFC932A931FDB006CB301 /* ContactDetailPageView.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		057D32F92A8DA92600524075 /* DrivingChangesWithState */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,9 +438,9 @@
 		057D33642A8DD94B00524075 /* TCATutorial */ = {
 			isa = PBXGroup;
 			children = (
+				051AFC8A2A92EA52006CB301 /* Test */,
 				8D2C03D02A8B40BC00F0131E /* Counter */,
 				8D2C03EA2A8B8B1200F0131E /* Contacts */,
-				05B1A9742A8F246000B8D268 /* Timers.swift */,
 			);
 			path = TCATutorial;
 			sourceTree = "<group>";
@@ -875,12 +898,14 @@
 				8DCF2DA82A8D1765005581DC /* SpecificSpacing.swift in Sources */,
 				8D2C03F62A8B8B6200F0131E /* ContactsFeature.swift in Sources */,
 				8DCF2DBB2A8D19D5005581DC /* AddingPlaceholder.swift in Sources */,
+				051AFC922A92F674006CB301 /* ContactView.swift in Sources */,
 				8D4AF2312A8B9ACC0008FEE3 /* Journal.swift in Sources */,
 				8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */,
 				8D2C03F52A8B8B6200F0131E /* AddContactView.swift in Sources */,
 				8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */,
 				8DCF2DB42A8D192E005581DC /* SpecificPadding.swift in Sources */,
 				8DCF2D982A8D0ADA005581DC /* CaptionedPhotoContentView.swift in Sources */,
+				051AFC942A931FDB006CB301 /* ContactDetailPageView.swift in Sources */,
 				8DCF2DA62A8D16F6005581DC /* DefaultSpacing.swift in Sources */,
 				057D334F2A8DBB2C00524075 /* RecipeDetailToolbar.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
@@ -915,10 +940,10 @@
 				8DCF2DAB2A8D17BB005581DC /* ScaledSpacing.swift in Sources */,
 				8D4AF2342A8B9AEE0008FEE3 /* JournalEntryListItem.swift in Sources */,
 				8D86380A2A246F590041A0AC /* RoutinePopupVM.swift in Sources */,
-				05B1A9752A8F246000B8D268 /* Timers.swift in Sources */,
 				8D4AF22C2A8B9A0F0008FEE3 /* SettingsView.swift in Sources */,
 				057D33022A8DADE500524075 /* RecipeEditorForm.swift in Sources */,
 				8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */,
+				051AFC962A932030006CB301 /* ContactDetailReducer.swift in Sources */,
 				8D4D3D2B2A3DDF5D009A64F6 /* NetworkManager.swift in Sources */,
 				8D2C03F22A8B8B6200F0131E /* AddContactFeature.swift in Sources */,
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
@@ -927,6 +952,7 @@
 				057D33572A8DBC4E00524075 /* RecipeIngredientsView.swift in Sources */,
 				0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */,
 				8DCF2DBD2A8D1A13005581DC /* StackingPlaceholder.swift in Sources */,
+				051AFC902A92F3D1006CB301 /* ContactsView.swift in Sources */,
 				057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
@@ -938,10 +964,12 @@
 				057D33132A8DB8CE00524075 /* RecipeListItemView.swift in Sources */,
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4AF2352A8B9AEE0008FEE3 /* JournalEntryView.swift in Sources */,
+				051AFC8E2A92F304006CB301 /* ContactReducer.swift in Sources */,
 				057D33612A8DBD9900524075 /* StarRating.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
 				057D330C2A8DB21100524075 /* ModelHelpers.swift in Sources */,
 				8D4AF2432A8BB69A0008FEE3 /* RefactorTheCustomScenes.swift in Sources */,
+				051AFC8C2A92EA68006CB301 /* ContactsReducer.swift in Sources */,
 				057D330A2A8DB19400524075 /* RecipeBox.swift in Sources */,
 				8D4AF23B2A8B9B100008FEE3 /* JournalEntry.swift in Sources */,
 				8DCF2DB22A8D18FA005581DC /* PaddingSomeEdges.swift in Sources */,

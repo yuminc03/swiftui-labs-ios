@@ -21,7 +21,7 @@ struct SettingsDetailView: View {
     
     var body: some View {
         VStack {
-            Text("")
+            Text(viewStore.setting.title)
                 .font(.largeTitle)
             Button("뒤로가기") {
                 viewStore.send(.didTapBackButton)
@@ -33,12 +33,15 @@ struct SettingsDetailView: View {
 struct SettingsDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsDetailView(store: Store(
-                initialState: SettingsDetailReducer.State(
-                    setting: SettingsModel(
-                        id: UUID(),
-                        title: ""
-                    )
+            initialState: SettingsDetailReducer.State(
+                setting: SettingsModel(
+                    id: UUID(),
+                    imageName: "back",
+                    iconColor: .blue,
+                    title: "title",
+                    rightText: ""
                 )
+            )
         ) {
             SettingsDetailReducer()
         })

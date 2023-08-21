@@ -15,11 +15,25 @@ struct SettingsDetailReducer: Reducer {
         var setting: SettingsModel
     }
     
-    enum Action {
+    enum Action: Equatable {
         case didTapBackButton
+        case delegate(Delegate)
+        enum Delegate: Equatable {
+            case updateSearchBarText(String)
+        }
     }
+    @Dependency(\.dismiss) var dismiss
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        return .none
+        switch action {
+        case .didTapBackButton:
+            return .run { [title = state.setting.title] send in
+                await send(.delegate(.updateSearchBarText(title)))
+                await dismiss()
+            }
+            
+        case .delegate:
+            return .none
+        }
     }
 }

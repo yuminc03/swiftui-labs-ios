@@ -17,129 +17,77 @@ struct ContentView: View {
     init() {
         self.store = Store(initialState: SettingsReducer.State()) {
             SettingsReducer()
+                ._printChanges()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
+        UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStackStore(
+            store.scope(state: \.path, action: { .path($0) })
+        ) {
             Form {
                 Section {
-                    NavigationLink {
-                        
-                    } label: {
-                        ProfileView(
-                            imageName: "char_yumin",
-                            nameText: "Yumin Chu",
-                            description: "Apple ID, iCloud+, 미디어 및 구입 항목"
-                        )
-                    }
-                } header: {
-                    SearchView()
-                        .padding(.bottom)
+                    SearchBarView(store: store.scope(
+                        state: \.searchBar,
+                        action: SettingsReducer.Action.searchBar
+                    ))
+                        .padding(-20)
                 }
-                
                 Section {
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "airpodspro",
-                            squareColor: .gray,
-                            title: "유민의 AirPads Pro 2"
-                        )
+                    ProfileView(
+                        imageName: "char_yumin",
+                        nameText: "Yumin Chu",
+                        description: "Apple ID, iCloud+, 미디어 및 구입 항목"
+                    )
+                }
+                Section {
+                    NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[0])) {
+                        SettingsRow(setting: viewStore.settings[0])
                     }
                 }
-                
                 Section {
-                    Toggle(
-                        isOn: viewStore.binding(
-                            get: \.isAirplainSwitchOn,
-                            send: .didTapAirplainModeSwitch($0))
-                    ) {
-                        SettingsItemView(
-                            imageName: "airplane",
-                            squareColor: .orange,
-                            title: "에어플레인 모드"
-                        )
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "wifi",
-                            squareColor: .blue,
-                            title: "Wi-Fi",
-                            rightText: "LS_DEV"
-                        )
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "bluetooth",
-                            squareColor: .blue,
-                            title: "Bluetooth",
-                            rightText: "켬"
-                        )
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "antenna.radiowaves.left.and.right",
-                            squareColor: .green,
-                            title: "셀룰러"
-                        )
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "personalhotspot",
-                            squareColor: .green,
-                            title: "개인용 핫스팟",
-                            rightText: "끔"
-                        )
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(
-                            imageName: "lock.fill",
-                            squareColor: .blue,
-                            title: "VPN",
-                            rightText: "연결 안 됨"
-                        )
+                    ForEach(1 ..< 7) { index in
+                        if index == 1 {
+                            Toggle(
+                                isOn: viewStore.binding(
+                                    get: \.isAirplainSwitchOn,
+                                    send: SettingsReducer.Action.didTapAirplainModeSwitch
+                                )
+                            ) {
+                                SettingsRow(
+                                    setting: viewStore.settings[index]
+                                )
+                            }
+                        } else {
+                            NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
+                                SettingsRow(setting: viewStore.settings[index])
+                            }
+                        }
                     }
                 }
-                
                 Section {
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(imageName: "bell.badge", squareColor: .red, title: "알림")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(imageName: "speaker.wave.3.fill", squareColor: .pink, title: "사운드 및 햅틱")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(imageName: "moon.fill", squareColor: .teal, title: "집중 모드")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        SettingsItemView(imageName: "hourglass", squareColor: .teal, title: "스크린 타임")
+                    ForEach(7 ..< viewStore.settings.endIndex) { index in
+                        NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
+                            SettingsRow(setting: viewStore.settings[index])
+                        }
                     }
                 }
             }
             
             .navigationTitle("설정")
+        } destination: { store in
+            SettingsDetailView(store: store)
         }
+        .alert(
+            store: store.scope(
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /SettingsReducer.Destination.State.airplainModeAlert,
+            action: SettingsReducer.Destination.Action.airplainModeAlert
+        )
     }
 }
 
