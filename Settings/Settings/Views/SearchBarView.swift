@@ -7,7 +7,17 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct SearchBarView: View {
+    
+    private let store: StoreOf<SearchBarReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<SearchBarReducer>
+    
+    init(store: StoreOf<SearchBarReducer>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         Label {
@@ -25,7 +35,11 @@ struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SearchBarView()
+            SearchBarView(
+                store: Store(
+                    initialState: SearchBarReducer.State(searchBarText: "검색")) {
+                SearchBarReducer()
+            })
         }
         .ignoresSafeArea()
     }
@@ -41,7 +55,7 @@ extension SearchBarView {
     }
     
     var searchText: some View {
-        Text("검색")
+        Text(viewStore.searchBarText)
             .foregroundColor(.gray)
             .font(.title2)
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D6555A22A92570200452114 /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6555A12A92570200452114 /* SettingsDetailView.swift */; };
 		8D6555A42A92578000452114 /* SettingsDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6555A32A92578000452114 /* SettingsDetailReducer.swift */; };
+		8D8DC79B2A93AE5F001A078B /* SearchBarReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DC79A2A93AE5F001A078B /* SearchBarReducer.swift */; };
 		8DB351BF2A91FE3C001AB679 /* SettingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351BE2A91FE3C001AB679 /* SettingsApp.swift */; };
 		8DB351C12A91FE3C001AB679 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351C02A91FE3C001AB679 /* ContentView.swift */; };
 		8DB351C32A91FE3D001AB679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB351C22A91FE3D001AB679 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		8D6555A12A92570200452114 /* SettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
 		8D6555A32A92578000452114 /* SettingsDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailReducer.swift; sourceTree = "<group>"; };
+		8D8DC79A2A93AE5F001A078B /* SearchBarReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarReducer.swift; sourceTree = "<group>"; };
 		8DB351BB2A91FE3C001AB679 /* Settings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Settings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB351BE2A91FE3C001AB679 /* SettingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApp.swift; sourceTree = "<group>"; };
 		8DB351C02A91FE3C001AB679 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		8DB351E82A9200E9001AB679 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D8DC79A2A93AE5F001A078B /* SearchBarReducer.swift */,
 				8DB351E92A9200FA001AB679 /* SearchBarView.swift */,
 				8DB351EB2A921C9F001AB679 /* ProfileView.swift */,
 				8DB351EF2A922270001AB679 /* SettingsRow.swift */,
@@ -306,6 +309,7 @@
 				8DB351F02A922270001AB679 /* SettingsRow.swift in Sources */,
 				8DB351C12A91FE3C001AB679 /* ContentView.swift in Sources */,
 				8DB351F22A92370B001AB679 /* SettingsReducer.swift in Sources */,
+				8D8DC79B2A93AE5F001A078B /* SearchBarReducer.swift in Sources */,
 				8D6555A22A92570200452114 /* SettingsDetailView.swift in Sources */,
 				8DB351F82A923B17001AB679 /* SettingsModel.swift in Sources */,
 				8DB351BF2A91FE3C001AB679 /* SettingsApp.swift in Sources */,

@@ -17,6 +17,7 @@ struct ContentView: View {
     init() {
         self.store = Store(initialState: SettingsReducer.State()) {
             SettingsReducer()
+                ._printChanges()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
         UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
@@ -28,7 +29,10 @@ struct ContentView: View {
         ) {
             Form {
                 Section {
-                    SearchBarView()
+                    SearchBarView(store: store.scope(
+                        state: \.searchBar,
+                        action: SettingsReducer.Action.searchBar
+                    ))
                         .padding(-20)
                 }
                 Section {
@@ -76,9 +80,13 @@ struct ContentView: View {
         } destination: { store in
             SettingsDetailView(store: store)
         }
-        .alert(store: store.scope(
-            state: \.$airplainModeAlert,
-            action: { .airplainModeAlert($0) })
+        .alert(
+            store: store.scope(
+                state: \.$destination,
+                action: { .destination($0) }
+            ),
+            state: /SettingsReducer.Destination.State.airplainModeAlert,
+            action: SettingsReducer.Destination.Action.airplainModeAlert
         )
     }
 }
