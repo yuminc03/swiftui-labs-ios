@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SearchBarView.swift
 //  Settings
 //
 //  Created by Yumin Chu on 2023/08/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct SearchBarView: View {
     
     var body: some View {
         Label {
@@ -21,17 +21,17 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SearchView()
+            SearchBarView()
         }
         .ignoresSafeArea()
     }
 }
 
-extension SearchView {
+extension SearchBarView {
     var searchImage: some View {
         Image(systemName: "magnifyingglass")
             .resizable()

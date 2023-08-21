@@ -30,8 +30,8 @@ struct ContactsView: View {
     var body: some View {
         NavigationStackStore(store.scope(state: \.path, action: { .path($0) })) {
             List {
-                ForEach(viewStore.contacts) { contact in
-                    NavigationLink(state: ContactDetailPageReducer.State()) {
+                ForEach(viewStore.state.contacts) { contact in
+                    NavigationLink(state: ContactDetailPageReducer.State(contact: contact)) {
                         HStack {
                             Text(contact.name)
                             Spacer()

@@ -9,21 +9,12 @@ import SwiftUI
 
 struct SettingsItemView: View {
     
-    private let imageName: String
-    private let squareColor: Color
-    private let title: String
-    private let rightText: String
+    private let setting: SettingsModel
     
     init(
-        imageName: String,
-        squareColor: Color,
-        title: String,
-        rightText: String = ""
+        setting: SettingsModel
     ) {
-        self.imageName = imageName
-        self.squareColor = squareColor
-        self.title = title
-        self.rightText = rightText
+        self.setting = setting
     }
     
     var body: some View {
@@ -42,12 +33,7 @@ struct SettingsItemView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SettingsItemView(
-                imageName: "wifi",
-                squareColor: .blue,
-                title: "Wi-Fi",
-                rightText: "켬"
-            )
+            SettingsItemView(setting: SettingsModel(id: UUID(), imageName: "swift", iconColor: .red, title: "title", rightText: "text"))
         }
         .ignoresSafeArea()
     }
@@ -57,10 +43,10 @@ extension SettingsItemView {
     
     private var icon: some View {
         RoundedRectangle(cornerRadius: 8)
-            .foregroundColor(squareColor)
+            .foregroundColor(setting.iconColor)
             .frame(width: 40, height: 40)
             .overlay {
-                Image(systemName: imageName)
+                Image(systemName: setting.imageName)
                     .resizable()
                     .foregroundColor(.white)
                     .padding(.horizontal, 8)
@@ -69,13 +55,13 @@ extension SettingsItemView {
     }
     
     private var contents: some View {
-        Text(title)
+        Text(setting.title)
             .font(.title3)
             .foregroundColor(.black)
     }
     
     private var rightContents: some View {
-        Text(rightText)
+        Text(setting.rightText)
             .font(.title3)
             .foregroundColor(.gray)
     }
