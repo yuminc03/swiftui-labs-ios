@@ -66,14 +66,10 @@ struct ContentView: View {
             
             .navigationTitle("설정")
         }
-//        .alert(
-//            store: store.scope(
-//                state: \.$airplainModeAlert,
-//                action: { .airplainModeAlert($0) }
-//            ),
-//            state: /SettingsReducer.Action.airplainModeAlert,
-//            action: SettingsReducer.Action.airplainModeAlert
-//        )
+        .alert(store: store.scope(
+            state: \.$airplainModeAlert,
+            action: { .airplainModeAlert($0) })
+        )
     }
 }
 
