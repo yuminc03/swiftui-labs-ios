@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsItemView: View {
+struct SettingsRow: View {
     
     private let setting: SettingsModel
     
@@ -29,17 +29,17 @@ struct SettingsItemView: View {
     }
 }
 
-struct SettingsItemView_Previews: PreviewProvider {
+struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SettingsItemView(setting: SettingsModel(id: UUID(), imageName: "swift", iconColor: .red, title: "title", rightText: "text"))
+            SettingsRow(setting: SettingsModel(id: UUID(), imageName: "swift", iconColor: .red, title: "title", rightText: "text"))
         }
         .ignoresSafeArea()
     }
 }
 
-extension SettingsItemView {
+extension SettingsRow {
     
     private var icon: some View {
         RoundedRectangle(cornerRadius: 8)

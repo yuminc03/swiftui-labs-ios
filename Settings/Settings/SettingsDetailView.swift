@@ -21,7 +21,7 @@ struct SettingsDetailView: View {
     
     var body: some View {
         VStack {
-            Text("")
+            Text("TITLE")
                 .font(.largeTitle)
             Button("뒤로가기") {
                 viewStore.send(.didTapBackButton)

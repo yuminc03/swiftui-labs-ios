@@ -25,7 +25,7 @@ struct ContentView: View {
         NavigationView {
             Form {
                 ForEach(viewStore.settings) { setting in
-                    SettingsItemView(setting: setting)
+                    SettingsRow(setting: setting)
                 }
             }
             
