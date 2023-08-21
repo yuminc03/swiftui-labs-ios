@@ -36,7 +36,7 @@ struct SettingsReducer: Reducer {
             ),
             SettingsModel(
                 id: UUID(),
-                imageName: "bluetooth",
+                imageName: "wave.3.right",
                 iconColor: .blue,
                 title: "Bluetooth",
                 rightText: "켬"

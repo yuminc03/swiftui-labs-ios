@@ -19,13 +19,48 @@ struct ContentView: View {
             SettingsReducer()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
+        UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
     }
     
     var body: some View {
         NavigationView {
             Form {
-                ForEach(viewStore.settings) { setting in
-                    SettingsRow(setting: setting)
+                Section {
+                    SearchBarView()
+                        .padding(-20)
+                }
+                Section {
+                    ProfileView(
+                        imageName: "char_yumin",
+                        nameText: "Yumin Chu",
+                        description: "Apple ID, iCloud+, 미디어 및 구입 항목"
+                    )
+                }
+                Section {
+                    SettingsRow(setting: viewStore.settings[0])
+                }
+                Section {
+                    ForEach(1 ..< 7) { index in
+                        if index == 1 {
+                            Toggle(
+                                isOn: viewStore.binding(
+                                    get: \.isAirplainSwitchOn,
+                                    send: SettingsReducer.Action.didTapAirplainModeSwitch
+                                )
+                            ) {
+                                SettingsRow(
+                                    setting: viewStore.settings[index]
+                                )
+                            }
+                        } else {
+                            SettingsRow(setting: viewStore.settings[index])
+                        }
+                    }
+                }
+                Section {
+                    ForEach(7 ..< viewStore.settings.endIndex) { index in
+                        SettingsRow(setting: viewStore.settings[index])
+                    }
                 }
             }
             

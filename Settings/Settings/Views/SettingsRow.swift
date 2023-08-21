@@ -33,7 +33,15 @@ struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SettingsRow(setting: SettingsModel(id: UUID(), imageName: "swift", iconColor: .red, title: "title", rightText: "text"))
+            SettingsRow(
+                setting: SettingsModel(
+                    id: UUID(),
+                    imageName: "swift",
+                    iconColor: .red,
+                    title: "title",
+                    rightText: "text"
+                )
+            )
         }
         .ignoresSafeArea()
     }
@@ -47,10 +55,8 @@ extension SettingsRow {
             .frame(width: 40, height: 40)
             .overlay {
                 Image(systemName: setting.imageName)
-                    .resizable()
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 10)
             }
     }
     
