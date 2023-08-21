@@ -23,7 +23,9 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStackStore(
+            store.scope(state: \.path, action: { .path($0) })
+        ) {
             Form {
                 Section {
                     SearchBarView()
@@ -37,7 +39,9 @@ struct ContentView: View {
                     )
                 }
                 Section {
-                    SettingsRow(setting: viewStore.settings[0])
+                    NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[0])) {
+                        SettingsRow(setting: viewStore.settings[0])
+                    }
                 }
                 Section {
                     ForEach(1 ..< 7) { index in
@@ -53,18 +57,24 @@ struct ContentView: View {
                                 )
                             }
                         } else {
-                            SettingsRow(setting: viewStore.settings[index])
+                            NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
+                                SettingsRow(setting: viewStore.settings[index])
+                            }
                         }
                     }
                 }
                 Section {
                     ForEach(7 ..< viewStore.settings.endIndex) { index in
-                        SettingsRow(setting: viewStore.settings[index])
+                        NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
+                            SettingsRow(setting: viewStore.settings[index])
+                        }
                     }
                 }
             }
             
             .navigationTitle("설정")
+        } destination: { store in
+            SettingsDetailView(store: store)
         }
         .alert(store: store.scope(
             state: \.$airplainModeAlert,
