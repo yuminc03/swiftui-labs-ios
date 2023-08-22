@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A1958D2A944ABA00979DCD /* ToggleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1958C2A944ABA00979DCD /* ToggleReducer.swift */; };
+		05A195912A944BC800979DCD /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A195902A944BC800979DCD /* ToggleView.swift */; };
 		8D6555A22A92570200452114 /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6555A12A92570200452114 /* SettingsDetailView.swift */; };
 		8D6555A42A92578000452114 /* SettingsDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6555A32A92578000452114 /* SettingsDetailReducer.swift */; };
 		8DB351BF2A91FE3C001AB679 /* SettingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351BE2A91FE3C001AB679 /* SettingsApp.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A1958C2A944ABA00979DCD /* ToggleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleReducer.swift; sourceTree = "<group>"; };
+		05A195902A944BC800979DCD /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		8D6555A12A92570200452114 /* SettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
 		8D6555A32A92578000452114 /* SettingsDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailReducer.swift; sourceTree = "<group>"; };
 		8DB351BB2A91FE3C001AB679 /* Settings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Settings.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,8 @@
 			children = (
 				8DB351EB2A921C9F001AB679 /* ProfileView.swift */,
 				8DB351EF2A922270001AB679 /* SettingsRow.swift */,
+				05A1958C2A944ABA00979DCD /* ToggleReducer.swift */,
+				05A195902A944BC800979DCD /* ToggleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,9 +309,11 @@
 				8DB351F02A922270001AB679 /* SettingsRow.swift in Sources */,
 				8DB351C12A91FE3C001AB679 /* ContentView.swift in Sources */,
 				8DB351F22A92370B001AB679 /* SettingsReducer.swift in Sources */,
+				05A1958D2A944ABA00979DCD /* ToggleReducer.swift in Sources */,
 				8D6555A22A92570200452114 /* SettingsDetailView.swift in Sources */,
 				8DB351F82A923B17001AB679 /* SettingItem.swift in Sources */,
 				8DB351BF2A91FE3C001AB679 /* SettingsApp.swift in Sources */,
+				05A195912A944BC800979DCD /* ToggleView.swift in Sources */,
 				8D6555A42A92578000452114 /* SettingsDetailReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
