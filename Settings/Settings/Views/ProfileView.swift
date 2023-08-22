@@ -33,22 +33,17 @@ struct ProfileView: View {
                     .font(.footnote)
             }
         }
-        .background(Color.white)
-        .cornerRadius(15)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color.black
-            ProfileView(
-                imageName: "char_yumin",
-                nameText: "Yumin Chu",
-                description: "Apple ID, iCloud+, 미디어 및 구입 항목"
-            )
-        }
-        .ignoresSafeArea()
+        ProfileView(
+            imageName: "char_yumin",
+            nameText: "Yumin Chu",
+            description: "Apple ID, iCloud+, 미디어 및 구입 항목"
+        )
+        .previewLayout(.sizeThatFits)
     }
 }
 
@@ -57,7 +52,7 @@ extension ProfileView {
     private var profileImage: some View {
         Image(imageName)
             .resizable()
-            .scaledToFill()
+            .scaledToFit()
             .frame(width: 60, height: 60)
             .clipShape(Circle())
     }

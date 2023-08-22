@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct SettingsDetailReducer: Reducer {
     
     struct State: Equatable {
-        var setting: SettingsModel
+        var item: SettingItem
     }
     
     enum Action: Equatable {
@@ -24,16 +24,18 @@ struct SettingsDetailReducer: Reducer {
     }
     @Dependency(\.dismiss) var dismiss
     
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        switch action {
-        case .didTapBackButton:
-            return .run { [title = state.setting.title] send in
-                await send(.delegate(.updateSearchBarText(title)))
-                await dismiss()
+    var body: some ReducerOf<Self> {
+        Reduce { state, action in
+            switch action {
+            case .didTapBackButton:
+                return .run { [title = state.item.title] send in
+                    await send(.delegate(.updateSearchBarText(title)))
+                    await dismiss()
+                }
+                
+            case .delegate:
+                return .none
             }
-            
-        case .delegate:
-            return .none
         }
     }
 }
