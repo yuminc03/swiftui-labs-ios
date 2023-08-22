@@ -25,7 +25,6 @@ struct SettingsRow: View {
             Spacer()
             rightContents
         }
-        .background(Color.white)
     }
 }
 
@@ -42,6 +41,7 @@ struct SettingsRow_Previews: PreviewProvider {
                     rightText: "text"
                 )
             )
+            .background(Color.white)
         }
         .ignoresSafeArea()
     }
@@ -52,23 +52,23 @@ extension SettingsRow {
     private var icon: some View {
         RoundedRectangle(cornerRadius: 8)
             .foregroundColor(setting.iconColor)
-            .frame(width: 40, height: 40)
+            .frame(width: 30, height: 30)
             .overlay {
                 Image(systemName: setting.imageName)
-                    .font(.title2)
+                    .font(.body)
                     .foregroundColor(.white)
             }
     }
     
     private var contents: some View {
         Text(setting.title)
-            .font(.title3)
+            .font(.body)
             .foregroundColor(.black)
     }
     
     private var rightContents: some View {
         Text(setting.rightText)
-            .font(.title3)
+            .font(.body)
             .foregroundColor(.gray)
     }
 }
