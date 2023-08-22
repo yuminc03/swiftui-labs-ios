@@ -74,19 +74,19 @@ enum SettingItem: Identifiable, Equatable {
         }
     }
     
-    var rightText: String {
+    var rightText: String? {
         switch self {
-        case .airPods: return ""
-        case .airplane: return ""
+        case .airPods: return nil
+        case .airplane: return nil
         case .wifi: return "LS_DEV"
         case .bluetooth: return "켬"
-        case .cellular: return ""
+        case .cellular: return nil
         case .hotspot: return "끔"
         case .vpn: return "연결 안 됨"
-        case .notification: return ""
-        case .soundAndHaptic: return ""
-        case .focusMode: return ""
-        case .screenTime: return ""
+        case .notification: return nil
+        case .soundAndHaptic: return nil
+        case .focusMode: return nil
+        case .screenTime: return nil
         }
     }
     

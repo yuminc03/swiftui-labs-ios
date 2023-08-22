@@ -25,6 +25,7 @@ struct SettingsRow: View {
             Spacer()
             rightContents
         }
+        
     }
 }
 
@@ -42,13 +43,15 @@ struct SettingsRow_Previews: PreviewProvider {
 private extension SettingsRow {
     
     var icon: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .foregroundColor(item.iconColor)
-            .frame(width: 30, height: 30)
-            .overlay {
-                Image(systemName: item.imageName)
-                    .font(.body)
-                    .foregroundColor(.white)
+        Image(systemName: item.imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 20, height: 20)
+            .foregroundColor(.white)
+            .padding(5)
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(item.iconColor)
             }
     }
     
@@ -59,7 +62,7 @@ private extension SettingsRow {
     }
     
     var rightContents: some View {
-        Text(item.rightText)
+        Text(item.rightText ?? "")
             .font(.body)
             .foregroundColor(.gray)
     }

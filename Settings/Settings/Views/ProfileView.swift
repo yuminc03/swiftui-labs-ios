@@ -52,7 +52,7 @@ extension ProfileView {
     private var profileImage: some View {
         Image(imageName)
             .resizable()
-            .scaledToFill()
+            .scaledToFit()
             .frame(width: 60, height: 60)
             .clipShape(Circle())
     }
