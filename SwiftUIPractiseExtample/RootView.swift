@@ -90,6 +90,14 @@ struct RootView: View {
                         Text("Driving changes in your UI with state and bindings")
                     }
                 }
+                Section("🥝 Introducing SwiftUI") {
+                    NavigationLink {
+                        LandmarksView()
+                    } label: {
+                        Text("Landmarks")
+                    }
+
+                }
                 Section("🍑 TCA Tutorials") {
                     NavigationLink {
                         CounterFeatureView()
