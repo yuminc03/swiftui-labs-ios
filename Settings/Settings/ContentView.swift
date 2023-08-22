@@ -14,11 +14,8 @@ struct ContentView: View {
     private let store: StoreOf<SettingsReducer>
     @ObservedObject private var viewStore: ViewStoreOf<SettingsReducer>
     
-    init() {
-        self.store = Store(initialState: SettingsReducer.State()) {
-            SettingsReducer()
-                ._printChanges()
-        }
+    init(store: StoreOf<SettingsReducer>) {
+        self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
     }
     
@@ -33,34 +30,27 @@ struct ContentView: View {
                     )
                 }
                 Section {
-                    if let item = viewStore.section1.first {
-                        NavigationLink(state: SettingsDetailReducer.State(setting: item)) {
-                            SettingsRow(setting: item)
+                    ForEach(viewStore.section1) { settingsItem in
+                        NavigationLink(state: SettingsDetailReducer.State(item: settingsItem)) {
+                            SettingsRow(item: settingsItem)
                         }
                     }
                 }
                 Section {
                     ForEach(viewStore.section2) { settingItem in
                         if settingItem == .airplane {
-                            Toggle(
-                                isOn: viewStore.binding(
-                                    get: \.isAirplainSwitchOn,
-                                    send: SettingsReducer.Action.didTapAirplainModeSwitch
-                                )
-                            ) {
-                                SettingsRow(setting: settingItem)
-                            }
+                            ToggleView(store: store.scope(state: \.toggleState, action: SettingsReducer.Action.toggleAction))
                         } else {
-                            NavigationLink(state: SettingsDetailReducer.State(setting: settingItem)) {
-                                SettingsRow(setting: settingItem)
+                            NavigationLink(state: SettingsDetailReducer.State(item: settingItem)) {
+                                SettingsRow(item: settingItem)
                             }
                         }
                     }
                 }
                 Section {
                     ForEach(viewStore.section3) { settingItem in
-                        NavigationLink(state: SettingsDetailReducer.State(setting: settingItem)) {
-                            SettingsRow(setting: settingItem)
+                        NavigationLink(state: SettingsDetailReducer.State(item: settingItem)) {
+                            SettingsRow(item: settingItem)
                         }
                     }
                 }
@@ -90,6 +80,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(store: .init(initialState: .init()) {
+            SettingsReducer()
+        })
     }
 }

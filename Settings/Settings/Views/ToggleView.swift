@@ -20,7 +20,7 @@ struct ToggleView: View {
     
     var body: some View {
         Toggle(isOn: viewStore.binding(get: \.isOn, send: .didTapToggle)) {
-            SettingsRow(setting: .airplane)
+            SettingsRow(item: .airplane)
         }
     }
 }

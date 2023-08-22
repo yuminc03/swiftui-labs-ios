@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SettingsRow: View {
     
-    private let setting: SettingItem
+    private let item: SettingItem
     
     init(
-        setting: SettingItem
+        item: SettingItem
     ) {
-        self.setting = setting
+        self.item = item
     }
     
     var body: some View {
@@ -31,9 +31,9 @@ struct SettingsRow: View {
 struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SettingsRow(setting: .airPods)
-            SettingsRow(setting: .airplane)
-            SettingsRow(setting: .wifi)
+            SettingsRow(item: .airPods)
+            SettingsRow(item: .airplane)
+            SettingsRow(item: .wifi)
         }
         .previewLayout(.sizeThatFits)
     }
@@ -43,23 +43,23 @@ private extension SettingsRow {
     
     var icon: some View {
         RoundedRectangle(cornerRadius: 8)
-            .foregroundColor(setting.iconColor)
+            .foregroundColor(item.iconColor)
             .frame(width: 30, height: 30)
             .overlay {
-                Image(systemName: setting.imageName)
+                Image(systemName: item.imageName)
                     .font(.body)
                     .foregroundColor(.white)
             }
     }
     
     var contents: some View {
-        Text(setting.title)
+        Text(item.title)
             .font(.body)
             .foregroundColor(.black)
     }
     
     var rightContents: some View {
-        Text(setting.rightText)
+        Text(item.rightText)
             .font(.body)
             .foregroundColor(.gray)
     }

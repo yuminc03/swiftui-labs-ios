@@ -21,7 +21,7 @@ struct SettingsDetailView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text(viewStore.setting.title)
+            Text(viewStore.item.title)
                 .font(.largeTitle)
             Button("뒤로가기") {
                 viewStore.send(.didTapBackButton)
@@ -34,7 +34,7 @@ struct SettingsDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsDetailView(store: Store(
             initialState: SettingsDetailReducer.State(
-                setting: .airPods
+                item: .airPods
             )
         ) {
             SettingsDetailReducer()

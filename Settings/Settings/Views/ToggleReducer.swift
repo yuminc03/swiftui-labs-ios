@@ -17,14 +17,22 @@ struct ToggleReducer: Reducer {
     
     enum Action: Equatable {
         case didTapToggle
-        enum Delegate: Equatable {
-            
-        }
+        case delegate(Delegate)
+    }
+    
+    enum Delegate: Equatable {
+        case isToggleOn
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
-            return .none
+            switch action {
+            case .didTapToggle:
+                return .send(.delegate(.isToggleOn))
+                
+            case .delegate:
+                return .none
+            }
         }
     }
 }
