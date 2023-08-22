@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SettingsRow: View {
     
-    private let setting: SettingsModel
+    private let setting: SettingItem
     
     init(
-        setting: SettingsModel
+        setting: SettingItem
     ) {
         self.setting = setting
     }
@@ -33,13 +33,7 @@ struct SettingsRow_Previews: PreviewProvider {
         ZStack {
             Color.black
             SettingsRow(
-                setting: SettingsModel(
-                    id: UUID(),
-                    imageName: "swift",
-                    iconColor: .red,
-                    title: "title",
-                    rightText: "text"
-                )
+                setting: SettingItem.airPods
             )
             .background(Color.white)
         }

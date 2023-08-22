@@ -22,7 +22,7 @@
 		8DB351F02A922270001AB679 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351EF2A922270001AB679 /* SettingsRow.swift */; };
 		8DB351F22A92370B001AB679 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351F12A92370B001AB679 /* SettingsReducer.swift */; };
 		8DB351F52A92372A001AB679 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB351F42A92372A001AB679 /* ComposableArchitecture */; };
-		8DB351F82A923B17001AB679 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351F72A923B17001AB679 /* SettingsModel.swift */; };
+		8DB351F82A923B17001AB679 /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB351F72A923B17001AB679 /* SettingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		8DB351EB2A921C9F001AB679 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8DB351EF2A922270001AB679 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		8DB351F12A92370B001AB679 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
-		8DB351F72A923B17001AB679 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		8DB351F72A923B17001AB679 /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 		8DB351F62A923ADE001AB679 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8DB351F72A923B17001AB679 /* SettingsModel.swift */,
+				8DB351F72A923B17001AB679 /* SettingItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 				8DB351F22A92370B001AB679 /* SettingsReducer.swift in Sources */,
 				8D8DC79B2A93AE5F001A078B /* SearchBarReducer.swift in Sources */,
 				8D6555A22A92570200452114 /* SettingsDetailView.swift in Sources */,
-				8DB351F82A923B17001AB679 /* SettingsModel.swift in Sources */,
+				8DB351F82A923B17001AB679 /* SettingItem.swift in Sources */,
 				8DB351BF2A91FE3C001AB679 /* SettingsApp.swift in Sources */,
 				8D6555A42A92578000452114 /* SettingsDetailReducer.swift in Sources */,
 				8DB351EA2A9200FA001AB679 /* SearchBarView.swift in Sources */,
@@ -473,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Settings/Preview Content\"";
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -502,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Settings/Preview Content\"";
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

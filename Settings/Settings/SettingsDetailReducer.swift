@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct SettingsDetailReducer: Reducer {
     
     struct State: Equatable {
-        var setting: SettingsModel
+        var setting: SettingItem
     }
     
     enum Action: Equatable {

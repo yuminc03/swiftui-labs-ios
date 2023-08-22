@@ -33,7 +33,7 @@ struct ContentView: View {
                         state: \.searchBar,
                         action: SettingsReducer.Action.searchBar
                     ))
-                        .padding(-20)
+                    .padding(-20)
                 }
                 Section {
                     ProfileView(

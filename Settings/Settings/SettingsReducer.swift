@@ -12,84 +12,18 @@ import ComposableArchitecture
 struct SettingsReducer: Reducer {
     
     struct State: Equatable {
-        let settings: IdentifiedArrayOf<SettingsModel> = [
-            SettingsModel(
-                id: UUID(),
-                imageName: "airpodspro",
-                iconColor: .gray,
-                title: "유민의 AirPads Pro 2",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "airplane",
-                iconColor: .orange,
-                title: "에어플레인 모드",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "wifi",
-                iconColor: .blue,
-                title: "Wi-Fi",
-                rightText: "LS_DEV"
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "wave.3.right",
-                iconColor: .blue,
-                title: "Bluetooth",
-                rightText: "켬"
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "antenna.radiowaves.left.and.right",
-                iconColor: .green,
-                title: "셀룰러",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "personalhotspot",
-                iconColor: .green,
-                title: "개인용 핫스팟",
-                rightText: "끔"
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "lock.fill",
-                iconColor: .blue,
-                title: "VPN",
-                rightText: "연결 안 됨"
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "bell.badge",
-                iconColor: .red,
-                title: "알림",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "speaker.wave.3.fill",
-                iconColor: .pink,
-                title: "사운드 및 햅틱",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "moon.fill",
-                iconColor: .indigo,
-                title: "집중 모드",
-                rightText: ""
-            ),
-            SettingsModel(
-                id: UUID(),
-                imageName: "hourglass",
-                iconColor: .indigo,
-                title: "스크린 타임",
-                rightText: ""
-            )
+        let settings: IdentifiedArrayOf<SettingItem> = [
+            .airPods,
+            .airplane,
+            .wifi,
+            .bluetooth,
+            .celluar,
+            .hotspot,
+            .vpn,
+            .notification,
+            .soundAndHaptic,
+            .focusMode,
+            .screenTime
         ]
         var isAirplainSwitchOn = false
         var searchBar = SearchBarReducer.State()
@@ -108,6 +42,9 @@ struct SettingsReducer: Reducer {
     }
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.searchBar, action: /Action.searchBar, child: {
+            SearchBarReducer()
+        })
         Reduce { state, action in
             switch action {
             case let .didTapAirplainModeSwitch(isOn):
@@ -119,21 +56,19 @@ struct SettingsReducer: Reducer {
                 return .none
                 
             case let .destination(.presented(.updateSearchBarText(.delegate(.updateSearchBarText(text))))):
+                print("\(text)")
                 return .none
                 
             case .destination:
                 return .none
-
+                
             case .path:
                 return .none
                 
-            case .destination(.presented):
+            case .searchBar:
                 return .none
             }
         }
-        Scope(state: \.searchBar, action: /Action.searchBar, child: {
-            SearchBarReducer()
-        })
         .ifLet(\.$destination, action: /Action.destination) {
             Destination()
         }
