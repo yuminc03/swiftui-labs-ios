@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 @main
 struct SettingsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store(initialState: .init()) {
+                SettingsReducer()._printChanges()
+            })
         }
     }
 }

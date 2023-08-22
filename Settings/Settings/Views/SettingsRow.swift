@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SettingsRow: View {
     
-    private let setting: SettingsModel
+    private let item: SettingItem
     
     init(
-        setting: SettingsModel
+        item: SettingItem
     ) {
-        self.setting = setting
+        self.item = item
     }
     
     var body: some View {
@@ -25,50 +25,45 @@ struct SettingsRow: View {
             Spacer()
             rightContents
         }
-        .background(Color.white)
+        
     }
 }
 
 struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color.black
-            SettingsRow(
-                setting: SettingsModel(
-                    id: UUID(),
-                    imageName: "swift",
-                    iconColor: .red,
-                    title: "title",
-                    rightText: "text"
-                )
-            )
+        VStack {
+            SettingsRow(item: .airPods)
+            SettingsRow(item: .airplane)
+            SettingsRow(item: .wifi)
         }
-        .ignoresSafeArea()
+        .previewLayout(.sizeThatFits)
     }
 }
 
-extension SettingsRow {
+private extension SettingsRow {
     
-    private var icon: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .foregroundColor(setting.iconColor)
-            .frame(width: 40, height: 40)
-            .overlay {
-                Image(systemName: setting.imageName)
-                    .font(.title2)
-                    .foregroundColor(.white)
+    var icon: some View {
+        Image(systemName: item.imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 20, height: 20)
+            .foregroundColor(.white)
+            .padding(5)
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(item.iconColor)
             }
     }
     
-    private var contents: some View {
-        Text(setting.title)
-            .font(.title3)
+    var contents: some View {
+        Text(item.title)
+            .font(.body)
             .foregroundColor(.black)
     }
     
-    private var rightContents: some View {
-        Text(setting.rightText)
-            .font(.title3)
+    var rightContents: some View {
+        Text(item.rightText ?? "")
+            .font(.body)
             .foregroundColor(.gray)
     }
 }

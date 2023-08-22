@@ -20,8 +20,8 @@ struct SettingsDetailView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(viewStore.setting.title)
+        VStack(spacing: 20) {
+            Text(viewStore.item.title)
                 .font(.largeTitle)
             Button("뒤로가기") {
                 viewStore.send(.didTapBackButton)
@@ -34,13 +34,7 @@ struct SettingsDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsDetailView(store: Store(
             initialState: SettingsDetailReducer.State(
-                setting: SettingsModel(
-                    id: UUID(),
-                    imageName: "back",
-                    iconColor: .blue,
-                    title: "title",
-                    rightText: ""
-                )
+                item: .airPods
             )
         ) {
             SettingsDetailReducer()

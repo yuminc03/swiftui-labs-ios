@@ -14,26 +14,14 @@ struct ContentView: View {
     private let store: StoreOf<SettingsReducer>
     @ObservedObject private var viewStore: ViewStoreOf<SettingsReducer>
     
-    init() {
-        self.store = Store(initialState: SettingsReducer.State()) {
-            SettingsReducer()
-                ._printChanges()
-        }
+    init(store: StoreOf<SettingsReducer>) {
+        self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
     }
     
     var body: some View {
-        NavigationStackStore(
-            store.scope(state: \.path, action: { .path($0) })
-        ) {
+        NavigationStackStore(store.scope(state: \.path, action: { .path($0) })) {
             Form {
-                Section {
-                    SearchBarView(store: store.scope(
-                        state: \.searchBar,
-                        action: SettingsReducer.Action.searchBar
-                    ))
-                        .padding(-20)
-                }
                 Section {
                     ProfileView(
                         imageName: "char_yumin",
@@ -42,40 +30,40 @@ struct ContentView: View {
                     )
                 }
                 Section {
-                    NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[0])) {
-                        SettingsRow(setting: viewStore.settings[0])
+                    ForEach(viewStore.section1) { settingsItem in
+                        NavigationLink(state: SettingsDetailReducer.State(item: settingsItem)) {
+                            SettingsRow(item: settingsItem)
+                        }
                     }
                 }
                 Section {
-                    ForEach(1 ..< 7) { index in
-                        if index == 1 {
-                            Toggle(
-                                isOn: viewStore.binding(
-                                    get: \.isAirplainSwitchOn,
-                                    send: SettingsReducer.Action.didTapAirplainModeSwitch
-                                )
-                            ) {
-                                SettingsRow(
-                                    setting: viewStore.settings[index]
-                                )
-                            }
+                    ForEach(viewStore.section2) { settingItem in
+                        if settingItem == .airplane {
+                            ToggleView(store: store.scope(state: \.toggleState, action: SettingsReducer.Action.toggleAction))
                         } else {
-                            NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
-                                SettingsRow(setting: viewStore.settings[index])
+                            NavigationLink(state: SettingsDetailReducer.State(item: settingItem)) {
+                                SettingsRow(item: settingItem)
                             }
                         }
                     }
                 }
                 Section {
-                    ForEach(7 ..< viewStore.settings.endIndex) { index in
-                        NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
-                            SettingsRow(setting: viewStore.settings[index])
+                    ForEach(viewStore.section3) { settingItem in
+                        NavigationLink(state: SettingsDetailReducer.State(item: settingItem)) {
+                            SettingsRow(item: settingItem)
                         }
                     }
                 }
             }
             
             .navigationTitle("설정")
+            .searchable(
+                text: viewStore.binding(
+                    get: \.searchBarText,
+                    send: SettingsReducer.Action.didChangeSearchBarText
+                ),
+                prompt: "검색"
+            )
         } destination: { store in
             SettingsDetailView(store: store)
         }
@@ -92,6 +80,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(store: .init(initialState: .init()) {
+            SettingsReducer()
+        })
     }
 }
