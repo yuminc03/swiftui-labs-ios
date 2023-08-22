@@ -20,21 +20,11 @@ struct ContentView: View {
                 ._printChanges()
         }
         self.viewStore = ViewStore(store, observe: { $0 })
-        UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
     }
     
     var body: some View {
-        NavigationStackStore(
-            store.scope(state: \.path, action: { .path($0) })
-        ) {
+        NavigationStackStore(store.scope(state: \.path, action: { .path($0) })) {
             Form {
-                Section {
-                    SearchBarView(store: store.scope(
-                        state: \.searchBar,
-                        action: SettingsReducer.Action.searchBar
-                    ))
-                    .padding(-20)
-                }
                 Section {
                     ProfileView(
                         imageName: "char_yumin",
@@ -43,40 +33,47 @@ struct ContentView: View {
                     )
                 }
                 Section {
-                    NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[0])) {
-                        SettingsRow(setting: viewStore.settings[0])
+                    if let item = viewStore.section1.first {
+                        NavigationLink(state: SettingsDetailReducer.State(setting: item)) {
+                            SettingsRow(setting: item)
+                        }
                     }
                 }
                 Section {
-                    ForEach(1 ..< 7) { index in
-                        if index == 1 {
+                    ForEach(viewStore.section2) { settingItem in
+                        if settingItem == .airplane {
                             Toggle(
                                 isOn: viewStore.binding(
                                     get: \.isAirplainSwitchOn,
                                     send: SettingsReducer.Action.didTapAirplainModeSwitch
                                 )
                             ) {
-                                SettingsRow(
-                                    setting: viewStore.settings[index]
-                                )
+                                SettingsRow(setting: settingItem)
                             }
                         } else {
-                            NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
-                                SettingsRow(setting: viewStore.settings[index])
+                            NavigationLink(state: SettingsDetailReducer.State(setting: settingItem)) {
+                                SettingsRow(setting: settingItem)
                             }
                         }
                     }
                 }
                 Section {
-                    ForEach(7 ..< viewStore.settings.endIndex) { index in
-                        NavigationLink(state: SettingsDetailReducer.State(setting: viewStore.settings[index])) {
-                            SettingsRow(setting: viewStore.settings[index])
+                    ForEach(viewStore.section3) { settingItem in
+                        NavigationLink(state: SettingsDetailReducer.State(setting: settingItem)) {
+                            SettingsRow(setting: settingItem)
                         }
                     }
                 }
             }
             
             .navigationTitle("설정")
+            .searchable(
+                text: viewStore.binding(
+                    get: \.searchBarText,
+                    send: SettingsReducer.Action.didChangeSearchBarText
+                ),
+                prompt: "검색"
+            )
         } destination: { store in
             SettingsDetailView(store: store)
         }

@@ -30,20 +30,18 @@ struct SettingsRow: View {
 
 struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color.black
-            SettingsRow(
-                setting: SettingItem.airPods
-            )
-            .background(Color.white)
+        VStack {
+            SettingsRow(setting: .airPods)
+            SettingsRow(setting: .airplane)
+            SettingsRow(setting: .wifi)
         }
-        .ignoresSafeArea()
+        .previewLayout(.sizeThatFits)
     }
 }
 
-extension SettingsRow {
+private extension SettingsRow {
     
-    private var icon: some View {
+    var icon: some View {
         RoundedRectangle(cornerRadius: 8)
             .foregroundColor(setting.iconColor)
             .frame(width: 30, height: 30)
@@ -54,13 +52,13 @@ extension SettingsRow {
             }
     }
     
-    private var contents: some View {
+    var contents: some View {
         Text(setting.title)
             .font(.body)
             .foregroundColor(.black)
     }
     
-    private var rightContents: some View {
+    var rightContents: some View {
         Text(setting.rightText)
             .font(.body)
             .foregroundColor(.gray)

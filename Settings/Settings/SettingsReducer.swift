@@ -12,21 +12,11 @@ import ComposableArchitecture
 struct SettingsReducer: Reducer {
     
     struct State: Equatable {
-        let settings: IdentifiedArrayOf<SettingItem> = [
-            .airPods,
-            .airplane,
-            .wifi,
-            .bluetooth,
-            .celluar,
-            .hotspot,
-            .vpn,
-            .notification,
-            .soundAndHaptic,
-            .focusMode,
-            .screenTime
-        ]
+        let section1 = SettingItem.section1
+        let section2 = SettingItem.section2
+        let section3 = SettingItem.section3
         var isAirplainSwitchOn = false
-        var searchBar = SearchBarReducer.State()
+        var searchBarText = ""
         @PresentationState var destination: Destination.State?
         var path = StackState<SettingsDetailReducer.State>()
     }
@@ -35,16 +25,13 @@ struct SettingsReducer: Reducer {
         case didTapAirplainModeSwitch(Bool)
         case destination(PresentationAction<Destination.Action>)
         case path(StackAction<SettingsDetailReducer.State, SettingsDetailReducer.Action>)
-        case searchBar(SearchBarReducer.Action)
+        case didChangeSearchBarText(String)
         enum Alert: Equatable {
             case switchAirplainModeAlert(Bool)
         }
     }
     
     var body: some ReducerOf<Self> {
-        Scope(state: \.searchBar, action: /Action.searchBar, child: {
-            SearchBarReducer()
-        })
         Reduce { state, action in
             switch action {
             case let .didTapAirplainModeSwitch(isOn):
@@ -65,7 +52,8 @@ struct SettingsReducer: Reducer {
             case .path:
                 return .none
                 
-            case .searchBar:
+            case let .didChangeSearchBarText(text):
+                state.searchBarText = text
                 return .none
             }
         }

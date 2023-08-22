@@ -14,7 +14,7 @@ enum SettingItem: Identifiable, Equatable {
     case airplane
     case wifi
     case bluetooth
-    case celluar
+    case cellular
     case hotspot
     case vpn
     case notification
@@ -32,7 +32,7 @@ enum SettingItem: Identifiable, Equatable {
         case .airplane: return "airplane"
         case .wifi: return "wifi"
         case .bluetooth: return "wave.3.right"
-        case .celluar: return "antenna.radiowaves.left.and.right"
+        case .cellular: return "antenna.radiowaves.left.and.right"
         case .hotspot: return "personalhotspot"
         case .vpn: return "lock.fill"
         case .notification: return "bell.badge"
@@ -48,7 +48,7 @@ enum SettingItem: Identifiable, Equatable {
         case .airplane: return .orange
         case .wifi: return .blue
         case .bluetooth: return .blue
-        case .celluar: return .green
+        case .cellular: return .green
         case .hotspot: return .green
         case .vpn: return .blue
         case .notification: return .red
@@ -64,7 +64,7 @@ enum SettingItem: Identifiable, Equatable {
         case .airplane: return "에어플레인 모드"
         case .wifi: return "Wi-Fi"
         case .bluetooth: return "Bluetooth"
-        case .celluar: return "셀룰러"
+        case .cellular: return "셀룰러"
         case .hotspot: return "개인용 핫스팟"
         case .vpn: return "VPN"
         case .notification: return "알림"
@@ -80,7 +80,7 @@ enum SettingItem: Identifiable, Equatable {
         case .airplane: return ""
         case .wifi: return "LS_DEV"
         case .bluetooth: return "켬"
-        case .celluar: return ""
+        case .cellular: return ""
         case .hotspot: return "끔"
         case .vpn: return "연결 안 됨"
         case .notification: return ""
@@ -89,4 +89,8 @@ enum SettingItem: Identifiable, Equatable {
         case .screenTime: return ""
         }
     }
+    
+    static let section1: [SettingItem] = [.airPods]
+    static let section2: [SettingItem] = [.airplane, .wifi, .bluetooth, .cellular, .hotspot, .vpn]
+    static let section3: [SettingItem] = [.notification, .soundAndHaptic, .focusMode, .screenTime]
 }
