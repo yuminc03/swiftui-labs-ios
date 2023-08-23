@@ -76,8 +76,8 @@ struct ContactsView: View {
                 state: \.$destination,
                 action: { .destination($0) }
             ),
-            state: /ContactsReducer.Destination.State.addContact,
-            action: ContactsReducer.Destination.Action.addContact
+            state: /ContactsReducer.Destination.State.alert,
+            action: ContactsReducer.Destination.Action.alert
         )
     }
 }
