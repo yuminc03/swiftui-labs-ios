@@ -28,6 +28,12 @@
 		054267072A95D2EE00DB2D12 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267062A95D2EE00DB2D12 /* BadgeSymbol.swift */; };
 		054267092A95D5A200DB2D12 /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267082A95D5A200DB2D12 /* RotatedBadgeSymbol.swift */; };
 		0542670B2A95D66B00DB2D12 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542670A2A95D66B00DB2D12 /* BadgeView.swift */; };
+		0542670D2A95DB3500DB2D12 /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0542670C2A95DB3500DB2D12 /* hikeData.json */; };
+		0542670F2A95DB6100DB2D12 /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542670E2A95DB6100DB2D12 /* Hike.swift */; };
+		054267112A95DD6D00DB2D12 /* HikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267102A95DD6D00DB2D12 /* HikeView.swift */; };
+		054267142A95E2ED00DB2D12 /* HikeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267122A95E2EC00DB2D12 /* HikeDetail.swift */; };
+		054267152A95E2ED00DB2D12 /* HikeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267132A95E2ED00DB2D12 /* HikeGraph.swift */; };
+		054267172A95E3A500DB2D12 /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054267162A95E3A500DB2D12 /* GraphCapsule.swift */; };
 		057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */; };
 		057D32FE2A8DA9A000524075 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FD2A8DA9A000524075 /* Recipe.swift */; };
 		057D33002A8DAD6800524075 /* RecipeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FF2A8DAD6800524075 /* RecipeEditor.swift */; };
@@ -181,6 +187,12 @@
 		054267062A95D2EE00DB2D12 /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		054267082A95D5A200DB2D12 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
 		0542670A2A95D66B00DB2D12 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		0542670C2A95DB3500DB2D12 /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
+		0542670E2A95DB6100DB2D12 /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		054267102A95DD6D00DB2D12 /* HikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeView.swift; sourceTree = "<group>"; };
+		054267122A95E2EC00DB2D12 /* HikeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeDetail.swift; sourceTree = "<group>"; };
+		054267132A95E2ED00DB2D12 /* HikeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeGraph.swift; sourceTree = "<group>"; };
+		054267162A95E3A500DB2D12 /* GraphCapsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
 		057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditorConfig.swift; sourceTree = "<group>"; };
 		057D32FD2A8DA9A000524075 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		057D32FF2A8DAD6800524075 /* RecipeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditor.swift; sourceTree = "<group>"; };
@@ -339,6 +351,7 @@
 		054266EC2A95913F00DB2D12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0542670C2A95DB3500DB2D12 /* hikeData.json */,
 				054266ED2A95914B00DB2D12 /* landmarkData.json */,
 			);
 			path = Resources;
@@ -541,6 +554,11 @@
 				054267012A95CA5600DB2D12 /* Badges */,
 				054267002A95CA3600DB2D12 /* Landmarks */,
 				054266EC2A95913F00DB2D12 /* Resources */,
+				0542670E2A95DB6100DB2D12 /* Hike.swift */,
+				054267102A95DD6D00DB2D12 /* HikeView.swift */,
+				054267122A95E2EC00DB2D12 /* HikeDetail.swift */,
+				054267132A95E2ED00DB2D12 /* HikeGraph.swift */,
+				054267162A95E3A500DB2D12 /* GraphCapsule.swift */,
 			);
 			path = SwiftUITutorial;
 			sourceTree = "<group>";
@@ -946,6 +964,7 @@
 				057D33332A8DBA1E00524075 /* VegetableDumplings-small.jpg in Resources */,
 				057D333F2A8DBA1E00524075 /* PeanutButterTruffles.jpg in Resources */,
 				057D33442A8DBA1E00524075 /* SpicyTomatoSauce-thumb.jpg in Resources */,
+				0542670D2A95DB3500DB2D12 /* hikeData.json in Resources */,
 				057D333B2A8DBA1E00524075 /* MushroomTapioca-small.jpg in Resources */,
 				057D33482A8DBA1E00524075 /* AppleCake-thumb.jpg in Resources */,
 				057D33432A8DBA1E00524075 /* SpicyTomatoSauce-small.jpg in Resources */,
@@ -1012,6 +1031,7 @@
 				8DCF2DA62A8D16F6005581DC /* DefaultSpacing.swift in Sources */,
 				057D334F2A8DBB2C00524075 /* RecipeDetailToolbar.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
+				054267142A95E2ED00DB2D12 /* HikeDetail.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
 				8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */,
 				057D33172A8DB9E000524075 /* RecipesSampleContentView.swift in Sources */,
@@ -1071,6 +1091,7 @@
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
 				8D8638062A246EDD0041A0AC /* RoutineTransitionView.swift in Sources */,
 				8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */,
+				054267172A95E3A500DB2D12 /* GraphCapsule.swift in Sources */,
 				057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */,
 				057D33082A8DB16500524075 /* SidebarView.swift in Sources */,
 				057D33132A8DB8CE00524075 /* RecipeListItemView.swift in Sources */,
@@ -1093,8 +1114,11 @@
 				8D8638102A24702D0041A0AC /* SaveButtonView.swift in Sources */,
 				8D2C03D62A8B40F400F0131E /* View+.swift in Sources */,
 				057D334E2A8DBB2C00524075 /* RecipeNotSelectedView.swift in Sources */,
+				054267112A95DD6D00DB2D12 /* HikeView.swift in Sources */,
 				057D33002A8DAD6800524075 /* RecipeEditor.swift in Sources */,
 				8D2C03F42A8B8B6200F0131E /* ContactDetailFeature.swift in Sources */,
+				0542670F2A95DB6100DB2D12 /* Hike.swift in Sources */,
+				054267152A95E2ED00DB2D12 /* HikeGraph.swift in Sources */,
 				054266FB2A959AD900DB2D12 /* LandmarkDetail.swift in Sources */,
 				8D4AF22E2A8B9A9A0008FEE3 /* SettingsDetailView.swift in Sources */,
 			);
