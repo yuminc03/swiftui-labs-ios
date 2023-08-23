@@ -14,6 +14,8 @@
 		051AFC922A92F674006CB301 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC912A92F674006CB301 /* ContactView.swift */; };
 		051AFC942A931FDB006CB301 /* ContactDetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC932A931FDB006CB301 /* ContactDetailPageView.swift */; };
 		051AFC962A932030006CB301 /* ContactDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AFC952A932030006CB301 /* ContactDetailReducer.swift */; };
+		054266E92A9585E500DB2D12 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266E82A9585E500DB2D12 /* CircleImage.swift */; };
+		054266EB2A9588AA00DB2D12 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266EA2A9588AA00DB2D12 /* MapView.swift */; };
 		057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */; };
 		057D32FE2A8DA9A000524075 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FD2A8DA9A000524075 /* Recipe.swift */; };
 		057D33002A8DAD6800524075 /* RecipeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FF2A8DAD6800524075 /* RecipeEditor.swift */; };
@@ -153,6 +155,8 @@
 		051AFC912A92F674006CB301 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		051AFC932A931FDB006CB301 /* ContactDetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailPageView.swift; sourceTree = "<group>"; };
 		051AFC952A932030006CB301 /* ContactDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailReducer.swift; sourceTree = "<group>"; };
+		054266E82A9585E500DB2D12 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		054266EA2A9588AA00DB2D12 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditorConfig.swift; sourceTree = "<group>"; };
 		057D32FD2A8DA9A000524075 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		057D32FF2A8DAD6800524075 /* RecipeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditor.swift; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				05A195932A948FB300979DCD /* LandmarksView.swift */,
+				054266E82A9585E500DB2D12 /* CircleImage.swift */,
+				054266EA2A9588AA00DB2D12 /* MapView.swift */,
 			);
 			path = SwiftUITutorial;
 			sourceTree = "<group>";
@@ -954,6 +960,7 @@
 				8D86380A2A246F590041A0AC /* RoutinePopupVM.swift in Sources */,
 				8D4AF22C2A8B9A0F0008FEE3 /* SettingsView.swift in Sources */,
 				057D33022A8DADE500524075 /* RecipeEditorForm.swift in Sources */,
+				054266EB2A9588AA00DB2D12 /* MapView.swift in Sources */,
 				8DCF2D9F2A8D1168005581DC /* Event.swift in Sources */,
 				051AFC962A932030006CB301 /* ContactDetailReducer.swift in Sources */,
 				8D4D3D2B2A3DDF5D009A64F6 /* NetworkManager.swift in Sources */,
@@ -963,6 +970,7 @@
 				057D32FE2A8DA9A000524075 /* Recipe.swift in Sources */,
 				057D33572A8DBC4E00524075 /* RecipeIngredientsView.swift in Sources */,
 				0514F76A2A8C568A000498FD /* NumberFactClient.swift in Sources */,
+				054266E92A9585E500DB2D12 /* CircleImage.swift in Sources */,
 				8DCF2DBD2A8D1A13005581DC /* StackingPlaceholder.swift in Sources */,
 				051AFC902A92F3D1006CB301 /* ContactsView.swift in Sources */,
 				057D33682A8DE05B00524075 /* IfElseTrainContentView.swift in Sources */,
