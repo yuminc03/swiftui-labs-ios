@@ -9,13 +9,13 @@ import SwiftUI
 
 struct LandmarksView: View {
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        LandmarkList()
     }
 }
 
 struct LandmarksView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarksView()
+          .environmentObject(ModelData())
     }
 }

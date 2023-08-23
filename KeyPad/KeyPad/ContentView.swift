@@ -31,6 +31,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center) {
             inputTextContainerView
+                .contentShape(Rectangle())
             .gesture(
                 DragGesture()
                     .onEnded { value in
