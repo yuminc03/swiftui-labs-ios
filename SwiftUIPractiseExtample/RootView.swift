@@ -96,7 +96,15 @@ struct RootView: View {
                     } label: {
                         Text("Landmarks")
                     }
-
+                  NavigationLink {
+                    VStack {
+                      HikeView(hike: ModelData().hikes[0])
+                        .padding()
+                      Spacer()
+                    }
+                  } label: {
+                      Text("HikeView")
+                  }
                 }
                 Section("🍑 TCA Tutorials") {
                     NavigationLink {
