@@ -22,6 +22,7 @@
 		054266F72A9596CF00DB2D12 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266F62A9596CF00DB2D12 /* LandmarkRow.swift */; };
 		054266F92A9598D200DB2D12 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266F82A9598D200DB2D12 /* LandmarkList.swift */; };
 		054266FB2A959AD900DB2D12 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266FA2A959AD900DB2D12 /* LandmarkDetail.swift */; };
+		054266FD2A95C1C700DB2D12 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054266FC2A95C1C700DB2D12 /* FavoriteButton.swift */; };
 		057D32FB2A8DA94F00524075 /* RecipeEditorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */; };
 		057D32FE2A8DA9A000524075 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FD2A8DA9A000524075 /* Recipe.swift */; };
 		057D33002A8DAD6800524075 /* RecipeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057D32FF2A8DAD6800524075 /* RecipeEditor.swift */; };
@@ -169,6 +170,7 @@
 		054266F62A9596CF00DB2D12 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		054266F82A9598D200DB2D12 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		054266FA2A959AD900DB2D12 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		054266FC2A95C1C700DB2D12 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		057D32FA2A8DA94F00524075 /* RecipeEditorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditorConfig.swift; sourceTree = "<group>"; };
 		057D32FD2A8DA9A000524075 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		057D32FF2A8DAD6800524075 /* RecipeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditor.swift; sourceTree = "<group>"; };
@@ -341,6 +343,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		054266FE2A95C3FF00DB2D12 /* Landmarks */ = {
+			isa = PBXGroup;
+			children = (
+				054266F62A9596CF00DB2D12 /* LandmarkRow.swift */,
+				054266F82A9598D200DB2D12 /* LandmarkList.swift */,
+				054266FA2A959AD900DB2D12 /* LandmarkDetail.swift */,
+			);
+			path = Landmarks;
+			sourceTree = "<group>";
+		};
+		054266FF2A95C40500DB2D12 /* Helopers */ = {
+			isa = PBXGroup;
+			children = (
+				054266E82A9585E500DB2D12 /* CircleImage.swift */,
+				054266EA2A9588AA00DB2D12 /* MapView.swift */,
+				054266FC2A95C1C700DB2D12 /* FavoriteButton.swift */,
+			);
+			path = Helopers;
+			sourceTree = "<group>";
+		};
 		057D32F92A8DA92600524075 /* DrivingChangesWithState */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,12 +507,9 @@
 			children = (
 				054266EC2A95913F00DB2D12 /* Resources */,
 				054266F12A95935500DB2D12 /* Models */,
-				054266E82A9585E500DB2D12 /* CircleImage.swift */,
-				054266EA2A9588AA00DB2D12 /* MapView.swift */,
+				054266FE2A95C3FF00DB2D12 /* Landmarks */,
+				054266FF2A95C40500DB2D12 /* Helopers */,
 				05A195932A948FB300979DCD /* LandmarksView.swift */,
-				054266F62A9596CF00DB2D12 /* LandmarkRow.swift */,
-				054266F82A9598D200DB2D12 /* LandmarkList.swift */,
-				054266FA2A959AD900DB2D12 /* LandmarkDetail.swift */,
 			);
 			path = SwiftUITutorial;
 			sourceTree = "<group>";
@@ -1027,6 +1046,7 @@
 				057D33612A8DBD9900524075 /* StarRating.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
 				057D330C2A8DB21100524075 /* ModelHelpers.swift in Sources */,
+				054266FD2A95C1C700DB2D12 /* FavoriteButton.swift in Sources */,
 				8D4AF2432A8BB69A0008FEE3 /* RefactorTheCustomScenes.swift in Sources */,
 				051AFC8C2A92EA68006CB301 /* ContactsReducer.swift in Sources */,
 				057D330A2A8DB19400524075 /* RecipeBox.swift in Sources */,

@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import Combine
 
-var landmarks: [Landmark] = load("landmarkData.json")
+final class ModelData: ObservableObject {
+  @Published var landmarks: [Landmark] = load("landmarkData.json")
+}
 
 func loadLandmarkData<T: Decodable>(_ fileName: String) -> T {
   let data: Data

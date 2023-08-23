@@ -16,5 +16,6 @@ struct LandmarksView: View {
 struct LandmarksView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarksView()
+          .environmentObject(ModelData())
     }
 }
