@@ -17,6 +17,7 @@
 		05E19F002A973995001F8B9B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19EFF2A973995001F8B9B /* CardView.swift */; };
 		05E19F022A973C45001F8B9B /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19F012A973C45001F8B9B /* TrailingIconLabelStyle.swift */; };
 		05E19F042A973DF9001F8B9B /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19F032A973DF9001F8B9B /* ScrumsView.swift */; };
+		05E19F062A974230001F8B9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19F052A974230001F8B9B /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		05E19EFF2A973995001F8B9B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		05E19F012A973C45001F8B9B /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		05E19F032A973DF9001F8B9B /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		05E19F052A974230001F8B9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				05E19EFF2A973995001F8B9B /* CardView.swift */,
 				05E19F032A973DF9001F8B9B /* ScrumsView.swift */,
 				05E19F012A973C45001F8B9B /* TrailingIconLabelStyle.swift */,
+				05E19F052A974230001F8B9B /* DetailView.swift */,
 				05E19EF62A9737E0001F8B9B /* Models */,
 				05E19EE92A9737AB001F8B9B /* Assets.xcassets */,
 				05E19EEB2A9737AB001F8B9B /* Preview Content */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E19EFE2A9738F9001F8B9B /* Theme.swift in Sources */,
+				05E19F062A974230001F8B9B /* DetailView.swift in Sources */,
 				05E19EFC2A973825001F8B9B /* DailyScrum.swift in Sources */,
 				05E19EE82A9737A9001F8B9B /* ContentView.swift in Sources */,
 				05E19F042A973DF9001F8B9B /* ScrumsView.swift in Sources */,
