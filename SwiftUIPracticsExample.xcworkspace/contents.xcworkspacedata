@@ -10,4 +10,7 @@
    <FileRef
       location = "group:Settings/Settings.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Scrumdinger/Scrumdinger.xcodeproj">
+   </FileRef>
 </Workspace>
