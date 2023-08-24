@@ -1,0 +1,24 @@
+//
+//  ThemePicker.swift
+//  Scrumdinger
+//
+//  Created by Yumin Chu on 2023/08/24.
+//
+
+import SwiftUI
+
+struct ThemePicker: View {
+  @Binding var selection: Theme
+  
+  var body: some View {
+    Picker("Theme", selection: $selection) {
+      
+    }
+  }
+}
+
+struct ThemePicker_Previews: PreviewProvider {
+  static var previews: some View {
+    ThemePicker(selection: .constant(.periwinkle))
+  }
+}
