@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D76B7352A98F9F200576C06 /* PaycoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7342A98F9F200576C06 /* PaycoApp.swift */; };
+		8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7362A98F9F200576C06 /* ContentView.swift */; };
+		8D76B7392A98F9F300576C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D76B7382A98F9F300576C06 /* Assets.xcassets */; };
+		8D76B73C2A98F9F300576C06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D76B73B2A98F9F300576C06 /* Preview Assets.xcassets */; };
+		8D76B7462A98F9F300576C06 /* PaycoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7452A98F9F300576C06 /* PaycoTests.swift */; };
+		8D76B7502A98F9F300576C06 /* PaycoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B74F2A98F9F300576C06 /* PaycoUITests.swift */; };
+		8D76B7522A98F9F300576C06 /* PaycoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7512A98F9F300576C06 /* PaycoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D76B7422A98F9F300576C06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D76B7292A98F9F200576C06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D76B7302A98F9F200576C06;
+			remoteInfo = Payco;
+		};
+		8D76B74C2A98F9F300576C06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D76B7292A98F9F200576C06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D76B7302A98F9F200576C06;
+			remoteInfo = Payco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D76B7312A98F9F200576C06 /* Payco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D76B7342A98F9F200576C06 /* PaycoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycoApp.swift; sourceTree = "<group>"; };
+		8D76B7362A98F9F200576C06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D76B7382A98F9F300576C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D76B73B2A98F9F300576C06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D76B7412A98F9F300576C06 /* PaycoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaycoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D76B7452A98F9F300576C06 /* PaycoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycoTests.swift; sourceTree = "<group>"; };
+		8D76B74B2A98F9F300576C06 /* PaycoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaycoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D76B74F2A98F9F300576C06 /* PaycoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycoUITests.swift; sourceTree = "<group>"; };
+		8D76B7512A98F9F300576C06 /* PaycoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D76B72E2A98F9F200576C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B73E2A98F9F300576C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B7482A98F9F300576C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D76B7282A98F9F200576C06 = {
+			isa = PBXGroup;
+			children = (
+				8D76B7332A98F9F200576C06 /* Payco */,
+				8D76B7442A98F9F300576C06 /* PaycoTests */,
+				8D76B74E2A98F9F300576C06 /* PaycoUITests */,
+				8D76B7322A98F9F200576C06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8D76B7322A98F9F200576C06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D76B7312A98F9F200576C06 /* Payco.app */,
+				8D76B7412A98F9F300576C06 /* PaycoTests.xctest */,
+				8D76B74B2A98F9F300576C06 /* PaycoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D76B7332A98F9F200576C06 /* Payco */ = {
+			isa = PBXGroup;
+			children = (
+				8D76B7342A98F9F200576C06 /* PaycoApp.swift */,
+				8D76B7362A98F9F200576C06 /* ContentView.swift */,
+				8D76B7382A98F9F300576C06 /* Assets.xcassets */,
+				8D76B73A2A98F9F300576C06 /* Preview Content */,
+			);
+			path = Payco;
+			sourceTree = "<group>";
+		};
+		8D76B73A2A98F9F300576C06 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8D76B73B2A98F9F300576C06 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D76B7442A98F9F300576C06 /* PaycoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D76B7452A98F9F300576C06 /* PaycoTests.swift */,
+			);
+			path = PaycoTests;
+			sourceTree = "<group>";
+		};
+		8D76B74E2A98F9F300576C06 /* PaycoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D76B74F2A98F9F300576C06 /* PaycoUITests.swift */,
+				8D76B7512A98F9F300576C06 /* PaycoUITestsLaunchTests.swift */,
+			);
+			path = PaycoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D76B7302A98F9F200576C06 /* Payco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D76B7552A98F9F300576C06 /* Build configuration list for PBXNativeTarget "Payco" */;
+			buildPhases = (
+				8D76B72D2A98F9F200576C06 /* Sources */,
+				8D76B72E2A98F9F200576C06 /* Frameworks */,
+				8D76B72F2A98F9F200576C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Payco;
+			productName = Payco;
+			productReference = 8D76B7312A98F9F200576C06 /* Payco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D76B7402A98F9F300576C06 /* PaycoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D76B7582A98F9F300576C06 /* Build configuration list for PBXNativeTarget "PaycoTests" */;
+			buildPhases = (
+				8D76B73D2A98F9F300576C06 /* Sources */,
+				8D76B73E2A98F9F300576C06 /* Frameworks */,
+				8D76B73F2A98F9F300576C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D76B7432A98F9F300576C06 /* PBXTargetDependency */,
+			);
+			name = PaycoTests;
+			productName = PaycoTests;
+			productReference = 8D76B7412A98F9F300576C06 /* PaycoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8D76B74A2A98F9F300576C06 /* PaycoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D76B75B2A98F9F300576C06 /* Build configuration list for PBXNativeTarget "PaycoUITests" */;
+			buildPhases = (
+				8D76B7472A98F9F300576C06 /* Sources */,
+				8D76B7482A98F9F300576C06 /* Frameworks */,
+				8D76B7492A98F9F300576C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D76B74D2A98F9F300576C06 /* PBXTargetDependency */,
+			);
+			name = PaycoUITests;
+			productName = PaycoUITests;
+			productReference = 8D76B74B2A98F9F300576C06 /* PaycoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D76B7292A98F9F200576C06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8D76B7302A98F9F200576C06 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					8D76B7402A98F9F300576C06 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8D76B7302A98F9F200576C06;
+					};
+					8D76B74A2A98F9F300576C06 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8D76B7302A98F9F200576C06;
+					};
+				};
+			};
+			buildConfigurationList = 8D76B72C2A98F9F200576C06 /* Build configuration list for PBXProject "Payco" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D76B7282A98F9F200576C06;
+			productRefGroup = 8D76B7322A98F9F200576C06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D76B7302A98F9F200576C06 /* Payco */,
+				8D76B7402A98F9F300576C06 /* PaycoTests */,
+				8D76B74A2A98F9F300576C06 /* PaycoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D76B72F2A98F9F200576C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D76B73C2A98F9F300576C06 /* Preview Assets.xcassets in Resources */,
+				8D76B7392A98F9F300576C06 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B73F2A98F9F300576C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B7492A98F9F300576C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D76B72D2A98F9F200576C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */,
+				8D76B7352A98F9F200576C06 /* PaycoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B73D2A98F9F300576C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D76B7462A98F9F300576C06 /* PaycoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D76B7472A98F9F300576C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D76B7502A98F9F300576C06 /* PaycoUITests.swift in Sources */,
+				8D76B7522A98F9F300576C06 /* PaycoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D76B7432A98F9F300576C06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D76B7302A98F9F200576C06 /* Payco */;
+			targetProxy = 8D76B7422A98F9F300576C06 /* PBXContainerItemProxy */;
+		};
+		8D76B74D2A98F9F300576C06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D76B7302A98F9F200576C06 /* Payco */;
+			targetProxy = 8D76B74C2A98F9F300576C06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8D76B7532A98F9F300576C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D76B7542A98F9F300576C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D76B7562A98F9F300576C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Payco/Preview Content\"";
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.Payco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D76B7572A98F9F300576C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Payco/Preview Content\"";
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.Payco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D76B7592A98F9F300576C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.PaycoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payco.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Payco";
+			};
+			name = Debug;
+		};
+		8D76B75A2A98F9F300576C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.PaycoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payco.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Payco";
+			};
+			name = Release;
+		};
+		8D76B75C2A98F9F300576C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.PaycoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Payco;
+			};
+			name = Debug;
+		};
+		8D76B75D2A98F9F300576C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lonalia.PaycoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Payco;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D76B72C2A98F9F200576C06 /* Build configuration list for PBXProject "Payco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D76B7532A98F9F300576C06 /* Debug */,
+				8D76B7542A98F9F300576C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D76B7552A98F9F300576C06 /* Build configuration list for PBXNativeTarget "Payco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D76B7562A98F9F300576C06 /* Debug */,
+				8D76B7572A98F9F300576C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D76B7582A98F9F300576C06 /* Build configuration list for PBXNativeTarget "PaycoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D76B7592A98F9F300576C06 /* Debug */,
+				8D76B75A2A98F9F300576C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D76B75B2A98F9F300576C06 /* Build configuration list for PBXNativeTarget "PaycoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D76B75C2A98F9F300576C06 /* Debug */,
+				8D76B75D2A98F9F300576C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8D76B7292A98F9F200576C06 /* Project object */;
+}
