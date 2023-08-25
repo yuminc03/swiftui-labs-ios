@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ContactsApp/ContactsApp.xcodeproj">
+      location = "group:SwiftUIPractiseExtample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftUIPractiseExtample.xcodeproj">
+      location = "group:ContactsApp/ContactsApp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:KeyPad/KeyPad.xcodeproj">
