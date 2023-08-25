@@ -5,6 +5,9 @@
       location = "group:SwiftUIPractiseExtample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ContactsApp/ContactsApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:KeyPad/KeyPad.xcodeproj">
    </FileRef>
    <FileRef
