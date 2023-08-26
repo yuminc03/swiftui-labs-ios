@@ -7,6 +7,27 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
+struct ContentCore: Reducer {
+  struct State: Equatable {
+    var selectedIndex = 0
+  }
+  
+  enum Action {
+    case didTapTabItem
+  }
+  
+  var body: some ReducerOf<Self> {
+    Reduce { state, action in
+      switch action {
+      case .didTapTabItem:
+        return .none
+      }
+    }
+  }
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
