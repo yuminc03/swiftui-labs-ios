@@ -29,19 +29,39 @@ struct ContentCore: Reducer {
 }
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+  var body: some View {
+    NavigationView {
+      List {
+        Section {
+          HStack(spacing: 10) {
+            title
+            Spacer()
+            TopRightButton(imageName: "ticket")
+            TopRightButton(imageName: "bell")
+            TopRightButton(imageName: "person")
+          }
         }
-        .padding()
+        
+        .listRowSeparator(.hidden)
+      }
+      .listStyle(.plain)
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
+}
+
+extension ContentView {
+  
+  var title: some View {
+    Text("포인트")
+      .font(.title)
+      .bold()
+  }
+  
+  
 }

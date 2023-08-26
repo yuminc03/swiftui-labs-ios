@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D5692762A99CADF003AFD98 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5692752A99CADF003AFD98 /* ComposableArchitecture */; };
+		8D5692792A99ED6E003AFD98 /* TopRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5692782A99ED6E003AFD98 /* TopRightButton.swift */; };
 		8D76B7352A98F9F200576C06 /* PaycoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7342A98F9F200576C06 /* PaycoApp.swift */; };
 		8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D76B7362A98F9F200576C06 /* ContentView.swift */; };
 		8D76B7392A98F9F300576C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D76B7382A98F9F300576C06 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D5692782A99ED6E003AFD98 /* TopRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightButton.swift; sourceTree = "<group>"; };
 		8D76B7312A98F9F200576C06 /* Payco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D76B7342A98F9F200576C06 /* PaycoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaycoApp.swift; sourceTree = "<group>"; };
 		8D76B7362A98F9F200576C06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D5692772A99ED38003AFD98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D5692782A99ED6E003AFD98 /* TopRightButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8D76B7282A98F9F200576C06 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 			children = (
 				8D76B7342A98F9F200576C06 /* PaycoApp.swift */,
 				8D76B7362A98F9F200576C06 /* ContentView.swift */,
+				8D5692772A99ED38003AFD98 /* Views */,
 				8D76B7382A98F9F300576C06 /* Assets.xcassets */,
 				8D76B73A2A98F9F300576C06 /* Preview Content */,
 			);
@@ -267,6 +278,7 @@
 			files = (
 				8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */,
 				8D76B7352A98F9F200576C06 /* PaycoApp.swift in Sources */,
+				8D5692792A99ED6E003AFD98 /* TopRightButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
