@@ -12,10 +12,14 @@ import ComposableArchitecture
 struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
+    let menu1 = PointMenuItem.dummy
+    let menu2 = PointPaymentItem.dummy
+    var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
   }
   
   enum Action {
     case didTapTabItem
+    case didTapPointPaymentItem
   }
   
   var body: some ReducerOf<Self> {
@@ -23,25 +27,162 @@ struct ContentCore: Reducer {
       switch action {
       case .didTapTabItem:
         return .none
+        
+      case .didTapPointPaymentItem:
+        return .none
       }
     }
   }
 }
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  private let columns = [
+    GridItem(.flexible(), spacing: 20, alignment: .center),
+    GridItem(.flexible(), spacing: 20, alignment: .center),
+    GridItem(.flexible(), spacing: 20, alignment: .center),
+    GridItem(.flexible(), spacing: 20, alignment: .center)
+  ]
+  private let pointpaymentBenefitColumns = [
+    GridItem(.flexible(), spacing: 10, alignment: .center)
+  ]
+  private let store: StoreOf<ContentCore>
+  @ObservedObject private var viewStore: ViewStoreOf<ContentCore>
+  
+  init() {
+    self.store = .init(initialState: .init()) {
+      ContentCore()
     }
+    self.viewStore = ViewStore(store, observe: { $0 })
+  }
+  
+  var body: some View {
+    NavigationView {
+      List {
+        Section {
+          HStack(spacing: 10) {
+            title
+            Spacer()
+            TopRightButton(imageName: "ticket")
+            TopRightButton(imageName: "bell")
+            TopRightButton(imageName: "person")
+          }
+        }
+        .listRowSeparator(.hidden)
+
+        Section {
+          section1
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          section2
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          section1
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          section4
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          
+        }
+        .listRowSeparator(.hidden)
+        
+        Section {
+          
+        }
+        .listRowSeparator(.hidden)
+      }
+      .listStyle(.plain)
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+  static var previews: some View {
+    ContentView()
+  }
+}
+
+extension ContentView {
+  
+  var title: some View {
+    Text("포인트")
+      .font(.title)
+      .bold()
+  }
+  
+  var section1: some View {
+    RoundedRectangle(cornerRadius: 20)
+      .frame(height: 150)
+      .foregroundColor(.red)
+  }
+  
+  var section2: some View {
+    LazyVGrid(columns: columns, spacing: 20) {
+      ForEach(viewStore.menu1) { item in
+        VStack(spacing: 10) {
+          Image(systemName: item.imageName)
+            .font(.largeTitle)
+            .foregroundColor(item.iconColor)
+          Text(item.title)
+            .font(.caption)
+        }
+      }
     }
+  }
+  
+  var section4: some View {
+    RoundedRectangle(cornerRadius: 20)
+      .foregroundColor(Color("gray_EAEAEA"))
+      .frame(height: 500)
+      .overlay {
+        VStack(spacing: 20) {
+          HStack {
+            Text("8월 포인트 결제 혜택")
+              .font(.title3)
+              .bold()
+            Spacer()
+          }
+          pointpaymentBenefitMenu
+          
+        }
+        .padding(.horizontal, 20)
+      }
+  }
+  
+  var pointpaymentBenefitMenu: some View {
+    LazyHGrid(rows: pointpaymentBenefitColumns, spacing: 20) {
+      ForEach(0 ..< 4) { index in
+        PointPaymentItemButton(
+          title: viewStore.menu2[index].title,
+          isSelected: viewStore.binding(
+            get: \.menu2Status[index],
+            send: .didTapPointPaymentItem
+          )
+        )
+      }
+    }
+  }
 }
