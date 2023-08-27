@@ -17,15 +17,19 @@ struct PointPaymentListItem: View {
     HStack(spacing: 20) {
       Image(imageName)
         .resizable()
-        .frame(width: 80, height: 80)
+        .frame(width: 60, height: 60)
         .clipShape(Circle())
       VStack(alignment: .leading, spacing: 3) {
         Text(topTitle)
-          .font(.title3)
+          .font(.subheadline)
         Text(bottomTitle)
-          .font(.title)
+          .font(.title2)
           .bold()
       }
+      Spacer()
+      Image(systemName: "chevron.right")
+        .font(.body)
+        .foregroundColor(.gray)
     }
   }
 }
