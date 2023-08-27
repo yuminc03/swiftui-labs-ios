@@ -15,11 +15,19 @@ struct ContentCore: Reducer {
     let menu1 = PointMenuItem.dummy
     let menu2 = PointPaymentItem.dummy
     var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
+    let pointPaymentData1 = PointPaymentRow.dummy1
+    let pointPaymentData2 = PointPaymentRow.dummy2
+    let pointPaymentData3 = PointPaymentRow.dummy3
+    let pointPaymentData4 = PointPaymentRow.dummy4
+    var section3MaxGridCount = 6
+    var section4CurrentPage = 1
   }
   
   enum Action {
     case didTapTabItem
     case didTapPointPaymentItem
+    case increaseSection3MaxCount
+    case didTapViewMoreButton
   }
   
   var body: some ReducerOf<Self> {
@@ -29,6 +37,15 @@ struct ContentCore: Reducer {
         return .none
         
       case .didTapPointPaymentItem:
+//        state.menu2Status = Array(repeating: false, count: PointPaymentItem.dummy.count)
+//        state.menu2Status[index] = true
+        return .none
+        
+      case .increaseSection3MaxCount:
+        state.section3MaxGridCount += 10
+        return .none
+        
+      case .didTapViewMoreButton:
         return .none
       }
     }
@@ -43,6 +60,9 @@ struct ContentView: View {
     GridItem(.flexible(), spacing: 20, alignment: .center)
   ]
   private let pointpaymentBenefitColumns = [
+    GridItem(.flexible(), spacing: 10, alignment: .center)
+  ]
+  private let section3Rows = [
     GridItem(.flexible(), spacing: 10, alignment: .center)
   ]
   private let store: StoreOf<ContentCore>
@@ -80,9 +100,10 @@ struct ContentView: View {
         .listRowSeparator(.hidden)
         
         Section {
-          section1
+          section3
         }
         .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets())
         
         Section {
           section4
@@ -122,6 +143,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .previewLayout(.sizeThatFits)
   }
 }
 
@@ -153,27 +175,66 @@ extension ContentView {
     }
   }
   
-  var section4: some View {
-    RoundedRectangle(cornerRadius: 20)
-      .foregroundColor(Color("gray_EAEAEA"))
-      .frame(height: 500)
-      .overlay {
-        VStack(spacing: 20) {
-          HStack {
-            Text("8월 포인트 결제 혜택")
-              .font(.title3)
-              .bold()
-            Spacer()
+  var section3: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      LazyHGrid(rows: section3Rows) {
+        ForEach(0 ... viewStore.section3MaxGridCount, id: \.self) { number in
+          if number == 0 {
+            section3Item
+              .padding(.leading, 20)
+              .onAppear {
+                if viewStore.section3MaxGridCount % 10 == 6 {
+                  store.send(.increaseSection3MaxCount)
+                }
+              }
+          } else {
+            section3Item
+              .onAppear {
+                if viewStore.section3MaxGridCount % 10 == 6 {
+                  store.send(.increaseSection3MaxCount)
+                }
+              }
           }
-          pointpaymentBenefitMenu
-          
         }
-        .padding(.horizontal, 20)
       }
+    }
+    .padding(.vertical, 20)
   }
   
-  var pointpaymentBenefitMenu: some View {
-    LazyHGrid(rows: pointpaymentBenefitColumns, spacing: 20) {
+  var section4: some View {
+    VStack(spacing: 30) {
+      pointPaymentBenefitTitle
+      pointPaymentBenefitMenu
+      pointPaymnetBenefitContents
+      PointPaymentMoreLoadButton(
+        title: "더보기",
+        currentPage: viewStore.binding(
+          get: \.section4CurrentPage,
+          send: .didTapViewMoreButton
+        ),
+        pageCount: viewStore.pointPaymentData1.count / 4
+      ) {
+        print("더보기 tapped")
+      }
+    }
+    .padding(20)
+    .background {
+      RoundedRectangle(cornerRadius: 20)
+        .foregroundColor(Color("gray_EAEAEA"))
+    }
+  }
+  
+  var pointPaymentBenefitTitle: some View {
+    HStack {
+      Text("8월 포인트 결제 혜택")
+        .font(.title2)
+        .bold()
+      Spacer()
+    }
+  }
+  
+  var pointPaymentBenefitMenu: some View {
+    LazyHGrid(rows: pointpaymentBenefitColumns, spacing: 15) {
       ForEach(0 ..< 4) { index in
         PointPaymentItemButton(
           title: viewStore.menu2[index].title,
@@ -183,6 +244,69 @@ extension ContentView {
           )
         )
       }
+    }
+    .scaledToFit()
+  }
+  
+  var section3Item: some View {
+    RoundedRectangle(cornerRadius: 20)
+      .frame(width: UIScreen.main.bounds.width - 40, height: 150)
+      .foregroundColor(.blue)
+  }
+  
+  var pointPaymnetBenefitContents: some View {
+    VStack(spacing: 20) {
+      if let index = viewStore.menu2Status.firstIndex(of: true) {
+        if index == 0 {
+          pointPaymentAllItem
+        } else if index == 1 {
+          pointPaymentOnlineItem
+        } else if index == 2 {
+          pointPaymentOfflineItem
+        } else if index == 3 {
+          pointPaymentNewItem
+        }
+      }
+    }
+  }
+  
+  var pointPaymentAllItem: some View {
+    ForEach(0 ..< 4) { index in
+      PointPaymentListItem(
+        topTitle: PointPaymentRow.dummy1[index].toptitle,
+        bottomTitle: PointPaymentRow.dummy1[index].bottomTitle,
+        imageName: PointPaymentRow.dummy1[index].imageName
+      )
+    }
+  }
+  
+  var pointPaymentOnlineItem: some View {
+    ForEach(0 ..< 4) { index in
+      PointPaymentListItem(
+        topTitle: PointPaymentRow.dummy2[index].toptitle,
+        bottomTitle: PointPaymentRow.dummy2[index].bottomTitle,
+        imageName: PointPaymentRow.dummy2[index].imageName
+      )
+    }
+  }
+  
+  var pointPaymentOfflineItem: some View {
+    ForEach(0 ..< 4) { index in
+      PointPaymentListItem(
+        topTitle: PointPaymentRow.dummy3[index].toptitle,
+        bottomTitle: PointPaymentRow.dummy3[index].bottomTitle,
+        imageName: PointPaymentRow.dummy3[index].imageName
+      )
+    }
+  }
+  
+  var pointPaymentNewItem: some View {
+    ForEach(0 ..< 4) { index in
+      PointPaymentListItem(
+        topTitle: PointPaymentRow.dummy4[index].toptitle,
+        bottomTitle: PointPaymentRow.dummy4[index].bottomTitle,
+        imageName: PointPaymentRow.dummy4[index].imageName
+      )
     }
   }
 }
