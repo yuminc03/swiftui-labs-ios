@@ -13,16 +13,22 @@ struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
     let menu1 = PointMenuItem.dummy
+    let menu2 = PointPaymentItem.dummy
+    var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
   }
   
   enum Action {
     case didTapTabItem
+    case didTapPointPaymentItem
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .didTapTabItem:
+        return .none
+        
+      case .didTapPointPaymentItem:
         return .none
       }
     }
@@ -130,7 +136,7 @@ extension ContentView {
   var section1: some View {
     RoundedRectangle(cornerRadius: 20)
       .frame(height: 150)
-      .foregroundColor(.gray)
+      .foregroundColor(.red)
   }
   
   var section2: some View {
@@ -159,15 +165,24 @@ extension ContentView {
               .bold()
             Spacer()
           }
-          .padding(.leading, 20)
+          pointpaymentBenefitMenu
           
         }
+        .padding(.horizontal, 20)
       }
   }
   
   var pointpaymentBenefitMenu: some View {
     LazyHGrid(rows: pointpaymentBenefitColumns, spacing: 20) {
-      
+      ForEach(0 ..< 4) { index in
+        PointPaymentItemButton(
+          title: viewStore.menu2[index].title,
+          isSelected: viewStore.binding(
+            get: \.menu2Status[index],
+            send: .didTapPointPaymentItem
+          )
+        )
+      }
     }
   }
 }
