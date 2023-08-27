@@ -111,7 +111,7 @@ struct ContentView: View {
         .listRowSeparator(.hidden)
         
         Section {
-          
+          section5
         }
         .listRowSeparator(.hidden)
         
@@ -217,6 +217,19 @@ extension ContentView {
         print("더보기 tapped")
       }
     }
+    .padding(20)
+    .background {
+      RoundedRectangle(cornerRadius: 20)
+        .foregroundColor(Color("gray_EAEAEA"))
+    }
+  }
+  
+  var section5: some View {
+    PaycoRewordView(
+      imageName: "dollarsign.circle.fill",
+      title: "PAYCO 리워드",
+      point: 0
+    )
     .padding(20)
     .background {
       RoundedRectangle(cornerRadius: 20)
