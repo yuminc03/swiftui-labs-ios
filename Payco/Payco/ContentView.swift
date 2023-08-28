@@ -13,6 +13,8 @@ struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
     let cardItem = CardItem.dummy
+    let advertisePaycoPoint = AdvertisePaycoPoint.dummy
+    var section3MaxGridCount = 10
     let menu1 = PointMenuItem.dummy
     let menu2 = PointPaymentItem.dummy
     var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
@@ -20,7 +22,6 @@ struct ContentCore: Reducer {
     let pointPaymentData2 = PointPaymentRow.dummy2
     let pointPaymentData3 = PointPaymentRow.dummy3
     let pointPaymentData4 = PointPaymentRow.dummy4
-    var section3MaxGridCount = 6
     var section4CurrentPage = 1
     let getPointList = GetPoint.dummy
     var getPointSelectedIndex = 0
@@ -42,8 +43,8 @@ struct ContentCore: Reducer {
         return .none
         
       case .didTapPointPaymentItem:
-//        state.menu2Status = Array(repeating: false, count: PointPaymentItem.dummy.count)
-//        state.menu2Status[index] = true
+        //        state.menu2Status = Array(repeating: false, count: PointPaymentItem.dummy.count)
+        //        state.menu2Status[index] = true
         return .none
         
       case .increaseSection3MaxCount:
@@ -114,7 +115,7 @@ extension ContentView {
     CurrentCardItem(cardItem: viewStore.cardItem) {
       print("카드 관리 button action")
     }
-      .padding(20)
+    .padding(20)
   }
   
   var section2: some View {
@@ -144,24 +145,39 @@ extension ContentView {
   var section3: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHGrid(
-        rows: [GridItem(.flexible(), spacing: 10, alignment: .center)]
+        rows: [GridItem(.flexible(), alignment: .center)],
+        spacing: 20
       ) {
-        ForEach(0 ... viewStore.section3MaxGridCount, id: \.self) { number in
-          if number == 0 {
-            section3Item
-              .padding(.leading, 20)
-              .onAppear {
-                if viewStore.section3MaxGridCount % 10 == 6 {
-                  store.send(.increaseSection3MaxCount)
-                }
+        ForEach(0 ..< viewStore.advertisePaycoPoint.count) { index in
+          if index == 0 {
+            AdvertisePaycoPointItem(
+              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
+            )
+            .padding(.leading, 20)
+            .onAppear {
+              if viewStore.section3MaxGridCount % 10 == 0 {
+                store.send(.increaseSection3MaxCount)
               }
+            }
+          } else if index == viewStore.advertisePaycoPoint.count - 1 {
+            AdvertisePaycoPointItem(
+              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
+            )
+            .padding(.trailing, 20)
+            .onAppear {
+              if viewStore.section3MaxGridCount % 10 == 0 {
+                store.send(.increaseSection3MaxCount)
+              }
+            }
           } else {
-            section3Item
-              .onAppear {
-                if viewStore.section3MaxGridCount % 10 == 6 {
-                  store.send(.increaseSection3MaxCount)
-                }
+            AdvertisePaycoPointItem(
+              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
+            )
+            .onAppear {
+              if viewStore.section3MaxGridCount % 10 == 0 {
+                store.send(.increaseSection3MaxCount)
               }
+            }
           }
         }
       }
@@ -256,12 +272,6 @@ extension ContentView {
       }
     }
     .scaledToFit()
-  }
-  
-  var section3Item: some View {
-    RoundedRectangle(cornerRadius: 20)
-      .frame(width: UIScreen.main.bounds.width - 40, height: 150)
-      .foregroundColor(.gray)
   }
   
   var pointPaymnetBenefitContents: some View {
