@@ -13,6 +13,8 @@ struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
     let cardItem = CardItem.dummy
+    let advertisePaycoPoint = AdvertisePaycoPoint.dummy
+    var section3MaxGridCount = 6
     let menu1 = PointMenuItem.dummy
     let menu2 = PointPaymentItem.dummy
     var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
@@ -20,7 +22,6 @@ struct ContentCore: Reducer {
     let pointPaymentData2 = PointPaymentRow.dummy2
     let pointPaymentData3 = PointPaymentRow.dummy3
     let pointPaymentData4 = PointPaymentRow.dummy4
-    var section3MaxGridCount = 6
     var section4CurrentPage = 1
     let getPointList = GetPoint.dummy
     var getPointSelectedIndex = 0
@@ -144,11 +145,12 @@ extension ContentView {
   var section3: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHGrid(
-        rows: [GridItem(.flexible(), spacing: 10, alignment: .center)]
+        rows: [GridItem(.flexible(), alignment: .center)],
+        spacing: 20
       ) {
-        ForEach(0 ... viewStore.section3MaxGridCount, id: \.self) { number in
-          if number == 0 {
-            section3Item
+        ForEach(0 ..< viewStore.advertisePaycoPoint.count) { index in
+          if index == 0 {
+            AdvertisePaycoPointItem(advertisePaycoPoint: viewStore.advertisePaycoPoint[index])
               .padding(.leading, 20)
               .onAppear {
                 if viewStore.section3MaxGridCount % 10 == 6 {
@@ -156,7 +158,7 @@ extension ContentView {
                 }
               }
           } else {
-            section3Item
+            AdvertisePaycoPointItem(advertisePaycoPoint: viewStore.advertisePaycoPoint[index])
               .onAppear {
                 if viewStore.section3MaxGridCount % 10 == 6 {
                   store.send(.increaseSection3MaxCount)
@@ -256,12 +258,6 @@ extension ContentView {
       }
     }
     .scaledToFit()
-  }
-  
-  var section3Item: some View {
-    RoundedRectangle(cornerRadius: 20)
-      .frame(width: UIScreen.main.bounds.width - 40, height: 150)
-      .foregroundColor(.gray)
   }
   
   var pointPaymnetBenefitContents: some View {
