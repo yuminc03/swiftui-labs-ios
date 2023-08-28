@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
+    let cardItem = CardItem.dummy
     let menu1 = PointMenuItem.dummy
     let menu2 = PointPaymentItem.dummy
     var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
@@ -60,18 +61,6 @@ struct ContentCore: Reducer {
 }
 
 struct ContentView: View {
-  private let columns = [
-    GridItem(.flexible(), spacing: 20, alignment: .center),
-    GridItem(.flexible(), spacing: 20, alignment: .center),
-    GridItem(.flexible(), spacing: 20, alignment: .center),
-    GridItem(.flexible(), spacing: 20, alignment: .center)
-  ]
-  private let pointpaymentBenefitColumns = [
-    GridItem(.flexible(), spacing: 10, alignment: .center)
-  ]
-  private let section3Rows = [
-    GridItem(.flexible(), spacing: 10, alignment: .center)
-  ]
   private let store: StoreOf<ContentCore>
   @ObservedObject private var viewStore: ViewStoreOf<ContentCore>
   
@@ -108,15 +97,11 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView {
   
-  var title: some View {
-    Text("포인트")
-      .font(.title)
-      .bold()
-  }
-  
   var topTitleView: some View {
     HStack(spacing: 10) {
-      title
+      Text("포인트")
+        .font(.title)
+        .bold()
       Spacer()
       TopRightButton(imageName: "ticket")
       TopRightButton(imageName: "bell")
@@ -126,14 +111,22 @@ extension ContentView {
   }
   
   var section1: some View {
-    RoundedRectangle(cornerRadius: 20)
-      .frame(height: 150)
-      .foregroundColor(.gray)
-      .padding(.horizontal, 20)
+    CurrentCardItem(cardItem: viewStore.cardItem) {
+      print("카드 관리 button action")
+    }
+      .padding(20)
   }
   
   var section2: some View {
-    LazyVGrid(columns: columns, spacing: 20) {
+    LazyVGrid(
+      columns: [
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center)
+      ],
+      spacing: 20
+    ) {
       ForEach(viewStore.menu1) { item in
         VStack(spacing: 10) {
           Image(systemName: item.imageName)
@@ -150,7 +143,9 @@ extension ContentView {
   
   var section3: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      LazyHGrid(rows: section3Rows) {
+      LazyHGrid(
+        rows: [GridItem(.flexible(), spacing: 10, alignment: .center)]
+      ) {
         ForEach(0 ... viewStore.section3MaxGridCount, id: \.self) { number in
           if number == 0 {
             section3Item
@@ -246,7 +241,10 @@ extension ContentView {
   }
   
   var pointPaymentBenefitMenu: some View {
-    LazyHGrid(rows: pointpaymentBenefitColumns, spacing: 15) {
+    LazyHGrid(
+      rows: [GridItem(.flexible(), spacing: 10, alignment: .center)],
+      spacing: 15
+    ) {
       ForEach(0 ..< 4) { index in
         PointPaymentItemButton(
           title: viewStore.menu2[index].title,
