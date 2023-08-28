@@ -21,8 +21,9 @@ struct ContentCore: Reducer {
     let pointPaymentData4 = PointPaymentRow.dummy4
     var section3MaxGridCount = 6
     var section4CurrentPage = 1
-    var getPointList = GetPoint.dummy
+    let getPointList = GetPoint.dummy
     var getPointSelectedIndex = 0
+    let nowPaycoList = NowPaycoItem.dummy
   }
   
   enum Action {
@@ -83,61 +84,17 @@ struct ContentView: View {
   
   var body: some View {
     NavigationView {
-      List {
-        Section {
-          HStack(spacing: 10) {
-            title
-            Spacer()
-            TopRightButton(imageName: "ticket")
-            TopRightButton(imageName: "bell")
-            TopRightButton(imageName: "person")
-          }
-        }
-        .listRowSeparator(.hidden)
-
-        Section {
-          section1
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          section2
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          section3
-        }
-        .listRowSeparator(.hidden)
-        .listRowInsets(EdgeInsets())
-        
-        Section {
-          section4
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          section5
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          section6
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          section7
-        }
-        .listRowSeparator(.hidden)
-        .listRowInsets(EdgeInsets())
-        
-        Section {
-          
-        }
-        .listRowSeparator(.hidden)
+      ScrollView(showsIndicators: false) {
+        topTitleView
+        section1
+        section2
+        section3
+        section4
+        section5
+        section6
+        section7
+        section8
       }
-      .listStyle(.plain)
     }
   }
 }
@@ -157,10 +114,22 @@ extension ContentView {
       .bold()
   }
   
+  var topTitleView: some View {
+    HStack(spacing: 10) {
+      title
+      Spacer()
+      TopRightButton(imageName: "ticket")
+      TopRightButton(imageName: "bell")
+      TopRightButton(imageName: "person")
+    }
+    .padding(.horizontal, 20)
+  }
+  
   var section1: some View {
     RoundedRectangle(cornerRadius: 20)
       .frame(height: 150)
       .foregroundColor(.gray)
+      .padding(.horizontal, 20)
   }
   
   var section2: some View {
@@ -175,6 +144,8 @@ extension ContentView {
         }
       }
     }
+    .padding(.horizontal, 20)
+    .padding(.vertical, 10)
   }
   
   var section3: some View {
@@ -200,7 +171,7 @@ extension ContentView {
         }
       }
     }
-    .padding(.vertical, 20)
+    .padding(.vertical, 10)
   }
   
   var section4: some View {
@@ -224,6 +195,7 @@ extension ContentView {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
     }
+    .padding(.horizontal, 20)
   }
   
   var section5: some View {
@@ -237,6 +209,8 @@ extension ContentView {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
     }
+    .padding(.horizontal, 20)
+    .padding(.vertical, 10)
   }
   
   var section6: some View {
@@ -246,14 +220,21 @@ extension ContentView {
         RoundedRectangle(cornerRadius: 20)
           .foregroundColor(Color("gray_EAEAEA"))
       }
+      .padding(.horizontal, 20)
   }
   
   var section7: some View {
     getPointView
-      .frame(height: 380)
+      .padding(.vertical, 10)
   }
   
-  
+  var section8: some View {
+    NowPaycoView(
+      leftImageName: "camera.viewfinder",
+      title: "지금 페이코는",
+      images: viewStore.nowPaycoList
+    )
+  }
   
   var pointPaymentBenefitTitle: some View {
     HStack {

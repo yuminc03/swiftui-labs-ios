@@ -22,7 +22,7 @@ struct GetPointGrid: View {
   }
   
   var body: some View {
-    VStack(spacing: 20) {
+    VStack(spacing: 10) {
       ScrollView(.horizontal, showsIndicators: false) {
         LazyHGrid(rows: [GridItem(.flexible(), alignment: .center)], spacing: 20) {
           ForEach(0 ..< data.count) { index in
