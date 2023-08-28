@@ -116,12 +116,7 @@ struct ContentView: View {
         .listRowSeparator(.hidden)
         
         Section {
-          
-        }
-        .listRowSeparator(.hidden)
-        
-        Section {
-          
+          section6
         }
         .listRowSeparator(.hidden)
         
@@ -237,6 +232,15 @@ extension ContentView {
     }
   }
   
+  var section6: some View {
+    brandOfMonthView
+      .padding(.vertical, 40)
+      .background {
+        RoundedRectangle(cornerRadius: 20)
+          .foregroundColor(Color("gray_EAEAEA"))
+      }
+  }
+  
   var pointPaymentBenefitTitle: some View {
     HStack {
       Text("8월 포인트 결제 혜택")
@@ -320,6 +324,30 @@ extension ContentView {
         bottomTitle: PointPaymentRow.dummy4[index].bottomTitle,
         imageName: PointPaymentRow.dummy4[index].imageName
       )
+    }
+  }
+  
+  var brandOfMonthView: some View {
+    BrandOfMonthView(
+      topTitle: "이달의 브랜드",
+      bottomTitle: "최대 15% 적립",
+      rightButtonTitle: "보러가기",
+      imageNames: [
+        BrandOfMonthItem(imageName: "a.circle.fill"),
+        BrandOfMonthItem(imageName: "b.circle.fill"),
+        BrandOfMonthItem(imageName: "c.circle.fill"),
+        BrandOfMonthItem(imageName: "d.circle.fill"),
+        BrandOfMonthItem(imageName: "e.circle.fill"),
+        BrandOfMonthItem(imageName: "f.circle.fill"),
+        BrandOfMonthItem(imageName: "g.circle.fill"),
+        BrandOfMonthItem(imageName: "h.circle.fill"),
+        BrandOfMonthItem(imageName: "i.circle.fill"),
+        BrandOfMonthItem(imageName: "j.circle.fill"),
+        BrandOfMonthItem(imageName: "k.circle.fill"),
+        BrandOfMonthItem(imageName: "l.circle.fill")
+      ]
+    ) {
+      print("Action")
     }
   }
 }
