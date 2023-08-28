@@ -18,21 +18,40 @@ struct ContentCore: Reducer {
     let menu1 = PointMenuItem.dummy
     let pointPaymentItem = PointPaymentItem.dummy
     var pointPaymentStatus = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
+    var selectedPointPaymentMenuIndex = 0
+    var currentPointPaymentPage = 1
     let pointPaymentData1 = PointPaymentRow.dummy1
     let pointPaymentData2 = PointPaymentRow.dummy2
     let pointPaymentData3 = PointPaymentRow.dummy3
     let pointPaymentData4 = PointPaymentRow.dummy4
-    var section4CurrentPage = 1
     let getPointList = GetPoint.dummy
     var getPointSelectedIndex = 0
     let nowPaycoList = NowPaycoItem.dummy
+    var pointPaymentDataCount: Int {
+      switch selectedPointPaymentMenuIndex {
+      case 0:
+        return pointPaymentData1.count
+        
+      case 1:
+        return pointPaymentData2.count
+        
+      case 2:
+        return pointPaymentData3.count
+        
+      case 3:
+        return pointPaymentData4.count
+        
+      default:
+        return pointPaymentData1.count
+      }
+    }
   }
   
   enum Action {
     case didTapTabItem
     case didTapPointPaymentMenu(Int)
+    case didTapPointPaymentMoreButton
     case increaseSection3MaxCount
-    case didTapViewMoreButton
     case didChangeGetPointSelectedIndex
   }
   
@@ -45,15 +64,26 @@ struct ContentCore: Reducer {
       case let .didTapPointPaymentMenu(index):
         state.pointPaymentStatus = Array(repeating: false, count: PointPaymentItem.dummy.count)
         state.pointPaymentStatus[index] = true
+        guard let selectedIndex = state.pointPaymentStatus.firstIndex(of: true) else {
+          return .none
+        }
+        
+        state.selectedPointPaymentMenuIndex = selectedIndex
+        state.currentPointPaymentPage = 1
+        return .none
+        
+      case .didTapPointPaymentMoreButton:
+        if state.currentPointPaymentPage + 1 > state.pointPaymentDataCount / 4 {
+          state.currentPointPaymentPage = 1
+        } else {
+          state.currentPointPaymentPage += 1
+        }
         return .none
         
       case .increaseSection3MaxCount:
         state.section3MaxGridCount += 10
         return .none
-        
-      case .didTapViewMoreButton:
-        return .none
-        
+      
       case .didChangeGetPointSelectedIndex:
         return .none
       }
@@ -192,13 +222,10 @@ extension ContentView {
       pointPaymnetBenefitContents
       PointPaymentMoreLoadButton(
         title: "더보기",
-        currentPage: viewStore.binding(
-          get: \.section4CurrentPage,
-          send: .didTapViewMoreButton
-        ),
-        pageCount: viewStore.pointPaymentData1.count / 4
+        currentPage: viewStore.currentPointPaymentPage,
+        pageCount: viewStore.pointPaymentDataCount / 4
       ) {
-        print("더보기 tapped")
+        store.send(.didTapPointPaymentMoreButton)
       }
     }
     .padding(20)
