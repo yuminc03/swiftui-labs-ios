@@ -52,7 +52,7 @@ struct ContentCore: Reducer {
     case didTapPointPaymentMenu(Int)
     case didTapPointPaymentMoreButton
     case increaseSection3MaxCount
-    case didChangeGetPointSelectedIndex
+    case didChangeGetPointSelectedIndex(Int)
   }
   
   var body: some ReducerOf<Self> {
@@ -84,7 +84,8 @@ struct ContentCore: Reducer {
         state.section3MaxGridCount += 10
         return .none
       
-      case .didChangeGetPointSelectedIndex:
+      case let .didChangeGetPointSelectedIndex(index):
+        state.getPointSelectedIndex = index
         return .none
       }
     }
@@ -383,14 +384,13 @@ extension ContentView {
   
   var getPointView: some View {
     GetPointGrid(
-      selectedIndex: viewStore.binding(
-        get: \.getPointSelectedIndex,
-        send: .didChangeGetPointSelectedIndex
-      ),
       maxCount: viewStore.getPointList.count,
       data: viewStore.getPointList
     ) {
       print("PAYCO Red button Action")
+    } indexChange: { index in
+      store.send(.didChangeGetPointSelectedIndex(index))
     }
+    .frame(height: 380)
   }
 }

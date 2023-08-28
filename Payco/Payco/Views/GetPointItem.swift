@@ -10,9 +10,11 @@ import SwiftUI
 struct GetPointItem: View {
   private let data: GetPoint
   private let action: () -> Void
+  private let index: Int
   
-  init(data: GetPoint, action: @escaping () -> Void) {
+  init(data: GetPoint, index: Int, action: @escaping () -> Void) {
     self.data = data
+    self.index = index
     self.action = action
   }
   
@@ -36,9 +38,11 @@ struct GetPointItem: View {
       }
       redButton
     }
+    .tag(index)
     .padding(.horizontal, 20)
     .padding(.top, 30)
     .padding(.bottom, 20)
+    .frame(width: UIScreen.main.bounds.width - 40)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .fill(Color("gray_EAEAEA"))
@@ -55,7 +59,7 @@ struct GetPointItem_Previews: PreviewProvider {
         contents: "해외 호텔 & 항공 예약 시\n할인은 기본,\n현지화 출금까지 가능해요",
         imageName: "network",
         buttonTitle: "자세히 보기"
-      )
+      ), index: 0
     ) {
       print("tapped")
     }
@@ -87,8 +91,8 @@ extension GetPointItem {
   var bigImage: some View {
     Image(systemName: data.imageName)
       .resizable()
-      .frame(width: 150, height: 150)
       .scaledToFit()
+      .frame(width: 150, height: 150)
       .foregroundColor(.red)
   }
   

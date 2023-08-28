@@ -9,46 +9,49 @@ import SwiftUI
 
 struct GetPointGrid: View {
   
-  @Binding private var selectedIndex: Int
+  @State private var selectedIndex = 0
   private let maxCount: Int
   private let data: [GetPoint]
   private let buttonAction: () -> Void
+  private let indexChange: (Int) -> Void
   
-  init(selectedIndex: Binding<Int>, maxCount: Int, data: [GetPoint], buttonAction: @escaping () -> Void) {
-    self._selectedIndex = selectedIndex
+  init(
+    maxCount: Int,
+    data: [GetPoint],
+    buttonAction: @escaping () -> Void,
+    indexChange: @escaping (Int) -> Void
+  ) {
     self.maxCount = maxCount
     self.data = data
     self.buttonAction = buttonAction
+    self.indexChange = indexChange
   }
   
   var body: some View {
     VStack(spacing: 10) {
-      ScrollView(.horizontal, showsIndicators: false) {
-        LazyHGrid(rows: [GridItem(.flexible(), alignment: .center)], spacing: 20) {
-          ForEach(0 ..< data.count) { index in
-            if index == 0 {
-              GetPointItem(data: data[index]) {
-                buttonAction()
-              }
-                .padding(.leading, 20)
-            } else {
-              GetPointItem(data: data[index]) {
-                buttonAction()
-              }
-            }
+      TabView(selection: $selectedIndex) {
+        ForEach(0 ..< data.count) { index in
+          GetPointItem(data: data[index], index: index) {
+            buttonAction()
           }
         }
       }
-      CustomPageTabView(selectedIndex: $selectedIndex, maxCount: maxCount)
+      .tabViewStyle(.page(indexDisplayMode: .never))
+      .onChange(of: selectedIndex) { newValue in
+        indexChange(newValue)
+      }
+      CustomPageTabView(selectedIndex: selectedIndex, maxCount: maxCount)
     }
   }
 }
 
 struct GetPointGrid_Previews: PreviewProvider {
   static var previews: some View {
-    GetPointGrid(selectedIndex: .constant(0), maxCount: 4, data: GetPoint.dummy) {
+    GetPointGrid(maxCount: 4, data: GetPoint.dummy) {
       print("tapped")
+    } indexChange: { index in
+      print("\(index) changed")
     }
-      .previewLayout(.sizeThatFits)
+    .previewLayout(.sizeThatFits)
   }
 }

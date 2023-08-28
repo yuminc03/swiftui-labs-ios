@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CustomPageTabView: View {
   
-  @Binding private var selectedIndex: Int
+  private var selectedIndex: Int
   private let maxCount: Int
   
-  init(selectedIndex: Binding<Int>, maxCount: Int) {
-    self._selectedIndex = selectedIndex
+  init(selectedIndex: Int, maxCount: Int) {
+    self.selectedIndex = selectedIndex
     self.maxCount = maxCount
   }
   
@@ -35,23 +35,16 @@ struct CustomPageTabItem: View {
   }
   
   var body: some View {
-    if isSelected {
-      RoundedRectangle(cornerRadius: 2.5)
-        .fill(.black)
-        .frame(width: 25, height: 5)
-        .animation(.easeInOut(duration: 0.5), value: isSelected)
-    } else {
-      RoundedRectangle(cornerRadius: 2.5)
-        .fill(Color("gray_EAEAEA"))
-        .frame(width: 5, height: 5)
-        .animation(.easeInOut(duration: 0.5), value: isSelected)
-    }
+    RoundedRectangle(cornerRadius: 2.5)
+      .fill(isSelected ? .black : Color("gray_EAEAEA"))
+      .frame(width: isSelected ? 25 : 5, height: 5)
+      .animation(.spring(), value: isSelected)
   }
 }
 
 struct CustomPageTabView_Previews: PreviewProvider {
   static var previews: some View {
-    CustomPageTabView(selectedIndex: .constant(0), maxCount: 4)
+    CustomPageTabView(selectedIndex: 1, maxCount: 4)
       .previewLayout(.sizeThatFits)
   }
 }
