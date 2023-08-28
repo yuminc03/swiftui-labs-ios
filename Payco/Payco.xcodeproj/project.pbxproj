@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		051EA2092A9C141C00A2EF7B /* BrandOfMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2082A9C141C00A2EF7B /* BrandOfMonthView.swift */; };
 		051EA20B2A9C18BE00A2EF7B /* BrandOfMonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA20A2A9C18BE00A2EF7B /* BrandOfMonthItem.swift */; };
+		051EA20D2A9C241D00A2EF7B /* GetPointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA20C2A9C241D00A2EF7B /* GetPointItem.swift */; };
+		051EA20F2A9C30A300A2EF7B /* GetPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA20E2A9C30A300A2EF7B /* GetPoint.swift */; };
+		051EA2112A9C36D300A2EF7B /* GetPointGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2102A9C36D300A2EF7B /* GetPointGrid.swift */; };
+		051EA2132A9C383800A2EF7B /* CustomPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2122A9C383800A2EF7B /* CustomPageTabView.swift */; };
+		051EA2152A9C5D8D00A2EF7B /* NowPaycoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2142A9C5D8D00A2EF7B /* NowPaycoView.swift */; };
 		8D5692762A99CADF003AFD98 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5692752A99CADF003AFD98 /* ComposableArchitecture */; };
 		8D5692792A99ED6E003AFD98 /* TopRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5692782A99ED6E003AFD98 /* TopRightButton.swift */; };
 		8D56927C2A9A1B31003AFD98 /* PointMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56927B2A9A1B31003AFD98 /* PointMenuItem.swift */; };
@@ -48,6 +53,11 @@
 /* Begin PBXFileReference section */
 		051EA2082A9C141C00A2EF7B /* BrandOfMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandOfMonthView.swift; sourceTree = "<group>"; };
 		051EA20A2A9C18BE00A2EF7B /* BrandOfMonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandOfMonthItem.swift; sourceTree = "<group>"; };
+		051EA20C2A9C241D00A2EF7B /* GetPointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPointItem.swift; sourceTree = "<group>"; };
+		051EA20E2A9C30A300A2EF7B /* GetPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPoint.swift; sourceTree = "<group>"; };
+		051EA2102A9C36D300A2EF7B /* GetPointGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPointGrid.swift; sourceTree = "<group>"; };
+		051EA2122A9C383800A2EF7B /* CustomPageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageTabView.swift; sourceTree = "<group>"; };
+		051EA2142A9C5D8D00A2EF7B /* NowPaycoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPaycoView.swift; sourceTree = "<group>"; };
 		8D5692782A99ED6E003AFD98 /* TopRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightButton.swift; sourceTree = "<group>"; };
 		8D56927B2A9A1B31003AFD98 /* PointMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointMenuItem.swift; sourceTree = "<group>"; };
 		8D56927F2A9B1916003AFD98 /* PointPaymentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPaymentItemButton.swift; sourceTree = "<group>"; };
@@ -104,6 +114,10 @@
 				8D56928F2A9B668B003AFD98 /* PointPaymentMoreLoadButton.swift */,
 				8D5692912A9B9336003AFD98 /* PaycoRewordView.swift */,
 				051EA2082A9C141C00A2EF7B /* BrandOfMonthView.swift */,
+				051EA2102A9C36D300A2EF7B /* GetPointGrid.swift */,
+				051EA20C2A9C241D00A2EF7B /* GetPointItem.swift */,
+				051EA2122A9C383800A2EF7B /* CustomPageTabView.swift */,
+				051EA2142A9C5D8D00A2EF7B /* NowPaycoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +129,7 @@
 				8D5692812A9B1E5C003AFD98 /* PointPaymentItem.swift */,
 				8D5692872A9B277C003AFD98 /* PointPaymentRow.swift */,
 				051EA20A2A9C18BE00A2EF7B /* BrandOfMonthItem.swift */,
+				051EA20E2A9C30A300A2EF7B /* GetPoint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,14 +334,19 @@
 				8D56927C2A9A1B31003AFD98 /* PointMenuItem.swift in Sources */,
 				8D5692922A9B9336003AFD98 /* PaycoRewordView.swift in Sources */,
 				8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */,
+				051EA20F2A9C30A300A2EF7B /* GetPoint.swift in Sources */,
 				051EA2092A9C141C00A2EF7B /* BrandOfMonthView.swift in Sources */,
 				8D5692822A9B1E5C003AFD98 /* PointPaymentItem.swift in Sources */,
+				051EA2112A9C36D300A2EF7B /* GetPointGrid.swift in Sources */,
+				051EA20D2A9C241D00A2EF7B /* GetPointItem.swift in Sources */,
 				8D5692902A9B668B003AFD98 /* PointPaymentMoreLoadButton.swift in Sources */,
 				8D76B7352A98F9F200576C06 /* PaycoApp.swift in Sources */,
 				8D5692862A9B2519003AFD98 /* PointPaymentListItem.swift in Sources */,
+				051EA2132A9C383800A2EF7B /* CustomPageTabView.swift in Sources */,
 				8D5692802A9B1916003AFD98 /* PointPaymentItemButton.swift in Sources */,
 				051EA20B2A9C18BE00A2EF7B /* BrandOfMonthItem.swift in Sources */,
 				8D5692792A99ED6E003AFD98 /* TopRightButton.swift in Sources */,
+				051EA2152A9C5D8D00A2EF7B /* NowPaycoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

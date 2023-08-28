@@ -21,6 +21,8 @@ struct ContentCore: Reducer {
     let pointPaymentData4 = PointPaymentRow.dummy4
     var section3MaxGridCount = 6
     var section4CurrentPage = 1
+    var getPointList = GetPoint.dummy
+    var getPointSelectedIndex = 0
   }
   
   enum Action {
@@ -28,6 +30,7 @@ struct ContentCore: Reducer {
     case didTapPointPaymentItem
     case increaseSection3MaxCount
     case didTapViewMoreButton
+    case didChangeGetPointSelectedIndex
   }
   
   var body: some ReducerOf<Self> {
@@ -46,6 +49,9 @@ struct ContentCore: Reducer {
         return .none
         
       case .didTapViewMoreButton:
+        return .none
+        
+      case .didChangeGetPointSelectedIndex:
         return .none
       }
     }
@@ -121,9 +127,10 @@ struct ContentView: View {
         .listRowSeparator(.hidden)
         
         Section {
-          
+          section7
         }
         .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets())
         
         Section {
           
@@ -153,7 +160,7 @@ extension ContentView {
   var section1: some View {
     RoundedRectangle(cornerRadius: 20)
       .frame(height: 150)
-      .foregroundColor(.red)
+      .foregroundColor(.gray)
   }
   
   var section2: some View {
@@ -241,6 +248,13 @@ extension ContentView {
       }
   }
   
+  var section7: some View {
+    getPointView
+      .frame(height: 380)
+  }
+  
+  
+  
   var pointPaymentBenefitTitle: some View {
     HStack {
       Text("8월 포인트 결제 혜택")
@@ -268,7 +282,7 @@ extension ContentView {
   var section3Item: some View {
     RoundedRectangle(cornerRadius: 20)
       .frame(width: UIScreen.main.bounds.width - 40, height: 150)
-      .foregroundColor(.blue)
+      .foregroundColor(.gray)
   }
   
   var pointPaymnetBenefitContents: some View {
@@ -348,6 +362,19 @@ extension ContentView {
       ]
     ) {
       print("Action")
+    }
+  }
+  
+  var getPointView: some View {
+    GetPointGrid(
+      selectedIndex: viewStore.binding(
+        get: \.getPointSelectedIndex,
+        send: .didChangeGetPointSelectedIndex
+      ),
+      maxCount: viewStore.getPointList.count,
+      data: viewStore.getPointList
+    ) {
+      print("PAYCO Red button Action")
     }
   }
 }
