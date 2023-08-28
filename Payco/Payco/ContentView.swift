@@ -16,8 +16,8 @@ struct ContentCore: Reducer {
     let advertisePaycoPoint = AdvertisePaycoPoint.dummy
     var section3MaxGridCount = 10
     let menu1 = PointMenuItem.dummy
-    let menu2 = PointPaymentItem.dummy
-    var menu2Status = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
+    let pointPaymentItem = PointPaymentItem.dummy
+    var pointPaymentStatus = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
     let pointPaymentData1 = PointPaymentRow.dummy1
     let pointPaymentData2 = PointPaymentRow.dummy2
     let pointPaymentData3 = PointPaymentRow.dummy3
@@ -30,7 +30,7 @@ struct ContentCore: Reducer {
   
   enum Action {
     case didTapTabItem
-    case didTapPointPaymentItem
+    case didTapPointPaymentMenu(Int)
     case increaseSection3MaxCount
     case didTapViewMoreButton
     case didChangeGetPointSelectedIndex
@@ -41,10 +41,10 @@ struct ContentCore: Reducer {
       switch action {
       case .didTapTabItem:
         return .none
-        
-      case .didTapPointPaymentItem:
-        //        state.menu2Status = Array(repeating: false, count: PointPaymentItem.dummy.count)
-        //        state.menu2Status[index] = true
+      
+      case let .didTapPointPaymentMenu(index):
+        state.pointPaymentStatus = Array(repeating: false, count: PointPaymentItem.dummy.count)
+        state.pointPaymentStatus[index] = true
         return .none
         
       case .increaseSection3MaxCount:
@@ -263,12 +263,12 @@ extension ContentView {
     ) {
       ForEach(0 ..< 4) { index in
         PointPaymentItemButton(
-          title: viewStore.menu2[index].title,
-          isSelected: viewStore.binding(
-            get: \.menu2Status[index],
-            send: .didTapPointPaymentItem
-          )
-        )
+          title: viewStore.pointPaymentItem[index].title,
+          isSelected: viewStore.pointPaymentStatus[index],
+          tag: index
+        ) {
+          store.send(.didTapPointPaymentMenu(index))
+        }
       }
     }
     .scaledToFit()
@@ -276,7 +276,7 @@ extension ContentView {
   
   var pointPaymnetBenefitContents: some View {
     VStack(spacing: 20) {
-      if let index = viewStore.menu2Status.firstIndex(of: true) {
+      if let index = viewStore.pointPaymentStatus.firstIndex(of: true) {
         if index == 0 {
           pointPaymentAllItem
         } else if index == 1 {
