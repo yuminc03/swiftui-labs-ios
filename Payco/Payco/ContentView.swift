@@ -11,7 +11,8 @@ import ComposableArchitecture
 
 struct ContentCore: Reducer {
   struct State: Equatable {
-    var selectedIndex = 0
+    var isFindFeatureBannerHidden = false
+    var selectedIndex = 1
     let cardItem = CardItem.dummy
     var advertisePaycoPoint = AdvertisePaycoPoint.dummy + AdvertisePaycoPoint.dummy + AdvertisePaycoPoint.dummy
     var selectedAdvertiseBannerIndex = 9
@@ -49,6 +50,7 @@ struct ContentCore: Reducer {
   }
   
   enum Action {
+    case didTapFindFeatureBannerXButton
     case didTapTabItem
     case didChangeAdvertiseBanner(Int)
     case didTapPointPaymentMenu(Int)
@@ -59,6 +61,10 @@ struct ContentCore: Reducer {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
+      case .didTapFindFeatureBannerXButton:
+        state.isFindFeatureBannerHidden = true
+        return .none
+        
       case .didTapTabItem:
         return .none
         
@@ -108,18 +114,16 @@ struct ContentView: View {
   }
   
   var body: some View {
-    NavigationView {
-      ScrollView(showsIndicators: false) {
-        topTitleView
-        section1
-        section2
-        section3
-        section4
-        section5
-        section6
-        section7
-        section8
-      }
+    ScrollView(showsIndicators: false) {
+      topTitleView
+      section1
+      section2
+      section3
+      section4
+      section5
+      section6
+      section7
+      section8
     }
   }
 }

@@ -21,6 +21,7 @@
 		051EA21F2A9C834400A2EF7B /* AdvertisePaycoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA21E2A9C834400A2EF7B /* AdvertisePaycoPoint.swift */; };
 		051EA2212A9C876B00A2EF7B /* AdvertisePaycoPointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2202A9C876B00A2EF7B /* AdvertisePaycoPointItem.swift */; };
 		05E835DA2A9D67120011E5ED /* AdvertisePaycoPointTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E835D92A9D67120011E5ED /* AdvertisePaycoPointTabView.swift */; };
+		05E835DC2A9D914C0011E5ED /* FindFeatureBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E835DB2A9D914C0011E5ED /* FindFeatureBannerView.swift */; };
 		8D5692762A99CADF003AFD98 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5692752A99CADF003AFD98 /* ComposableArchitecture */; };
 		8D5692792A99ED6E003AFD98 /* TopRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5692782A99ED6E003AFD98 /* TopRightButton.swift */; };
 		8D56927C2A9A1B31003AFD98 /* PointMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56927B2A9A1B31003AFD98 /* PointMenuItem.swift */; };
@@ -72,6 +73,7 @@
 		051EA21E2A9C834400A2EF7B /* AdvertisePaycoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisePaycoPoint.swift; sourceTree = "<group>"; };
 		051EA2202A9C876B00A2EF7B /* AdvertisePaycoPointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisePaycoPointItem.swift; sourceTree = "<group>"; };
 		05E835D92A9D67120011E5ED /* AdvertisePaycoPointTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisePaycoPointTabView.swift; sourceTree = "<group>"; };
+		05E835DB2A9D914C0011E5ED /* FindFeatureBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFeatureBannerView.swift; sourceTree = "<group>"; };
 		8D5692782A99ED6E003AFD98 /* TopRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightButton.swift; sourceTree = "<group>"; };
 		8D56927B2A9A1B31003AFD98 /* PointMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointMenuItem.swift; sourceTree = "<group>"; };
 		8D56927F2A9B1916003AFD98 /* PointPaymentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPaymentItemButton.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				051EA2122A9C383800A2EF7B /* CustomPageTabView.swift */,
 				051EA2142A9C5D8D00A2EF7B /* NowPaycoView.swift */,
 				051EA2182A9C63B600A2EF7B /* NowPaycoImageItem.swift */,
+				05E835DB2A9D914C0011E5ED /* FindFeatureBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				8D5692882A9B277C003AFD98 /* PointPaymentRow.swift in Sources */,
 				8D56927C2A9A1B31003AFD98 /* PointMenuItem.swift in Sources */,
+				05E835DC2A9D914C0011E5ED /* FindFeatureBannerView.swift in Sources */,
 				8D5692922A9B9336003AFD98 /* PaycoRewordView.swift in Sources */,
 				051EA21F2A9C834400A2EF7B /* AdvertisePaycoPoint.swift in Sources */,
 				8D76B7372A98F9F200576C06 /* ContentView.swift in Sources */,
