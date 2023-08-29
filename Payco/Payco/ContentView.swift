@@ -183,7 +183,7 @@ extension ContentView {
   }
   
   var section3: some View {
-    AdvertisePaycoPointTabView(
+    AdvertisePaycoPointView(
       selectedIndex: .init(initialValue: viewStore.selectedAdvertiseBannerIndex),
       data: viewStore.advertisePaycoPoint
     ) { selectedTabIndex in
