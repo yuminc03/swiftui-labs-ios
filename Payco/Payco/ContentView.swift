@@ -125,6 +125,7 @@ struct ContentView: View {
       section7
       section8
     }
+    .padding(.init(top: 1, leading: 1, bottom: 1, trailing: 1))
   }
 }
 

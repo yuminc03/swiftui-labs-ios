@@ -15,7 +15,13 @@ struct BrandOfMonthView: View {
   private let imageNames: [BrandOfMonthItem]
   private let action: () -> Void
   
-  init(topTitle: String, bottomTitle: String, rightButtonTitle: String, imageNames: [BrandOfMonthItem], action: @escaping () -> Void) {
+  init(
+    topTitle: String,
+    bottomTitle: String,
+    rightButtonTitle: String,
+    imageNames: [BrandOfMonthItem],
+    action: @escaping () -> Void
+  ) {
     self.topTitle = topTitle
     self.bottomTitle = bottomTitle
     self.rightButtonTitle = rightButtonTitle
@@ -84,14 +90,14 @@ extension BrandOfMonthView {
     Text(topTitle)
       .foregroundColor(.black)
       .font(.title3)
-      .fontWeight(.semibold)
+      .fontWeight(.bold)
   }
   
   var bottomTitleText: some View {
     Text(bottomTitle)
       .foregroundColor(.red)
       .font(.title3)
-      .fontWeight(.semibold)
+      .fontWeight(.bold)
   }
   
   var rightButton: some View {
