@@ -10,16 +10,25 @@ import SwiftUI
 struct PointPaymentItemButton: View {
   
   private let title: String
-  @Binding private var isSelected: Bool
+  private var isSelected: Bool
+  private let tag: Int
+  private let action: () -> Void
   
-  init(title: String, isSelected: Binding<Bool>) {
+  init(
+    title: String,
+    isSelected: Bool,
+    tag: Int,
+    action: @escaping () -> Void
+  ) {
     self.title = title
-    self._isSelected = isSelected
+    self.isSelected = isSelected
+    self.tag = tag
+    self.action = action
   }
   
   var body: some View {
     Button(title) {
-      isSelected.toggle()
+      action()
     }
     .padding(10)
     .foregroundColor(isSelected ? .white : .black)
@@ -28,6 +37,7 @@ struct PointPaymentItemButton: View {
     .background {
       isSelected ? Color.black : Color("gray_D8D8D8")
     }
+    .tag(tag)
     .cornerRadius(30)
   }
 }
@@ -41,8 +51,11 @@ struct PointPaymentItemButton_Previews: PreviewProvider {
       ForEach(0 ..< 4) { index in
         PointPaymentItemButton(
           title: "전체",
-          isSelected: .constant(index == 0 ? true : false)
-        )
+          isSelected: index == 0 ? true : false,
+          tag: index
+        ) {
+          print("\(index) button tapped")
+        }
       }
     }
     .scaledToFit()

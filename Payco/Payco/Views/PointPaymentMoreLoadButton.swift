@@ -9,13 +9,13 @@ import SwiftUI
 
 struct PointPaymentMoreLoadButton: View {
   private let title: String
-  @Binding private var currentPage: Int
+  private var currentPage: Int
   private let pageCount: Int
   private let action: () -> Void
   
-  init(title: String, currentPage: Binding<Int>, pageCount: Int, action: @escaping () -> Void) {
+  init(title: String, currentPage: Int, pageCount: Int, action: @escaping () -> Void) {
     self.title = title
-    self._currentPage = currentPage
+    self.currentPage = currentPage
     self.pageCount = pageCount
     self.action = action
   }
@@ -47,9 +47,13 @@ struct PointPaymentMoreLoadButton: View {
 
 struct PointPaymentMoreLoadButton_Previews: PreviewProvider {
   static var previews: some View {
-    PointPaymentMoreLoadButton(title: "더보기", currentPage: .constant(8), pageCount: 8) {
+    PointPaymentMoreLoadButton(
+      title: "더보기",
+      currentPage: 8,
+      pageCount: 8
+    ) {
       print("action")
     }
-      .previewLayout(.sizeThatFits)
+    .previewLayout(.sizeThatFits)
   }
 }

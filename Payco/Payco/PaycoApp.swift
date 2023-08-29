@@ -23,7 +23,11 @@ struct PaycoApp: App {
   
   var body: some Scene {
     WindowGroup {
-      tabBar
+      ZStack {
+        tabBar
+        findFeatureBanner
+          .padding(.bottom, 50)
+      }
     }
   }
 }
@@ -38,12 +42,14 @@ extension PaycoApp {
           Image(systemName: "percent")
           Text("혜택")
         }
+        .tag(0)
       
       ContentView()
         .tabItem {
           Image(systemName: "p.circle.fill")
           Text("포인트")
         }
+        .tag(1)
       
       Color.yellow
         .ignoresSafeArea(edges: .top)
@@ -51,6 +57,7 @@ extension PaycoApp {
           Image(systemName: "barcode.viewfinder")
           Text("결제")
         }
+        .tag(2)
       
       Color.blue
         .ignoresSafeArea(edges: .top)
@@ -58,6 +65,7 @@ extension PaycoApp {
           Image(systemName: "chart.bar.fill")
           Text("금융")
         }
+        .tag(3)
       
       Color.purple
         .ignoresSafeArea(edges: .top)
@@ -65,7 +73,19 @@ extension PaycoApp {
           Image(systemName: "ellipsis")
           Text("전체")
         }
+        .tag(4)
     }
     .tint(.red)
+  }
+  
+  var findFeatureBanner: some View {
+    VStack {
+      Spacer()
+      if viewStore.isFindFeatureBannerHidden == false {
+        FindFeatureBannerView {
+          store.send(.didTapFindFeatureBannerXButton)
+        }
+      }
+    }
   }
 }
