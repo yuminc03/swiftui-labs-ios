@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GetPointGrid: View {
   
-  @State private var selectedIndex = 0
+  @State private var selectedIndex = GetPoint.dummy.count
   private let maxCount: Int
   private let data: [GetPoint]
   private let buttonAction: () -> Void
@@ -38,9 +38,14 @@ struct GetPointGrid: View {
       }
       .tabViewStyle(.page(indexDisplayMode: .never))
       .onChange(of: selectedIndex) { newValue in
+        if newValue == 0 {
+          selectedIndex = GetPoint.dummy.count
+        } else if newValue == data.count - 1 {
+          selectedIndex = GetPoint.dummy.count + GetPoint.dummy.count - 1
+        }
         indexChange(newValue)
       }
-      CustomPageTabView(selectedIndex: selectedIndex, maxCount: maxCount)
+      CustomPageTabView(selectedIndex: selectedIndex % 4, maxCount: maxCount)
     }
   }
 }

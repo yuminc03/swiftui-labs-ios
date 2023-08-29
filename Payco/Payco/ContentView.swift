@@ -25,7 +25,7 @@ struct ContentCore: Reducer {
     let pointPaymentData2 = PointPaymentRow.dummy2
     let pointPaymentData3 = PointPaymentRow.dummy3
     let pointPaymentData4 = PointPaymentRow.dummy4
-    let getPointList = GetPoint.dummy
+    let getPointList = GetPoint.dummy + GetPoint.dummy + GetPoint.dummy
     var getPointSelectedIndex = 0
     var brandOfMonthData = BrandOfMonthItem.dummy
     let nowPaycoList = NowPaycoItem.dummy
@@ -347,7 +347,7 @@ extension ContentView {
   
   var getPointView: some View {
     GetPointGrid(
-      maxCount: viewStore.getPointList.count,
+      maxCount: GetPoint.dummy.count,
       data: viewStore.getPointList
     ) {
       print("PAYCO Red button Action")
