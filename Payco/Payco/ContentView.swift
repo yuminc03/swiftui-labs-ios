@@ -13,8 +13,8 @@ struct ContentCore: Reducer {
   struct State: Equatable {
     var selectedIndex = 0
     let cardItem = CardItem.dummy
-    let advertisePaycoPoint = AdvertisePaycoPoint.dummy
-    var section3MaxGridCount = 10
+    var advertisePaycoPoint = AdvertisePaycoPoint.dummy + AdvertisePaycoPoint.dummy + AdvertisePaycoPoint.dummy
+    var selectedAdvertiseBannerIndex = 9
     let menu1 = PointMenuItem.dummy
     let pointPaymentItem = PointPaymentItem.dummy
     var pointPaymentStatus = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
@@ -26,6 +26,7 @@ struct ContentCore: Reducer {
     let pointPaymentData4 = PointPaymentRow.dummy4
     let getPointList = GetPoint.dummy
     var getPointSelectedIndex = 0
+    var brandOfMonthData = BrandOfMonthItem.dummy
     let nowPaycoList = NowPaycoItem.dummy
     var pointPaymentDataCount: Int {
       switch selectedPointPaymentMenuIndex {
@@ -49,9 +50,9 @@ struct ContentCore: Reducer {
   
   enum Action {
     case didTapTabItem
+    case didChangeAdvertiseBanner(Int)
     case didTapPointPaymentMenu(Int)
     case didTapPointPaymentMoreButton
-    case increaseSection3MaxCount
     case didChangeGetPointSelectedIndex(Int)
   }
   
@@ -59,6 +60,13 @@ struct ContentCore: Reducer {
     Reduce { state, action in
       switch action {
       case .didTapTabItem:
+        return .none
+        
+      case let .didChangeAdvertiseBanner(index):
+        state.selectedAdvertiseBannerIndex = index
+        if index == state.advertisePaycoPoint.count - 1 {
+          state.advertisePaycoPoint = state.advertisePaycoPoint + AdvertisePaycoPoint.dummy
+        }
         return .none
       
       case let .didTapPointPaymentMenu(index):
@@ -79,11 +87,7 @@ struct ContentCore: Reducer {
           state.currentPointPaymentPage += 1
         }
         return .none
-        
-      case .increaseSection3MaxCount:
-        state.section3MaxGridCount += 10
-        return .none
-      
+       
       case let .didChangeGetPointSelectedIndex(index):
         state.getPointSelectedIndex = index
         return .none
@@ -174,46 +178,14 @@ extension ContentView {
   }
   
   var section3: some View {
-    ScrollView(.horizontal, showsIndicators: false) {
-      LazyHGrid(
-        rows: [GridItem(.flexible(), alignment: .center)],
-        spacing: 20
-      ) {
-        ForEach(0 ..< viewStore.advertisePaycoPoint.count) { index in
-          if index == 0 {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
-            )
-            .padding(.leading, 20)
-            .onAppear {
-              if viewStore.section3MaxGridCount % 10 == 0 {
-                store.send(.increaseSection3MaxCount)
-              }
-            }
-          } else if index == viewStore.advertisePaycoPoint.count - 1 {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
-            )
-            .padding(.trailing, 20)
-            .onAppear {
-              if viewStore.section3MaxGridCount % 10 == 0 {
-                store.send(.increaseSection3MaxCount)
-              }
-            }
-          } else {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: viewStore.advertisePaycoPoint[index]
-            )
-            .onAppear {
-              if viewStore.section3MaxGridCount % 10 == 0 {
-                store.send(.increaseSection3MaxCount)
-              }
-            }
-          }
-        }
-      }
+    AdvertisePaycoPointTabView(
+      selectedIndex: .init(initialValue: viewStore.selectedAdvertiseBannerIndex),
+      data: viewStore.advertisePaycoPoint
+    ) { selectedTabIndex in
+      print("\(selectedTabIndex)")
+      store.send(.didChangeAdvertiseBanner(selectedTabIndex))
     }
-    .padding(.vertical, 10)
+    .padding(.vertical, 20)
   }
   
   var section4: some View {
@@ -363,20 +335,7 @@ extension ContentView {
       topTitle: "이달의 브랜드",
       bottomTitle: "최대 15% 적립",
       rightButtonTitle: "보러가기",
-      imageNames: [
-        BrandOfMonthItem(imageName: "a.circle.fill"),
-        BrandOfMonthItem(imageName: "b.circle.fill"),
-        BrandOfMonthItem(imageName: "c.circle.fill"),
-        BrandOfMonthItem(imageName: "d.circle.fill"),
-        BrandOfMonthItem(imageName: "e.circle.fill"),
-        BrandOfMonthItem(imageName: "f.circle.fill"),
-        BrandOfMonthItem(imageName: "g.circle.fill"),
-        BrandOfMonthItem(imageName: "h.circle.fill"),
-        BrandOfMonthItem(imageName: "i.circle.fill"),
-        BrandOfMonthItem(imageName: "j.circle.fill"),
-        BrandOfMonthItem(imageName: "k.circle.fill"),
-        BrandOfMonthItem(imageName: "l.circle.fill")
-      ]
+      imageNames: viewStore.brandOfMonthData
     ) {
       print("Action")
     }
