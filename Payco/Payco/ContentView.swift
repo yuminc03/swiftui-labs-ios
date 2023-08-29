@@ -183,12 +183,8 @@ extension ContentView {
   }
   
   var section3: some View {
-    AdvertisePaycoPointView(
-      selectedIndex: .init(initialValue: viewStore.selectedAdvertiseBannerIndex),
-      data: viewStore.advertisePaycoPoint
-    ) { selectedTabIndex in
-      print("\(selectedTabIndex)")
-      store.send(.didChangeAdvertiseBanner(selectedTabIndex))
+    AdvertisePaycoPointView(data: viewStore.advertisePaycoPoint) { index in
+      store.send(.didChangeAdvertiseBanner(index))
     }
     .padding(.vertical, 20)
   }

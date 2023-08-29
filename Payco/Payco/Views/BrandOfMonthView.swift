@@ -12,7 +12,7 @@ struct BrandOfMonthView: View {
   private let topTitle: String
   private let bottomTitle: String
   private let rightButtonTitle: String
-  private let imageNames: [BrandOfMonthItem]
+  private var imageNames: [BrandOfMonthItem]
   private let action: () -> Void
   
   init(
