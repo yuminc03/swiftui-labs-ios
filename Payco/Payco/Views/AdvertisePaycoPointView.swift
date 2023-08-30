@@ -8,23 +8,12 @@
 import SwiftUI
 
 struct AdvertisePaycoPointView: View {
-  @State private var offsetX: CGFloat = 0
   @State private var selectedIndex = AdvertisePaycoPoint.dummy.count
   @State private var data: [AdvertisePaycoPoint]
   private let onChange: (Int) -> Void
+  private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+  @State private var isDrag = false
   
-  private var scrollObservableView: some View {
-    GeometryReader { proxy in
-      let offsetX = proxy.frame(in: .global).origin.x
-      Color.clear
-        .preference(key: ScrollOffsetKey.self, value: offsetX)
-        .onAppear {
-          self.offsetX = offsetX
-        }
-    }
-    .frame(height: 0)
-  }
-
   init(
     data: [AdvertisePaycoPoint],
     onChange: @escaping (Int) -> Void
@@ -34,32 +23,54 @@ struct AdvertisePaycoPointView: View {
   }
   
   var body: some View {
-    ScrollView(.horizontal, showsIndicators: false) {
-      scrollObservableView
-      LazyHStack(spacing: 10) {
-        ForEach(0 ..< data.count) { index in
-          if index == 0 {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: data[index]
-            )
-            .padding(.leading, 20)
-          } else if index == data.count - 1 {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: data[index]
-            )
-            .padding(.trailing, 20)
-          } else {
-            AdvertisePaycoPointItem(
-              advertisePaycoPoint: data[index]
-            )
+    ScrollViewReader { proxy in
+      horizontalScrollView
+      .onAppear {
+        proxy.scrollTo(selectedIndex, anchor: .center)
+      }
+      .onReceive(timer) { _ in
+        guard isDrag == false else { return }
+        if selectedIndex == data.count - 2 {
+          selectedIndex = AdvertisePaycoPoint.dummy.count + AdvertisePaycoPoint.dummy.count - 2
+          proxy.scrollTo(selectedIndex, anchor: .center)
+        } else {
+          selectedIndex += 1
+          withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+            proxy.scrollTo(selectedIndex, anchor: .center)
           }
         }
       }
-    }
-    .frame(height: 220)
-    .onPreferenceChange(ScrollOffsetKey.self) {
-      offsetX = $0
-      print("scroll x offset: \($0)")
+      .gesture(
+        DragGesture()
+          .onEnded { value in
+            isDrag = true
+            if value.translation.width > 0 {
+              if selectedIndex == 1 {
+                selectedIndex = AdvertisePaycoPoint.dummy.count + 1
+                proxy.scrollTo(selectedIndex, anchor: .center)
+                isDrag = false
+              } else {
+                selectedIndex -= 1
+                withAnimation(.spring()) {
+                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  isDrag = true
+                }
+              }
+            } else {
+              if selectedIndex == data.count - 2 {
+                selectedIndex = AdvertisePaycoPoint.dummy.count + AdvertisePaycoPoint.dummy.count - 2
+                proxy.scrollTo(selectedIndex, anchor: .center)
+                isDrag = true
+              } else {
+                selectedIndex += 1
+                withAnimation(.spring()) {
+                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  isDrag = true
+                }
+              }
+            }
+          }
+      )
     }
   }
 }
@@ -72,9 +83,22 @@ struct AdvertisePaycoPointView_Previews: PreviewProvider {
   }
 }
 
-struct ScrollOffsetKey: PreferenceKey {
-  static var defaultValue: CGFloat = 0
-  static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-    value += nextValue()
+extension AdvertisePaycoPointView {
+  
+  var horizontalScrollView: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      LazyHStack(spacing: 10) {
+        ForEach(0 ..< data.count) { index in
+          AdvertisePaycoPointItem(
+            advertisePaycoPoint: data[index]
+          )
+          .padding(.leading, index == 0 ? 20 : 0)
+          .padding(.trailing, index == data.count - 1 ? 20 : 0)
+          .id(index)
+        }
+      }
+    }
+    .scrollDisabled(true)
+    .frame(height: 230)
   }
 }
