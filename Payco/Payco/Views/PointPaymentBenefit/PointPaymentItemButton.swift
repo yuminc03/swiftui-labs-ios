@@ -58,7 +58,6 @@ struct PointPaymentItemButton_Previews: PreviewProvider {
         }
       }
     }
-    .scaledToFit()
     .previewLayout(.sizeThatFits)
   }
 }
