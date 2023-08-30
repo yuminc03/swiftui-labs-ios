@@ -88,7 +88,6 @@ extension PointPaymentBenefitsList {
         rows: [GridItem(.flexible(), spacing: 10, alignment: .center)],
         spacing: 15
       ) {
-        Spacer()
         ForEach(0 ..< 4) { index in
           PointPaymentItemButton(
             title: menuTitles[index].title,
@@ -98,7 +97,6 @@ extension PointPaymentBenefitsList {
             menuItemAction(index)
           }
         }
-        Spacer()
       }
     }
     .frame(height: 50)
