@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentCardItem: View {
-  
+  @State private var animationValue: CGFloat = 0
   private let cardItem: CardItem
   private let buttonAction: () -> Void
   
@@ -33,7 +33,7 @@ struct CurrentCardItem: View {
     }
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
-    .frame(height: 200)
+    .frame(height: 220)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .fill(
@@ -85,13 +85,20 @@ extension CurrentCardItem {
   }
   
   var cardImage: some View {
-    Image(systemName: "lanyardcard.fill")
+    Image("card")
       .resizable()
       .scaledToFit()
-      .frame(height: 120)
-      .rotationEffect(Angle(degrees: 15))
-      .foregroundColor(.black)
-      .offset(x: -30, y: -30)
+      .frame(height: 150)
+      .offset(x: -10, y: -30)
+      .rotation3DEffect(
+        .degrees(-animationValue),
+        axis: (x: -animationValue, y: animationValue, z: animationValue)
+      )
+      .onAppear {
+        withAnimation(.linear(duration: 1).repeatForever(autoreverses: true)) {
+          animationValue = 15
+        }
+      }
   }
   
   var manageCardButton: some View {
@@ -102,5 +109,6 @@ extension CurrentCardItem {
     .padding()
     .background(Color.white.opacity(0.2))
     .cornerRadius(15)
+    .offset(x: 10, y: -20)
   }
 }
