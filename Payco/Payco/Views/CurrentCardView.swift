@@ -1,5 +1,5 @@
 //
-//  CurrentCardItem.swift
+//  CurrentCardView.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct CurrentCardItem: View {
-  
-  private let cardItem: CardItem
+/// 현재 카드(화면 상단 setting된 카드)
+struct CurrentCardView: View {
+  @State private var animationValue: CGFloat = 0
+  private let cardItem: CurrentCardItem
   private let buttonAction: () -> Void
   
-  init(cardItem: CardItem, buttonAction: @escaping () -> Void) {
+  init(cardItem: CurrentCardItem, buttonAction: @escaping () -> Void) {
     self.cardItem = cardItem
     self.buttonAction = buttonAction
   }
@@ -33,7 +34,7 @@ struct CurrentCardItem: View {
     }
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
-    .frame(height: 200)
+    .frame(height: 220)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .fill(
@@ -44,19 +45,20 @@ struct CurrentCardItem: View {
           )
         )
     }
+    .padding(20)
   }
 }
 
-struct CurrentCardItem_Previews: PreviewProvider {
+struct CurrentCardView_Previews: PreviewProvider {
   static var previews: some View {
-    CurrentCardItem(cardItem: CardItem.dummy) {
+    CurrentCardView(cardItem: CurrentCardItem.dummy) {
       print("action")
     }
     .previewLayout(.sizeThatFits)
   }
 }
 
-extension CurrentCardItem {
+extension CurrentCardView {
   
   var paycoPointText: some View {
     Text(cardItem.topLeadingTitle)
@@ -85,13 +87,20 @@ extension CurrentCardItem {
   }
   
   var cardImage: some View {
-    Image(systemName: "lanyardcard.fill")
+    Image("card")
       .resizable()
       .scaledToFit()
-      .frame(height: 120)
-      .rotationEffect(Angle(degrees: 15))
-      .foregroundColor(.black)
-      .offset(x: -30, y: -30)
+      .frame(height: 150)
+      .offset(x: -10, y: -30)
+      .rotation3DEffect(
+        .degrees(-animationValue),
+        axis: (x: -animationValue, y: animationValue, z: animationValue)
+      )
+      .onAppear {
+        withAnimation(.linear(duration: 1).repeatForever(autoreverses: true)) {
+          animationValue = 15
+        }
+      }
   }
   
   var manageCardButton: some View {
@@ -102,5 +111,6 @@ extension CurrentCardItem {
     .padding()
     .background(Color.white.opacity(0.2))
     .cornerRadius(15)
+    .offset(x: 10, y: -20)
   }
 }

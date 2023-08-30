@@ -1,5 +1,5 @@
 //
-//  GetPointItem.swift
+//  SeeMorePage.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct GetPointItem: View {
-  private let data: GetPoint
+struct SeeMorePage: View {
+  private let data: SeeMorePageTabItem
   private let action: () -> Void
   private let index: Int
   
-  init(data: GetPoint, index: Int, action: @escaping () -> Void) {
+  init(data: SeeMorePageTabItem, index: Int, action: @escaping () -> Void) {
     self.data = data
     self.index = index
     self.action = action
@@ -50,10 +50,10 @@ struct GetPointItem: View {
   }
 }
 
-struct GetPointItem_Previews: PreviewProvider {
+struct SeeMorePage_Previews: PreviewProvider {
   static var previews: some View {
-    GetPointItem(
-      data: GetPoint(
+    SeeMorePage(
+      data: SeeMorePageTabItem(
         topCaption: "알고 계셨나요?",
         title: "PAYCO 포인트로\n해외결제도 된다는 사실",
         contents: "해외 호텔 & 항공 예약 시\n할인은 기본,\n현지화 출금까지 가능해요",
@@ -68,7 +68,7 @@ struct GetPointItem_Previews: PreviewProvider {
   }
 }
 
-extension GetPointItem {
+extension SeeMorePage {
   var topCaptionText: some View {
     Text(data.topCaption)
       .font(.caption)

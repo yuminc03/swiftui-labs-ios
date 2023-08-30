@@ -1,5 +1,5 @@
 //
-//  AdvertisePaycoPointItem.swift
+//  AdvertisingAutoScrollBanner.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AdvertisePaycoPointItem: View {
+struct AdvertisingAutoScrollBanner: View {
   
   private let advertisePaycoPoint: AdvertisePaycoPoint
   
@@ -37,14 +37,14 @@ struct AdvertisePaycoPointItem: View {
   }
 }
 
-struct AdvertisePaycoPointItem_Previews: PreviewProvider {
+struct AdvertisingAutoScrollBanner_Previews: PreviewProvider {
   static var previews: some View {
-    AdvertisePaycoPointItem(advertisePaycoPoint: AdvertisePaycoPoint.dummy[0])
+    AdvertisingAutoScrollBanner(advertisePaycoPoint: AdvertisePaycoPoint.dummy[0])
       .previewLayout(.sizeThatFits)
   }
 }
 
-extension AdvertisePaycoPointItem {
+extension AdvertisingAutoScrollBanner {
   
   var conditionText: some View {
     Text(advertisePaycoPoint.conditionText)
