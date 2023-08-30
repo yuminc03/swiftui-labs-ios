@@ -38,10 +38,10 @@ struct GetPointGrid: View {
       }
       .tabViewStyle(.page(indexDisplayMode: .never))
       .onChange(of: selectedIndex) { newValue in
-        if newValue == 0 {
-          selectedIndex = GetPoint.dummy.count
-        } else if newValue == data.count - 1 {
-          selectedIndex = GetPoint.dummy.count + GetPoint.dummy.count - 1
+        if newValue == 1 {
+          selectedIndex = GetPoint.dummy.count + 1
+        } else if newValue == data.count - 2 {
+          selectedIndex = GetPoint.dummy.count + GetPoint.dummy.count - 2
         }
         indexChange(newValue)
       }
