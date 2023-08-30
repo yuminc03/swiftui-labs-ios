@@ -1,5 +1,5 @@
 //
-//  PaycoRewordView.swift
+//  PaycoRewordRow.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PaycoRewordView: View {
+struct PaycoRewordRow: View {
   
   let imageName: String
   let title: String
@@ -29,12 +29,19 @@ struct PaycoRewordView: View {
         .font(.headline)
         .foregroundColor(.gray)
     }
+    .padding(20)
+    .background {
+      RoundedRectangle(cornerRadius: 20)
+        .foregroundColor(Color("gray_EAEAEA"))
+    }
+    .padding(.horizontal, 20)
+    .padding(.vertical, 10)
   }
 }
 
 struct PaycoRewordView_Previews: PreviewProvider {
   static var previews: some View {
-    PaycoRewordView(
+    PaycoRewordRow(
       imageName: "dollarsign.circle.fill",
       title: "PAYCO 리워드",
       point: 0

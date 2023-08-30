@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetPoint: Identifiable, Equatable {
+struct SeeMorePageTabItem: Identifiable, Equatable {
   let id = UUID()
   let topCaption: String
   let title: String
@@ -15,7 +15,7 @@ struct GetPoint: Identifiable, Equatable {
   let imageName: String
   let buttonTitle: String
   
-  static let dummy: [GetPoint] = [
+  static let dummy: [SeeMorePageTabItem] = [
     .init(
       topCaption: "알고 계셨나요?",
       title: "PAYCO 포인트로\n해외결제도 된다는 사실",

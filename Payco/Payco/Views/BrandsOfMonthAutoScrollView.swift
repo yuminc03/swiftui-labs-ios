@@ -1,5 +1,5 @@
 //
-//  BrandOfMonthView.swift
+//  BrandsOfMonthAutoScrollView.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BrandOfMonthView: View {
+struct BrandsOfMonthAutoScrollView: View {
   @State private var xOffset: CGFloat = 0
   @State private var selectedIndex = 12
   private let topTitle: String
@@ -43,12 +43,18 @@ struct BrandOfMonthView: View {
       .padding(.horizontal, 20)
       contentsView
     }
+    .padding(.vertical, 40)
+    .background {
+      RoundedRectangle(cornerRadius: 20)
+        .foregroundColor(Color("gray_EAEAEA"))
+    }
+    .padding(.horizontal, 20)
   }
 }
 
-struct BrandOfMonthView_Previews: PreviewProvider {
+struct BrandsOfMonthAutoScrollView_Previews: PreviewProvider {
   static var previews: some View {
-    BrandOfMonthView(
+    BrandsOfMonthAutoScrollView(
       topTitle: "이달의 브랜드",
       bottomTitle: "최대 15% 적립",
       rightButtonTitle: "보러가기",
@@ -85,7 +91,7 @@ struct BrandOfMonthView_Previews: PreviewProvider {
   }
 }
 
-extension BrandOfMonthView {
+extension BrandsOfMonthAutoScrollView {
   
   var topTitleText: some View {
     Text(topTitle)

@@ -1,5 +1,5 @@
 //
-//  GetPointGrid.swift
+//  SeeMorePageTabView.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct GetPointGrid: View {
+struct SeeMorePageTabView: View {
   
-  @State private var selectedIndex = GetPoint.dummy.count
+  @State private var selectedIndex = SeeMorePageTabItem.dummy.count
   private let maxCount: Int
-  private let data: [GetPoint]
+  private let data: [SeeMorePageTabItem]
   private let buttonAction: () -> Void
   private let indexChange: (Int) -> Void
   
   init(
     maxCount: Int,
-    data: [GetPoint],
+    data: [SeeMorePageTabItem],
     buttonAction: @escaping () -> Void,
     indexChange: @escaping (Int) -> Void
   ) {
@@ -31,7 +31,7 @@ struct GetPointGrid: View {
     VStack(spacing: 10) {
       TabView(selection: $selectedIndex) {
         ForEach(0 ..< data.count) { index in
-          GetPointItem(data: data[index], index: index) {
+          SeeMorePage(data: data[index], index: index) {
             buttonAction()
           }
         }
@@ -39,20 +39,22 @@ struct GetPointGrid: View {
       .tabViewStyle(.page(indexDisplayMode: .never))
       .onChange(of: selectedIndex) { newValue in
         if newValue == 1 {
-          selectedIndex = GetPoint.dummy.count + 1
+          selectedIndex = SeeMorePageTabItem.dummy.count + 1
         } else if newValue == data.count - 2 {
-          selectedIndex = GetPoint.dummy.count + GetPoint.dummy.count - 2
+          selectedIndex = SeeMorePageTabItem.dummy.count + SeeMorePageTabItem.dummy.count - 2
         }
         indexChange(newValue)
       }
       CustomPageTabView(selectedIndex: selectedIndex % 4, maxCount: maxCount)
     }
+    .frame(height: 380)
+    .padding(.vertical, 10)
   }
 }
 
-struct GetPointGrid_Previews: PreviewProvider {
+struct SeeMorePageTabView_Previews: PreviewProvider {
   static var previews: some View {
-    GetPointGrid(maxCount: 4, data: GetPoint.dummy) {
+    SeeMorePageTabView(maxCount: 4, data: SeeMorePageTabItem.dummy) {
       print("tapped")
     } indexChange: { index in
       print("\(index) changed")

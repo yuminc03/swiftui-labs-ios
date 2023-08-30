@@ -1,5 +1,5 @@
 //
-//  PointMenuItem.swift
+//  MenuCollectionItem.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum PointMenuItem: CaseIterable, Identifiable, Equatable {
+enum MenuCollectionItem: CaseIterable, Identifiable, Equatable {
   case sendMyAccount
   case charge
   case transform
@@ -105,5 +105,5 @@ enum PointMenuItem: CaseIterable, Identifiable, Equatable {
     }
   }
   
-  static let dummy = PointMenuItem.allCases
+  static let dummy = MenuCollectionItem.allCases
 }

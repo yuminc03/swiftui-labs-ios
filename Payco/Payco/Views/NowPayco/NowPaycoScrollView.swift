@@ -1,5 +1,5 @@
 //
-//  NowPaycoView.swift
+//  NowPaycoScrollView.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NowPaycoView: View {
+struct NowPaycoScrollView: View {
   private let leftImageName: String
   private let title: String
   private let images: [NowPaycoItem]
@@ -38,12 +38,12 @@ struct NowPaycoView: View {
 
 struct NowPaycoItem_Previews: PreviewProvider {
   static var previews: some View {
-    NowPaycoView(leftImageName: "camera.viewfinder", title: "지금 페이코는", images: NowPaycoItem.dummy)
+    NowPaycoScrollView(leftImageName: "camera.viewfinder", title: "지금 페이코는", images: NowPaycoItem.dummy)
       .previewLayout(.sizeThatFits)
   }
 }
 
-extension NowPaycoView {
+extension NowPaycoScrollView {
   
   var titleView: some View {
     HStack(spacing: 5) {

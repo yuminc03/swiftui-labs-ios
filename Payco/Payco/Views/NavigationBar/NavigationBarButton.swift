@@ -1,5 +1,5 @@
 //
-//  TopRightButton.swift
+//  NavigationBarButton.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopRightButton: View {
+struct NavigationBarButton: View {
   
   let imageName: String
   
@@ -16,14 +16,16 @@ struct TopRightButton: View {
       print(imageName)
     } label: {
       Image(systemName: imageName)
-        .font(.headline)
+        .font(.title3)
+        .fontWeight(.bold)
         .foregroundColor(.black)
     }
   }
 }
 
-struct TopRightButton_Previews: PreviewProvider {
+struct NavigationBarButton_Previews: PreviewProvider {
   static var previews: some View {
-    TopRightButton(imageName: "")
+    NavigationBarButton(imageName: "ticket")
+      .previewLayout(.sizeThatFits)
   }
 }

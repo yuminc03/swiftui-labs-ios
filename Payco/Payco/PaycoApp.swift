@@ -11,12 +11,12 @@ import ComposableArchitecture
 
 @main
 struct PaycoApp: App {
-  private let store: StoreOf<ContentCore>
-  @ObservedObject private var viewStore: ViewStoreOf<ContentCore>
+  private let store: StoreOf<PointCore>
+  @ObservedObject private var viewStore: ViewStoreOf<PointCore>
   
   init() {
     self.store = .init(initialState: .init(), reducer: {
-      ContentCore()
+      PointCore()
     })
     self.viewStore = ViewStore(self.store, observe: { $0 })
   }
@@ -35,7 +35,7 @@ struct PaycoApp: App {
 extension PaycoApp {
   
   var tabBar: some View {
-    TabView(selection: viewStore.binding(get: \.selectedIndex, send: .didTapTabItem)) {
+    TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: .didTapTabItem)) {
       Color.red
         .ignoresSafeArea(edges: .top)
         .tabItem {
@@ -44,7 +44,7 @@ extension PaycoApp {
         }
         .tag(0)
       
-      ContentView()
+      PointView()
         .tabItem {
           Image(systemName: "p.circle.fill")
           Text("포인트")

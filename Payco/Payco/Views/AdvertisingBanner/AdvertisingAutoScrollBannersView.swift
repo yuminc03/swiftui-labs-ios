@@ -1,5 +1,5 @@
 //
-//  AdvertisePaycoPointView.swift
+//  AdvertisingAutoScrollBannersView.swift
 //  Payco
 //
 //  Created by Yumin Chu on 2023/08/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AdvertisePaycoPointView: View {
+struct AdvertisingAutoScrollBannersView: View {
   @State private var selectedIndex = AdvertisePaycoPoint.dummy.count
   @State private var data: [AdvertisePaycoPoint]
   private let onChange: (Int) -> Void
@@ -72,24 +72,26 @@ struct AdvertisePaycoPointView: View {
           }
       )
     }
+    .padding(.vertical, 20)
   }
 }
 
-struct AdvertisePaycoPointView_Previews: PreviewProvider {
+struct AdvertisingAutoScrollBannersView_Previews: PreviewProvider {
   static var previews: some View {
-    AdvertisePaycoPointView(data: AdvertisePaycoPoint.dummy) { index in
+    AdvertisingAutoScrollBannersView(data: AdvertisePaycoPoint.dummy) { index in
       print("\(index): change index")
     }
+    .previewLayout(.sizeThatFits)
   }
 }
 
-extension AdvertisePaycoPointView {
+extension AdvertisingAutoScrollBannersView {
   
   var horizontalScrollView: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHStack(spacing: 10) {
         ForEach(0 ..< data.count) { index in
-          AdvertisePaycoPointItem(
+          AdvertisingAutoScrollBanner(
             advertisePaycoPoint: data[index]
           )
           .padding(.leading, index == 0 ? 20 : 0)
