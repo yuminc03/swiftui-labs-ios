@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BrandOfMonthView: View {
   @State private var xOffset: CGFloat = 0
+  @State private var selectedIndex = 12
   private let topTitle: String
   private let bottomTitle: String
   private let rightButtonTitle: String
@@ -52,30 +53,30 @@ struct BrandOfMonthView_Previews: PreviewProvider {
       bottomTitle: "최대 15% 적립",
       rightButtonTitle: "보러가기",
       imageNames: [
-        BrandOfMonthItem(imageName: "a.circle.fill"),
-        BrandOfMonthItem(imageName: "b.circle.fill"),
-        BrandOfMonthItem(imageName: "c.circle.fill"),
-        BrandOfMonthItem(imageName: "d.circle.fill"),
-        BrandOfMonthItem(imageName: "e.circle.fill"),
-        BrandOfMonthItem(imageName: "f.circle.fill"),
-        BrandOfMonthItem(imageName: "g.circle.fill"),
-        BrandOfMonthItem(imageName: "h.circle.fill"),
-        BrandOfMonthItem(imageName: "i.circle.fill"),
-        BrandOfMonthItem(imageName: "j.circle.fill"),
-        BrandOfMonthItem(imageName: "k.circle.fill"),
-        BrandOfMonthItem(imageName: "l.circle.fill"),
-        BrandOfMonthItem(imageName: "a.circle.fill"),
-        BrandOfMonthItem(imageName: "b.circle.fill"),
-        BrandOfMonthItem(imageName: "c.circle.fill"),
-        BrandOfMonthItem(imageName: "d.circle.fill"),
-        BrandOfMonthItem(imageName: "e.circle.fill"),
-        BrandOfMonthItem(imageName: "f.circle.fill"),
-        BrandOfMonthItem(imageName: "g.circle.fill"),
-        BrandOfMonthItem(imageName: "h.circle.fill"),
-        BrandOfMonthItem(imageName: "i.circle.fill"),
-        BrandOfMonthItem(imageName: "j.circle.fill"),
-        BrandOfMonthItem(imageName: "k.circle.fill"),
-        BrandOfMonthItem(imageName: "l.circle.fill")
+        .init(imageName: "a.circle.fill", imageColor: .red),
+        .init(imageName: "b.circle.fill", imageColor: .blue),
+        .init(imageName: "c.circle.fill", imageColor: .cyan),
+        .init(imageName: "d.circle.fill", imageColor: .yellow),
+        .init(imageName: "e.circle.fill", imageColor: .purple),
+        .init(imageName: "f.circle.fill", imageColor: .orange),
+        .init(imageName: "g.circle.fill", imageColor: .indigo),
+        .init(imageName: "h.circle.fill", imageColor: .blue),
+        .init(imageName: "i.circle.fill", imageColor: .green),
+        .init(imageName: "j.circle.fill", imageColor: .black),
+        .init(imageName: "k.circle.fill", imageColor: .gray),
+        .init(imageName: "l.circle.fill", imageColor: .black),
+        .init(imageName: "a.circle.fill", imageColor: .red),
+        .init(imageName: "b.circle.fill", imageColor: .blue),
+        .init(imageName: "c.circle.fill", imageColor: .cyan),
+        .init(imageName: "d.circle.fill", imageColor: .yellow),
+        .init(imageName: "e.circle.fill", imageColor: .purple),
+        .init(imageName: "f.circle.fill", imageColor: .orange),
+        .init(imageName: "g.circle.fill", imageColor: .indigo),
+        .init(imageName: "h.circle.fill", imageColor: .blue),
+        .init(imageName: "i.circle.fill", imageColor: .green),
+        .init(imageName: "j.circle.fill", imageColor: .black),
+        .init(imageName: "k.circle.fill", imageColor: .gray),
+        .init(imageName: "l.circle.fill", imageColor: .black)
       ]
     ) {
       print("Action")
@@ -112,23 +113,51 @@ extension BrandOfMonthView {
   }
   
   var contentsView: some View {
-    ScrollView(.horizontal, showsIndicators: false) {
-      HStack(alignment: .center, spacing: 10) {
-        ForEach(imageNames) { image in
-          Image(systemName: image.imageName)
-            .resizable()
-            .frame(width: 70, height: 70)
-            .cornerRadius(35)
-            .foregroundColor(.blue)
+    ScrollViewReader { proxy in
+      ScrollView(.horizontal, showsIndicators: false) {
+        HStack(alignment: .center, spacing: 10) {
+          ForEach(0 ..< imageNames.count) { index in
+            Image(systemName: imageNames[index].imageName)
+              .resizable()
+              .frame(width: 70, height: 70)
+              .cornerRadius(35)
+              .foregroundColor(imageNames[index].imageColor)
+              .id(index)
+          }
+        }
+        .frame(height: 70)
+        .offset(x: xOffset, y: 0)
+      }
+      .scrollDisabled(true)
+      .onAppear {
+        withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
+          xOffset = -960
         }
       }
-      .frame(height: 70)
-      .offset(x: xOffset, y: 0)
-    }
-    .onAppear {
-      withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)) {
-        xOffset = -960
-      }
+      .gesture(
+        DragGesture()
+          .onEnded { value in
+            if value.translation.width < 0 {
+              if selectedIndex < imageNames.count - 4 {
+                selectedIndex += 1
+                withAnimation(.linear) {
+                  proxy.scrollTo(selectedIndex, anchor: .center)
+                }
+              } else {
+                selectedIndex = 12
+                proxy.scrollTo(selectedIndex, anchor: .center)
+              }
+            } else {
+              if selectedIndex > 0 {
+                selectedIndex -= 1
+                proxy.scrollTo(selectedIndex, anchor: .center)
+              } else {
+                selectedIndex = 12
+                proxy.scrollTo(selectedIndex, anchor: .center)
+              }
+            }
+          }
+      )
     }
   }
 }

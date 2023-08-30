@@ -21,10 +21,6 @@ struct ContentCore: Reducer {
     var pointPaymentStatus = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
     var selectedPointPaymentMenuIndex = 0
     var currentPointPaymentPage = 1
-    let pointPaymentData1 = PointPaymentRow.dummy1
-    let pointPaymentData2 = PointPaymentRow.dummy2
-    let pointPaymentData3 = PointPaymentRow.dummy3
-    let pointPaymentData4 = PointPaymentRow.dummy4
     let getPointList = GetPoint.dummy + GetPoint.dummy + GetPoint.dummy
     var getPointSelectedIndex = 0
     var brandOfMonthData = BrandOfMonthItem.dummy
@@ -32,19 +28,19 @@ struct ContentCore: Reducer {
     var pointPaymentDataCount: Int {
       switch selectedPointPaymentMenuIndex {
       case 0:
-        return pointPaymentData1.count
+        return PointPaymentRow.dummy1.count
         
       case 1:
-        return pointPaymentData2.count
+        return PointPaymentRow.dummy2.count
         
       case 2:
-        return pointPaymentData3.count
+        return PointPaymentRow.dummy3.count
         
       case 3:
-        return pointPaymentData4.count
+        return PointPaymentRow.dummy4.count
         
       default:
-        return pointPaymentData1.count
+        return PointPaymentRow.dummy1.count
       }
     }
   }
