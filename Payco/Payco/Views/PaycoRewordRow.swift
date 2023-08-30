@@ -9,9 +9,15 @@ import SwiftUI
 
 struct PaycoRewordRow: View {
   
-  let imageName: String
-  let title: String
-  let point: Int
+  private let imageName: String
+  private let title: String
+  private let point: Int
+  
+  init(imageName: String, title: String, point: Int) {
+    self.imageName = imageName
+    self.title = title
+    self.point = point
+  }
   
   var body: some View {
     HStack(spacing: 5) {

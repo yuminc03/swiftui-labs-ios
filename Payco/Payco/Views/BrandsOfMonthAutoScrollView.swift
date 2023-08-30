@@ -145,8 +145,8 @@ extension BrandsOfMonthAutoScrollView {
           .onEnded { value in
             if value.translation.width < 0 {
               if selectedIndex < imageNames.count - 4 {
-                selectedIndex += 1
-                withAnimation(.linear) {
+                selectedIndex += 3
+                withAnimation {
                   proxy.scrollTo(selectedIndex, anchor: .center)
                 }
               } else {
@@ -155,8 +155,10 @@ extension BrandsOfMonthAutoScrollView {
               }
             } else {
               if selectedIndex > 0 {
-                selectedIndex -= 1
-                proxy.scrollTo(selectedIndex, anchor: .center)
+                selectedIndex -= 3
+                withAnimation {
+                  proxy.scrollTo(selectedIndex, anchor: .center)
+                }
               } else {
                 selectedIndex = 12
                 proxy.scrollTo(selectedIndex, anchor: .center)
