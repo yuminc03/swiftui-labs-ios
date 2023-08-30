@@ -67,6 +67,7 @@ struct PointPaymentBenefitsList_Previews: PreviewProvider {
     } buttonAction: {
       print("button action")
     }
+    .previewLayout(.sizeThatFits)
   }
 }
 
@@ -82,21 +83,25 @@ extension PointPaymentBenefitsList {
   }
   
   var menu: some View {
-    LazyHGrid(
-      rows: [GridItem(.flexible(), spacing: 10, alignment: .center)],
-      spacing: 15
-    ) {
-      ForEach(0 ..< 4) { index in
-        PointPaymentItemButton(
-          title: menuTitles[index].title,
-          isSelected: menuStatus[index],
-          tag: index
-        ) {
-          menuItemAction(index)
+    ScrollView(.horizontal, showsIndicators: false) {
+      LazyHGrid(
+        rows: [GridItem(.flexible(), spacing: 10, alignment: .center)],
+        spacing: 15
+      ) {
+        Spacer()
+        ForEach(0 ..< 4) { index in
+          PointPaymentItemButton(
+            title: menuTitles[index].title,
+            isSelected: menuStatus[index],
+            tag: index
+          ) {
+            menuItemAction(index)
+          }
         }
+        Spacer()
       }
     }
-    .scaledToFit()
+    .frame(height: 50)
   }
   
   var list: some View {
