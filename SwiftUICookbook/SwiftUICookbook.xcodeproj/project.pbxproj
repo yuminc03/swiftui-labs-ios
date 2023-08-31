@@ -16,6 +16,8 @@
 		055CA4732AA00E8B00943414 /* SwiftUICookbookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4722AA00E8B00943414 /* SwiftUICookbookUITestsLaunchTests.swift */; };
 		055CA4802AA00F2E00943414 /* RocketShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA47F2AA00F2E00943414 /* RocketShape.swift */; };
 		055CA4822AA01D4700943414 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4812AA01D4700943414 /* OnboardingView.swift */; };
+		055CA4842AA0243700943414 /* PetSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4832AA0243700943414 /* PetSales.swift */; };
+		055CA4862AA024E800943414 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4852AA024E800943414 /* LineChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		055CA4722AA00E8B00943414 /* SwiftUICookbookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICookbookUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		055CA47F2AA00F2E00943414 /* RocketShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketShape.swift; sourceTree = "<group>"; };
 		055CA4812AA01D4700943414 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		055CA4832AA0243700943414 /* PetSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSales.swift; sourceTree = "<group>"; };
+		055CA4852AA024E800943414 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				055CA4572AA00E8800943414 /* ContentView.swift */,
 				055CA4812AA01D4700943414 /* OnboardingView.swift */,
 				055CA47F2AA00F2E00943414 /* RocketShape.swift */,
+				055CA4832AA0243700943414 /* PetSales.swift */,
+				055CA4852AA024E800943414 /* LineChartView.swift */,
 				055CA4592AA00E8A00943414 /* Assets.xcassets */,
 				055CA45B2AA00E8A00943414 /* Preview Content */,
 			);
@@ -263,10 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055CA4842AA0243700943414 /* PetSales.swift in Sources */,
 				055CA4802AA00F2E00943414 /* RocketShape.swift in Sources */,
 				055CA4822AA01D4700943414 /* OnboardingView.swift in Sources */,
 				055CA4582AA00E8800943414 /* ContentView.swift in Sources */,
 				055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */,
+				055CA4862AA024E800943414 /* LineChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

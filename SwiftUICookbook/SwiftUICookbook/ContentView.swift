@@ -25,44 +25,51 @@ struct ContentView: View {
 //      .padding()
 //    }
     
-    if showMainApp {
-      Text("Selcome to CosmoJourney!")
-        .multilineTextAlignment(.center)
-        .font(.largeTitle)
-    } else {
-      VStack {
-        TabView {
-          OnboardingView(
-            title: "The Final Frontier",
-            image: "globe",
-            description: "Explore the universe from the comfort of your spaceship!"
-          )
-          OnboardingView(
-            title: "Meet Alien Friends",
-            image: "person.3.fill",
-            description: "Make intergalactic friendships with beings from other planets!"
-          )
-          OnboardingView(
-            title: "Astronaut Life",
-            image: "suit.fill",
-            description: "Live the astronaut lifestyle with zero gravity workouts!"
-          )
-        }
-        .tabViewStyle(.page)
-
-        Spacer()
-        
-        Button("Get Started") {
-          showMainApp.toggle()
-        }
-        .padding()
-        .font(.title3)
-        .background(Color.blue)
-        .foregroundColor(.white)
-        .cornerRadius(10)
-        .padding(.bottom)
-      }
+//    if showMainApp {
+//      Text("Selcome to CosmoJourney!")
+//        .multilineTextAlignment(.center)
+//        .font(.largeTitle)
+//    } else {
+//      VStack {
+//        TabView {
+//          OnboardingView(
+//            title: "The Final Frontier",
+//            image: "globe",
+//            description: "Explore the universe from the comfort of your spaceship!"
+//          )
+//          OnboardingView(
+//            title: "Meet Alien Friends",
+//            image: "person.3.fill",
+//            description: "Make intergalactic friendships with beings from other planets!"
+//          )
+//          OnboardingView(
+//            title: "Astronaut Life",
+//            image: "suit.fill",
+//            description: "Live the astronaut lifestyle with zero gravity workouts!"
+//          )
+//        }
+//        .tabViewStyle(.page)
+//
+//        Spacer()
+//
+//        Button("Get Started") {
+//          showMainApp.toggle()
+//        }
+//        .padding()
+//        .font(.title3)
+//        .background(Color.blue)
+//        .foregroundColor(.white)
+//        .cornerRadius(10)
+//        .padding(.bottom)
+//      }
+//    }
+    
+    VStack {
+      Text("Pet Store Monthly Sales")
+        .font(.headline)
+      LineChartView()
     }
+    .padding()
   }
 }
 
