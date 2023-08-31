@@ -121,7 +121,7 @@ struct PointView: View {
       seeMorePageTabView
       nowOfPayco
     }
-    .padding(.init(top: 1, leading: 1, bottom: 1, trailing: 1))
+    .padding(.init(top: 1, leading: 0, bottom: 1, trailing: 0))
   }
 }
 
