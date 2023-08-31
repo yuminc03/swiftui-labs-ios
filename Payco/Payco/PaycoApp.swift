@@ -83,7 +83,7 @@ extension PaycoApp {
       Spacer()
       if viewStore.isFindFeatureBannerHidden == false {
         FindFeatureBannerView {
-          store.send(.didTapFindFeatureBannerXButton)
+          store.send(.didTapDismissButton)
         }
       }
     }

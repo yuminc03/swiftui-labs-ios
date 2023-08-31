@@ -46,7 +46,7 @@ struct PointCore: Reducer {
   }
   
   enum Action {
-    case didTapFindFeatureBannerXButton
+    case didTapDismissButton
     case didTapTabItem
     case didChangeAdvertiseBanner(Int)
     case didTapPointPaymentMenu(Int)
@@ -57,7 +57,7 @@ struct PointCore: Reducer {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .didTapFindFeatureBannerXButton:
+      case .didTapDismissButton:
         state.isFindFeatureBannerHidden = true
         return .none
         
@@ -121,7 +121,7 @@ struct PointView: View {
       seeMorePageTabView
       nowOfPayco
     }
-    .padding(.init(top: 1, leading: 1, bottom: 1, trailing: 1))
+    .padding(.init(top: 1, leading: 0, bottom: 1, trailing: 0))
   }
 }
 
