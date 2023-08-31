@@ -46,7 +46,7 @@ struct PointCore: Reducer {
   }
   
   enum Action {
-    case didTapFindFeatureBannerXButton
+    case didTapDismissButton
     case didTapTabItem
     case didChangeAdvertiseBanner(Int)
     case didTapPointPaymentMenu(Int)
@@ -57,7 +57,7 @@ struct PointCore: Reducer {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .didTapFindFeatureBannerXButton:
+      case .didTapDismissButton:
         state.isFindFeatureBannerHidden = true
         return .none
         
