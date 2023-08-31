@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftUICookbook/SwiftUICookbook.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Payco/Payco.xcodeproj">
    </FileRef>
    <FileRef
