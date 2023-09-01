@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NowPaycoImageItem: View {
+struct NowPaycoImageItem: View { // modifier로 바꿔보기
   
   private let imageName: String
   

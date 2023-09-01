@@ -16,7 +16,7 @@ struct MenuCollectionView: View {
   }
   
   var body: some View {
-    LazyVGrid(
+    LazyVGrid( // lazy 지우기
       columns: [
         GridItem(.flexible(), spacing: 20, alignment: .center),
         GridItem(.flexible(), spacing: 20, alignment: .center),

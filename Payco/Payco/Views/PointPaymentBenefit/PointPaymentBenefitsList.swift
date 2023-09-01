@@ -74,20 +74,15 @@ struct PointPaymentBenefitsList_Previews: PreviewProvider {
 extension PointPaymentBenefitsList {
   
   var title: some View {
-    HStack {
-      Text("8월 포인트 결제 혜택")
-        .font(.title2)
-        .bold()
-      Spacer()
-    }
+    Text("8월 포인트 결제 혜택")
+      .font(.title2)
+      .fontWeight(.bold)
+      .frame(maxWidth: .infinity, alignment: .leading)
   }
   
   var menu: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      LazyHGrid(
-        rows: [GridItem(.flexible(), spacing: 10, alignment: .center)],
-        spacing: 15
-      ) {
+      HStack(alignment: .center, spacing: 15) {
         ForEach(0 ..< 4) { index in
           PointPaymentItemButton(
             title: menuTitles[index].title,
@@ -95,7 +90,7 @@ extension PointPaymentBenefitsList {
             tag: index
           ) {
             menuItemAction(index)
-          }
+          } // tapGesture
         }
       }
     }

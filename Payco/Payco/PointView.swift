@@ -23,7 +23,7 @@ struct PointCore: Reducer {
     var currentPointPaymentPage = 1
     let getPointList = SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy
     var getPointSelectedIndex = 0
-    let brandOfMonthData = BrandOfMonthItem.dummy
+    let brandOfMonthData = BrandOfMonthItem.dummy + BrandOfMonthItem.dummy + BrandOfMonthItem.dummy
     let nowPaycoList = NowPaycoItem.dummy
     var pointPaymentDataCount: Int {
       switch selectedPointPaymentMenuIndex {
@@ -110,7 +110,7 @@ struct PointView: View {
   }
   
   var body: some View {
-    ScrollView(showsIndicators: false) {
+    ScrollView(showsIndicators: false) { //VStack으로 바꾸고 padding 20을 전체에 주기
       navigationBar
       currentCardView
       menuCollection
@@ -134,6 +134,7 @@ struct PointView_Previews: PreviewProvider {
 
 extension PointView {
   
+  // 나눌 필요 없음
   var navigationBar: some View {
     NavigationBar()
   }
@@ -203,5 +204,6 @@ extension PointView {
       title: "지금 페이코는",
       images: viewStore.nowPaycoList
     )
+    .padding(.bottom, 20)
   }
 }

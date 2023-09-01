@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrandsOfMonthAutoScrollView: View {
   @State private var xOffset: CGFloat = 0
-  @State private var selectedIndex = 12
+  @State private var selectedIndex = 18
   private let topTitle: String
   private let bottomTitle: String
   private let rightButtonTitle: String
@@ -31,9 +31,9 @@ struct BrandsOfMonthAutoScrollView: View {
   }
   
   var body: some View {
-    VStack(spacing: 40) {
+    VStack(spacing: 5) {
       HStack {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
           topTitleText
           bottomTitleText
         }
@@ -58,32 +58,7 @@ struct BrandsOfMonthAutoScrollView_Previews: PreviewProvider {
       topTitle: "이달의 브랜드",
       bottomTitle: "최대 15% 적립",
       rightButtonTitle: "보러가기",
-      imageNames: [
-        .init(imageName: "a.circle.fill", imageColor: .red),
-        .init(imageName: "b.circle.fill", imageColor: .blue),
-        .init(imageName: "c.circle.fill", imageColor: .cyan),
-        .init(imageName: "d.circle.fill", imageColor: .yellow),
-        .init(imageName: "e.circle.fill", imageColor: .purple),
-        .init(imageName: "f.circle.fill", imageColor: .orange),
-        .init(imageName: "g.circle.fill", imageColor: .indigo),
-        .init(imageName: "h.circle.fill", imageColor: .blue),
-        .init(imageName: "i.circle.fill", imageColor: .green),
-        .init(imageName: "j.circle.fill", imageColor: .black),
-        .init(imageName: "k.circle.fill", imageColor: .gray),
-        .init(imageName: "l.circle.fill", imageColor: .black),
-        .init(imageName: "a.circle.fill", imageColor: .red),
-        .init(imageName: "b.circle.fill", imageColor: .blue),
-        .init(imageName: "c.circle.fill", imageColor: .cyan),
-        .init(imageName: "d.circle.fill", imageColor: .yellow),
-        .init(imageName: "e.circle.fill", imageColor: .purple),
-        .init(imageName: "f.circle.fill", imageColor: .orange),
-        .init(imageName: "g.circle.fill", imageColor: .indigo),
-        .init(imageName: "h.circle.fill", imageColor: .blue),
-        .init(imageName: "i.circle.fill", imageColor: .green),
-        .init(imageName: "j.circle.fill", imageColor: .black),
-        .init(imageName: "k.circle.fill", imageColor: .gray),
-        .init(imageName: "l.circle.fill", imageColor: .black)
-      ]
+      imageNames: BrandOfMonthItem.dummy + BrandOfMonthItem.dummy + BrandOfMonthItem.dummy
     ) {
       print("Action")
     }
@@ -123,15 +98,24 @@ extension BrandsOfMonthAutoScrollView {
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(alignment: .center, spacing: 10) {
           ForEach(0 ..< imageNames.count) { index in
-            Image(systemName: imageNames[index].imageName)
-              .resizable()
-              .frame(width: 70, height: 70)
-              .cornerRadius(35)
-              .foregroundColor(imageNames[index].imageColor)
-              .id(index)
+            VStack(spacing: 2) {
+              if index % 8 == 0 {
+                BlackComment(type: .new)
+              } else if index % 10 == 0 {
+                BlackComment(type: .hot)
+              } else {
+                BlackComment(type: .none)
+              }
+              Image(systemName: imageNames[index].imageName)
+                .resizable()
+                .frame(width: 70, height: 70)
+                .cornerRadius(35)
+                .foregroundColor(imageNames[index].imageColor)
+                .id(index)
+            }
           }
         }
-        .frame(height: 70)
+        .frame(height: 120)
         .offset(x: xOffset, y: 0)
       }
       .scrollDisabled(true)
@@ -147,21 +131,21 @@ extension BrandsOfMonthAutoScrollView {
               if selectedIndex < imageNames.count - 4 {
                 selectedIndex += 3
                 withAnimation {
-                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  proxy.scrollTo(selectedIndex, anchor: .bottom)
                 }
               } else {
-                selectedIndex = 12
-                proxy.scrollTo(selectedIndex, anchor: .center)
+                selectedIndex = 18
+                proxy.scrollTo(selectedIndex, anchor: .bottom)
               }
             } else {
               if selectedIndex > 0 {
-                selectedIndex -= 3
+                selectedIndex -= 5
                 withAnimation {
-                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  proxy.scrollTo(selectedIndex, anchor: .bottom)
                 }
               } else {
-                selectedIndex = 12
-                proxy.scrollTo(selectedIndex, anchor: .center)
+                selectedIndex = 18
+                proxy.scrollTo(selectedIndex, anchor: .bottom)
               }
             }
           }

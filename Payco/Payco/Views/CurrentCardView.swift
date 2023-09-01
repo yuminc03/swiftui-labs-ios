@@ -36,6 +36,7 @@ struct CurrentCardView: View {
     .padding(.vertical, 30)
     .frame(height: 220)
     .background {
+      // 위아래로 뭔가 뚱뚱한 느낌.. (비슷하게)
       RoundedRectangle(cornerRadius: 20)
         .fill(
           LinearGradient(

@@ -12,7 +12,7 @@ struct AdvertisingAutoScrollBannersView: View {
   @State private var data: [AdvertisePaycoPoint]
   private let onChange: (Int) -> Void
   private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-  @State private var isDrag = false
+  @State private var isDrag = false 
   
   init(
     data: [AdvertisePaycoPoint],

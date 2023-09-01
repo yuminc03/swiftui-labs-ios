@@ -29,7 +29,7 @@ struct PointPaymentItemButton: View {
   var body: some View {
     Button(title) {
       action()
-    }
+    } //
     .padding(10)
     .foregroundColor(isSelected ? .white : .black)
     .fontWeight(isSelected ? .semibold : .regular)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomPageTabView: View {
+struct CustomPageTabView: View { //CustomPageIndicator
   
   private var selectedIndex: Int
   private let maxCount: Int
