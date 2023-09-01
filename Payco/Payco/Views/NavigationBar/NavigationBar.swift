@@ -14,11 +14,12 @@ struct NavigationBar: View {
         .font(.title)
         .bold()
       Spacer()
-      NavigationBarButton(imageName: "ticket") // badge
-      NavigationBarButton(imageName: "bell")
-      NavigationBarButton(imageName: "person")
+      NavigationBarButton(type: .ticket(24)) // badge
+      NavigationBarButton(type: .notification(3))
+      NavigationBarButton(type: .profile)
     }
     .padding(.horizontal, 20)
+    .padding(.vertical, 10)
   }
 }
 
