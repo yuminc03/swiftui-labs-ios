@@ -58,32 +58,7 @@ struct BrandsOfMonthAutoScrollView_Previews: PreviewProvider {
       topTitle: "이달의 브랜드",
       bottomTitle: "최대 15% 적립",
       rightButtonTitle: "보러가기",
-      imageNames: [
-        .init(imageName: "a.circle.fill", imageColor: .red),
-        .init(imageName: "b.circle.fill", imageColor: .blue),
-        .init(imageName: "c.circle.fill", imageColor: .cyan),
-        .init(imageName: "d.circle.fill", imageColor: .yellow),
-        .init(imageName: "e.circle.fill", imageColor: .purple),
-        .init(imageName: "f.circle.fill", imageColor: .orange),
-        .init(imageName: "g.circle.fill", imageColor: .indigo),
-        .init(imageName: "h.circle.fill", imageColor: .blue),
-        .init(imageName: "i.circle.fill", imageColor: .green),
-        .init(imageName: "j.circle.fill", imageColor: .black),
-        .init(imageName: "k.circle.fill", imageColor: .gray),
-        .init(imageName: "l.circle.fill", imageColor: .black),
-        .init(imageName: "a.circle.fill", imageColor: .red),
-        .init(imageName: "b.circle.fill", imageColor: .blue),
-        .init(imageName: "c.circle.fill", imageColor: .cyan),
-        .init(imageName: "d.circle.fill", imageColor: .yellow),
-        .init(imageName: "e.circle.fill", imageColor: .purple),
-        .init(imageName: "f.circle.fill", imageColor: .orange),
-        .init(imageName: "g.circle.fill", imageColor: .indigo),
-        .init(imageName: "h.circle.fill", imageColor: .blue),
-        .init(imageName: "i.circle.fill", imageColor: .green),
-        .init(imageName: "j.circle.fill", imageColor: .black),
-        .init(imageName: "k.circle.fill", imageColor: .gray),
-        .init(imageName: "l.circle.fill", imageColor: .black)
-      ]
+      imageNames: BrandOfMonthItem.dummy + BrandOfMonthItem.dummy + BrandOfMonthItem.dummy
     ) {
       print("Action")
     }
