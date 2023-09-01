@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05195A002AA19C9100AA311E /* BlackComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959FF2AA19C9100AA311E /* BlackComment.swift */; };
 		051EA2092A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2082A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift */; };
 		051EA20B2A9C18BE00A2EF7B /* BrandOfMonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA20A2A9C18BE00A2EF7B /* BrandOfMonthItem.swift */; };
 		051EA20D2A9C241D00A2EF7B /* SeeMorePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA20C2A9C241D00A2EF7B /* SeeMorePage.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051959FF2AA19C9100AA311E /* BlackComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackComment.swift; sourceTree = "<group>"; };
 		051EA2082A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsOfMonthAutoScrollView.swift; sourceTree = "<group>"; };
 		051EA20A2A9C18BE00A2EF7B /* BrandOfMonthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandOfMonthItem.swift; sourceTree = "<group>"; };
 		051EA20C2A9C241D00A2EF7B /* SeeMorePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMorePage.swift; sourceTree = "<group>"; };
@@ -127,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051959FE2AA19C6C00AA311E /* BrandsOfMonth */ = {
+			isa = PBXGroup;
+			children = (
+				051EA2082A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift */,
+				051959FF2AA19C9100AA311E /* BlackComment.swift */,
+			);
+			path = BrandsOfMonth;
+			sourceTree = "<group>";
+		};
 		8D5692772A99ED38003AFD98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +147,7 @@
 				8D97F4A72A9F81220028DC88 /* AdvertisingBanner */,
 				8D97F4A62A9F81090028DC88 /* PointPaymentBenefit */,
 				8D5692912A9B9336003AFD98 /* PaycoRewordRow.swift */,
-				051EA2082A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift */,
+				051959FE2AA19C6C00AA311E /* BrandsOfMonth */,
 				8D97F4A42A9F80CD0028DC88 /* SeeMore */,
 				051EA2122A9C383800A2EF7B /* CustomPageTabView.swift */,
 				8D97F4A52A9F80EB0028DC88 /* NowPayco */,
@@ -407,6 +418,7 @@
 				8D56927C2A9A1B31003AFD98 /* MenuCollectionItem.swift in Sources */,
 				05E835DC2A9D914C0011E5ED /* FindFeatureBannerView.swift in Sources */,
 				8D5692922A9B9336003AFD98 /* PaycoRewordRow.swift in Sources */,
+				05195A002AA19C9100AA311E /* BlackComment.swift in Sources */,
 				051EA21F2A9C834400A2EF7B /* AdvertisePaycoPoint.swift in Sources */,
 				8D76B7372A98F9F200576C06 /* PointView.swift in Sources */,
 				051EA20F2A9C30A300A2EF7B /* SeeMorePageTabItem.swift in Sources */,

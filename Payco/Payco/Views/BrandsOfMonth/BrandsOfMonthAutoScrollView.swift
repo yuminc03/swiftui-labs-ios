@@ -31,9 +31,9 @@ struct BrandsOfMonthAutoScrollView: View {
   }
   
   var body: some View {
-    VStack(spacing: 40) {
+    VStack(spacing: 5) {
       HStack {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
           topTitleText
           bottomTitleText
         }
@@ -123,15 +123,24 @@ extension BrandsOfMonthAutoScrollView {
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(alignment: .center, spacing: 10) {
           ForEach(0 ..< imageNames.count) { index in
-            Image(systemName: imageNames[index].imageName)
-              .resizable()
-              .frame(width: 70, height: 70)
-              .cornerRadius(35)
-              .foregroundColor(imageNames[index].imageColor)
-              .id(index)
+            VStack(spacing: 2) {
+              if index % 8 == 0 {
+                BlackComment(type: .new)
+              } else if index % 10 == 0 {
+                BlackComment(type: .hot)
+              } else {
+                BlackComment(type: .none)
+              }
+              Image(systemName: imageNames[index].imageName)
+                .resizable()
+                .frame(width: 70, height: 70)
+                .cornerRadius(35)
+                .foregroundColor(imageNames[index].imageColor)
+                .id(index)
+            }
           }
         }
-        .frame(height: 70)
+        .frame(height: 120)
         .offset(x: xOffset, y: 0)
       }
       .scrollDisabled(true)
@@ -147,21 +156,21 @@ extension BrandsOfMonthAutoScrollView {
               if selectedIndex < imageNames.count - 4 {
                 selectedIndex += 3
                 withAnimation {
-                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  proxy.scrollTo(selectedIndex, anchor: .bottom)
                 }
               } else {
                 selectedIndex = 18
-                proxy.scrollTo(selectedIndex, anchor: .center)
+                proxy.scrollTo(selectedIndex, anchor: .bottom)
               }
             } else {
               if selectedIndex > 0 {
                 selectedIndex -= 5
                 withAnimation {
-                  proxy.scrollTo(selectedIndex, anchor: .center)
+                  proxy.scrollTo(selectedIndex, anchor: .bottom)
                 }
               } else {
                 selectedIndex = 18
-                proxy.scrollTo(selectedIndex, anchor: .center)
+                proxy.scrollTo(selectedIndex, anchor: .bottom)
               }
             }
           }

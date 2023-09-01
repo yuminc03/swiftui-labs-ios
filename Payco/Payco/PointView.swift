@@ -203,5 +203,6 @@ extension PointView {
       title: "지금 페이코는",
       images: viewStore.nowPaycoList
     )
+    .padding(.bottom, 20)
   }
 }
