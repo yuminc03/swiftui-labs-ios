@@ -13,7 +13,7 @@ struct SeeMorePageTabView: View {
   private let maxCount: Int
   private let data: [SeeMorePageTabItem]
   private let buttonAction: () -> Void
-  private let indexChange: (Int) -> Void
+  private let indexChange: (Int) -> Void // 밖에서 selectedIndex를 받거나 없애거나.!
   
   init(
     maxCount: Int,
@@ -38,7 +38,7 @@ struct SeeMorePageTabView: View {
       }
       .tabViewStyle(.page(indexDisplayMode: .never))
       .onChange(of: selectedIndex) { newValue in
-        if newValue == 1 {
+        if newValue == 1 { // 데이터 개수는 6개로!
           selectedIndex = SeeMorePageTabItem.dummy.count + 1
         } else if newValue == data.count - 2 {
           selectedIndex = SeeMorePageTabItem.dummy.count + SeeMorePageTabItem.dummy.count - 2

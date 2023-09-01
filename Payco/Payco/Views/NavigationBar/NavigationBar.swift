@@ -14,7 +14,7 @@ struct NavigationBar: View {
         .font(.title)
         .bold()
       Spacer()
-      NavigationBarButton(imageName: "ticket")
+      NavigationBarButton(imageName: "ticket") // badge
       NavigationBarButton(imageName: "bell")
       NavigationBarButton(imageName: "person")
     }

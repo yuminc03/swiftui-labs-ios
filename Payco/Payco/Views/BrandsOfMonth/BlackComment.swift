@@ -42,7 +42,7 @@ struct BlackComment: View {
         .padding(10)
         .background(type != .none ? .black : .clear)
         .cornerRadius(30)
-      Rectangle()
+      Rectangle() //삼각형으로 바꿔보기 (path)
         .rotation(Angle(degrees: 45))
         .frame(width: 15, height: 15)
         .foregroundColor(type != .none ? Color.black : Color.clear)

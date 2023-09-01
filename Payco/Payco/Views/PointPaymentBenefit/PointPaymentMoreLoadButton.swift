@@ -39,8 +39,7 @@ struct PointPaymentMoreLoadButton: View {
       .padding(.horizontal, 20)
       .padding(.vertical, 15)
       .background(Color.white)
-      .cornerRadius(30)
-      .contentShape(RoundedRectangle(cornerRadius: 30))
+      .clipShape(Capsule())
     }
   }
 }

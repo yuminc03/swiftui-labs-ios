@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+struct CustomModifier: ViewModifier {
+  
+  func body(content: Content) -> some View {
+    content
+    .padding(20)
+    .background {
+      RoundedRectangle(cornerRadius: 20)
+        .foregroundColor(Color("gray_EAEAEA"))
+    }
+  }
+}
+
+extension View {
+  func custom() -> some View {
+    modifier(CustomModifier())
+  }
+}
 struct PaycoRewordRow: View {
   
   private let imageName: String
@@ -35,11 +52,7 @@ struct PaycoRewordRow: View {
         .font(.headline)
         .foregroundColor(.gray)
     }
-    .padding(20)
-    .background {
-      RoundedRectangle(cornerRadius: 20)
-        .foregroundColor(Color("gray_EAEAEA"))
-    }
+    .custom()
     .padding(.horizontal, 20)
     .padding(.vertical, 10)
   }

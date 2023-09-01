@@ -59,11 +59,11 @@ extension NowPaycoScrollView {
   
   var imageGridView: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      LazyHGrid(rows: [GridItem(.flexible(), spacing: 10)]) {
+      LazyHGrid(rows: [GridItem(.flexible(), spacing: 10)]) { //grid로 하지 않아도 됨
         ForEach(0 ..< images.count) { index in
           if index == 0 {
             NowPaycoImageItem(imageName: images[index].imageName)
-              .padding(.leading, 40)
+              .padding(.leading, 40) // 개선필요함 -> clear view를 넣거나.!
           } else if index == images.count - 1 {
             NowPaycoImageItem(imageName: images[index].imageName)
               .padding(.trailing, 40)
