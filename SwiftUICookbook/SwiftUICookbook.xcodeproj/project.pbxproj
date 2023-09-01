@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051959F52AA16F5700AA311E /* DeclareAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959F42AA16F5700AA311E /* DeclareAnimation.swift */; };
+		051959F72AA1700800AA311E /* AnimateViewOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959F62AA1700800AA311E /* AnimateViewOpacity.swift */; };
+		051959F92AA171C000AA311E /* AnimatePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959F82AA171C000AA311E /* AnimatePosition.swift */; };
+		051959FB2AA175BC00AA311E /* AnimateRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959FA2AA175BC00AA311E /* AnimateRotation.swift */; };
+		051959FD2AA176D100AA311E /* AnimateViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959FC2AA176D100AA311E /* AnimateViewSize.swift */; };
 		055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4552AA00E8800943414 /* SwiftUICookbookApp.swift */; };
 		055CA4582AA00E8800943414 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4572AA00E8800943414 /* ContentView.swift */; };
 		055CA45A2AA00E8A00943414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055CA4592AA00E8A00943414 /* Assets.xcassets */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051959F42AA16F5700AA311E /* DeclareAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclareAnimation.swift; sourceTree = "<group>"; };
+		051959F62AA1700800AA311E /* AnimateViewOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewOpacity.swift; sourceTree = "<group>"; };
+		051959F82AA171C000AA311E /* AnimatePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatePosition.swift; sourceTree = "<group>"; };
+		051959FA2AA175BC00AA311E /* AnimateRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateRotation.swift; sourceTree = "<group>"; };
+		051959FC2AA176D100AA311E /* AnimateViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewSize.swift; sourceTree = "<group>"; };
 		055CA4522AA00E8800943414 /* SwiftUICookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055CA4552AA00E8800943414 /* SwiftUICookbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICookbookApp.swift; sourceTree = "<group>"; };
 		055CA4572AA00E8800943414 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +124,11 @@
 				055CA4852AA024E800943414 /* LineChartView.swift */,
 				8D5053E42AA0C86B00A459DA /* ProgressBar.swift */,
 				8D5053E62AA0DDAA00A459DA /* SpinnerView.swift */,
+				051959F42AA16F5700AA311E /* DeclareAnimation.swift */,
+				051959F62AA1700800AA311E /* AnimateViewOpacity.swift */,
+				051959F82AA171C000AA311E /* AnimatePosition.swift */,
+				051959FA2AA175BC00AA311E /* AnimateRotation.swift */,
+				051959FC2AA176D100AA311E /* AnimateViewSize.swift */,
 				055CA4592AA00E8A00943414 /* Assets.xcassets */,
 				055CA45B2AA00E8A00943414 /* Preview Content */,
 			);
@@ -275,13 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051959FD2AA176D100AA311E /* AnimateViewSize.swift in Sources */,
+				051959F52AA16F5700AA311E /* DeclareAnimation.swift in Sources */,
 				055CA4842AA0243700943414 /* PetSales.swift in Sources */,
 				055CA4802AA00F2E00943414 /* RocketShape.swift in Sources */,
+				051959FB2AA175BC00AA311E /* AnimateRotation.swift in Sources */,
 				055CA4822AA01D4700943414 /* OnboardingView.swift in Sources */,
 				055CA4582AA00E8800943414 /* ContentView.swift in Sources */,
 				055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */,
 				055CA4862AA024E800943414 /* LineChartView.swift in Sources */,
+				051959F92AA171C000AA311E /* AnimatePosition.swift in Sources */,
 				8D5053E72AA0DDAA00A459DA /* SpinnerView.swift in Sources */,
+				051959F72AA1700800AA311E /* AnimateViewOpacity.swift in Sources */,
 				8D5053E52AA0C86B00A459DA /* ProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
