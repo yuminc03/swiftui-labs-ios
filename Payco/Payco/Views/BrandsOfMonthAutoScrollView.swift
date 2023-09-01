@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrandsOfMonthAutoScrollView: View {
   @State private var xOffset: CGFloat = 0
-  @State private var selectedIndex = 12
+  @State private var selectedIndex = 18
   private let topTitle: String
   private let bottomTitle: String
   private let rightButtonTitle: String
@@ -150,17 +150,17 @@ extension BrandsOfMonthAutoScrollView {
                   proxy.scrollTo(selectedIndex, anchor: .center)
                 }
               } else {
-                selectedIndex = 12
+                selectedIndex = 18
                 proxy.scrollTo(selectedIndex, anchor: .center)
               }
             } else {
               if selectedIndex > 0 {
-                selectedIndex -= 3
+                selectedIndex -= 5
                 withAnimation {
                   proxy.scrollTo(selectedIndex, anchor: .center)
                 }
               } else {
-                selectedIndex = 12
+                selectedIndex = 18
                 proxy.scrollTo(selectedIndex, anchor: .center)
               }
             }

@@ -23,7 +23,7 @@ struct PointCore: Reducer {
     var currentPointPaymentPage = 1
     let getPointList = SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy
     var getPointSelectedIndex = 0
-    let brandOfMonthData = BrandOfMonthItem.dummy
+    let brandOfMonthData = BrandOfMonthItem.dummy + BrandOfMonthItem.dummy + BrandOfMonthItem.dummy
     let nowPaycoList = NowPaycoItem.dummy
     var pointPaymentDataCount: Int {
       switch selectedPointPaymentMenuIndex {
