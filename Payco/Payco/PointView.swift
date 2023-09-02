@@ -112,15 +112,53 @@ struct PointView: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(spacing: 20) {
-        navigationBar
-        currentCardView
-        menuCollection
-        advertisingAutoScrollBanners
-        pointPaymentBenefitList
-        rewordRow
-        brandCollectionOfMonthView
-        seeMorePageTabView
-        nowOfPayco
+        NavigationBar()
+        CurrentCardView(cardItem: viewStore.cardItem) {
+          print("카드 관리 button action")
+        }
+        MenuCollectionView(data: viewStore.menuCollection)
+        AdvertisingAutoScrollBannersView(
+          data: viewStore.advertisePaycoPoint
+        ) { index in
+          store.send(.didChangeAdvertiseBanner(index))
+        }
+        PointPaymentBenefitsList(
+          currentPointPaymentPage: viewStore.currentPointPaymentPage,
+          pageCount: viewStore.pointPaymentDataCount / 4,
+          menuTitles: viewStore.pointPaymentMenuItem,
+          menuStatus: viewStore.pointPaymentMenuItemStatus
+        ) { index in
+          store.send(.didTapPointPaymentMenu(index))
+        } buttonAction: {
+          store.send(.didTapPointPaymentMoreButton)
+        }
+        PaycoRewordRow(
+          imageName: "dollarsign.circle.fill",
+          title: "PAYCO 리워드",
+          point: 0
+        )
+        BrandsOfMonthAutoScrollView(
+          topTitle: "이달의 브랜드",
+          bottomTitle: "최대 15% 적립",
+          rightButtonTitle: "보러가기",
+          imageNames: viewStore.brandOfMonthData
+        ) {
+          print("BrandsOfMonthAutoScrollView Action")
+        }
+        SeeMorePageTabView(
+          maxCount: SeeMorePageTabItem.dummy.count,
+          data: viewStore.getPointList
+        ) {
+          print("SeeMorePageTabView Red button Action")
+        } indexChange: { index in
+          store.send(.didChangeGetPointSelectedIndex(index))
+        }
+        NowPaycoScrollView(
+          leftImageName: "camera.viewfinder",
+          title: "지금 페이코는",
+          images: viewStore.nowPaycoList
+        )
+        .padding(.bottom, 20)
       }
       .padding(20)
     }
@@ -132,81 +170,5 @@ struct PointView_Previews: PreviewProvider {
   static var previews: some View {
     PointView()
       .previewLayout(.sizeThatFits)
-  }
-}
-
-extension PointView {
-  
-  // 나눌 필요 없음
-  var navigationBar: some View {
-    NavigationBar()
-  }
-  
-  var currentCardView: some View {
-    CurrentCardView(cardItem: viewStore.cardItem) {
-      print("카드 관리 button action")
-    }
-  }
-  
-  var menuCollection: some View {
-    MenuCollectionView(data: viewStore.menuCollection)
-  }
-  
-  var advertisingAutoScrollBanners: some View {
-    AdvertisingAutoScrollBannersView(data: viewStore.advertisePaycoPoint) { index in
-      store.send(.didChangeAdvertiseBanner(index))
-    }
-  }
-  
-  var pointPaymentBenefitList: some View {
-    PointPaymentBenefitsList(
-      currentPointPaymentPage: viewStore.currentPointPaymentPage,
-      pageCount: viewStore.pointPaymentDataCount / 4,
-      menuTitles: viewStore.pointPaymentMenuItem,
-      menuStatus: viewStore.pointPaymentMenuItemStatus
-    ) { index in
-      store.send(.didTapPointPaymentMenu(index))
-    } buttonAction: {
-      store.send(.didTapPointPaymentMoreButton)
-    }
-  }
-  
-  var rewordRow: some View {
-    PaycoRewordRow(
-      imageName: "dollarsign.circle.fill",
-      title: "PAYCO 리워드",
-      point: 0
-    )
-  }
-  
-  var brandCollectionOfMonthView: some View {
-    BrandsOfMonthAutoScrollView(
-      topTitle: "이달의 브랜드",
-      bottomTitle: "최대 15% 적립",
-      rightButtonTitle: "보러가기",
-      imageNames: viewStore.brandOfMonthData
-    ) {
-      print("BrandsOfMonthAutoScrollView Action")
-    }
-  }
-  
-  var seeMorePageTabView: some View {
-    SeeMorePageTabView(
-      maxCount: SeeMorePageTabItem.dummy.count,
-      data: viewStore.getPointList
-    ) {
-      print("SeeMorePageTabView Red button Action")
-    } indexChange: { index in
-      store.send(.didChangeGetPointSelectedIndex(index))
-    }
-  }
-  
-  var nowOfPayco: some View {
-    NowPaycoScrollView(
-      leftImageName: "camera.viewfinder",
-      title: "지금 페이코는",
-      images: viewStore.nowPaycoList
-    )
-    .padding(.bottom, 20)
   }
 }
