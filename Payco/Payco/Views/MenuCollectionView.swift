@@ -31,12 +31,10 @@ struct MenuCollectionView: View {
             .font(.largeTitle)
             .foregroundColor(item.iconColor)
           Text(item.title)
-            .font(.caption)
+            .font(.subheadline)
         }
       }
     }
-    .padding(.horizontal, 20)
-    .padding(.vertical, 10)
   }
 }
 

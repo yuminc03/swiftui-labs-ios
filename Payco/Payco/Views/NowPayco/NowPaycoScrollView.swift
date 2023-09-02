@@ -21,8 +21,9 @@ struct NowPaycoScrollView: View {
   var body: some View {
     VStack(spacing: 40) {
       titleView
-        .padding(.leading, 40)
+        .padding(.leading, 20)
       imageGridView
+        .padding(.horizontal, -20)
     }
     .padding(.vertical, 30)
     .background {
@@ -30,7 +31,6 @@ struct NowPaycoScrollView: View {
         .overlay {
           RoundedRectangle(cornerRadius: 20)
             .fill(Color("gray_EAEAEA"))
-            .padding(.horizontal, 20)
         }
     }
   }

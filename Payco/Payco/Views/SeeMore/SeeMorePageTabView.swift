@@ -48,7 +48,7 @@ struct SeeMorePageTabView: View {
       CustomPageTabView(selectedIndex: selectedIndex % 4, maxCount: maxCount)
     }
     .frame(height: 380)
-    .padding(.vertical, 10)
+    .padding(.horizontal, -20)
   }
 }
 
