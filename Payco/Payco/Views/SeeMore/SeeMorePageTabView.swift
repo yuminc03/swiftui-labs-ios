@@ -35,13 +35,13 @@ struct SeeMorePageTabView: View {
       }
       .tabViewStyle(.page(indexDisplayMode: .never))
       .onChange(of: selectedIndex) { newValue in
-        if newValue == 0 { 
+        if newValue == 0 {
           selectedIndex = 4
         } else if newValue == 5 {
           selectedIndex = 1
         }
       }
-      CustomPageTabView(selectedIndex: (selectedIndex == 0) ? 3 : (selectedIndex == 5) ? 1 : selectedIndex - 1 , maxCount: maxCount)
+      CustomPageIndicator(selectedIndex: (selectedIndex == 0) ? 3 : (selectedIndex == 5) ? 1 : selectedIndex - 1 , maxCount: maxCount)
     }
     .frame(height: 380)
     .padding(.horizontal, -20)
