@@ -83,7 +83,7 @@ extension PointPaymentBenefitsList {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(alignment: .center, spacing: 15) {
         ForEach(0 ..< 4) { index in
-          PointPaymentItemButton(
+          PointPaymentMenuItem(
             title: menuTitles[index].title,
             isSelected: menuStatus[index],
             tag: index
