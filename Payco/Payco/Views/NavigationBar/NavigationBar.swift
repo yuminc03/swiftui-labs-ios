@@ -14,7 +14,7 @@ struct NavigationBar: View {
         .font(.title)
         .bold()
       Spacer()
-      NavigationBarButton(type: .ticket(24)) // badge
+      NavigationBarButton(type: .ticket(24))
       NavigationBarButton(type: .notification(3))
       NavigationBarButton(type: .profile)
     }

@@ -19,24 +19,29 @@ struct CurrentCardView: View {
   }
   
   var body: some View {
-    HStack {
-      VStack(alignment: .leading, spacing: 20) {
-        paycoPointText
-        cardPoint
+    HStack(alignment: .center) {
+      VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 20) {
+          paycoPointText
+          cardPoint
+        }
         Spacer()
         bankInfoText
       }
       Spacer()
-      VStack(spacing: 0) {
+      ZStack(alignment: .trailing) {
         cardImage
-        manageCardButton
+        VStack(alignment: .trailing) {
+          Spacer()
+          manageCardButton
+        }
       }
     }
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
+    .frame(maxWidth: .infinity)
     .frame(height: 220)
     .background {
-      // 위아래로 뭔가 뚱뚱한 느낌.. (비슷하게)
       RoundedRectangle(cornerRadius: 20)
         .fill(
           LinearGradient(
@@ -45,6 +50,7 @@ struct CurrentCardView: View {
             endPoint: .trailing
           )
         )
+        .aspectRatio(2.0, contentMode: .fit)
     }
   }
 }
@@ -62,7 +68,7 @@ extension CurrentCardView {
   
   var paycoPointText: some View {
     Text(cardItem.topLeadingTitle)
-      .font(.title3)
+      .font(.headline)
       .fontWeight(.semibold)
       .foregroundColor(.white)
   }
@@ -70,7 +76,7 @@ extension CurrentCardView {
   var cardPoint: some View {
     HStack(spacing: 10) {
       Text("\(cardItem.point) P")
-        .font(.largeTitle)
+        .font(.title)
       Image(systemName: "chevron.right")
         .font(.title3)
     }
@@ -82,8 +88,9 @@ extension CurrentCardView {
     Text("\(cardItem.bankName) (\(cardItem.accountNumber))")
       .underline(color: .white)
       .foregroundColor(.white)
-      .font(.body)
+      .font(.subheadline)
       .fontWeight(.light)
+      .offset(y: -10)
   }
   
   var cardImage: some View {
@@ -91,7 +98,7 @@ extension CurrentCardView {
       .resizable()
       .scaledToFit()
       .frame(height: 150)
-      .offset(x: -10, y: -30)
+      .offset(x: -10, y: -40)
       .rotation3DEffect(
         .degrees(-animationValue),
         axis: (x: -animationValue, y: animationValue, z: animationValue)
@@ -107,10 +114,11 @@ extension CurrentCardView {
     Button(cardItem.buttonTitle) {
       buttonAction()
     }
+    .font(.footnote)
     .foregroundColor(.white)
-    .padding()
+    .padding(.horizontal, 15)
+    .padding(.vertical, 10)
     .background(Color.white.opacity(0.2))
-    .cornerRadius(15)
-    .offset(x: 10, y: -20)
+    .cornerRadius(10)
   }
 }
