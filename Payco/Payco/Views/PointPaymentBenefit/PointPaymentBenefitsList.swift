@@ -46,7 +46,8 @@ struct PointPaymentBenefitsList: View {
         buttonAction()
       }
     }
-    .padding(20)
+    .padding(.vertical, 30)
+    .padding(.horizontal, 20)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
