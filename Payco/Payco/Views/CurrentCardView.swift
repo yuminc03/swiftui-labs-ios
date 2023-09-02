@@ -46,7 +46,6 @@ struct CurrentCardView: View {
           )
         )
     }
-    .padding(20)
   }
 }
 

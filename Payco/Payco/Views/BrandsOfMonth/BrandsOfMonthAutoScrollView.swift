@@ -48,7 +48,6 @@ struct BrandsOfMonthAutoScrollView: View {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
     }
-    .padding(.horizontal, 20)
   }
 }
 

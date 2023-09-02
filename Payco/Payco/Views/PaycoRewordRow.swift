@@ -20,7 +20,7 @@ struct CustomModifier: ViewModifier {
 }
 
 extension View {
-  func custom() -> some View {
+  func grayRoundRectangle() -> some View {
     modifier(CustomModifier())
   }
 }
@@ -52,9 +52,7 @@ struct PaycoRewordRow: View {
         .font(.headline)
         .foregroundColor(.gray)
     }
-    .custom()
-    .padding(.horizontal, 20)
-    .padding(.vertical, 10)
+    .grayRoundRectangle()
   }
 }
 

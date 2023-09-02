@@ -110,16 +110,19 @@ struct PointView: View {
   }
   
   var body: some View {
-    ScrollView(showsIndicators: false) { //VStack으로 바꾸고 padding 20을 전체에 주기
-      navigationBar
-      currentCardView
-      menuCollection
-      advertisingAutoScrollBanners
-      pointPaymentBenefitList
-      rewordRow
-      brandCollectionOfMonthView
-      seeMorePageTabView
-      nowOfPayco
+    ScrollView(showsIndicators: false) {
+      VStack(spacing: 20) {
+        navigationBar
+        currentCardView
+        menuCollection
+        advertisingAutoScrollBanners
+        pointPaymentBenefitList
+        rewordRow
+        brandCollectionOfMonthView
+        seeMorePageTabView
+        nowOfPayco
+      }
+      .padding(20)
     }
     .padding(.init(top: 1, leading: 0, bottom: 1, trailing: 0))
   }

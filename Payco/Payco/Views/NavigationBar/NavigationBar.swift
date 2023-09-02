@@ -18,8 +18,6 @@ struct NavigationBar: View {
       NavigationBarButton(type: .notification(3))
       NavigationBarButton(type: .profile)
     }
-    .padding(.horizontal, 20)
-    .padding(.vertical, 10)
   }
 }
 
