@@ -40,7 +40,7 @@ struct CurrentCardView: View {
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
     .frame(maxWidth: .infinity)
-    .frame(height: 220)
+    .frame(height: 200)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .fill(
