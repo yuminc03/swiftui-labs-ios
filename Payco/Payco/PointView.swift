@@ -21,7 +21,7 @@ struct PointCore: Reducer {
     var pointPaymentMenuItemStatus = [true] + Array(repeating: false, count: PointPaymentItem.dummy.count - 1)
     var selectedPointPaymentMenuIndex = 0
     var currentPointPaymentPage = 1
-    let getPointList = SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy + SeeMorePageTabItem.dummy
+    let getPointList = SeeMorePageTabItem.dummy
     var getPointSelectedIndex = 0
     let brandOfMonthData = BrandOfMonthItem.dummy + BrandOfMonthItem.dummy + BrandOfMonthItem.dummy
     let nowPaycoList = NowPaycoItem.dummy
@@ -51,7 +51,6 @@ struct PointCore: Reducer {
     case didChangeAdvertiseBanner(Int)
     case didTapPointPaymentMenu(Int)
     case didTapPointPaymentMoreButton
-    case didChangeGetPointSelectedIndex(Int)
   }
   
   var body: some ReducerOf<Self> {
@@ -88,10 +87,6 @@ struct PointCore: Reducer {
         } else {
           state.currentPointPaymentPage += 1
         }
-        return .none
-       
-      case let .didChangeGetPointSelectedIndex(index):
-        state.getPointSelectedIndex = index
         return .none
       }
     }
@@ -146,12 +141,10 @@ struct PointView: View {
           print("BrandsOfMonthAutoScrollView Action")
         }
         SeeMorePageTabView(
-          maxCount: SeeMorePageTabItem.dummy.count,
+          maxCount: 4,
           data: viewStore.getPointList
         ) {
           print("SeeMorePageTabView Red button Action")
-        } indexChange: { index in
-          store.send(.didChangeGetPointSelectedIndex(index))
         }
         NowPaycoScrollView(
           leftImageName: "camera.viewfinder",
