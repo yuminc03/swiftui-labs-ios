@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct StopWatchView: View {
-    var body: some View {
-        Text("StopWatchView")
+  var body: some View {
+    ZStack {
+      Color.black
+        .ignoresSafeArea()
     }
+  }
 }
 
 struct StopWatchView_Previews: PreviewProvider {
-    static var previews: some View {
-        StopWatchView()
-    }
+  static var previews: some View {
+    StopWatchView()
+  }
 }

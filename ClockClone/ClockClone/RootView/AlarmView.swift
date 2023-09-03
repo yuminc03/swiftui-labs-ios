@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct AlarmView: View {
-    var body: some View {
-        Text("AlarmView")
+  var body: some View {
+    ZStack {
+      Color.black
+        .ignoresSafeArea()
     }
+  }
 }
 
 struct AlarmView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlarmView()
-    }
+  static var previews: some View {
+    AlarmView()
+  }
 }

@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct TimerView: View {
-    var body: some View {
-        Text("TimerView")
+  var body: some View {
+    ZStack {
+      Color.black
+        .ignoresSafeArea()
     }
+  }
 }
 
 struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView()
-    }
+  static var previews: some View {
+    TimerView()
+  }
 }
