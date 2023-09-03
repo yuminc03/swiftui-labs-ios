@@ -2,7 +2,7 @@
 //  SwiftUICookbookTests.swift
 //  SwiftUICookbookTests
 //
-//  Created by LS-NOTE-00106 on 2023/08/31.
+//  Created by Yumin Chu on 2023/08/31.
 //
 
 import XCTest

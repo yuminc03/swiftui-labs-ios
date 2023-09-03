@@ -2,7 +2,7 @@
 //  AnimatePosition.swift
 //  SwiftUICookbook
 //
-//  Created by LS-NOTE-00106 on 2023/09/01.
+//  Created by Yumin Chu on 2023/09/01.
 //
 
 import SwiftUI
