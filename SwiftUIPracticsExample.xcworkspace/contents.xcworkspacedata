@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftUICookbook/SwiftUICookbook.xcodeproj">
+      location = "group:ClockClone/ClockClone.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Payco/Payco.xcodeproj">
@@ -21,5 +21,8 @@
    </FileRef>
    <FileRef
       location = "group:Scrumdinger/Scrumdinger.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftUICookbook/SwiftUICookbook.xcodeproj">
    </FileRef>
 </Workspace>
