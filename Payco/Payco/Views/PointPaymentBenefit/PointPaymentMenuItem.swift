@@ -35,7 +35,7 @@ struct PointPaymentMenuItem: View {
       .padding(.vertical, 10)
       .foregroundColor(isSelected ? .white : .black)
       .fontWeight(isSelected ? .semibold : .regular)
-      .font(.body)
+      .font(.subheadline)
       .background {
         isSelected ? Color.black : Color("gray_D8D8D8")
       }

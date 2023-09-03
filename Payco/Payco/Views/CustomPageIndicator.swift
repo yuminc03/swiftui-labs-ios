@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomPageTabView: View { //CustomPageIndicator
+struct CustomPageIndicator: View {
   
   private var selectedIndex: Int
   private let maxCount: Int
@@ -44,7 +44,7 @@ struct CustomPageTabItem: View {
 
 struct CustomPageTabView_Previews: PreviewProvider {
   static var previews: some View {
-    CustomPageTabView(selectedIndex: 1, maxCount: 4)
+    CustomPageIndicator(selectedIndex: 1, maxCount: 4)
       .previewLayout(.sizeThatFits)
   }
 }

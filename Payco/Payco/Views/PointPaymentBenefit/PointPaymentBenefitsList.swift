@@ -46,7 +46,8 @@ struct PointPaymentBenefitsList: View {
         buttonAction()
       }
     }
-    .padding(20)
+    .padding(.vertical, 30)
+    .padding(.horizontal, 20)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
@@ -74,14 +75,14 @@ extension PointPaymentBenefitsList {
   
   var title: some View {
     Text("8월 포인트 결제 혜택")
-      .font(.title2)
+      .font(.title3)
       .fontWeight(.bold)
       .frame(maxWidth: .infinity, alignment: .leading)
   }
   
   var menu: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      HStack(alignment: .center, spacing: 15) {
+      HStack(alignment: .center, spacing: 10) {
         ForEach(0 ..< 4) { index in
           PointPaymentMenuItem(
             title: menuTitles[index].title,

@@ -17,6 +17,13 @@ struct SeeMorePageTabItem: Identifiable, Equatable {
   
   static let dummy: [SeeMorePageTabItem] = [
     .init(
+      topCaption: "",
+      title: "결제할 때 사용 가능한\n5천 포인트 바로 받기",
+      contents: "신청까지 최대 1분,\n신청완료 즉시 5천P 지급!",
+      imageName: "banknote",
+      buttonTitle: "카드 신청하기"
+    ),
+    .init(
       topCaption: "알고 계셨나요?",
       title: "PAYCO 포인트로\n해외결제도 된다는 사실",
       contents: "해외 호텔 & 항공 예약 시\n할인은 기본,\n현지화 출금까지 가능해요",
@@ -43,6 +50,13 @@ struct SeeMorePageTabItem: Identifiable, Equatable {
       contents: "신청까지 최대 1분,\n신청완료 즉시 5천P 지급!",
       imageName: "banknote",
       buttonTitle: "카드 신청하기"
+    ),
+    .init(
+      topCaption: "알고 계셨나요?",
+      title: "PAYCO 포인트로\n해외결제도 된다는 사실",
+      contents: "해외 호텔 & 항공 예약 시\n할인은 기본,\n현지화 출금까지 가능해요",
+      imageName: "network",
+      buttonTitle: "자세히 보기"
     )
   ]
 }

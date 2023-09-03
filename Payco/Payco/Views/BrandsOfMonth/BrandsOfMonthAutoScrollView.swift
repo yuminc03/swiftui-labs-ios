@@ -32,18 +32,18 @@ struct BrandsOfMonthAutoScrollView: View {
   
   var body: some View {
     VStack(spacing: 5) {
-      HStack {
-        VStack(alignment: .leading, spacing: 5) {
+      VStack(alignment: .leading, spacing: -5) {
+        HStack(alignment: .firstTextBaseline) {
           topTitleText
-          bottomTitleText
+          Spacer()
+          rightButton
         }
-        Spacer()
-        rightButton
+        bottomTitleText
       }
       .padding(.horizontal, 20)
       contentsView
     }
-    .padding(.vertical, 40)
+    .padding(.vertical, 30)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
@@ -85,11 +85,12 @@ extension BrandsOfMonthAutoScrollView {
     Button(rightButtonTitle) {
       action()
     }
-    .font(.caption)
+    .font(.footnote)
     .foregroundColor(.black)
-    .padding(10)
+    .padding(.horizontal, 10)
+    .padding(.vertical, 8)
     .background(Color("gray_D8D8D8"))
-    .cornerRadius(10)
+    .cornerRadius(8)
   }
   
   var contentsView: some View {
@@ -114,7 +115,6 @@ extension BrandsOfMonthAutoScrollView {
             }
           }
         }
-        .frame(height: 120)
         .offset(x: xOffset, y: 0)
       }
       .scrollDisabled(true)

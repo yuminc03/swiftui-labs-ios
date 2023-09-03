@@ -39,21 +39,36 @@ struct BlackComment: View {
         .font(.caption)
         .fontWeight(.bold)
         .foregroundColor(type != .none ? .white : .clear)
-        .padding(10)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 8)
         .background(type != .none ? .black : .clear)
-        .cornerRadius(30)
-      Rectangle() //삼각형으로 바꿔보기 (path)
-        .rotation(Angle(degrees: 45))
-        .frame(width: 15, height: 15)
-        .foregroundColor(type != .none ? Color.black : Color.clear)
-        .offset(y: -10)
+        .clipShape(Capsule())
+      Triangle()
+        .fill(type != .none ? .black : .clear)
+        .frame(width: 10, height: 5)
     }
   }
 }
 
 struct BlackComment_Previews: PreviewProvider {
   static var previews: some View {
-    BlackComment(type: .none)
+    BlackComment(type: .new)
       .previewLayout(.sizeThatFits)
+  }
+}
+
+extension BlackComment {
+  
+  struct Triangle: Shape {
+
+    func path(in rect: CGRect) -> Path {
+      var path = Path()
+      path.move(to: CGPoint(x: 0, y: 0))
+      path.addLine(to: CGPoint(x: rect.midX, y: rect.height))
+      path.addLine(to: CGPoint(x: rect.width, y: 0))
+      path.addLine(to: CGPoint(x: 0, y: 0))
+      path.closeSubpath()
+      return path
+    }
   }
 }
