@@ -25,6 +25,7 @@
 		055CA4862AA024E800943414 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4852AA024E800943414 /* LineChartView.swift */; };
 		8D5053E52AA0C86B00A459DA /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5053E42AA0C86B00A459DA /* ProgressBar.swift */; };
 		8D5053E72AA0DDAA00A459DA /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5053E62AA0DDAA00A459DA /* SpinnerView.swift */; };
+		8DE1A5252AA468B400AA0294 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE1A5242AA468B400AA0294 /* AddImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		055CA4852AA024E800943414 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		8D5053E42AA0C86B00A459DA /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		8D5053E62AA0DDAA00A459DA /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		8DE1A5242AA468B400AA0294 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				051959F82AA171C000AA311E /* AnimatePosition.swift */,
 				051959FA2AA175BC00AA311E /* AnimateRotation.swift */,
 				051959FC2AA176D100AA311E /* AnimateViewSize.swift */,
+				8DE1A5242AA468B400AA0294 /* AddImageView.swift */,
 				055CA4592AA00E8A00943414 /* Assets.xcassets */,
 				055CA45B2AA00E8A00943414 /* Preview Content */,
 			);
@@ -296,6 +299,7 @@
 				055CA4802AA00F2E00943414 /* RocketShape.swift in Sources */,
 				051959FB2AA175BC00AA311E /* AnimateRotation.swift in Sources */,
 				055CA4822AA01D4700943414 /* OnboardingView.swift in Sources */,
+				8DE1A5252AA468B400AA0294 /* AddImageView.swift in Sources */,
 				055CA4582AA00E8800943414 /* ContentView.swift in Sources */,
 				055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */,
 				055CA4862AA024E800943414 /* LineChartView.swift in Sources */,
