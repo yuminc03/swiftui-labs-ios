@@ -38,6 +38,7 @@ struct WorldClockView: View {
   init(store: StoreOf<WorldClockCore>) {
     self.store = store
     self.viewStore = ViewStore(store, observe: { $0 })
+    setNavigaitonBarColors()
   }
   
   var body: some View {
@@ -47,17 +48,14 @@ struct WorldClockView: View {
           .ignoresSafeArea()
         
         List {
-          ForEach(viewStore.state.worldClockRow) { item in
-            WorldClockRow(worldClockItem: item)
-              .background(.clear)
+          ForEach(0 ..< viewStore.state.worldClockRow.count) { index in
+            WorldClockRow(worldClockItem: viewStore.state.worldClockRow[index], isFirstRow: index == 0)
           }
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         .listStyle(.plain)
-        .listRowBackground(Color.clear)
-        .scrollContentBackground(.hidden)
+        .padding(.horizontal, 20)
       }
-      .navigationTitle(Text("세계 시계"))
-      .foregroundColor(.white)
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
           Button {
@@ -73,13 +71,18 @@ struct WorldClockView: View {
         }
       }
       .foregroundColor(.orange)
+      .navigationTitle("세계 시계")
     }
   }
 }
 
 struct WorldClockView_Previews: PreviewProvider {
   static var previews: some View {
-    WorldClockView(store: Store(initialState: WorldClockCore.State()) {
+    WorldClockView(store: Store(initialState: WorldClockCore.State(
+      worldClockRow: [
+        WorldClockItem(id: UUID(), parallax: "오늘, +0시간", cityName: "서울", isAM: false, time: "7:22")
+      ]
+    )) {
       WorldClockCore()
     })
   }
@@ -87,4 +90,9 @@ struct WorldClockView_Previews: PreviewProvider {
 
 extension WorldClockView {
   
+  private func setNavigaitonBarColors() {
+    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    UINavigationBar.appearance().barTintColor = UIColor.black
+  }
 }

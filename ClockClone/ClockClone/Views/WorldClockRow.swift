@@ -9,13 +9,19 @@ import SwiftUI
 
 struct WorldClockRow: View {
   private let worldClockItem: WorldClockItem
+  private let isFirstRow: Bool
   
-  init(worldClockItem: WorldClockItem) {
+  init(worldClockItem: WorldClockItem, isFirstRow: Bool) {
     self.worldClockItem = worldClockItem
+    self.isFirstRow = isFirstRow
   }
   
   var body: some View {
     VStack(spacing: 20) {
+      if isFirstRow {
+        Divider()
+          .background(Color.gray)
+      }
       HStack(alignment: .center) {
         VStack(alignment: .leading, spacing: 5) {
           parallaxText
@@ -31,21 +37,22 @@ struct WorldClockRow: View {
       Divider()
         .background(Color.gray)
     }
-    .padding(.top, 20)
-    .padding(.horizontal, 20)
     .background(Color.black)
   }
 }
 
 struct WorldClockRow_Previews: PreviewProvider {
   static var previews: some View {
-    WorldClockRow(worldClockItem: WorldClockItem(
-      id: UUID(),
-      parallax: "오늘, +0시간",
-      cityName: "서울",
-      isAM: false,
-      time: "7:22"
-    ))
+    WorldClockRow(
+      worldClockItem: WorldClockItem(
+        id: UUID(),
+        parallax: "오늘, +0시간",
+        cityName: "서울",
+        isAM: false,
+        time: "7:22"
+      ),
+      isFirstRow: true
+    )
     .previewLayout(.sizeThatFits)
   }
 }

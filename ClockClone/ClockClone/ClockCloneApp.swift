@@ -21,6 +21,7 @@ struct ClockCloneApp: App {
         ._printChanges()
     }
     self.viewStore = ViewStore(store, observe: { $0 })
+    UITabBar.appearance().unselectedItemTintColor = UIColor(named: "gray_C7C7C7")
   }
   
   var body: some Scene {
