@@ -34,7 +34,11 @@ extension ClockCloneApp {
   
   var tabView: some View {
     TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: .didTapTabItem)) {
-      WorldClockView()
+      WorldClockView(store: Store(initialState: WorldClockCore.State(worldClockRow: [
+        WorldClockItem(id: UUID(), parallax: "오늘, +0시간", cityName: "서울", isAM: false, time: "7:22")
+      ])) {
+        WorldClockCore()
+      })
         .tabItem {
           Image(systemName: TabItem.worldClock.imageName)
           Text(TabItem.worldClock.label)
