@@ -11,13 +11,14 @@ import ComposableArchitecture
 
 struct SelectCityCore: Reducer {
   struct State: Equatable {
-    var searchText = ""
     let cities = City.dummy
-    let city: City
+    var searchText = ""
+    var selectedCity: City?
   }
   
   enum Action {
     case didChangeSearchText(String)
+    case didTapRow
     case delegate(Delegate)
     
     enum Delegate: Equatable {
@@ -28,7 +29,16 @@ struct SelectCityCore: Reducer {
   @Dependency(\.dismiss) var dismiss
   
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
-    return .none
+    switch action {
+    case let .didChangeSearchText(text):
+      return .none
+      
+    case .didTapRow:
+      return .none
+      
+    case .delegate:
+      return .none
+    }
   }
 }
 struct SelectCityView: View {
@@ -43,6 +53,11 @@ struct SelectCityView: View {
   var body: some View {
     NavigationStack {
       VStack(spacing: 20) {
+        VStack(alignment: .center, spacing: 20) {
+          Text("도시 선택")
+            .font(.body)
+        }
+        .ignoresSafeArea()
         List {
           ForEach(viewStore.cities) { city in
             SearchCityRow(city: city)
@@ -51,23 +66,14 @@ struct SelectCityView: View {
         }
         .listStyle(.plain)
       }
-      .searchable(
-        text: viewStore.binding(
-          get: \.searchText,
-          send: { .didChangeSearchText($0) }
-        ),
-        placement: .toolbar,
-        prompt: "검색"
-      )
-      .navigationTitle("도시 선택")
-      .navigationBarTitleDisplayMode(.inline)
+      .toolbar(.hidden, for: .navigationBar)
     }
   }
 }
 
 struct SelectCityView_Previews: PreviewProvider {
   static var previews: some View {
-    SelectCityView(store: Store(initialState: SelectCityCore.State(city: City(name: ""))) {
+    SelectCityView(store: Store(initialState: SelectCityCore.State()) {
       SelectCityCore()
     })
   }

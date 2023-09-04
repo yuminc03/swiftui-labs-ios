@@ -35,7 +35,7 @@ struct WorldClockCore: Reducer {
         return .none
         
       case .didTapAddButton:
-        state.addCity = SelectCityCore.State(city: City(name: ""))
+        state.addCity = SelectCityCore.State()
         return .none
         
       case let .addCity(.presented(.delegate(.save(city)))):
