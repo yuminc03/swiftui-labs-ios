@@ -41,6 +41,7 @@ struct WorldClockRow: View {
       Divider()
         .background(Color.gray)
     }
+    .padding(.horizontal, 20)
     .background(Color.black)
   }
 }
