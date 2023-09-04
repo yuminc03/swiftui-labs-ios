@@ -75,6 +75,7 @@ struct TimerView: View {
             }
             .pickerStyle(.wheel)
             .compositingGroup()
+            .scaleEffect(1.2)
             Picker(
               "selected minute",
               selection: viewStore.binding(get: \.selectedTime, send: .didSelectTime)
@@ -86,6 +87,7 @@ struct TimerView: View {
             }
             .pickerStyle(.wheel)
             .compositingGroup()
+            .scaleEffect(1.2)
             Picker(
               "selected second",
               selection: viewStore.binding(get: \.selectedTime, send: .didSelectTime)
@@ -97,6 +99,7 @@ struct TimerView: View {
             }
             .pickerStyle(.wheel)
             .compositingGroup()
+            .scaleEffect(1.2)
           }
         }
       }
