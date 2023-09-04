@@ -9,15 +9,32 @@ import SwiftUI
 
 import ComposableArchitecture
 
+struct ClockCloneCore: Reducer {
+  struct State: Equatable {
+    var selectedTabIndex = 0
+  }
+  
+  enum Action {
+    case didTapTabItem
+  }
+  
+  func reduce(into state: inout State, action: Action) -> Effect<Action> {
+    switch action {
+    case .didTapTabItem:
+      return .none
+    }
+  }
+}
+
 @main
 struct ClockCloneApp: App {
   
-  private let store: StoreOf<WorldClockCore>
-  @ObservedObject var viewStore: ViewStoreOf<WorldClockCore>
+  private let store: StoreOf<ClockCloneCore>
+  @ObservedObject var viewStore: ViewStoreOf<ClockCloneCore>
   
   init() {
-    self.store = Store(initialState: WorldClockCore.State()) {
-      WorldClockCore()
+    self.store = Store(initialState: ClockCloneCore.State()) {
+      ClockCloneCore()
         ._printChanges()
     }
     self.viewStore = ViewStore(store, observe: { $0 })
@@ -35,15 +52,7 @@ extension ClockCloneApp {
   
   var tabView: some View {
     TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: .didTapTabItem)) {
-      WorldClockView(
-        store: Store(initialState: WorldClockCore.State(
-          worldClockRow: [
-            WorldClockItem(id: UUID(), parallax: "오늘, +0시간", cityName: "서울", isAM: false, time: "7:22")
-          ]
-        )) {
-          WorldClockCore()
-        }
-      )
+      WorldClockView()
       .tabItem {
         Image(systemName: TabItem.worldClock.imageName)
         Text(TabItem.worldClock.label)

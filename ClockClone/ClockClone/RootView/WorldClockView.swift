@@ -11,34 +11,56 @@ import ComposableArchitecture
 
 struct WorldClockCore: Reducer {
   struct State: Equatable {
-    var selectedTabIndex = 0
-    let tabItems = TabItem.allCases
-    var worldClockRow: IdentifiedArrayOf<WorldClockItem> = []
+    var worldClocks = WorldClockItem.dummy
+    @PresentationState var addCity: SelectCityCore.State?
   }
+  @Environment(\.editMode) var editMode
   
   enum Action {
-    case didTapTabItem
+    case onDeleteClock(at: IndexSet)
+    case onMoveClock(from: IndexSet, to: Int)
+    case didTapAddButton
+    case addCity(PresentationAction<SelectCityCore.Action>)
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .didTapTabItem:
+      case let .onDeleteClock(at: indexSet):
+        state.worldClocks.remove(atOffsets: indexSet)
+        return .none
+        
+      case let .onMoveClock(from: indexSet, to: index):
+        state.worldClocks.move(fromOffsets: indexSet, toOffset: index)
+        return .none
+        
+      case .didTapAddButton:
+        state.addCity = SelectCityCore.State()
+        return .none
+        
+      case let .addCity(.presented(.delegate(.save(city)))):
+//        state.worldClocks.append(WorldClockItem(parallax: <#T##String#>, cityName: <#T##String#>, time: <#T##String#>))
+        return .none
+        
+      case .addCity:
         return .none
       }
+    }
+    .ifLet(\.$addCity, action: /Action.addCity) {
+      SelectCityCore()
     }
   }
 }
 
 struct WorldClockView: View {
-  
   private let store: StoreOf<WorldClockCore>
   @ObservedObject private var viewStore: ViewStoreOf<WorldClockCore>
   
-  init(store: StoreOf<WorldClockCore>) {
-    self.store = store
+  init() {
+    self.store = Store(initialState: WorldClockCore.State()) {
+      WorldClockCore()
+    }
     self.viewStore = ViewStore(store, observe: { $0 })
-    setNavigaitonBarColors()
   }
   
   var body: some View {
@@ -46,53 +68,51 @@ struct WorldClockView: View {
       ZStack {
         Color.black
           .ignoresSafeArea()
-        
-        List {
-          ForEach(0 ..< viewStore.state.worldClockRow.count) { index in
-            WorldClockRow(worldClockItem: viewStore.state.worldClockRow[index], isFirstRow: index == 0)
+        if viewStore.worldClocks.isEmpty {
+          Text("세계 시계 없음")
+            .font(.largeTitle)
+            .foregroundColor(Color("gray_424242"))
+        } else {
+          List {
+            ForEach(0 ..< viewStore.worldClocks.count) { index in
+              WorldClockRow(
+                worldClockItem: viewStore.worldClocks[index],
+                isFirstRow: index == 0,
+                isEditMode: false
+              )
+            }
+            .onDelete { store.send(.onDeleteClock(at: $0)) }
+            .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
           }
-          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+          .listStyle(.plain)
         }
-        .listStyle(.plain)
-        .padding(.horizontal, 20)
       }
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
           Button {
-            print("plus button tapped")
+            store.send(.didTapAddButton)
           } label: {
             Image(systemName: "plus")
           }
         }
-        ToolbarItem(placement: .navigationBarLeading) {
-          Button("편집") {
-            print("편집 button tapped")
+        if viewStore.worldClocks.isEmpty == false {
+          ToolbarItem(placement: .navigationBarLeading) {
+            EditButton()
           }
         }
       }
       .foregroundColor(.orange)
       .navigationTitle("세계 시계")
     }
+    .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
+      SelectCityView(store: store)
+    }
   }
 }
 
 struct WorldClockView_Previews: PreviewProvider {
   static var previews: some View {
-    WorldClockView(store: Store(initialState: WorldClockCore.State(
-      worldClockRow: [
-        WorldClockItem(id: UUID(), parallax: "오늘, +0시간", cityName: "서울", isAM: false, time: "7:22")
-      ]
-    )) {
-      WorldClockCore()
-    })
-  }
-}
-
-extension WorldClockView {
-  
-  private func setNavigaitonBarColors() {
-    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-    UINavigationBar.appearance().barTintColor = UIColor.black
+    WorldClockView()
   }
 }
