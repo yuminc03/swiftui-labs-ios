@@ -21,11 +21,11 @@ struct StopWatchView: View {
             Spacer()
             stopWatchButton(title: "시작", type: .green)
           }
+        }
+        .padding(.bottom, 10)
+        List {
           Divider()
             .background(.gray)
-        }
-        List {
-          Spacer()
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         .listStyle(.plain)
