@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05143F852AA5572A002CA98A /* StopWatchButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05143F842AA5572A002CA98A /* StopWatchButtonType.swift */; };
+		05143F872AA55C0A002CA98A /* StopWatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05143F862AA55C0A002CA98A /* StopWatchRow.swift */; };
+		05143F892AA55C80002CA98A /* LabTimeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05143F882AA55C80002CA98A /* LabTimeItem.swift */; };
 		8DE1A5332AA479B500AA0294 /* ClockCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE1A5322AA479B500AA0294 /* ClockCloneApp.swift */; };
 		8DE1A5352AA479B500AA0294 /* WorldClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE1A5342AA479B500AA0294 /* WorldClockView.swift */; };
 		8DE1A5372AA479B600AA0294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE1A5362AA479B600AA0294 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05143F842AA5572A002CA98A /* StopWatchButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchButtonType.swift; sourceTree = "<group>"; };
+		05143F862AA55C0A002CA98A /* StopWatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchRow.swift; sourceTree = "<group>"; };
+		05143F882AA55C80002CA98A /* LabTimeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTimeItem.swift; sourceTree = "<group>"; };
 		8DE1A52F2AA479B500AA0294 /* ClockClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE1A5322AA479B500AA0294 /* ClockCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockCloneApp.swift; sourceTree = "<group>"; };
 		8DE1A5342AA479B500AA0294 /* WorldClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockView.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			children = (
 				8DE1A5322AA479B500AA0294 /* ClockCloneApp.swift */,
 				8DE1A5652AA48FE300AA0294 /* TabItem.swift */,
+				05143F842AA5572A002CA98A /* StopWatchButtonType.swift */,
 				8DE1A56D2AA4D57C00AA0294 /* RootView */,
 				8DE1A56A2AA4A49C00AA0294 /* Model */,
 				8DE1A5672AA4935700AA0294 /* Views */,
@@ -148,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE1A5682AA4937700AA0294 /* WorldClockRow.swift */,
+				05143F862AA55C0A002CA98A /* StopWatchRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE1A56B2AA4A4AC00AA0294 /* WorldClockItem.swift */,
+				05143F882AA55C80002CA98A /* LabTimeItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,12 +317,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE1A5642AA48DD400AA0294 /* TimerView.swift in Sources */,
+				05143F892AA55C80002CA98A /* LabTimeItem.swift in Sources */,
 				8DE1A5352AA479B500AA0294 /* WorldClockView.swift in Sources */,
 				8DE1A56C2AA4A4AC00AA0294 /* WorldClockItem.swift in Sources */,
 				8DE1A5662AA48FE300AA0294 /* TabItem.swift in Sources */,
+				05143F852AA5572A002CA98A /* StopWatchButtonType.swift in Sources */,
 				8DE1A5692AA4937700AA0294 /* WorldClockRow.swift in Sources */,
 				8DE1A5622AA48DC700AA0294 /* StopWatchView.swift in Sources */,
 				8DE1A56F2AA4D58900AA0294 /* AlarmView.swift in Sources */,
+				05143F872AA55C0A002CA98A /* StopWatchRow.swift in Sources */,
 				8DE1A5332AA479B500AA0294 /* ClockCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

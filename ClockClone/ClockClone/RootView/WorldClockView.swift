@@ -49,7 +49,10 @@ struct WorldClockView: View {
         
         List {
           ForEach(0 ..< viewStore.state.worldClockRow.count) { index in
-            WorldClockRow(worldClockItem: viewStore.state.worldClockRow[index], isFirstRow: index == 0)
+            WorldClockRow(
+              worldClockItem: viewStore.state.worldClockRow[index],
+              isFirstRow: index == 0
+            )
           }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
