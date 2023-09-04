@@ -10,10 +10,12 @@ import SwiftUI
 struct WorldClockRow: View {
   private let worldClockItem: WorldClockItem
   private let isFirstRow: Bool
+  private let isEditMode: Bool
   
-  init(worldClockItem: WorldClockItem, isFirstRow: Bool) {
+  init(worldClockItem: WorldClockItem, isFirstRow: Bool, isEditMode: Bool) {
     self.worldClockItem = worldClockItem
     self.isFirstRow = isFirstRow
+    self.isEditMode = isEditMode
   }
   
   var body: some View {
@@ -28,12 +30,14 @@ struct WorldClockRow: View {
           cityName
         }
         Spacer()
-        HStack(alignment: .lastTextBaseline, spacing: 2) {
-          ampmText
-          timeText
+        if isEditMode == false {
+          HStack(alignment: .lastTextBaseline, spacing: 2) {
+            ampmText
+            timeText
+          }
         }
-        .foregroundColor(.white)
       }
+      .foregroundColor(.white)
       Divider()
         .background(Color.gray)
     }
@@ -45,13 +49,13 @@ struct WorldClockRow_Previews: PreviewProvider {
   static var previews: some View {
     WorldClockRow(
       worldClockItem: WorldClockItem(
-        id: UUID(),
         parallax: "오늘, +0시간",
         cityName: "서울",
         isAM: false,
-        time: "7:22"
+        time: "오후 7:00"
       ),
-      isFirstRow: true
+      isFirstRow: true,
+      isEditMode: false
     )
     .previewLayout(.sizeThatFits)
   }
@@ -66,18 +70,17 @@ extension WorldClockRow {
   }
   
   var cityName: some View {
-    Text(worldClockItem.cityName)
-      .foregroundColor(.white)
+    Text(worldClockItem.cityName.components(separatedBy: " ").first ?? "")
       .font(.title3)
   }
   
   var ampmText: some View {
-    Text(worldClockItem.isAM ? "오전" : "오후")
+    Text(worldClockItem.time.components(separatedBy: " ").first ?? "")
       .font(.title2)
   }
   
   var timeText: some View {
-    Text(worldClockItem.time)
+    Text(worldClockItem.time.components(separatedBy: " ").last ?? "")
       .font(.largeTitle)
   }
 }
