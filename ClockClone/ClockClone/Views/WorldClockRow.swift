@@ -52,7 +52,6 @@ struct WorldClockRow_Previews: PreviewProvider {
       worldClockItem: WorldClockItem(
         parallax: "오늘, +0시간",
         cityName: "서울",
-        isAM: false,
         time: "오후 7:00"
       ),
       isFirstRow: true,
@@ -67,21 +66,23 @@ extension WorldClockRow {
   var parallaxText: some View {
     Text(worldClockItem.parallax)
       .foregroundColor(.gray)
-      .font(.caption)
+      .font(.body)
   }
   
   var cityName: some View {
     Text(worldClockItem.cityName.components(separatedBy: " ").first ?? "")
-      .font(.title3)
+      .font(.title)
   }
   
   var ampmText: some View {
     Text(worldClockItem.time.components(separatedBy: " ").first ?? "")
-      .font(.title2)
+      .font(.largeTitle)
+      .fontWeight(.light)
   }
   
   var timeText: some View {
     Text(worldClockItem.time.components(separatedBy: " ").last ?? "")
-      .font(.largeTitle)
+      .font(.system(size: 52))
+      .fontWeight(.light)
   }
 }

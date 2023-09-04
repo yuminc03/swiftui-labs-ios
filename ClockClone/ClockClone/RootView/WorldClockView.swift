@@ -12,21 +12,20 @@ import ComposableArchitecture
 struct WorldClockCore: Reducer {
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
+    @PresentationState var addCity: SelectCityCore.State?
   }
   @Environment(\.editMode) var editMode
   
   enum Action {
-    case didTapTabItem
     case onDeleteClock(at: IndexSet)
     case onMoveClock(from: IndexSet, to: Int)
+    case didTapAddButton
+    case addCity(PresentationAction<SelectCityCore.Action>)
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .didTapTabItem:
-        return .none
-        
       case let .onDeleteClock(at: indexSet):
         state.worldClocks.remove(atOffsets: indexSet)
         return .none
@@ -34,7 +33,21 @@ struct WorldClockCore: Reducer {
       case let .onMoveClock(from: indexSet, to: index):
         state.worldClocks.move(fromOffsets: indexSet, toOffset: index)
         return .none
+        
+      case .didTapAddButton:
+        state.addCity = SelectCityCore.State(city: City(name: ""))
+        return .none
+        
+      case let .addCity(.presented(.delegate(.save(city)))):
+//        state.worldClocks.append(WorldClockItem(parallax: <#T##String#>, cityName: <#T##String#>, time: <#T##String#>))
+        return .none
+        
+      case .addCity:
+        return .none
       }
+    }
+    .ifLet(\.$addCity, action: /Action.addCity) {
+      SelectCityCore()
     }
   }
 }
@@ -78,7 +91,7 @@ struct WorldClockView: View {
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
           Button {
-            print("plus button tapped")
+            store.send(.didTapAddButton)
           } label: {
             Image(systemName: "plus")
           }
@@ -91,6 +104,9 @@ struct WorldClockView: View {
       }
       .foregroundColor(.orange)
       .navigationTitle("세계 시계")
+    }
+    .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
+      SelectCityView(store: store)
     }
   }
 }
