@@ -62,7 +62,7 @@ extension NowPaycoScrollView {
       HStack(alignment: .center, spacing: 10) {
         clearItem
         ForEach(0 ..< images.count) { index in
-          NowPaycoImageItem(imageName: images[index].imageName)
+          roundedImage(imageName: images[index].imageName)
         }
         clearItem
       }
@@ -72,6 +72,12 @@ extension NowPaycoScrollView {
   var clearItem: some View {
     RoundedRectangle(cornerRadius: 20)
       .fill(.clear)
-      .frame(width: 40, height: 120)
+      .frame(width: 30, height: 120)
+  }
+  
+  private func roundedImage(imageName: String) -> some View {
+    Image(imageName)
+      .resizable()
+      .roundedRectangleImage()
   }
 }

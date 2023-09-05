@@ -8,7 +8,32 @@
 import SwiftUI
 
 struct StopWatchRow: View {
-  let labTime: LabTimeItem
+  enum ColorType {
+    case white
+    case red
+    case green
+    
+    var textColor: Color {
+      switch self {
+      case .white:
+        return Color.white
+        
+      case .red:
+        return Color.red
+        
+      case .green:
+        return Color.green
+      }
+    }
+  }
+  
+  private let labTime: LabTimeItem
+  private let colorType: ColorType
+
+  init(labTime: LabTimeItem, colorType: ColorType) {
+    self.labTime = labTime
+    self.colorType = colorType
+  }
   
   var body: some View {
     VStack(spacing: 10) {
@@ -22,7 +47,7 @@ struct StopWatchRow: View {
       Divider()
         .background(.gray)
     }
-    .foregroundColor(.white)
+    .foregroundColor(colorType.textColor)
     .padding(.top, 10)
     .background(.black)
   }
@@ -30,11 +55,10 @@ struct StopWatchRow: View {
 
 struct StopWatchRow_Previews: PreviewProvider {
   static var previews: some View {
-    StopWatchRow(labTime: LabTimeItem(id: 0, savedTime: "00:00.96"))
+    StopWatchRow(
+      labTime: LabTimeItem(id: 0, savedTime: "00:00.96"),
+      colorType: .red
+    )
       .previewLayout(.sizeThatFits)
   }
-}
-
-extension StopWatchRow {
-  
 }
