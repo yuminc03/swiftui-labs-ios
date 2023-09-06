@@ -64,7 +64,15 @@ struct TimerCore: Reducer {
     case editAlarmSound(PresentationAction<EndTimerAlarmListCore.Action>)
     case didTapStartButton
     case didTapCancelButton
+    case timerAction
+    case timerTicked
   }
+  
+  private enum CancelID {
+    case timer
+  }
+  
+  @Dependency(\.continuousClock) var timer
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
@@ -88,6 +96,9 @@ struct TimerCore: Reducer {
         } else {
           state.isStartButtonDisabled = true
         }
+        state.selectedTime = Int(state.pickerItems[0][state.selectedIndeces[0]]) ?? 0
+        state.selectedMinute = Int(state.pickerItems[1][state.selectedIndeces[1]]) ?? 0
+        state.selectedSecond = Int(state.pickerItems[2][state.selectedIndeces[2]]) ?? 0
         return .none
         
       case .didTapTimerSoundRow:
@@ -120,6 +131,18 @@ struct TimerCore: Reducer {
         state.greenButtonType = .start
         state.isCancelButtonDisabled = true
         return .none
+        
+      case .timerAction:
+        return .run { [buttonType = state.greenButtonType] send in
+          guard buttonType != .start else { return }
+          for await _ in timer.timer(interval: .seconds(1)) {
+            await send(.timerTicked)
+          }
+        }
+        .cancellable(id: CancelID.timer)
+        
+      case .timerTicked:
+        return .none
       }
     }
     .ifLet(\.$editSound, action: /Action.editAlarmSound) {
@@ -142,9 +165,19 @@ struct TimerView: View {
   
   var body: some View {
     VStack {
-      Spacer()
-      timerPicker
-      Spacer()
+      if viewStore.greenButtonType == .start {
+        Spacer()
+        timerPicker
+        Spacer()
+      } else {
+        TimerProgressBarView(
+          percent: 90,
+          hour: "",
+          minute: "11",
+          second: "00",
+          alarmTime: "오후 4:00"
+        )
+      }
       VStack(spacing: 40) {
         timerButtons
         TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
@@ -177,29 +210,27 @@ extension TimerView {
   }
   
   var timerPicker: some View {
-    VStack {
-      ZStack(alignment: .center) {
-        RepresentedPickerView(
-          items: viewStore.pickerItems,
-          selectedItemIndeces: viewStore.binding(
-            get: \.selectedIndeces,
-            send: { .didSelectPickerItems($0) }
-          )
+    ZStack(alignment: .center) {
+      RepresentedPickerView(
+        items: viewStore.pickerItems,
+        selectedItemIndeces: viewStore.binding(
+          get: \.selectedIndeces,
+          send: { .didSelectPickerItems($0) }
         )
-        HStack(spacing: 0) {
-          Spacer()
-          timerUnitText(text: "시간")
-            .offset(x: 32)
-          Spacer()
-          timerUnitText(text: "분")
-            .offset(x: 32)
-          Spacer()
-          timerUnitText(text: "초")
-            .offset(x: 32)
-          Spacer()
-        }
-        .foregroundColor(.white)
+      )
+      HStack(spacing: 0) {
+        Spacer()
+        timerUnitText(text: "시간")
+          .offset(x: 32)
+        Spacer()
+        timerUnitText(text: "분")
+          .offset(x: 32)
+        Spacer()
+        timerUnitText(text: "초")
+          .offset(x: 32)
+        Spacer()
       }
+      .foregroundColor(.white)
     }
   }
   

@@ -19,6 +19,7 @@
 		053A8E9E2AA81B38005A62FE /* TimerSoundRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8E9D2AA81B38005A62FE /* TimerSoundRow.swift */; };
 		053A8EA02AA834EA005A62FE /* FrameDebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */; };
 		053A8EA32AA83682005A62FE /* EndTimerAlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */; };
+		053A8EA52AA85722005A62FE /* TimerProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */; };
 		8D7B24E02AA60BCF002D3A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */; };
 		8D8A2AA82AA762BB0025954C /* AnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A2AA72AA762BB0025954C /* AnalogClockView.swift */; };
 		8D8A2AAA2AA770440025954C /* MinuteAnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A2AA92AA770440025954C /* MinuteAnalogClockView.swift */; };
@@ -68,6 +69,7 @@
 		053A8E9D2AA81B38005A62FE /* TimerSoundRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSoundRow.swift; sourceTree = "<group>"; };
 		053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameDebugModifier.swift; sourceTree = "<group>"; };
 		053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTimerAlarmListView.swift; sourceTree = "<group>"; };
+		053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressBarView.swift; sourceTree = "<group>"; };
 		8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8A2AA72AA762BB0025954C /* AnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockView.swift; sourceTree = "<group>"; };
 		8D8A2AA92AA770440025954C /* MinuteAnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteAnalogClockView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */,
+				053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				8DE1A5692AA4937700AA0294 /* WorldClockRow.swift in Sources */,
 				8DE1A5622AA48DC700AA0294 /* StopWatchView.swift in Sources */,
 				053A8E9A2AA8061E005A62FE /* RepresentedPickerView.swift in Sources */,
+				053A8EA52AA85722005A62FE /* TimerProgressBarView.swift in Sources */,
 				053A8EA32AA83682005A62FE /* EndTimerAlarmListView.swift in Sources */,
 				053A8EA02AA834EA005A62FE /* FrameDebugModifier.swift in Sources */,
 				05143F912AA5BB56002CA98A /* CityTime.swift in Sources */,
