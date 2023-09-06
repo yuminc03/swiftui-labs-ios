@@ -2,7 +2,7 @@
 //  StopWatchButtonType.swift
 //  ClockClone
 //
-//  Created by LS-NOTE-00106 on 2023/09/04.
+//  Created by Yumin Chu on 2023/09/04.
 //
 
 import SwiftUI
@@ -12,6 +12,7 @@ enum StopWatchButtonType {
   case gray
   case green
   case red
+  case orange
   
   var buttonColor: Color {
     switch self {
@@ -26,6 +27,9 @@ enum StopWatchButtonType {
       
     case .red:
       return Color("red_670000")
+      
+    case .orange:
+      return Color("orange_6A441B")
     }
   }
   
@@ -42,6 +46,9 @@ enum StopWatchButtonType {
       
     case .red:
       return .red
+      
+    case .orange:
+      return .orange
     }
   }
 }

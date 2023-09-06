@@ -2,7 +2,7 @@
 //  ListView.swift
 //  SwiftUICookbook
 //
-//  Created by LS-NOTE-00106 on 2023/09/05.
+//  Created by Yumin Chu on 2023/09/05.
 //
 
 import SwiftUI
