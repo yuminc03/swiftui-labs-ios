@@ -14,6 +14,9 @@ struct TimerCore: Reducer {
     var selectedTime = 0
     var selectedMinute = 0
     var selectedSecond = 0
+    var greenButtonType: GreenButtonType = .start
+    var isStartButtonDisabled = true
+    var isCancelButtonDisabled = true
     var pickerItems = [
       (0 ..< 24).map { $0.description },
       (0 ..< 60).map { $0.description },
@@ -21,6 +24,35 @@ struct TimerCore: Reducer {
     ]
     var selectedIndeces = [0, 0, 0]
     @PresentationState var editSound: EndTimerAlarmListCore.State?
+    
+    enum GreenButtonType {
+      case start
+      case pause
+      case resume
+      
+      var buttonTitle: String {
+        switch self {
+        case .start:
+          return "시작"
+          
+        case .pause:
+          return "일시 정지"
+          
+        case .resume:
+          return "재개"
+        }
+      }
+      
+      var color: StopWatchButtonType {
+        switch self {
+        case .start, .resume:
+          return .green
+          
+        case .pause:
+          return .orange
+        }
+      }
+    }
   }
   
   enum Action {
@@ -30,6 +62,8 @@ struct TimerCore: Reducer {
     case didSelectPickerItems([Int])
     case didTapTimerSoundRow
     case editAlarmSound(PresentationAction<EndTimerAlarmListCore.Action>)
+    case didTapStartButton
+    case didTapCancelButton
   }
   
   var body: some ReducerOf<Self> {
@@ -49,6 +83,11 @@ struct TimerCore: Reducer {
         
       case let .didSelectPickerItems(indeces):
         state.selectedIndeces = indeces
+        if state.selectedIndeces.map ({ $0 == 0 }).contains(false) {
+          state.isStartButtonDisabled = false
+        } else {
+          state.isStartButtonDisabled = true
+        }
         return .none
         
       case .didTapTimerSoundRow:
@@ -56,6 +95,30 @@ struct TimerCore: Reducer {
         return .none
         
       case .editAlarmSound:
+        return .none
+        
+      case .didTapStartButton:
+        switch state.greenButtonType {
+        case .start:
+          state.greenButtonType = .pause
+          
+        case .pause:
+          state.greenButtonType = .resume
+          
+        case .resume:
+          state.greenButtonType = .pause
+        }
+        
+        if state.greenButtonType != .start {
+          state.isCancelButtonDisabled = false
+        } else {
+          state.isCancelButtonDisabled = true
+        }
+        return .none
+        
+      case .didTapCancelButton:
+        state.greenButtonType = .start
+        state.isCancelButtonDisabled = true
         return .none
       }
     }
@@ -144,17 +207,19 @@ extension TimerView {
     HStack(spacing: 0) {
       StopWatchButton(
         title: "취소",
-        type: .darkGray
+        type: viewStore.isCancelButtonDisabled ? .darkGray : .gray
       ) {
-        
+        store.send(.didTapCancelButton)
       }
+      .disabled(viewStore.isCancelButtonDisabled)
       Spacer()
       StopWatchButton(
-        title: "시작",
-        type: .green
+        title: viewStore.greenButtonType.buttonTitle,
+        type: viewStore.greenButtonType.color
       ) {
-
+        store.send(.didTapStartButton)
       }
+      .disabled(viewStore.isStartButtonDisabled)
     }
   }
 }
