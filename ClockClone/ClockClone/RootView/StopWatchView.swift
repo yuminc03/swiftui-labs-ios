@@ -331,6 +331,9 @@ extension StopWatchView {
   }
   
   var clockView: some View {
-    AnalogClockView()
+    AnalogClockView(
+      seconds: viewStore.timerSecond,
+      minute: viewStore.timerMinute
+    )
   }
 }

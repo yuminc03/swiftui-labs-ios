@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct AnalogClockView: View {
-  private let seconds = 0
+  private let seconds: Int
+  private let minute: Int
+  
+  init(seconds: Int, minute: Int) {
+    self.seconds = seconds
+    self.minute = minute
+  }
   
   var body: some View {
     ZStack {
       Circle()
         .fill(.black)
-      MinuteAnalogClockView()
+      MinuteAnalogClockView(minute: minute)
         .offset(y: -UIScreen.main.bounds.width + 330)
       clockShortScales
       clockLongScales
@@ -29,7 +35,7 @@ struct AnalogClockView: View {
 
 struct AnalogClockView_Previews: PreviewProvider {
   static var previews: some View {
-    AnalogClockView()
+    AnalogClockView(seconds: 10, minute: 1)
       .previewLayout(.sizeThatFits)
   }
 }
