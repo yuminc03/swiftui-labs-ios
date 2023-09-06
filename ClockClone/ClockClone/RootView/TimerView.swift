@@ -20,6 +20,7 @@ struct TimerCore: Reducer {
       (0 ..< 60).map { $0.description }
     ]
     var selectedIndeces = [0, 0, 0]
+    @PresentationState var editSound: EndTimerAlarmListCore.State?
   }
   
   enum Action {
@@ -27,25 +28,39 @@ struct TimerCore: Reducer {
     case didSelectMinute(Int)
     case didSelectSecond(Int)
     case didSelectPickerItems([Int])
+    case didTapTimerSoundRow
+    case editAlarmSound(PresentationAction<EndTimerAlarmListCore.Action>)
   }
   
-  func reduce(into state: inout State, action: Action) -> Effect<Action> {
-    switch action {
-    case let .didSelectTime(hour):
-      state.selectedTime = hour
-      return .none
-      
-    case let .didSelectMinute(minute):
-      state.selectedMinute = minute
-      return .none
-      
-    case let .didSelectSecond(second):
-      state.selectedSecond = second
-      return .none
-      
-    case let .didSelectPickerItems(indeces):
-      state.selectedIndeces = indeces
-      return .none
+  var body: some ReducerOf<Self> {
+    Reduce { state, action in
+      switch action {
+      case let .didSelectTime(hour):
+        state.selectedTime = hour
+        return .none
+        
+      case let .didSelectMinute(minute):
+        state.selectedMinute = minute
+        return .none
+        
+      case let .didSelectSecond(second):
+        state.selectedSecond = second
+        return .none
+        
+      case let .didSelectPickerItems(indeces):
+        state.selectedIndeces = indeces
+        return .none
+        
+      case .didTapTimerSoundRow:
+        state.editSound = EndTimerAlarmListCore.State()
+        return .none
+        
+      case .editAlarmSound:
+        return .none
+      }
+    }
+    .ifLet(\.$editSound, action: /Action.editAlarmSound) {
+      EndTimerAlarmListCore()
     }
   }
 }
@@ -69,11 +84,16 @@ struct TimerView: View {
       Spacer()
       VStack(spacing: 40) {
         timerButtons
-        TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토")
+        TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
+          store.send(.didTapTimerSoundRow)
+        }
       }
       Spacer(minLength: UIScreen.main.bounds.height / 3)
     }
     .padding(.horizontal, 20)
+    .sheet(store: store.scope(state: \.$editSound, action: { .editAlarmSound($0) })) { store in
+      EndTimerAlarmListView(store: store)
+    }
   }
 }
 

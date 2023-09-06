@@ -10,10 +10,12 @@ import SwiftUI
 struct TimerSoundRow: View {
   private let title: String
   private let selectedName: String
+  private let tapAction: () -> Void
   
-  init(title: String, selectedName: String) {
+  init(title: String, selectedName: String, tapAction: @escaping () -> Void) {
     self.title = title
     self.selectedName = selectedName
+    self.tapAction = tapAction
   }
   
   var body: some View {
@@ -33,12 +35,18 @@ struct TimerSoundRow: View {
     .padding(20)
     .background(Color("gray_272727"))
     .cornerRadius(10)
+    .contentShape(RoundedRectangle(cornerRadius: 10))
+    .onTapGesture {
+      tapAction()
+    }
   }
 }
 
 struct TimerSoundRow_Previews: PreviewProvider {
   static var previews: some View {
-    TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토")
-      .previewLayout(.sizeThatFits)
+    TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
+      print("action")
+    }
+    .previewLayout(.sizeThatFits)
   }
 }
