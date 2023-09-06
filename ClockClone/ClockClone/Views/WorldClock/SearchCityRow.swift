@@ -2,7 +2,7 @@
 //  SearchCityRow.swift
 //  ClockClone
 //
-//  Created by LS-NOTE-00106 on 2023/09/04.
+//  Created by Yumin Chu on 2023/09/04.
 //
 
 import SwiftUI

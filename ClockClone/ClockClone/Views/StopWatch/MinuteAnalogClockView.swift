@@ -9,6 +9,12 @@ import SwiftUI
 
 struct MinuteAnalogClockView: View {
   
+  private let minute: Int
+  
+  init(minute: Int) {
+    self.minute = minute
+  }
+  
   var body: some View {
     ZStack {
       Circle()
@@ -23,7 +29,7 @@ struct MinuteAnalogClockView: View {
 
 struct MinuteAnalogClockView_Previews: PreviewProvider {
   static var previews: some View {
-    MinuteAnalogClockView()
+    MinuteAnalogClockView(minute: 1)
       .previewLayout(.sizeThatFits)
   }
 }
@@ -58,6 +64,7 @@ extension MinuteAnalogClockView {
           path.addLine(to: CGPoint(x: proxy.size.width / 2, y: 0))
         }
         .stroke(.orange, lineWidth: 2)
+        .rotationEffect(.degrees(Double(minute) * (360 / 10)))
       }
       Circle()
         .fill(.orange)

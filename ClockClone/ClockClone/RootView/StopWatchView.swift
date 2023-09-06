@@ -206,21 +206,21 @@ struct StopWatchView: View {
           Spacer()
           HStack(spacing: 0) {
             if viewStore.isTapReStartButton {
-              stopWatchButton(
+              StopWatchButton(
                 title: "랩",
                 type: viewStore.isTapStartButton ?.gray : .darkGray
               ) {
                 store.send(.didTapRapButton)
               }
             } else if viewStore.isTapStopButton {
-              stopWatchButton(
+              StopWatchButton(
                 title: "재설정",
                 type: viewStore.isTapStartButton ?.gray : .darkGray
               ) {
                 store.send(.didTapResetButton)
               }
             } else {
-              stopWatchButton(
+              StopWatchButton(
                 title: "랩",
                 type: viewStore.isTapStartButton ?.gray : .darkGray
               ) {
@@ -229,12 +229,12 @@ struct StopWatchView: View {
             }
             Spacer()
             if viewStore.isStartButton {
-              stopWatchButton(title: "시작", type: .green) {
+              StopWatchButton(title: "시작", type: .green) {
                 store.send(.didTapToggleStartButton)
                 store.send(.rapTimerStart)
               }
             } else {
-              stopWatchButton(title: "중단", type: .red) {
+              StopWatchButton(title: "중단", type: .red) {
                 store.send(.didTapToggleStartButton)
               }
             }
@@ -287,33 +287,6 @@ extension StopWatchView {
     .tabViewStyle(.page)
   }
   
-  private func stopWatchButton(
-    title: String,
-    type: StopWatchButtonType,
-    action: @escaping () -> Void
-  ) -> some View {
-    Text(title)
-      .font(.body)
-      .foregroundColor(type.titleColor)
-      .frame(width: 90, height: 90)
-      .background {
-        ZStack(alignment: .center) {
-          Circle()
-            .fill(type.buttonColor)
-            .frame(width: 90, height: 90)
-          Circle()
-            .fill(.black)
-            .frame(height: 85)
-          Circle()
-            .fill(type.buttonColor)
-            .frame(height: 80)
-        }
-      }
-      .onTapGesture {
-        action()
-      }
-  }
-  
   var stopWatchView: some View {
     HStack(alignment: .center, spacing: 0) {
       Text(viewStore.minuteText)
@@ -331,6 +304,9 @@ extension StopWatchView {
   }
   
   var clockView: some View {
-    AnalogClockView()
+    AnalogClockView(
+      seconds: viewStore.timerSecond,
+      minute: viewStore.timerMinute
+    )
   }
 }
