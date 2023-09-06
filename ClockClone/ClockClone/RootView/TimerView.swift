@@ -63,25 +63,17 @@ struct TimerView: View {
   }
   
   var body: some View {
-    VStack(spacing: 0) {
-      VStack(spacing: 20) {
-        Spacer()
-        timerPicker
-        Spacer()
+    VStack {
+      Spacer()
+      timerPicker
+      Spacer()
+      VStack(spacing: 40) {
         timerButtons
+        TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토")
       }
-      .padding(.horizontal, 20)
-      Form {
-        Section {
-          NavigationLink {
-            
-          } label: {
-            TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토")
-          }
-        }
-      }
-      .scrollDisabled(true)
+      Spacer(minLength: UIScreen.main.bounds.height / 3)
     }
+    .padding(.horizontal, 20)
   }
 }
 
@@ -129,22 +121,19 @@ extension TimerView {
   }
   
   var timerButtons: some View {
-    VStack(spacing: 0) {
+    HStack(spacing: 0) {
+      StopWatchButton(
+        title: "취소",
+        type: .darkGray
+      ) {
+        
+      }
       Spacer()
-      HStack(spacing: 0) {
-        StopWatchButton(
-          title: "취소",
-          type: .darkGray
-        ) {
-          
-        }
-        Spacer()
-        StopWatchButton(
-          title: "시작",
-          type: .green
-        ) {
+      StopWatchButton(
+        title: "시작",
+        type: .green
+      ) {
 
-        }
       }
     }
   }

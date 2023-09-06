@@ -2,7 +2,7 @@
 //  StopWatchButton.swift
 //  ClockClone
 //
-//  Created by LS-NOTE-00106 on 2023/09/06.
+//  Created by Yumin Chu on 2023/09/06.
 //
 
 import SwiftUI

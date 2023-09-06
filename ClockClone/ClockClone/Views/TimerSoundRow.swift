@@ -2,7 +2,7 @@
 //  TimerSoundRow.swift
 //  ClockClone
 //
-//  Created by LS-NOTE-00106 on 2023/09/06.
+//  Created by Yumin Chu on 2023/09/06.
 //
 
 import SwiftUI
@@ -22,10 +22,17 @@ struct TimerSoundRow: View {
         .font(.headline)
         .foregroundColor(.white)
       Spacer()
-      Text(selectedName)
-        .font(.headline)
-        .foregroundColor(.gray)
+      HStack(spacing: 10) {
+        Text(selectedName)
+          .font(.headline)
+        Image(systemName: "chevron.right")
+          .font(.subheadline)
+      }
+      .foregroundColor(.gray)
     }
+    .padding(20)
+    .background(Color("gray_272727"))
+    .cornerRadius(10)
   }
 }
 
