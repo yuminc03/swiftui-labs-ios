@@ -14,12 +14,19 @@ struct TimerCore: Reducer {
     var selectedTime = 0
     var selectedMinute = 0
     var selectedSecond = 0
+    var pickerItems = [
+      (0 ..< 24).map { $0.description },
+      (0 ..< 60).map { $0.description },
+      (0 ..< 60).map { $0.description }
+    ]
+    var selectedIndeces = [0, 0, 0]
   }
   
   enum Action {
     case didSelectTime(Int)
     case didSelectMinute(Int)
     case didSelectSecond(Int)
+    case didSelectPickerItems([Int])
   }
   
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
@@ -35,9 +42,14 @@ struct TimerCore: Reducer {
     case let .didSelectSecond(second):
       state.selectedSecond = second
       return .none
+      
+    case let .didSelectPickerItems(indeces):
+      state.selectedIndeces = indeces
+      return .none
     }
   }
 }
+
 struct TimerView: View {
   private let store: StoreOf<TimerCore>
   @ObservedObject var viewStore: ViewStoreOf<TimerCore>
@@ -51,64 +63,24 @@ struct TimerView: View {
   }
   
   var body: some View {
-    ZStack {
-      Color.black
-        .ignoresSafeArea()
-      VStack {
-        ZStack(alignment: .center) {
-          HStack(spacing: 0) {
-            Spacer()
-            Text("시간")
-              .font(.headline)
-              .offset(x: -25)
-            Spacer()
-            Text("분")
-              .font(.headline)
-              .offset(x: -25)
-            Spacer()
-            Text("초")
-              .font(.headline)
-              .offset(x: -25)
-          }
-          .foregroundColor(.white)
-          RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(.white.opacity(0.1))
-            .frame(height: 30)
-          HStack(spacing: 0) {
-            Picker(
-              "selected time",
-              selection: viewStore.binding(get: \.selectedTime, send: { .didSelectTime($0) })
-            ) {
-              ForEach(0 ..< 24) { number in
-                Text("\(number)")
-                  .foregroundColor(.white)
-              }
-            }
-            .pickerStyle(.wheel)
-            Picker(
-              "selected minute",
-              selection: viewStore.binding(get: \.selectedMinute, send: { .didSelectMinute($0) })
-            ) {
-              ForEach(0 ..< 60) { number in
-                Text("\(number)")
-                  .foregroundColor(.white)
-              }
-            }
-            .pickerStyle(.wheel)
-            Picker(
-              "selected second",
-              selection: viewStore.binding(get: \.selectedSecond, send: { .didSelectSecond($0) })
-            ) {
-              ForEach(0 ..< 60) { number in
-                Text("\(number)")
-                  .foregroundColor(.white)
-              }
-            }
-            .pickerStyle(.wheel)
+    VStack(spacing: 0) {
+      VStack(spacing: 20) {
+        Spacer()
+        timerPicker
+        Spacer()
+        timerButtons
+      }
+      .padding(.horizontal, 20)
+      Form {
+        Section {
+          NavigationLink {
+            
+          } label: {
+            TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토")
           }
         }
       }
-      .padding(.horizontal, 20)
+      .scrollDisabled(true)
     }
   }
 }
@@ -117,5 +89,63 @@ struct TimerView_Previews: PreviewProvider {
   static var previews: some View {
     TimerView()
       .previewLayout(.sizeThatFits)
+  }
+}
+
+extension TimerView {
+  
+  private func timerUnitText(text: String) -> some View {
+    Text(text)
+      .font(.headline)
+      .frame(width: 30, alignment: .leading)
+      .foregroundColor(.white)
+  }
+  
+  var timerPicker: some View {
+    VStack {
+      ZStack(alignment: .center) {
+        RepresentedPickerView(
+          items: viewStore.pickerItems,
+          selectedItemIndeces: viewStore.binding(
+            get: \.selectedIndeces,
+            send: { .didSelectPickerItems($0) }
+          )
+        )
+        HStack(spacing: 0) {
+          Spacer()
+          timerUnitText(text: "시간")
+            .offset(x: 32)
+          Spacer()
+          timerUnitText(text: "분")
+            .offset(x: 32)
+          Spacer()
+          timerUnitText(text: "초")
+            .offset(x: 32)
+          Spacer()
+        }
+        .foregroundColor(.white)
+      }
+    }
+  }
+  
+  var timerButtons: some View {
+    VStack(spacing: 0) {
+      Spacer()
+      HStack(spacing: 0) {
+        StopWatchButton(
+          title: "취소",
+          type: .darkGray
+        ) {
+          
+        }
+        Spacer()
+        StopWatchButton(
+          title: "시작",
+          type: .green
+        ) {
+
+        }
+      }
+    }
   }
 }
