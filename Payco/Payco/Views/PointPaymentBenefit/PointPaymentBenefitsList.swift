@@ -46,12 +46,8 @@ struct PointPaymentBenefitsList: View {
         buttonAction()
       }
     }
-    .padding(.vertical, 30)
-    .padding(.horizontal, 20)
-    .background {
-      RoundedRectangle(cornerRadius: 20)
-        .foregroundColor(Color("gray_EAEAEA"))
-    }
+    .padding(.vertical, 10)
+    .roundedGrayBackground()
   }
 }
 
@@ -90,7 +86,7 @@ extension PointPaymentBenefitsList {
             tag: index
           ) {
             menuItemAction(index)
-          } // tapGesture
+          }
         }
       }
     }

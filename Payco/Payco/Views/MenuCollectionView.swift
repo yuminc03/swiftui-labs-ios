@@ -16,17 +16,21 @@ struct MenuCollectionView: View {
   }
   
   var body: some View {
-    VStack(alignment: .center, spacing: 20) {
-      ForEach(0 ..< 2) { index in
-        HStack(alignment: .center, spacing: 20) {
-          ForEach(4 * index ..< 4 * index + 4) { i in
-            menuItem(
-              imageName: data[i].imageName,
-              imageColor: data[i].iconColor,
-              title: data[i].title
-            )
-          }
-        }
+    LazyVGrid(
+      columns: [
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center),
+        GridItem(.flexible(), spacing: 20, alignment: .center)
+      ],
+      spacing: 20
+    ) {
+      ForEach(data) { item in
+        menuItem(
+          imageName: item.imageName,
+          imageColor: item.iconColor,
+          title: item.title
+        )
       }
     }
   }
@@ -53,9 +57,5 @@ extension MenuCollectionView {
       Text(title)
         .font(.caption)
     }
-    .frame(
-      width: (UIScreen.main.bounds.width - 100) / 4,
-      height: 70
-    )
   }
 }
