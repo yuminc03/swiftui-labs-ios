@@ -8,16 +8,16 @@
       location = "group:Payco/Payco.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftUIPractiseExtample.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ContactsApp/ContactsApp.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:KeyPad/KeyPad.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Settings/Settings.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftUIPractiseExtample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ContactsApp/ContactsApp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Scrumdinger/Scrumdinger.xcodeproj">
