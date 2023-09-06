@@ -242,9 +242,9 @@ struct StopWatchView: View {
         }
         .padding(.bottom, 10)
       }
+      Divider()
+        .background(.gray)
       if viewStore.raps.isEmpty {
-        Divider()
-          .background(.gray)
         Rectangle()
           .fill(.black)
           .frame(height: UIScreen.main.bounds.height / 3)
@@ -256,6 +256,7 @@ struct StopWatchView: View {
               colorType: .white
             )
           }
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         .listStyle(.plain)
         .frame(height: UIScreen.main.bounds.height / 3)
