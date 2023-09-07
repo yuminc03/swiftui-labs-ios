@@ -81,7 +81,7 @@ struct StopWatchCore: Reducer {
       }
       
     case .rapTimerStart:
-      if state.isStartButton {
+      if state.isStartButton == false {
         state.raps.append("")
       }
       return .run { send in
@@ -112,15 +112,15 @@ struct StopWatchCore: Reducer {
       
     case .timerTicked:
       state.stopWatchMilliSecond += 1
-      state.millisecondText = calculateMilliSecond(state.stopWatchMilliSecond)
+      state.millisecondText = String(format: "%02d", state.stopWatchMilliSecond % 100)
       
       guard state.stopWatchMilliSecond / 100 > 0 else { return .none }
       state.stopWatchSecond = state.stopWatchMilliSecond / 100
-      state.secondText = calculateMinuteAndSecond(state.stopWatchSecond)
+      state.secondText = String(format: "%02d", state.stopWatchSecond % 60)
       
       guard state.stopWatchSecond / 60 > 0 else { return .none }
       state.stopWatchMinute = state.stopWatchSecond / 60
-      state.minuteText = calculateMinuteAndSecond(state.stopWatchMinute)
+      state.minuteText = String(format: "%02d", state.stopWatchMinute % 60)
       return .none
       
     case .stopWatchAction:
@@ -143,15 +143,15 @@ struct StopWatchCore: Reducer {
       
     case .rapTimerTicked:
       state.rapMilliSecond += 1
-      state.rapMilliText = calculateMilliSecond(state.rapMilliSecond)
+      state.rapMilliText = String(format: "%02d", state.rapMilliSecond % 100)
       
       guard state.rapMilliSecond / 100 > 0 else { return .none }
       state.rapSecond = state.stopWatchMilliSecond / 100
-      state.rapSecondText = calculateMinuteAndSecond(state.rapSecond)
+      state.rapSecondText = String(format: "%02d", state.rapSecond % 60)
       
       guard state.rapSecond / 60 > 0 else { return .none }
       state.rapMinute = state.rapSecond / 60
-      state.rapMinuteText = calculateMinuteAndSecond(state.rapMinute)
+      state.rapMinuteText = String(format: "%02d", state.rapMinute % 60)
       return .none
       
     case .didCancelStopWatch:
@@ -159,22 +159,6 @@ struct StopWatchCore: Reducer {
       
     case .didCancelRap:
       return .cancel(id: CancelID.rap)
-    }
-  }
-  
-  private func calculateMinuteAndSecond(_ second: Int) -> String {
-    if Int(second % 60) < 10 {
-      return "0\(Int(second % 60))"
-    } else {
-      return "\(Int(second % 60))"
-    }
-  }
-  
-  private func calculateMilliSecond(_ milliSecond: Int) -> String {
-    if Int(milliSecond % 100) < 10 {
-      return "0\(Int(milliSecond % 100))"
-    } else {
-      return "\(Int(milliSecond % 100))"
     }
   }
 }
