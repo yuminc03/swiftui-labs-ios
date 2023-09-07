@@ -42,7 +42,15 @@ struct EndTimerAlarmListView: View {
       List {
         Section {
           ForEach(City.alarmSoundsDummy) { sound in
-            Text(sound.name)
+            if sound == City.alarmSoundsDummy.last {
+              NavigationLink {
+                ClassicMusicListView()
+              } label: {
+                Text(sound.name)
+              }
+            } else {
+              Text(sound.name)
+            }
           }
         }
         Section {

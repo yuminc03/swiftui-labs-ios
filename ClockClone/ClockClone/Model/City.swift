@@ -26,7 +26,7 @@ struct City: Equatable, Identifiable {
     .init(name: "방콕, 태국")
   ]
   
-  static let alarmSoundsDummy: [City] = [
+  static let alarmSoundsDummy: IdentifiedArrayOf<City> = [
     .init(name: "전파 탐지기(기본 설정"),
     .init(name: "공상음"),
     .init(name: "공지음"),
@@ -56,5 +56,33 @@ struct City: Equatable, Identifiable {
     .init(name: "해변가"),
     .init(name: "희망"),
     .init(name: "클래식")
+  ]
+  
+  static let classicDummy: IdentifiedArrayOf<City> = [
+    .init(name: "개 짖는 소리"),
+    .init(name: "경보기"),
+    .init(name: "공 튀기는 소리"),
+    .init(name: "공상과학"),
+    .init(name: "구식 자동차 경적"),
+    .init(name: "귀뚜라미 소리"),
+    .init(name: "기계음"),
+    .init(name: "기타"),
+    .init(name: "로보트 소리"),
+    .init(name: "마림바"),
+    .init(name: "블루스"),
+    .init(name: "상승음"),
+    .init(name: "수중 음파 탐지기"),
+    .init(name: "시계바늘 움직임"),
+    .init(name: "실로폰"),
+    .init(name: "오리소리"),
+    .init(name: "오토바이"),
+    .init(name: "전화 벨소리"),
+    .init(name: "종탑 소리"),
+    .init(name: "초인종 소리"),
+    .init(name: "타악기"),
+    .init(name: "트릴"),
+    .init(name: "피아노 연주"),
+    .init(name: "핀볼 소리"),
+    .init(name: "하프")
   ]
 }
