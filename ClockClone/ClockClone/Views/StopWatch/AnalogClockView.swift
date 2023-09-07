@@ -71,19 +71,21 @@ extension AnalogClockView {
   var clockLongScales: some View {
     GeometryReader { proxy in
       ForEach(1 ... 60, id: \.self) { second in
-        Path { path in
-          path.move(to: CGPoint(
-            x: proxy.size.width / 2,
-            y: 0
-          ))
-          path.addLine(to: CGPoint(
-            x: proxy.size.width / 2,
-            y: 15
-          ))
-          path.closeSubpath()
+        ZStack {
+          Path { path in
+            path.move(to: CGPoint(
+              x: proxy.size.width / 2,
+              y: 0
+            ))
+            path.addLine(to: CGPoint(
+              x: proxy.size.width / 2,
+              y: 15
+            ))
+            path.closeSubpath()
+          }
+          .stroke(second % 5 == 0 ? .white : .gray, lineWidth: 2)
+          .rotationEffect(.degrees(Double(second) * (360 / 60)))
         }
-        .stroke(second % 5 == 0 ? .white : .gray, lineWidth: 2)
-        .rotationEffect(.degrees(Double(second) * (360 / 60)))
       }
     }
   }
@@ -106,5 +108,36 @@ extension AnalogClockView {
         .rotationEffect(.degrees(Double(milliSecond) * (360 / 300)))
       }
     }
+  }
+  
+  var numbers: some View {
+    VStack(spacing: 30) {
+      HStack(spacing: 0) {
+        Text("55")
+        Spacer()
+        Text("5")
+      }
+      HStack(spacing: 0) {
+        Text("50")
+        Spacer()
+        Text("10")
+      }
+      HStack(spacing: 0) {
+        Text("45")
+        Spacer()
+        Text("15")
+      }
+      HStack(spacing: 0) {
+        Text("40")
+        Spacer()
+        Text("20")
+      }
+      HStack(spacing: 0) {
+        Text("35")
+        Spacer()
+        Text("25")
+      }
+    }
+    .font(.title)
   }
 }
