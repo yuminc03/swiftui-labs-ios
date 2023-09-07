@@ -23,6 +23,7 @@ struct SearchCityRow: View {
     }
     .padding(.horizontal, 20)
     .padding(.top, 10)
+    .contentShape(Rectangle())
   }
 }
 

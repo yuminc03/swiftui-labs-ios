@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct WorldClockCore: Reducer {
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
+    var cities = City.dummy
     @PresentationState var addCity: SelectCityCore.State?
   }
   @Environment(\.editMode) var editMode
@@ -35,11 +36,18 @@ struct WorldClockCore: Reducer {
         return .none
         
       case .didTapAddButton:
-        state.addCity = SelectCityCore.State()
+        state.addCity = SelectCityCore.State(cities: state.cities)
         return .none
         
       case let .addCity(.presented(.delegate(.save(city)))):
-//        state.worldClocks.append(WorldClockItem(parallax: <#T##String#>, cityName: <#T##String#>, time: <#T##String#>))
+        state.cities.remove(id: city.id)
+        state.worldClocks.append(
+          WorldClockItem(
+            parallax: "오늘, +0시간",
+            cityName: city.name.components(separatedBy: ", ").last ?? "",
+            time: CityTime.randomTime
+          )
+        )
         return .none
         
       case .addCity:
@@ -74,16 +82,17 @@ struct WorldClockView: View {
             .foregroundColor(Color("gray_424242"))
         } else {
           List {
-            ForEach(0 ..< viewStore.worldClocks.count) { index in
+            ForEach(viewStore.worldClocks) { worldClock in
               WorldClockRow(
-                worldClockItem: viewStore.worldClocks[index],
-                isFirstRow: index == 0,
+                worldClockItem: worldClock,
+                isFirstRow: worldClock == viewStore.worldClocks[0],
                 isEditMode: false
               )
             }
             .onDelete { store.send(.onDeleteClock(at: $0)) }
             .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .listRowSeparator(.hidden)
           }
           .listStyle(.plain)
         }

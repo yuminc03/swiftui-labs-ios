@@ -23,6 +23,10 @@ struct WorldClockRow: View {
       if isFirstRow {
         Divider()
           .background(Color.gray)
+      } else {
+        Rectangle()
+          .fill(.clear)
+          .frame(height: 1)
       }
       HStack(alignment: .center) {
         VStack(alignment: .leading, spacing: 5) {

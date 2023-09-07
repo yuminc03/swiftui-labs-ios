@@ -11,19 +11,18 @@ import ComposableArchitecture
 
 struct SelectCityCore: Reducer {
   struct State: Equatable {
-    let cities = City.dummy
+    var cities: IdentifiedArrayOf<City>
     var searchText = ""
-    var selectedCity: City?
   }
   
   enum Action {
     case didTapCancelButton
     case didChangeSearchText(String)
-    case didTapRow
+    case didTapRow(City)
     case delegate(Delegate)
     
     enum Delegate: Equatable {
-      case save(String)
+      case save(City)
     }
   }
   
@@ -40,8 +39,12 @@ struct SelectCityCore: Reducer {
       state.searchText = text
       return .none
       
-    case .didTapRow:
-      return .none
+    case let .didTapRow(city):
+      state.cities.remove(id: city.id)
+      return .run { send in
+        await send(.delegate(.save(city)))
+        await dismiss()
+      }
       
     case .delegate:
       return .none
@@ -68,6 +71,9 @@ struct SelectCityView: View {
         List {
           ForEach(viewStore.cities) { city in
             SearchCityRow(city: city)
+              .onTapGesture {
+                store.send(.didTapRow(city))
+              }
           }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
@@ -80,7 +86,7 @@ struct SelectCityView: View {
 
 struct SelectCityView_Previews: PreviewProvider {
   static var previews: some View {
-    SelectCityView(store: Store(initialState: SelectCityCore.State()) {
+    SelectCityView(store: Store(initialState: SelectCityCore.State(cities: City.dummy)) {
       SelectCityCore()
     })
   }
