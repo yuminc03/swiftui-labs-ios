@@ -11,18 +11,21 @@ import ComposableArchitecture
 
 struct TimerCore: Reducer {
   struct State: Equatable {
-    var selectedTime = 0
-    var selectedMinute = 0
-    var selectedSecond = 0
-    var greenButtonType: GreenButtonType = .start
-    var isStartButtonDisabled = true
-    var isCancelButtonDisabled = true
-    var pickerItems = [
+    let pickerItems = [
       (0 ..< 24).map { $0.description },
       (0 ..< 60).map { $0.description },
       (0 ..< 60).map { $0.description }
     ]
-    var selectedIndeces = [0, 0, 0]
+    var hourText = "00"
+    var minuteText = "00"
+    var secondText = "00"
+    var targetTime = ""
+    var selectedTimerSeconds = 0
+    var remainingSeconds = 0
+    var greenButtonType: GreenButtonType = .start
+    var isStartButtonDisabled = true
+    var isCancelButtonDisabled = true
+    var selectedTimes = [0, 0, 0]
     @PresentationState var editSound: EndTimerAlarmListCore.State?
     
     enum GreenButtonType {
@@ -56,9 +59,6 @@ struct TimerCore: Reducer {
   }
   
   enum Action {
-    case didSelectTime(Int)
-    case didSelectMinute(Int)
-    case didSelectSecond(Int)
     case didSelectPickerItems([Int])
     case didTapTimerSoundRow
     case editAlarmSound(PresentationAction<EndTimerAlarmListCore.Action>)
@@ -66,6 +66,7 @@ struct TimerCore: Reducer {
     case didTapCancelButton
     case timerAction
     case timerTicked
+    case onDisappear
   }
   
   private enum CancelID {
@@ -77,28 +78,13 @@ struct TimerCore: Reducer {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case let .didSelectTime(hour):
-        state.selectedTime = hour
-        return .none
-        
-      case let .didSelectMinute(minute):
-        state.selectedMinute = minute
-        return .none
-        
-      case let .didSelectSecond(second):
-        state.selectedSecond = second
-        return .none
-        
       case let .didSelectPickerItems(indeces):
-        state.selectedIndeces = indeces
-        if state.selectedIndeces.map ({ $0 == 0 }).contains(false) {
+        state.selectedTimes = indeces
+        if state.selectedTimes.map ({ $0 == 0 }).contains(false) {
           state.isStartButtonDisabled = false
         } else {
           state.isStartButtonDisabled = true
         }
-        state.selectedTime = Int(state.pickerItems[0][state.selectedIndeces[0]]) ?? 0
-        state.selectedMinute = Int(state.pickerItems[1][state.selectedIndeces[1]]) ?? 0
-        state.selectedSecond = Int(state.pickerItems[2][state.selectedIndeces[2]]) ?? 0
         return .none
         
       case .didTapTimerSoundRow:
@@ -111,6 +97,11 @@ struct TimerCore: Reducer {
       case .didTapStartButton:
         switch state.greenButtonType {
         case .start:
+          let selectedHour = state.selectedTimes[0]
+          let selectedMinute = state.selectedTimes[1]
+          let selectedSecond = state.selectedTimes[2]
+          state.selectedTimerSeconds = (selectedHour * 3600) + (selectedMinute * 60) + selectedSecond
+          state.remainingSeconds = (selectedHour * 3600) + (selectedMinute * 60) + selectedSecond
           state.greenButtonType = .pause
           
         case .pause:
@@ -125,29 +116,71 @@ struct TimerCore: Reducer {
         } else {
           state.isCancelButtonDisabled = true
         }
-        return .none
+        
+        guard state.greenButtonType == .pause || state.greenButtonType == .resume else {
+          return .none
+        }
+       
+        return .run { send in
+          await send(.timerAction)
+        }
         
       case .didTapCancelButton:
         state.greenButtonType = .start
         state.isCancelButtonDisabled = true
-        return .none
+        state.hourText = "00"
+        state.minuteText = "00"
+        state.secondText = "00"
+        state.targetTime = ""
+        state.selectedTimerSeconds = 0
+        state.remainingSeconds = 0
+        return .cancel(id: CancelID.timer)
         
       case .timerAction:
         return .run { [buttonType = state.greenButtonType] send in
-          guard buttonType != .start else { return }
+          guard buttonType != .resume else { return }
           for await _ in timer.timer(interval: .seconds(1)) {
             await send(.timerTicked)
           }
         }
-        .cancellable(id: CancelID.timer)
+        .cancellable(id: CancelID.timer, cancelInFlight: true)
         
       case .timerTicked:
+        var remainedTime = state.remainingSeconds
+        remainedTime -= 1
+        guard remainedTime > 0 else {
+          state.remainingSeconds = 0
+          return .cancel(id: CancelID.timer)
+        }
+        state.remainingSeconds = remainedTime
+        let targetTime = Calendar.current.date(byAdding: .second, value: state.remainingSeconds, to: Date(), wrappingComponents: false) ?? Date()
+        state.targetTime = DateFormat.convertTimeToString(
+          date: targetTime,
+          id: CityTime.korean.rawValue
+        )
+        state.hourText = convertToText(timerSeconds: remainedTime).hour
+        state.minuteText = convertToText(timerSeconds: remainedTime).minute
+        state.secondText = convertToText(timerSeconds: remainedTime).second
         return .none
+        
+      case .onDisappear:
+        return .cancel(id: CancelID.timer)
       }
     }
     .ifLet(\.$editSound, action: /Action.editAlarmSound) {
       EndTimerAlarmListCore()
     }
+  }
+  
+  private func convertToText(timerSeconds: Int) -> (hour: String, minute: String, second: String) {
+    let hours = timerSeconds / 3600
+    let minute = (timerSeconds - hours * 3600) / 60
+    let seconds = timerSeconds % 60
+    return (
+      String(format: "%02d", hours),
+      String(format: "%02d", minute),
+      String(format: "%02d", seconds)
+    )
   }
 }
 
@@ -164,29 +197,23 @@ struct TimerView: View {
   }
   
   var body: some View {
-    VStack {
-      if viewStore.greenButtonType == .start {
-        Spacer()
-        timerPicker
-        Spacer()
-      } else {
-        TimerProgressBarView(
-          percent: 90,
-          hour: "",
-          minute: "11",
-          second: "00",
-          alarmTime: "오후 4:00"
-        )
-      }
-      VStack(spacing: 40) {
-        timerButtons
-        TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
-          store.send(.didTapTimerSoundRow)
+    NavigationStack {
+      VStack(spacing: 20) {
+        timerView
+        VStack(spacing: 40) {
+          timerButtons
+          TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
+            store.send(.didTapTimerSoundRow)
+          }
         }
+        Spacer(minLength: UIScreen.main.bounds.height / 3)
       }
-      Spacer(minLength: UIScreen.main.bounds.height / 3)
     }
     .padding(.horizontal, 20)
+    .animation(.linear, value: viewStore.greenButtonType)
+    .onDisappear {
+      store.send(.onDisappear)
+    }
     .sheet(store: store.scope(state: \.$editSound, action: { .editAlarmSound($0) })) { store in
       EndTimerAlarmListView(store: store)
     }
@@ -209,12 +236,35 @@ extension TimerView {
       .foregroundColor(.white)
   }
   
+  var timerView: some View {
+    VStack(spacing: 20) {
+      if viewStore.greenButtonType == .start {
+        Spacer(minLength: UIScreen.main.bounds.height / 5)
+        timerPicker
+        Spacer()
+      } else {
+        Spacer()
+        TimerProgressBarView(
+          percent: CGFloat(
+            viewStore.remainingSeconds / (viewStore.selectedTimerSeconds / 100)
+          ),
+          hour: viewStore.hourText,
+          minute: viewStore.minuteText,
+          second: viewStore.secondText,
+          alarmTime: viewStore.targetTime
+        )
+        .padding(.horizontal, 20)
+      }
+    }
+    .frame(height: UIScreen.main.bounds.height / 2)
+  }
+  
   var timerPicker: some View {
     ZStack(alignment: .center) {
       RepresentedPickerView(
         items: viewStore.pickerItems,
         selectedItemIndeces: viewStore.binding(
-          get: \.selectedIndeces,
+          get: \.selectedTimes,
           send: { .didSelectPickerItems($0) }
         )
       )

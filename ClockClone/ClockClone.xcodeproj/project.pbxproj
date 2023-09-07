@@ -123,6 +123,7 @@
 				053A8E992AA8061E005A62FE /* RepresentedPickerView.swift */,
 				053A8E9B2AA8166E005A62FE /* StopWatchButton.swift */,
 				053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */,
+				05143F902AA5BB56002CA98A /* CityTime.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -233,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				8DE1A56B2AA4A4AC00AA0294 /* WorldClockItem.swift */,
-				05143F902AA5BB56002CA98A /* CityTime.swift */,
 				05143F882AA55C80002CA98A /* LabTimeItem.swift */,
 				05143F8C2AA5994A002CA98A /* City.swift */,
 			);

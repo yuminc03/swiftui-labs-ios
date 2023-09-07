@@ -7,13 +7,19 @@
 
 import Foundation
 
+import ComposableArchitecture
+
 struct WorldClockItem: Equatable, Identifiable {
   let id = UUID()
   let parallax: String
   let cityName: String
   let time: String
   
-  static let dummy: [WorldClockItem] = [
-    .init(parallax: "오늘, +0시간", cityName: "서울", time: CityTime.randomTime)
+  static let dummy: IdentifiedArrayOf<WorldClockItem> = [
+    .init(
+      parallax: "오늘, +0시간",
+      cityName: "서울",
+      time: DateFormat.convertTimeToString(id: CityTime.korean.rawValue)
+    )
   ]
 }
