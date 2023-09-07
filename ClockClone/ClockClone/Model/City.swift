@@ -7,11 +7,13 @@
 
 import Foundation
 
+import ComposableArchitecture
+
 struct City: Equatable, Identifiable {
   let id = UUID()
   let name: String
   
-  static let dummy: [City] = [
+  static let dummy: IdentifiedArrayOf<City> = [
     .init(name: "갈라파고스 제도, 에콰도르"),
     .init(name: "그린 베이, 미국"),
     .init(name: "나폴리, 이탈리아"),

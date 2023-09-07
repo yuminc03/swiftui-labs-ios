@@ -9,9 +9,11 @@ import SwiftUI
 
 struct AlarmView: View {
   var body: some View {
-    ZStack {
-      Color.black
-        .ignoresSafeArea()
+    VStack(spacing: 20) {
+      Image(systemName: "clock.fill")
+        .font(.largeTitle)
+      Text("알람")
+        .font(.largeTitle)
     }
   }
 }

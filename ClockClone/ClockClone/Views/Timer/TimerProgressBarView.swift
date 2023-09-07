@@ -68,7 +68,7 @@ extension TimerProgressBarView {
         .frame(width: proxy.size.width, height: proxy.size.height)
         .rotationEffect(.degrees(90))
         .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
-        .animation(.linear, value: percent)
+        .animation(.linear(duration: 1), value: 1 - (percent / 100))
     }
   }
   
@@ -76,7 +76,7 @@ extension TimerProgressBarView {
     GeometryReader { proxy in
       VStack(spacing: 20) {
         HStack(spacing: 2) {
-          if hour.isEmpty == false {
+          if hour != "00" {
             Text(hour)
               .frame(width: 95, alignment: .trailing)
             Text(":")
@@ -89,7 +89,7 @@ extension TimerProgressBarView {
           Text(second)
             .frame(width: 95, alignment: .leading)
         }
-        .font(.system(size: 80, weight: .thin))
+        .font(.system(size: 60, weight: .thin))
         Label(alarmTime, systemImage: "bell.fill")
           .foregroundColor(.gray)
           .font(.title3)
