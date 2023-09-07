@@ -57,8 +57,14 @@ struct StopWatchCore: Reducer {
     switch action {
     case .didTapRapButton:
       guard state.isStartButton == false else { return .none }
+      state.savedMilliSeconds.append(state.rapMilliSecond)
+      state.raps[state.raps.count - 1] = "\(state.rapMinuteText):\(state.rapSecondText).\(state.rapMilliText)"
+      state.raps.append("")
+      state.stopWatchMilliSecond = 0
+      state.stopWatchSecond = 0
+      state.stopWatchMinute = 0
       return .run { send in
-        await send(.rapTimerStart)
+        await send(.rapAction)
       }
       
     case .didTapToggleStartButton:
@@ -75,11 +81,9 @@ struct StopWatchCore: Reducer {
       }
       
     case .rapTimerStart:
-      guard state.isStartButton == false else { return .none }
-      state.raps.append(
-        "\(state.rapMinuteText):\(state.rapSecondText).\(state.rapMilliText)"
-      )
-      state.savedMilliSeconds.append(state.rapMilliSecond)
+      if state.isStartButton {
+        state.raps.append("")
+      }
       return .run { send in
         await send(.rapAction)
       }
@@ -97,7 +101,10 @@ struct StopWatchCore: Reducer {
       state.stopWatchMinute = 0
       state.raps = []
       state.savedMilliSeconds = []
-      return .cancel(id: CancelID.stopWatch)
+      return .run { send in
+        await send(.didCancelStopWatch)
+        await send(.didCancelRap)
+      }
       
     case .didTapReStartButton:
       state.isTapReStartButton = true
@@ -126,8 +133,8 @@ struct StopWatchCore: Reducer {
       .cancellable(id: CancelID.stopWatch, cancelInFlight: true)
       
     case .rapAction:
-      return .run { [state = state] send in
-        guard state.isStartButton == false else { return }
+      return .run { [isStartButton = state.isStartButton] send in
+        guard isStartButton == false else { return }
         for await _ in rapClock.timer(interval: .seconds(0.01)) {
           await send(.rapTimerTicked)
         }
@@ -141,7 +148,7 @@ struct StopWatchCore: Reducer {
       guard state.rapMilliSecond / 100 > 0 else { return .none }
       state.rapSecond = state.stopWatchMilliSecond / 100
       state.rapSecondText = calculateMinuteAndSecond(state.rapSecond)
-
+      
       guard state.rapSecond / 60 > 0 else { return .none }
       state.rapMinute = state.rapSecond / 60
       state.rapMinuteText = calculateMinuteAndSecond(state.rapMinute)
@@ -288,6 +295,7 @@ extension StopWatchView {
       } else {
         StopWatchButton(title: "중단", type: .red) {
           store.send(.didTapToggleStartButton)
+          store.send(.rapTimerStart)
         }
       }
     }
@@ -297,7 +305,12 @@ extension StopWatchView {
     List {
       ForEach(0 ..< viewStore.raps.count) { index in
         StopWatchRow(
-          labTime: LabTimeItem(id: index + 1, savedTime: viewStore.raps[index]),
+          labTime: LabTimeItem(
+            id: index + 1,
+            savedTime: index == 0 ?
+            "\(viewStore.rapMinuteText):\(viewStore.rapSecondText).\(viewStore.rapMilliText)"
+            : viewStore.raps[index]
+          ),
           colorType: .white
         )
       }
