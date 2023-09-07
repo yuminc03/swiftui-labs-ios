@@ -18,9 +18,9 @@ struct StopWatchCore: Reducer {
     var isTapStartButton = false
     var isTapStopButton = false
     var isTapReStartButton = false
-    var timerMinute = 0
-    var timerSecond = 0
-    var timerMilliSecond = 0
+    var stopWatchMinute = 0
+    var stopWatchSecond = 0
+    var stopWatchMilliSecond = 0
     var savedMilliSeconds = [Int]()
     var raps = [String]()
     var rapMilliSecond = 0
@@ -92,9 +92,9 @@ struct StopWatchCore: Reducer {
       state.isTapStartButton = false
       state.isTapStopButton = false
       state.isTapReStartButton = false
-      state.timerMilliSecond = 0
-      state.timerSecond = 0
-      state.timerMinute = 0
+      state.stopWatchMilliSecond = 0
+      state.stopWatchSecond = 0
+      state.stopWatchMinute = 0
       state.raps = []
       state.savedMilliSeconds = []
       return .cancel(id: CancelID.stopWatch)
@@ -104,30 +104,16 @@ struct StopWatchCore: Reducer {
       return .none
       
     case .timerTicked:
-      state.timerMilliSecond += 1
-      if Int(state.timerMilliSecond % 100) < 10 {
-        state.millisecondText = "0\(Int(state.timerMilliSecond % 100))"
-      } else {
-        state.millisecondText = "\(Int(state.timerMilliSecond % 100))"
-      }
+      state.stopWatchMilliSecond += 1
+      state.millisecondText = calculateMilliSecond(state.stopWatchMilliSecond)
       
-      guard state.timerMilliSecond / 100 > 0 else { return .none }
+      guard state.stopWatchMilliSecond / 100 > 0 else { return .none }
+      state.stopWatchSecond = state.stopWatchMilliSecond / 100
+      state.secondText = calculateMinuteAndSecond(state.stopWatchSecond)
       
-      state.timerSecond = state.timerMilliSecond / 100
-      if Int(state.timerSecond % 60) < 10 {
-        state.secondText = "0\(Int(state.timerSecond % 60))"
-      } else {
-        state.secondText = "\(Int(state.timerSecond % 60))"
-      }
-
-      guard state.timerSecond / 60 > 0 else { return .none }
-
-      state.timerMinute = state.timerSecond / 60
-      if Int(state.timerMinute % 60) < 10 {
-        state.minuteText = "0\(Int(state.timerMinute % 60))"
-      } else {
-        state.minuteText = "\(Int(state.timerMinute % 60))"
-      }
+      guard state.stopWatchSecond / 60 > 0 else { return .none }
+      state.stopWatchMinute = state.stopWatchSecond / 60
+      state.minuteText = calculateMinuteAndSecond(state.stopWatchMinute)
       return .none
       
     case .stopWatchAction:
@@ -150,29 +136,15 @@ struct StopWatchCore: Reducer {
       
     case .rapTimerTicked:
       state.rapMilliSecond += 1
-      if Int(state.rapMilliSecond % 100) < 10 {
-        state.rapMilliText = "0\(Int(state.rapMilliSecond % 100))"
-      } else {
-        state.rapMilliText = "\(Int(state.rapMilliSecond % 100))"
-      }
+      state.rapMilliText = calculateMilliSecond(state.rapMilliSecond)
       
       guard state.rapMilliSecond / 100 > 0 else { return .none }
-      
-      state.rapSecond = state.timerMilliSecond / 100
-      if Int(state.rapSecond % 60) < 10 {
-        state.rapSecondText = "0\(Int(state.rapSecond % 60))"
-      } else {
-        state.rapSecondText = "\(Int(state.rapSecond % 60))"
-      }
+      state.rapSecond = state.stopWatchMilliSecond / 100
+      state.rapSecondText = calculateMinuteAndSecond(state.rapSecond)
 
       guard state.rapSecond / 60 > 0 else { return .none }
-
       state.rapMinute = state.rapSecond / 60
-      if Int(state.rapMinute % 60) < 10 {
-        state.rapMinuteText = "0\(Int(state.rapMinute % 60))"
-      } else {
-        state.rapMinuteText = "\(Int(state.rapMinute % 60))"
-      }
+      state.rapMinuteText = calculateMinuteAndSecond(state.rapMinute)
       return .none
       
     case .didCancelStopWatch:
@@ -180,6 +152,22 @@ struct StopWatchCore: Reducer {
       
     case .didCancelRap:
       return .cancel(id: CancelID.rap)
+    }
+  }
+  
+  private func calculateMinuteAndSecond(_ second: Int) -> String {
+    if Int(second % 60) < 10 {
+      return "0\(Int(second % 60))"
+    } else {
+      return "\(Int(second % 60))"
+    }
+  }
+  
+  private func calculateMilliSecond(_ milliSecond: Int) -> String {
+    if Int(milliSecond % 100) < 10 {
+      return "0\(Int(milliSecond % 100))"
+    } else {
+      return "\(Int(milliSecond % 100))"
     }
   }
 }
@@ -204,41 +192,7 @@ struct StopWatchView: View {
         }
         VStack(spacing: 0) {
           Spacer()
-          HStack(spacing: 0) {
-            if viewStore.isTapReStartButton {
-              StopWatchButton(
-                title: "랩",
-                type: viewStore.isTapStartButton ?.gray : .darkGray
-              ) {
-                store.send(.didTapRapButton)
-              }
-            } else if viewStore.isTapStopButton {
-              StopWatchButton(
-                title: "재설정",
-                type: viewStore.isTapStartButton ?.gray : .darkGray
-              ) {
-                store.send(.didTapResetButton)
-              }
-            } else {
-              StopWatchButton(
-                title: "랩",
-                type: viewStore.isTapStartButton ?.gray : .darkGray
-              ) {
-                store.send(.didTapRapButton)
-              }
-            }
-            Spacer()
-            if viewStore.isStartButton {
-              StopWatchButton(title: "시작", type: .green) {
-                store.send(.didTapToggleStartButton)
-                store.send(.rapTimerStart)
-              }
-            } else {
-              StopWatchButton(title: "중단", type: .red) {
-                store.send(.didTapToggleStartButton)
-              }
-            }
-          }
+          buttons
         }
         .padding(.bottom, 10)
       }
@@ -249,17 +203,7 @@ struct StopWatchView: View {
           .fill(.black)
           .frame(height: UIScreen.main.bounds.height / 3)
       } else {
-        List {
-          ForEach(0 ..< viewStore.raps.count) { index in
-            StopWatchRow(
-              labTime: LabTimeItem(id: index + 1, savedTime: viewStore.raps[index]),
-              colorType: .white
-            )
-          }
-          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-        }
-        .listStyle(.plain)
-        .frame(height: UIScreen.main.bounds.height / 3)
+        rapList
       }
     }
     .padding(.horizontal, 20)
@@ -306,8 +250,60 @@ extension StopWatchView {
   
   var clockView: some View {
     AnalogClockView(
-      seconds: viewStore.timerSecond,
-      minute: viewStore.timerMinute
+      seconds: viewStore.stopWatchSecond,
+      minute: viewStore.stopWatchMinute
     )
+  }
+  
+  var buttons: some View {
+    HStack(spacing: 0) {
+      if viewStore.isTapReStartButton {
+        StopWatchButton(
+          title: "랩",
+          type: viewStore.isTapStartButton ?.gray : .darkGray
+        ) {
+          store.send(.didTapRapButton)
+        }
+      } else if viewStore.isTapStopButton {
+        StopWatchButton(
+          title: "재설정",
+          type: viewStore.isTapStartButton ?.gray : .darkGray
+        ) {
+          store.send(.didTapResetButton)
+        }
+      } else {
+        StopWatchButton(
+          title: "랩",
+          type: viewStore.isTapStartButton ?.gray : .darkGray
+        ) {
+          store.send(.didTapRapButton)
+        }
+      }
+      Spacer()
+      if viewStore.isStartButton {
+        StopWatchButton(title: "시작", type: .green) {
+          store.send(.didTapToggleStartButton)
+          store.send(.rapTimerStart)
+        }
+      } else {
+        StopWatchButton(title: "중단", type: .red) {
+          store.send(.didTapToggleStartButton)
+        }
+      }
+    }
+  }
+  
+  var rapList: some View {
+    List {
+      ForEach(0 ..< viewStore.raps.count) { index in
+        StopWatchRow(
+          labTime: LabTimeItem(id: index + 1, savedTime: viewStore.raps[index]),
+          colorType: .white
+        )
+      }
+      .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+    }
+    .listStyle(.plain)
+    .frame(height: UIScreen.main.bounds.height / 3)
   }
 }
