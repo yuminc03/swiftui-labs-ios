@@ -65,7 +65,6 @@ struct SelectCityView: View {
           searchView
         }
         .padding(.horizontal, 20)
-        .ignoresSafeArea()
         List {
           ForEach(viewStore.cities) { city in
             SearchCityRow(city: city)
