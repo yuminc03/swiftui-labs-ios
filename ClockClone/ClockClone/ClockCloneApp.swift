@@ -15,12 +15,13 @@ struct ClockCloneCore: Reducer {
   }
   
   enum Action {
-    case didTapTabItem
+    case didTapTabItem(Int)
   }
   
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
-    case .didTapTabItem:
+    case let .didTapTabItem(index):
+      state.selectedTabIndex = index
       return .none
     }
   }
@@ -51,7 +52,7 @@ struct ClockCloneApp: App {
 extension ClockCloneApp {
   
   var tabView: some View {
-    TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: .didTapTabItem)) {
+    TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: { .didTapTabItem($0) })) {
       WorldClockView()
       .tabItem {
         Image(systemName: TabItem.worldClock.imageName)

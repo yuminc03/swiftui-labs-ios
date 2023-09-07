@@ -28,11 +28,11 @@ enum CityTime: String, Equatable, CaseIterable {
 
 class DateFormat {
   
-  static func convertTimeToString(id: String) -> String {
+  static func convertTimeToString(date: Date = Date(), id: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "a h:mm"
     dateFormatter.locale = Locale(identifier: Locale.current.identifier)
     dateFormatter.timeZone = TimeZone(identifier: id)
-    return dateFormatter.string(from: Date())
+    return dateFormatter.string(from: date)
   }
 }
