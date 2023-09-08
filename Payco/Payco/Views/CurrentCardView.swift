@@ -26,26 +26,26 @@ struct CurrentCardView: View {
         Spacer()
         bankInfoText
       }
-      .debug()
       Spacer()
       manageCardButton
-        .debug()
     }
-    .debug()
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
     .frame(maxWidth: .infinity)
     .frame(height: 200)
-    .background { // 여기에서 zstack을 사용, 카드를 보여주기
-      RoundedRectangle(cornerRadius: 20)
-        .fill(
-          LinearGradient(
-            colors: [.orange, .pink],
-            startPoint: .leading,
-            endPoint: .trailing
+    .background {
+      ZStack(alignment: .trailing) {
+        RoundedRectangle(cornerRadius: 20)
+          .fill(
+            LinearGradient(
+              colors: [.orange, .pink],
+              startPoint: .leading,
+              endPoint: .trailing
+            )
           )
-        )
-        .aspectRatio(2.0, contentMode: .fit)
+          .aspectRatio(2.0, contentMode: .fit)
+        cardImage
+      }
     }
   }
 }
