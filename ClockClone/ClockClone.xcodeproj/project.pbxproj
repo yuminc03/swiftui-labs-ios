@@ -21,6 +21,7 @@
 		053A8EA32AA83682005A62FE /* EndTimerAlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */; };
 		053A8EA52AA85722005A62FE /* TimerProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */; };
 		05ABB3DA2AAA94B2006EFAF0 /* ClassicMusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */; };
+		05ABB3DE2AAAAA32006EFAF0 /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABB3DD2AAAAA32006EFAF0 /* AlarmSound.swift */; };
 		8D7B24E02AA60BCF002D3A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */; };
 		8D8A2AA82AA762BB0025954C /* AnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A2AA72AA762BB0025954C /* AnalogClockView.swift */; };
 		8D8A2AAA2AA770440025954C /* MinuteAnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A2AA92AA770440025954C /* MinuteAnalogClockView.swift */; };
@@ -72,6 +73,7 @@
 		053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTimerAlarmListView.swift; sourceTree = "<group>"; };
 		053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressBarView.swift; sourceTree = "<group>"; };
 		05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicMusicListView.swift; sourceTree = "<group>"; };
+		05ABB3DD2AAAAA32006EFAF0 /* AlarmSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSound.swift; sourceTree = "<group>"; };
 		8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8A2AA72AA762BB0025954C /* AnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockView.swift; sourceTree = "<group>"; };
 		8D8A2AA92AA770440025954C /* MinuteAnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteAnalogClockView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				8DE1A56B2AA4A4AC00AA0294 /* WorldClockItem.swift */,
 				05143F882AA55C80002CA98A /* LabTimeItem.swift */,
 				05143F8C2AA5994A002CA98A /* City.swift */,
+				05ABB3DD2AAAAA32006EFAF0 /* AlarmSound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				8D8A2AAA2AA770440025954C /* MinuteAnalogClockView.swift in Sources */,
 				05143F892AA55C80002CA98A /* LabTimeItem.swift in Sources */,
 				8DE1A5352AA479B500AA0294 /* WorldClockView.swift in Sources */,
+				05ABB3DE2AAAAA32006EFAF0 /* AlarmSound.swift in Sources */,
 				8DE1A56C2AA4A4AC00AA0294 /* WorldClockItem.swift in Sources */,
 				8DE1A5662AA48FE300AA0294 /* TabItem.swift in Sources */,
 				05143F852AA5572A002CA98A /* StopWatchButtonType.swift in Sources */,

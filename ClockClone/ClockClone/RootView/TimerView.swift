@@ -26,6 +26,7 @@ struct TimerCore: Reducer {
     var isStartButtonDisabled = true
     var isCancelButtonDisabled = true
     var selectedTimes = [0, 0, 0]
+    var selectedSound = "프레스토"
     @PresentationState var editSound: EndTimerAlarmListCore.State?
     
     enum GreenButtonType {
@@ -89,6 +90,10 @@ struct TimerCore: Reducer {
         
       case .didTapTimerSoundRow:
         state.editSound = EndTimerAlarmListCore.State()
+        return .none
+        
+      case let .editAlarmSound(.presented(.delegate(.save(sound)))):
+        state.selectedSound = sound.name
         return .none
         
       case .editAlarmSound:
@@ -202,7 +207,7 @@ struct TimerView: View {
         timerView
         VStack(spacing: 40) {
           timerButtons
-          TimerSoundRow(title: "타이머 종료 시", selectedName: "프레스토") {
+          TimerSoundRow(title: "타이머 종료 시", selectedName: viewStore.selectedSound) {
             store.send(.didTapTimerSoundRow)
           }
         }

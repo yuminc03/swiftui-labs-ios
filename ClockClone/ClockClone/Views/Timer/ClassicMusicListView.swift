@@ -11,7 +11,7 @@ import ComposableArchitecture
 
 struct ClassicMusicListCore: Reducer {
   struct State: Equatable {
-    let classicMusics = City.classicDummy
+    let classicMusics = AlarmSound.classicDummy
   }
   
   struct Action {
@@ -39,7 +39,7 @@ struct ClassicMusicListView: View {
     NavigationStack {
       List {
         ForEach(viewStore.classicMusics) { music in
-          Text(music.name)
+          checkmarkRow(name: music.name, isSelected: music.isSelected)
         }
       }
       .navigationTitle("클래식")
@@ -51,5 +51,6 @@ struct ClassicMusicListView: View {
 struct ClassicMusicListView_Previews: PreviewProvider {
   static var previews: some View {
     ClassicMusicListView()
+      .previewLayout(.sizeThatFits)
   }
 }
