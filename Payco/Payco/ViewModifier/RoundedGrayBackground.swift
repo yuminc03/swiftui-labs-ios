@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RoundedGrayBackground: ViewModifier {
+  let padding: CGFloat
   
   func body(content: Content) -> some View {
     content
-    .padding(20)
+    .padding(padding)
     .background {
       RoundedRectangle(cornerRadius: 20)
         .foregroundColor(Color("gray_EAEAEA"))
@@ -21,7 +22,7 @@ struct RoundedGrayBackground: ViewModifier {
 
 extension View {
   
-  func roundedGrayBackground() -> some View {
-    modifier(RoundedGrayBackground())
+  func roundedGrayBackground(padding: CGFloat = 20) -> some View {
+    modifier(RoundedGrayBackground(padding: padding))
   }
 }

@@ -20,6 +20,7 @@
 		051EA21D2A9C774700A2EF7B /* CurrentCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA21C2A9C774700A2EF7B /* CurrentCardItem.swift */; };
 		051EA21F2A9C834400A2EF7B /* AdvertisePaycoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA21E2A9C834400A2EF7B /* AdvertisePaycoPoint.swift */; };
 		051EA2212A9C876B00A2EF7B /* AdvertisingAutoScrollBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051EA2202A9C876B00A2EF7B /* AdvertisingAutoScrollBanner.swift */; };
+		05ABB3E02AAAF346006EFAF0 /* FrameDebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABB3DF2AAAF346006EFAF0 /* FrameDebugModifier.swift */; };
 		05E835DA2A9D67120011E5ED /* AdvertisingAutoScrollBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E835D92A9D67120011E5ED /* AdvertisingAutoScrollBannersView.swift */; };
 		05E835DC2A9D914C0011E5ED /* FindFeatureBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E835DB2A9D914C0011E5ED /* FindFeatureBannerView.swift */; };
 		8D5692762A99CADF003AFD98 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5692752A99CADF003AFD98 /* ComposableArchitecture */; };
@@ -77,6 +78,7 @@
 		051EA21C2A9C774700A2EF7B /* CurrentCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCardItem.swift; sourceTree = "<group>"; };
 		051EA21E2A9C834400A2EF7B /* AdvertisePaycoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisePaycoPoint.swift; sourceTree = "<group>"; };
 		051EA2202A9C876B00A2EF7B /* AdvertisingAutoScrollBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingAutoScrollBanner.swift; sourceTree = "<group>"; };
+		05ABB3DF2AAAF346006EFAF0 /* FrameDebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameDebugModifier.swift; sourceTree = "<group>"; };
 		05E835D92A9D67120011E5ED /* AdvertisingAutoScrollBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingAutoScrollBannersView.swift; sourceTree = "<group>"; };
 		05E835DB2A9D914C0011E5ED /* FindFeatureBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFeatureBannerView.swift; sourceTree = "<group>"; };
 		8D5692782A99ED6E003AFD98 /* NavigationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButton.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				8D76B7342A98F9F200576C06 /* PaycoApp.swift */,
 				8D76B7362A98F9F200576C06 /* PointView.swift */,
+				05ABB3DF2AAAF346006EFAF0 /* FrameDebugModifier.swift */,
 				8D56927A2A9A1AEA003AFD98 /* Models */,
 				8D8A2AA12AA758DF0025954C /* ViewModifier */,
 				8D5692772A99ED38003AFD98 /* Views */,
@@ -433,6 +436,7 @@
 				051EA21F2A9C834400A2EF7B /* AdvertisePaycoPoint.swift in Sources */,
 				8D76B7372A98F9F200576C06 /* PointView.swift in Sources */,
 				051EA20F2A9C30A300A2EF7B /* SeeMorePageTabItem.swift in Sources */,
+				05ABB3E02AAAF346006EFAF0 /* FrameDebugModifier.swift in Sources */,
 				051EA21D2A9C774700A2EF7B /* CurrentCardItem.swift in Sources */,
 				051EA21B2A9C767F00A2EF7B /* CurrentCardView.swift in Sources */,
 				051EA2092A9C141C00A2EF7B /* BrandsOfMonthAutoScrollView.swift in Sources */,

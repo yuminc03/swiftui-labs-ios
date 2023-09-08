@@ -61,7 +61,7 @@ extension TimerProgressBarView {
         .stroke(.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round))
         .frame(width: proxy.size.width, height: proxy.size.height)
         .rotationEffect(.degrees(90))
-        .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
+        .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0)) // 이거 왜?
         .animation(.linear(duration: 1.0), value: percent)
     }
   }

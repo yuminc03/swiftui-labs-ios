@@ -80,7 +80,7 @@ struct TimerCore: Reducer {
   
   @Dependency(\.continuousClock) var timer
   
-  var body: some ReducerOf<Self> {
+  var body: some ReducerOf<Self> { // view frame 크기 박는 것은 최대한 자제하기
     Reduce { state, action in
       switch action {
       case let .didSelectPickerItems(indeces):
@@ -300,7 +300,7 @@ extension TimerView {
       ) {
         store.send(.didTapCancelButton)
       }
-      .disabled(viewStore.isCancelButtonDisabled)
+//      .disabled(viewStore.isCancelButtonDisabled)
       Spacer()
       StopWatchButton(
         title: viewStore.greenButtonType.buttonTitle,
@@ -308,7 +308,7 @@ extension TimerView {
       ) {
         store.send(.didTapStartButton)
       }
-      .disabled(viewStore.isStartButtonDisabled)
+//      .disabled(viewStore.isStartButtonDisabled)
     }
   }
 }

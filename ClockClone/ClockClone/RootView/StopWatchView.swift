@@ -9,8 +9,9 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct StopWatchCore: Reducer {
+struct StopWatchCore: Reducer { // rap 기능, state 변수 개수 줄이기 (숫자 너비 고려하기)
   struct State: Equatable {
+    // timer는 하나로 충분함, currentTime 하나로 타이머 시간 계산, rapTime 저장, buttonState enum을 정의해서 사용
     var minuteText = "00"
     var secondText = "00"
     var millisecondText = "00"
@@ -176,26 +177,15 @@ struct StopWatchView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      ZStack {
-        VStack(alignment: .center, spacing: 20) {
-          tabView
-          Spacer()
-        }
-        VStack(spacing: 0) {
-          Spacer()
-          buttons
-        }
+      ZStack(alignment: .bottom) {
+        // view 깔끔하게 수정 (알아보기 쉽도록) - 큰 컴포넌트 이름으로 보여주기 - 쓸모없는 코드 삭제
+        tabView
+        buttons
         .padding(.bottom, 10)
       }
       Divider()
         .background(.gray)
-      if viewStore.raps.isEmpty {
-        Rectangle()
-          .fill(.black)
-          .frame(height: UIScreen.main.bounds.height / 3)
-      } else {
-        rapList
-      }
+      rapList
     }
     .padding(.horizontal, 20)
     .onDisappear {
@@ -225,7 +215,7 @@ extension StopWatchView {
   
   var stopWatchView: some View {
     HStack(alignment: .center, spacing: 0) {
-      Text(viewStore.minuteText)
+      Text(viewStore.minuteText) // 시간 다시 표현(format)
         .frame(width: 110)
       Text(":")
       Text(viewStore.secondText)
@@ -287,8 +277,8 @@ extension StopWatchView {
   
   var rapList: some View {
     List {
-      ForEach(0 ..< viewStore.raps.count) { index in
-        StopWatchRow(
+      ForEach(0 ..< viewStore.raps.count, id: \.self) { index in
+        StopWatchRow( // index == 0일 때만 숫자가 계속 올라감(타이머)
           labTime: LabTimeItem(
             id: index + 1,
             savedTime: index == 0 ?

@@ -23,16 +23,14 @@ struct PointPaymentMoreLoadButton: View {
   var body: some View {
     HStack(spacing: 5) {
       Text(title)
-        .font(.body)
         .foregroundColor(.black)
       Text("\(currentPage)")
-        .font(.body)
         .foregroundColor(.black)
         .bold()
       Text("/ \(pageCount)")
-        .font(.body)
         .foregroundColor(.gray)
     }
+    .font(.body)
     .padding(.horizontal, 20)
     .padding(.vertical, 10)
     .background(Color.white)

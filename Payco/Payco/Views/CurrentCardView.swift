@@ -19,29 +19,24 @@ struct CurrentCardView: View {
   }
   
   var body: some View {
-    HStack(alignment: .center) {
-      VStack(alignment: .leading) {
-        VStack(alignment: .leading, spacing: 20) {
-          paycoPointText
-          cardPoint
-        }
+    HStack(alignment: .bottom) {
+      VStack(alignment: .leading, spacing: 20) {
+        paycoPointText
+        cardPoint
         Spacer()
         bankInfoText
       }
+      .debug()
       Spacer()
-      ZStack(alignment: .trailing) {
-        cardImage
-        VStack(alignment: .trailing) {
-          Spacer()
-          manageCardButton
-        }
-      }
+      manageCardButton
+        .debug()
     }
+    .debug()
     .padding(.horizontal, 20)
     .padding(.vertical, 30)
     .frame(maxWidth: .infinity)
     .frame(height: 200)
-    .background {
+    .background { // 여기에서 zstack을 사용, 카드를 보여주기
       RoundedRectangle(cornerRadius: 20)
         .fill(
           LinearGradient(

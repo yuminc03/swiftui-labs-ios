@@ -72,7 +72,6 @@ struct AdvertisingAutoScrollBannersView: View {
           }
       )
     }
-    .padding(.horizontal, -20)
   }
 }
 

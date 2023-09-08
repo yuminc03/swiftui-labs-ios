@@ -9,7 +9,7 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct WorldClockCore: Reducer {
+struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
     var cities = City.dummy
@@ -73,9 +73,7 @@ struct WorldClockView: View {
   
   var body: some View {
     NavigationStack {
-      ZStack {
-        Color.black
-          .ignoresSafeArea()
+      VStack {
         if viewStore.worldClocks.isEmpty {
           Text("세계 시계 없음")
             .font(.largeTitle)

@@ -19,6 +19,7 @@ struct RepresentedPickerView: UIViewRepresentable {
   }
   
   func updateUIView(_ uiView: UIPickerView, context: Context) {
+    // updateUIView() State가 바뀔 때 update함
     for i in 0 ..< selectedItemIndeces.count {
       uiView.selectRow(selectedItemIndeces[i], inComponent: i, animated: true)
     }
@@ -32,6 +33,8 @@ struct RepresentedPickerView: UIViewRepresentable {
 class Coordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
   let items: [[String]]
   var selectedItemIndeces: Binding<[Int]>
+  // 이 부분에서 SwiftUI에서 사용할 view를 받아야 함
+//  var parent: RepresentedPickerView
   
   init(items: [[String]], selectedItemIndeces: Binding<[Int]>) {
     self.items = items

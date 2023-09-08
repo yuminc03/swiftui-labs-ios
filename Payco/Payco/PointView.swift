@@ -117,6 +117,8 @@ struct PointView: View {
         ) { index in
           store.send(.didChangeAdvertiseBanner(index))
         }
+        .padding(.horizontal, -20)
+
         PointPaymentBenefitsList(
           currentPointPaymentPage: viewStore.currentPointPaymentPage,
           pageCount: viewStore.pointPaymentDataCount / 4,
