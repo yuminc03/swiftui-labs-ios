@@ -27,6 +27,9 @@ struct TimerCore: Reducer {
     var isCancelButtonDisabled = true
     var selectedTimes = [0, 0, 0]
     var selectedSound = "프레스토"
+    var progressValue: CGFloat {
+      return CGFloat(remainingSeconds) / (CGFloat(selectedTimerSeconds) / 100)
+    }
     @PresentationState var editSound: EndTimerAlarmListCore.State?
     
     enum GreenButtonType {
@@ -67,6 +70,7 @@ struct TimerCore: Reducer {
     case didTapCancelButton
     case timerAction
     case timerTicked
+    case endedTimer
     case onDisappear
   }
   
@@ -122,10 +126,6 @@ struct TimerCore: Reducer {
           state.isCancelButtonDisabled = true
         }
         
-        guard state.greenButtonType == .pause || state.greenButtonType == .resume else {
-          return .none
-        }
-       
         return .run { send in
           await send(.timerAction)
         }
@@ -151,22 +151,27 @@ struct TimerCore: Reducer {
         .cancellable(id: CancelID.timer, cancelInFlight: true)
         
       case .timerTicked:
-        var remainedTime = state.remainingSeconds
-        remainedTime -= 1
-        guard remainedTime > 0 else {
-          state.remainingSeconds = 0
-          return .cancel(id: CancelID.timer)
+        guard state.remainingSeconds > 0 else {
+          return .run { send in
+            await send(.endedTimer)
+          }
         }
-        state.remainingSeconds = remainedTime
+        state.remainingSeconds -= 1
         let targetTime = Calendar.current.date(byAdding: .second, value: state.remainingSeconds, to: Date(), wrappingComponents: false) ?? Date()
         state.targetTime = DateFormat.convertTimeToString(
           date: targetTime,
           id: CityTime.korean.rawValue
         )
-        state.hourText = convertToText(timerSeconds: remainedTime).hour
-        state.minuteText = convertToText(timerSeconds: remainedTime).minute
-        state.secondText = convertToText(timerSeconds: remainedTime).second
+        state.hourText = convertToText(timerSeconds: state.remainingSeconds).hour
+        state.minuteText = convertToText(timerSeconds: state.remainingSeconds).minute
+        state.secondText = convertToText(timerSeconds: state.remainingSeconds).second
         return .none
+        
+      case .endedTimer:
+        return .run { send in
+          await send(.onDisappear)
+          await send(.didTapCancelButton)
+        }
         
       case .onDisappear:
         return .cancel(id: CancelID.timer)
@@ -250,9 +255,7 @@ extension TimerView {
       } else {
         Spacer()
         TimerProgressBarView(
-          percent: CGFloat(
-            viewStore.remainingSeconds / (viewStore.selectedTimerSeconds / 100)
-          ),
+          percent: viewStore.progressValue,
           hour: viewStore.hourText,
           minute: viewStore.minuteText,
           second: viewStore.secondText,
