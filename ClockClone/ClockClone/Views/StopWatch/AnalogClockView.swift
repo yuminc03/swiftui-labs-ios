@@ -20,8 +20,9 @@ struct AnalogClockView: View {
     ZStack {
       Circle()
         .fill(.black)
+      numbers
       MinuteAnalogClockView(minute: minute)
-        .offset(y: -UIScreen.main.bounds.width + 330)
+        .offset(y: -UIScreen.main.bounds.width + 360)
       clockShortScales
       clockLongScales
       bigClockHourHand
@@ -35,7 +36,7 @@ struct AnalogClockView: View {
 
 struct AnalogClockView_Previews: PreviewProvider {
   static var previews: some View {
-    AnalogClockView(seconds: 10, minute: 1)
+    AnalogClockView(seconds: 0, minute: 0)
       .previewLayout(.sizeThatFits)
   }
 }
@@ -111,33 +112,47 @@ extension AnalogClockView {
   }
   
   var numbers: some View {
-    VStack(spacing: 30) {
-      HStack(spacing: 0) {
-        Text("55")
-        Spacer()
-        Text("5")
+    ZStack {
+      VStack(spacing: UIScreen.main.bounds.width / 12) {
+        HStack {
+          Text("50")
+          Spacer()
+          Text("10")
+        }
+        .frame(width: UIScreen.main.bounds.width - 130)
+        HStack {
+          Text("45")
+          Spacer()
+          Text("15")
+        }
+        HStack {
+          Text("40")
+          Spacer()
+          Text("20")
+        }
+        .frame(width: UIScreen.main.bounds.width - 130)
       }
-      HStack(spacing: 0) {
-        Text("50")
-        Spacer()
-        Text("10")
-      }
-      HStack(spacing: 0) {
-        Text("45")
-        Spacer()
-        Text("15")
-      }
-      HStack(spacing: 0) {
-        Text("40")
-        Spacer()
-        Text("20")
-      }
-      HStack(spacing: 0) {
-        Text("35")
-        Spacer()
-        Text("25")
+      HStack(spacing: UIScreen.main.bounds.width / 12) {
+        VStack {
+          Text("55")
+          Spacer()
+          Text("35")
+        }
+        .padding(.vertical, 10)
+        VStack {
+          Text("60")
+          Spacer()
+          Text("30")
+        }
+        VStack {
+          Text("5")
+          Spacer()
+          Text("25")
+        }
+        .padding(.vertical, 10)
       }
     }
+    .padding(20)
     .font(.title)
   }
 }

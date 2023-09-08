@@ -19,6 +19,7 @@ struct MinuteAnalogClockView: View {
     ZStack {
       Circle()
         .fill(.black)
+      numbers
       clockScales
       hourHand
     }
@@ -50,7 +51,7 @@ extension MinuteAnalogClockView {
           ))
           path.closeSubpath()
         }
-        .stroke(second % 6 == 0 ? .white : .gray, lineWidth: 1)
+        .stroke(second % 10 == 0 ? .white : .gray, lineWidth: 1)
         .rotationEffect(.degrees(Double(second) * (360 / 60)))
       }
     }
@@ -70,5 +71,30 @@ extension MinuteAnalogClockView {
         .fill(.orange)
         .frame(height: 8)
     }
+  }
+  
+  var numbers: some View {
+    ZStack {
+      VStack(spacing: 20) {
+        HStack {
+          Text("25")
+          Spacer()
+          Text("5")
+        }
+        HStack {
+          Text("20")
+          Spacer()
+          Text("10")
+        }
+      }
+      .padding(20)
+      VStack {
+        Text("30")
+        Spacer()
+        Text("15")
+      }
+      .padding(15)
+    }
+    .font(.caption)
   }
 }
