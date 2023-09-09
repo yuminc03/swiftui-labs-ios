@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */; };
-		8D1BBBF22AACC32D00F2A334 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF12AACC32D00F2A334 /* ContentView.swift */; };
+		8D1BBBF22AACC32D00F2A334 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF12AACC32D00F2A334 /* RootView.swift */; };
 		8D1BBBF42AACC32E00F2A334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */; };
 		8D1BBBF72AACC32E00F2A334 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF62AACC32E00F2A334 /* Preview Assets.xcassets */; };
 		8D1BBC012AACC32F00F2A334 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBC002AACC32F00F2A334 /* DesignSystemTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		8D1BBBEC2AACC32D00F2A334 /* DesignSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemApp.swift; sourceTree = "<group>"; };
-		8D1BBBF12AACC32D00F2A334 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D1BBBF12AACC32D00F2A334 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1BBBF62AACC32E00F2A334 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D1BBBFC2AACC32F00F2A334 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */,
-				8D1BBBF12AACC32D00F2A334 /* ContentView.swift */,
+				8D1BBBF12AACC32D00F2A334 /* RootView.swift */,
 				8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */,
 				8D1BBBF52AACC32E00F2A334 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1BBBF22AACC32D00F2A334 /* ContentView.swift in Sources */,
+				8D1BBBF22AACC32D00F2A334 /* RootView.swift in Sources */,
 				8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
