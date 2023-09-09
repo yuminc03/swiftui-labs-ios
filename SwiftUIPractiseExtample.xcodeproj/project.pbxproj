@@ -92,6 +92,7 @@
 		05E19ECC2A96DB3B001F8B9B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19ECB2A96DB3B001F8B9B /* PageView.swift */; };
 		05E19ECE2A96E65B001F8B9B /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19ECD2A96E65B001F8B9B /* PageControl.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
+		8D1BBC1A2AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */; };
 		8D1DAC372A964A9300144888 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC362A964A9300144888 /* Profile.swift */; };
 		8D1DAC392A964B2E00144888 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC382A964B2E00144888 /* ProfileHost.swift */; };
 		8D1DAC3B2A964B6A00144888 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */; };
@@ -101,7 +102,6 @@
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
 		8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D22A8B40F400F0131E /* CounterFeature.swift */; };
 		8D2C03D62A8B40F400F0131E /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D32A8B40F400F0131E /* View+.swift */; };
-		8D2C03E12A8B57E900F0131E /* SwiftUIPractiseExtampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03E02A8B57E900F0131E /* SwiftUIPractiseExtampleTests.swift */; };
 		8D2C03F22A8B8B6200F0131E /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03EB2A8B8B6100F0131E /* AddContactFeature.swift */; };
 		8D2C03F32A8B8B6200F0131E /* ContactsFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03EC2A8B8B6100F0131E /* ContactsFeatureView.swift */; };
 		8D2C03F42A8B8B6200F0131E /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03ED2A8B8B6100F0131E /* ContactDetailFeature.swift */; };
@@ -263,6 +263,7 @@
 		05E19ECB2A96DB3B001F8B9B /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		05E19ECD2A96E65B001F8B9B /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
+		8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftUIPractiseExtampleTests.swift; path = SwiftUIPractiseExtample/SwiftUIPractiseExtampleTests/SwiftUIPractiseExtampleTests.swift; sourceTree = SOURCE_ROOT; };
 		8D1DAC362A964A9300144888 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8D1DAC382A964B2E00144888 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
@@ -274,7 +275,6 @@
 		8D2C03D32A8B40F400F0131E /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		8D2C03D72A8B423600F0131E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D2C03DE2A8B57E900F0131E /* SwiftUIPractiseExtampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIPractiseExtampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D2C03E02A8B57E900F0131E /* SwiftUIPractiseExtampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPractiseExtampleTests.swift; sourceTree = "<group>"; };
 		8D2C03EB2A8B8B6100F0131E /* AddContactFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		8D2C03EC2A8B8B6100F0131E /* ContactsFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsFeatureView.swift; sourceTree = "<group>"; };
 		8D2C03ED2A8B8B6100F0131E /* ContactDetailFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
@@ -678,7 +678,7 @@
 		8D2C03DF2A8B57E900F0131E /* SwiftUIPractiseExtampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				8D2C03E02A8B57E900F0131E /* SwiftUIPractiseExtampleTests.swift */,
+				8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */,
 			);
 			path = SwiftUIPractiseExtampleTests;
 			sourceTree = "<group>";
@@ -1060,7 +1060,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D2C03E12A8B57E900F0131E /* SwiftUIPractiseExtampleTests.swift in Sources */,
+				8D1BBC1A2AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
