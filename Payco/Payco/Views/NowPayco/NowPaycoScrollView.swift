@@ -61,7 +61,7 @@ extension NowPaycoScrollView {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(alignment: .center, spacing: 10) {
         clearItem
-        ForEach(0 ..< images.count) { index in
+        ForEach(0 ..< images.count, id: \.self) { index in
           roundedImage(imageName: images[index].imageName)
         }
         clearItem

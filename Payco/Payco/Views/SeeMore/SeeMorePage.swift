@@ -19,33 +19,30 @@ struct SeeMorePage: View {
   }
   
   var body: some View {
-    VStack(alignment: .center, spacing: 20) {
-      VStack(alignment: .leading, spacing: 20) {
-        VStack(alignment: .leading, spacing: 5) {
-          if data.topCaption.isEmpty == false {
-            topCaptionText
+    HStack(spacing: 0) {
+      clearItem
+      VStack(alignment: .center, spacing: 20) {
+        VStack(alignment: .leading, spacing: 20) {
+          VStack(alignment: .leading, spacing: 5) {
+            if data.topCaption.isEmpty == false {
+              topCaptionText
+            }
+            titleText
           }
-          titleText
-        }
-        HStack(alignment: .top) {
-          VStack {
+          HStack(alignment: .top) {
             bodyText
             Spacer()
+            bigImage
           }
-          Spacer()
-          bigImage
         }
+        redButton
       }
-      redButton
-    }
-    .tag(index)
-    .padding(.horizontal, 20)
-    .padding(.top, 30)
-    .padding(.bottom, 20)
-    .frame(width: UIScreen.main.bounds.width - 40)
-    .background {
-      RoundedRectangle(cornerRadius: 20)
-        .fill(Color("gray_EAEAEA"))
+      .tag(index)
+      .padding(.horizontal, 20)
+      .padding(.top, 30)
+      .padding(.bottom, 20)
+      .roundedGrayBackground(padding: 0)
+      clearItem
     }
   }
 }
@@ -83,9 +80,12 @@ extension SeeMorePage {
   }
   
   var bodyText: some View {
-    Text(data.contents)
-      .font(.subheadline)
-      .fontWeight(.light)
+    VStack {
+      Text(data.contents)
+        .font(.subheadline)
+        .fontWeight(.light)
+      Spacer()
+    }
   }
   
   var bigImage: some View {
@@ -112,5 +112,11 @@ extension SeeMorePage {
       .cornerRadius(15)
       .contentShape(RoundedRectangle(cornerRadius: 15))
     }
+  }
+  
+  var clearItem: some View {
+    RoundedRectangle(cornerRadius: 20)
+      .fill(.clear)
+      .frame(width: 20)
   }
 }

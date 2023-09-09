@@ -27,7 +27,7 @@ struct SeeMorePageTabView: View {
   var body: some View {
     VStack(spacing: 10) {
       TabView(selection: $selectedIndex) {
-        ForEach(0 ..< data.count) { index in
+        ForEach(0 ..< data.count, id: \.self) { index in
           SeeMorePage(data: data[index], index: index) {
             buttonAction()
           }

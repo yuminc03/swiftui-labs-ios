@@ -89,7 +89,7 @@ extension AdvertisingAutoScrollBannersView {
   var horizontalScrollView: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHStack(spacing: 10) {
-        ForEach(0 ..< data.count) { index in
+        ForEach(0 ..< data.count, id: \.self) { index in
           AdvertisingAutoScrollBanner(
             advertisePaycoPoint: data[index]
           )

@@ -19,7 +19,7 @@ struct CustomPageIndicator: View {
   
   var body: some View {
     HStack(spacing: 5) {
-      ForEach(0 ..< maxCount) { index in
+      ForEach(0 ..< maxCount, id: \.self) { index in
         CustomPageTabItem(isSelected: index == selectedIndex)
       }
     }

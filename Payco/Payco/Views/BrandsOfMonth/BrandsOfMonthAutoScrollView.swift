@@ -44,10 +44,7 @@ struct BrandsOfMonthAutoScrollView: View {
       contentsView
     }
     .padding(.vertical, 30)
-    .background {
-      RoundedRectangle(cornerRadius: 20)
-        .foregroundColor(Color("gray_EAEAEA"))
-    }
+    .roundedGrayBackground(padding: 0)
   }
 }
 
@@ -97,7 +94,7 @@ extension BrandsOfMonthAutoScrollView {
     ScrollViewReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(alignment: .center, spacing: 10) {
-          ForEach(0 ..< imageNames.count) { index in
+          ForEach(0 ..< imageNames.count, id: \.self) { index in
             VStack(spacing: 2) {
               if index % 8 == 0 {
                 BlackComment(type: .new)
