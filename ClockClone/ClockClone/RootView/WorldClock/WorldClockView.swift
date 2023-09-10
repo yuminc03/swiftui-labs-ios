@@ -13,9 +13,9 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
     var cities = City.dummy
+    @BindingState var editMode: EditMode = .inactive
     @PresentationState var addCity: SelectCityCore.State?
   }
-  @Environment(\.editMode) var editMode
   
   enum Action {
     case onDeleteClock(at: IndexSet)
@@ -63,7 +63,9 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
 struct WorldClockView: View {
   private let store: StoreOf<WorldClockCore>
   @ObservedObject private var viewStore: ViewStoreOf<WorldClockCore>
-  
+  struct ViewState: Equatable {
+    
+  }
   init() {
     self.store = Store(initialState: WorldClockCore.State()) {
       WorldClockCore()
@@ -111,6 +113,7 @@ struct WorldClockView: View {
       }
       .foregroundColor(.orange)
       .navigationTitle("세계 시계")
+//      .environment(\.editMode, viewStore.$editMode)
     }
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)

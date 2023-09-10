@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct TimerProgressBarView: View {
-  
   private let percent: CGFloat
-  private let hour: String
-  private let minute: String
-  private let second: String
+  private let currentTime: Int
   private let alarmTime: String
   
-  init(percent: CGFloat, hour: String, minute: String, second: String, alarmTime: String) {
+  init(percent: CGFloat, currentTime: Int, alarmTime: String) {
     self.percent = percent
-    self.hour = hour
-    self.minute = minute
-    self.second = second
+    self.currentTime = currentTime
     self.alarmTime = alarmTime
   }
   
@@ -36,7 +31,7 @@ struct TimerProgressBarView: View {
 
 struct TimerProgressBarView_Previews: PreviewProvider {
   static var previews: some View {
-    TimerProgressBarView(percent: 90, hour: "10", minute: "00", second: "10", alarmTime: "오후 4:24")
+    TimerProgressBarView(percent: 50, currentTime: 80, alarmTime: "오후 4:24")
       .previewLayout(.sizeThatFits)
   }
 }
@@ -61,7 +56,7 @@ extension TimerProgressBarView {
         .stroke(.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round))
         .frame(width: proxy.size.width, height: proxy.size.height)
         .rotationEffect(.degrees(90))
-        .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0)) // 이거 왜?
+        .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0)) // progressBar가 시계 반대 방향으로 회전하도록 x축을 기준으로 180도 뒤집음
         .animation(.linear(duration: 1.0), value: percent)
     }
   }
@@ -69,26 +64,27 @@ extension TimerProgressBarView {
   var alarmTimes: some View {
     GeometryReader { proxy in
       VStack(spacing: 20) {
-        HStack(spacing: 2) {
-          if hour != "00" {
-            Text(hour)
-              .frame(width: 95, alignment: .trailing)
-            Text(":")
-              .frame(width: 15)
-          }
-          Text(minute)
-            .frame(width: 95)
-          Text(":")
-            .frame(width: 15)
-          Text(second)
-            .frame(width: 95, alignment: .leading)
-        }
+        Text(convertToText(timerSeconds: currentTime))
         .font(.system(size: 60, weight: .thin))
+        .monospacedDigit()
         Label(alarmTime, systemImage: "bell.fill")
           .foregroundColor(.gray)
           .font(.title3)
       }
       .frame(width: proxy.size.width, height: proxy.size.height)
+    }
+  }
+  
+  private func convertToText(timerSeconds: Int) -> String {
+    if timerSeconds / 3600 == 0 {
+      let minute = timerSeconds / 60
+      let seconds = timerSeconds % 60
+      return String(format: "%02d:%02d", minute, seconds)
+    } else {
+      let hours = timerSeconds / 3600
+      let minute = (timerSeconds - hours * 3600) / 60
+      let seconds = timerSeconds % 60
+      return String(format: "%02d:%02d:%02d", hours, minute, seconds)
     }
   }
 }

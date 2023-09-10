@@ -132,33 +132,70 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		053A8EA12AA83632005A62FE /* Timer */ = {
+		8D1AFAED2AADE41B000C763D /* WorldClock */ = {
 			isa = PBXGroup;
 			children = (
-				053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */,
-				05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */,
-				053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */,
-			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
-		8D7B24DE2AA5E8A9002D3A6E /* WorldClock */ = {
-			isa = PBXGroup;
-			children = (
+				8DE1A5342AA479B500AA0294 /* WorldClockView.swift */,
 				05143F8A2AA58FF3002CA98A /* SelectCityView.swift */,
-				05143F8E2AA59F3D002CA98A /* SearchCityRow.swift */,
+				8D1AFAF12AADE492000C763D /* Views */,
 			);
 			path = WorldClock;
 			sourceTree = "<group>";
 		};
-		8D8A2AA62AA762920025954C /* StopWatch */ = {
+		8D1AFAEE2AADE423000C763D /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				8DE1A56E2AA4D58900AA0294 /* AlarmView.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		8D1AFAEF2AADE42A000C763D /* StopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				8DE1A5612AA48DC700AA0294 /* StopWatchView.swift */,
+				8D1AFAF22AADE4A4000C763D /* Views */,
+			);
+			path = StopWatch;
+			sourceTree = "<group>";
+		};
+		8D1AFAF02AADE430000C763D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8DE1A5632AA48DD400AA0294 /* TimerView.swift */,
+				053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */,
+				05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */,
+				8D1AFAF32AADE4CC000C763D /* Views */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8D1AFAF12AADE492000C763D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DE1A5682AA4937700AA0294 /* WorldClockRow.swift */,
+				05143F8E2AA59F3D002CA98A /* SearchCityRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D1AFAF22AADE4A4000C763D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				05143F862AA55C0A002CA98A /* StopWatchRow.swift */,
 				8D8A2AA72AA762BB0025954C /* AnalogClockView.swift */,
 				8D8A2AA92AA770440025954C /* MinuteAnalogClockView.swift */,
 			);
-			path = StopWatch;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D1AFAF32AADE4CC000C763D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				053A8E9D2AA81B38005A62FE /* TimerSoundRow.swift */,
+				053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8DE1A5262AA479B500AA0294 = {
@@ -190,7 +227,6 @@
 				053A8E982AA805E5005A62FE /* Common */,
 				8DE1A56D2AA4D57C00AA0294 /* RootView */,
 				8DE1A56A2AA4A49C00AA0294 /* Model */,
-				8DE1A5672AA4935700AA0294 /* Views */,
 				8DE1A5362AA479B600AA0294 /* Assets.xcassets */,
 				8DE1A5382AA479B600AA0294 /* Preview Content */,
 				8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */,
@@ -223,18 +259,6 @@
 			path = ClockCloneUITests;
 			sourceTree = "<group>";
 		};
-		8DE1A5672AA4935700AA0294 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8DE1A5682AA4937700AA0294 /* WorldClockRow.swift */,
-				053A8E9D2AA81B38005A62FE /* TimerSoundRow.swift */,
-				8D7B24DE2AA5E8A9002D3A6E /* WorldClock */,
-				8D8A2AA62AA762920025954C /* StopWatch */,
-				053A8EA12AA83632005A62FE /* Timer */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8DE1A56A2AA4A49C00AA0294 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,10 +273,10 @@
 		8DE1A56D2AA4D57C00AA0294 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
-				8DE1A5342AA479B500AA0294 /* WorldClockView.swift */,
-				8DE1A56E2AA4D58900AA0294 /* AlarmView.swift */,
-				8DE1A5612AA48DC700AA0294 /* StopWatchView.swift */,
-				8DE1A5632AA48DD400AA0294 /* TimerView.swift */,
+				8D1AFAED2AADE41B000C763D /* WorldClock */,
+				8D1AFAEE2AADE423000C763D /* Alarm */,
+				8D1AFAEF2AADE42A000C763D /* StopWatch */,
+				8D1AFAF02AADE430000C763D /* Timer */,
 			);
 			path = RootView;
 			sourceTree = "<group>";

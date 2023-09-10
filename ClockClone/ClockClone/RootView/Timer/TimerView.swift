@@ -16,49 +16,15 @@ struct TimerCore: Reducer {
       (0 ..< 60).map { $0.description },
       (0 ..< 60).map { $0.description }
     ]
-    var hourText = "00"
-    var minuteText = "00"
-    var secondText = "00"
-    var targetTime = ""
-    var selectedTimerSeconds = 0
-    var remainingSeconds = 0
-    var greenButtonType: GreenButtonType = .start
-    var isStartButtonDisabled = true
-    var isCancelButtonDisabled = true
+    var currentTime = 0
+    var fullTime = 0
+    var endTimerTime = ""
+    var buttonType: ButtonType = .start
     var selectedTimes = [0, 0, 0]
     var selectedSound = "프레스토"
-    var progressValue: CGFloat {
-      return CGFloat(remainingSeconds) / (CGFloat(selectedTimerSeconds) / 100)
-    }
     @PresentationState var editSound: EndTimerAlarmListCore.State?
-    
-    enum GreenButtonType {
-      case start
-      case pause
-      case resume
-      
-      var buttonTitle: String {
-        switch self {
-        case .start:
-          return "시작"
-          
-        case .pause:
-          return "일시 정지"
-          
-        case .resume:
-          return "재개"
-        }
-      }
-      
-      var color: StopWatchButtonType {
-        switch self {
-        case .start, .resume:
-          return .green
-          
-        case .pause:
-          return .orange
-        }
-      }
+    var progressValue: CGFloat {
+      return CGFloat(currentTime) / (CGFloat(fullTime) / 100)
     }
   }
   
@@ -70,26 +36,49 @@ struct TimerCore: Reducer {
     case didTapCancelButton
     case timerAction
     case timerTicked
-    case endedTimer
     case onDisappear
   }
   
+  @Dependency(\.continuousClock) var timer
+
   private enum CancelID {
     case timer
   }
   
-  @Dependency(\.continuousClock) var timer
-  
+  enum ButtonType {
+    case start
+    case pause
+    case resume
+    
+    var buttonTitle: String {
+      switch self {
+      case .start:
+        return "시작"
+        
+      case .pause:
+        return "일시 정지"
+        
+      case .resume:
+        return "재개"
+      }
+    }
+    
+    var color: StopWatchButtonType {
+      switch self {
+      case .start, .resume:
+        return .green
+        
+      case .pause:
+        return .orange
+      }
+    }
+  }
+    
   var body: some ReducerOf<Self> { // view frame 크기 박는 것은 최대한 자제하기
     Reduce { state, action in
       switch action {
       case let .didSelectPickerItems(indeces):
         state.selectedTimes = indeces
-        if state.selectedTimes.map ({ $0 == 0 }).contains(false) {
-          state.isStartButtonDisabled = false
-        } else {
-          state.isStartButtonDisabled = true
-        }
         return .none
         
       case .didTapTimerSoundRow:
@@ -104,45 +93,31 @@ struct TimerCore: Reducer {
         return .none
         
       case .didTapStartButton:
-        switch state.greenButtonType {
+        switch state.buttonType {
         case .start:
-          let selectedHour = state.selectedTimes[0]
-          let selectedMinute = state.selectedTimes[1]
-          let selectedSecond = state.selectedTimes[2]
-          state.selectedTimerSeconds = (selectedHour * 3600) + (selectedMinute * 60) + selectedSecond
-          state.remainingSeconds = (selectedHour * 3600) + (selectedMinute * 60) + selectedSecond
-          state.greenButtonType = .pause
+          let timerTime = (state.selectedTimes[0] * 3600) + (state.selectedTimes[1] * 60) + state.selectedTimes[2]
+          state.currentTime = timerTime
+          state.fullTime = timerTime
+          state.buttonType = .pause
           
         case .pause:
-          state.greenButtonType = .resume
+          state.buttonType = .resume
           
         case .resume:
-          state.greenButtonType = .pause
+          state.buttonType = .pause
         }
-        
-        if state.greenButtonType != .start {
-          state.isCancelButtonDisabled = false
-        } else {
-          state.isCancelButtonDisabled = true
-        }
-        
         return .run { send in
           await send(.timerAction)
         }
         
       case .didTapCancelButton:
-        state.greenButtonType = .start
-        state.isCancelButtonDisabled = true
-        state.hourText = "00"
-        state.minuteText = "00"
-        state.secondText = "00"
-        state.targetTime = ""
-        state.selectedTimerSeconds = 0
-        state.remainingSeconds = 0
+        state.buttonType = .start
+        state.currentTime = 0
+        state.fullTime = 0
         return .cancel(id: CancelID.timer)
         
       case .timerAction:
-        return .run { [buttonType = state.greenButtonType] send in
+        return .run { [buttonType = state.buttonType] send in
           guard buttonType != .resume else { return }
           for await _ in timer.timer(interval: .seconds(1)) {
             await send(.timerTicked)
@@ -151,27 +126,23 @@ struct TimerCore: Reducer {
         .cancellable(id: CancelID.timer, cancelInFlight: true)
         
       case .timerTicked:
-        guard state.remainingSeconds > 0 else {
+        guard state.currentTime > 0 else {
           return .run { send in
-            await send(.endedTimer)
+            await send(.didTapCancelButton)
           }
         }
-        state.remainingSeconds -= 1
-        let targetTime = Calendar.current.date(byAdding: .second, value: state.remainingSeconds, to: Date(), wrappingComponents: false) ?? Date()
-        state.targetTime = DateFormat.convertTimeToString(
+        state.currentTime -= 1
+        let targetTime = Calendar.current.date(
+          byAdding: .second,
+          value: state.currentTime,
+          to: Date(),
+          wrappingComponents: false
+        ) ?? Date()
+        state.endTimerTime = DateFormat.convertTimeToString(
           date: targetTime,
           id: CityTime.korean.rawValue
         )
-        state.hourText = convertToText(timerSeconds: state.remainingSeconds).hour
-        state.minuteText = convertToText(timerSeconds: state.remainingSeconds).minute
-        state.secondText = convertToText(timerSeconds: state.remainingSeconds).second
         return .none
-        
-      case .endedTimer:
-        return .run { send in
-          await send(.onDisappear)
-          await send(.didTapCancelButton)
-        }
         
       case .onDisappear:
         return .cancel(id: CancelID.timer)
@@ -180,17 +151,6 @@ struct TimerCore: Reducer {
     .ifLet(\.$editSound, action: /Action.editAlarmSound) {
       EndTimerAlarmListCore()
     }
-  }
-  
-  private func convertToText(timerSeconds: Int) -> (hour: String, minute: String, second: String) {
-    let hours = timerSeconds / 3600
-    let minute = (timerSeconds - hours * 3600) / 60
-    let seconds = timerSeconds % 60
-    return (
-      String(format: "%02d", hours),
-      String(format: "%02d", minute),
-      String(format: "%02d", seconds)
-    )
   }
 }
 
@@ -220,7 +180,7 @@ struct TimerView: View {
       }
     }
     .padding(.horizontal, 20)
-    .animation(.linear, value: viewStore.greenButtonType)
+    .animation(.linear, value: viewStore.buttonType)
     .onDisappear {
       store.send(.onDisappear)
     }
@@ -248,7 +208,7 @@ extension TimerView {
   
   var timerView: some View {
     VStack(spacing: 20) {
-      if viewStore.greenButtonType == .start {
+      if viewStore.buttonType == .start {
         Spacer(minLength: UIScreen.main.bounds.height / 5)
         timerPicker
         Spacer()
@@ -256,10 +216,8 @@ extension TimerView {
         Spacer()
         TimerProgressBarView(
           percent: viewStore.progressValue,
-          hour: viewStore.hourText,
-          minute: viewStore.minuteText,
-          second: viewStore.secondText,
-          alarmTime: viewStore.targetTime
+          currentTime: viewStore.currentTime,
+          alarmTime: viewStore.endTimerTime
         )
         .padding(.horizontal, 20)
       }
@@ -296,19 +254,17 @@ extension TimerView {
     HStack(spacing: 0) {
       StopWatchButton(
         title: "취소",
-        type: viewStore.isCancelButtonDisabled ? .darkGray : .gray
+        type: .gray
       ) {
         store.send(.didTapCancelButton)
       }
-//      .disabled(viewStore.isCancelButtonDisabled)
       Spacer()
       StopWatchButton(
-        title: viewStore.greenButtonType.buttonTitle,
-        type: viewStore.greenButtonType.color
+        title: viewStore.buttonType.buttonTitle,
+        type: viewStore.buttonType.color
       ) {
         store.send(.didTapStartButton)
       }
-//      .disabled(viewStore.isStartButtonDisabled)
     }
   }
 }
