@@ -16,6 +16,20 @@ struct StopWatchCore: Reducer {
     var buttonState: ButtonState = .start
     var rapButtonState: RapButtonState = .rap
     var raps = [Int]()
+    var minRapIndex: Int {
+      guard let minValue = raps.min(),
+            let index = raps.map ({ $0 == minValue }).firstIndex(of: true) else {
+        return 0
+      }
+      return index
+    }
+    var maxRapIndex: Int {
+      guard let maxValue = raps.max(),
+            let index = raps.map ({ $0 == maxValue }).firstIndex(of: true) else {
+        return 0
+      }
+      return index
+    }
   }
   
   enum Action {
@@ -27,7 +41,7 @@ struct StopWatchCore: Reducer {
   }
   
   @Dependency(\.continuousClock) var stopWatchClock
-
+  
   private enum CancelID {
     case stopWatch
   }
@@ -45,7 +59,7 @@ struct StopWatchCore: Reducer {
         return "중단"
       }
     }
-      
+    
     var bgColor: StopWatchButtonType {
       switch self {
       case .start:
@@ -70,7 +84,7 @@ struct StopWatchCore: Reducer {
         return "재설정"
       }
     }
-      
+    
     var bgColor: StopWatchButtonType {
       switch self {
       case .rap:
@@ -81,7 +95,7 @@ struct StopWatchCore: Reducer {
       }
     }
   }
-    
+  
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
     case .didTapRapButton:
@@ -195,8 +209,8 @@ extension StopWatchView {
   
   var clockView: some View {
     AnalogClockView(
-      seconds: 0,
-      minute: 0
+      seconds: viewStore.currentTime / 100 % 60,
+      minute: viewStore.currentTime / 100 % 60 / 60
     )
   }
   
@@ -227,14 +241,24 @@ extension StopWatchView {
   var rapList: some View {
     List {
       ForEach(0 ..< viewStore.raps.count, id: \.self) { index in
-        StopWatchRow(
-          labTime: LabTimeItem(
-            id: viewStore.raps.count - index,
-            savedTime: index == 0 ? convertToText(currentTime: viewStore.rapTime)
-            : convertToText(currentTime: viewStore.raps[index])
-          ),
-          colorType: .white
-        )
+        if index == 0 {
+          StopWatchRow(
+            labTime: LabTimeItem(
+              id: viewStore.raps.count - index,
+              savedTime: convertToText(currentTime: viewStore.rapTime)
+            ),
+              colorType: .white
+          )
+        } else {
+          StopWatchRow(
+            labTime: LabTimeItem(
+              id: viewStore.raps.count - index,
+              savedTime: convertToText(currentTime: viewStore.raps[index])
+            ),
+            colorType: (viewStore.minRapIndex == index) ?
+              .green : (viewStore.maxRapIndex == index) ? .red : .white
+          )
+        }
       }
       .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
@@ -246,6 +270,6 @@ extension StopWatchView {
     let milliSeconds = currentTime % 100
     let seconds = currentTime / 100 % 60
     let minute = currentTime / 100 % 60 / 60
-    return String(format: "%02d:%02d:%02d", minute, seconds, milliSeconds)
+    return String(format: "%02d:%02d.%02d", minute, seconds, milliSeconds)
   }
 }
