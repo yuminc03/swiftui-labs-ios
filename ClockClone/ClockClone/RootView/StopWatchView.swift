@@ -9,157 +9,132 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct StopWatchCore: Reducer { // rap 기능, state 변수 개수 줄이기 (숫자 너비 고려하기)
+struct StopWatchCore: Reducer {
   struct State: Equatable {
-    // timer는 하나로 충분함, currentTime 하나로 타이머 시간 계산, rapTime 저장, buttonState enum을 정의해서 사용
-    var minuteText = "00"
-    var secondText = "00"
-    var millisecondText = "00"
-    var isStartButton = true
-    var isTapStartButton = false
-    var isTapStopButton = false
-    var isTapReStartButton = false
-    var stopWatchMinute = 0
-    var stopWatchSecond = 0
-    var stopWatchMilliSecond = 0
-    var savedMilliSeconds = [Int]()
-    var raps = [String]()
-    var rapMilliSecond = 0
-    var rapSecond = 0
-    var rapMinute = 0
-    var rapMilliText = "00"
-    var rapSecondText = "00"
-    var rapMinuteText = "00"
+    var currentTime = 0
+    var rapTime = 0
+    var buttonState: ButtonState = .start
+    var rapButtonState: RapButtonState = .rap
+    var raps = [Int]()
   }
   
   enum Action {
     case didTapRapButton
-    case didTapToggleStartButton
-    case rapTimerStart
-    case didTapResetButton
-    case didTapReStartButton
-    case timerTicked
+    case didToggleStartButton
+    case stopWatchTicked
     case stopWatchAction
-    case rapAction
-    case rapTimerTicked
     case didCancelStopWatch
-    case didCancelRap
-  }
-  
-  private enum CancelID {
-    case stopWatch
-    case rap
   }
   
   @Dependency(\.continuousClock) var stopWatchClock
-  @Dependency(\.continuousClock) var rapClock
+
+  private enum CancelID {
+    case stopWatch
+  }
   
+  enum ButtonState: Equatable {
+    case start
+    case stop
+    
+    var title: String {
+      switch self {
+      case .start:
+        return "시작"
+        
+      case .stop:
+        return "중단"
+      }
+    }
+      
+    var bgColor: StopWatchButtonType {
+      switch self {
+      case .start:
+        return .green
+        
+      case .stop:
+        return .red
+      }
+    }
+  }
+  
+  enum RapButtonState: Equatable {
+    case rap
+    case reset
+    
+    var title: String {
+      switch self {
+      case .rap:
+        return "랩"
+        
+      case .reset:
+        return "재설정"
+      }
+    }
+      
+    var bgColor: StopWatchButtonType {
+      switch self {
+      case .rap:
+        return .gray
+        
+      case .reset:
+        return .gray
+      }
+    }
+  }
+    
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
     case .didTapRapButton:
-      guard state.isStartButton == false else { return .none }
-      state.savedMilliSeconds.append(state.rapMilliSecond)
-      state.raps[state.raps.count - 1] = "\(state.rapMinuteText):\(state.rapSecondText).\(state.rapMilliText)"
-      state.raps.append("")
-      state.stopWatchMilliSecond = 0
-      state.stopWatchSecond = 0
-      state.stopWatchMinute = 0
-      return .run { send in
-        await send(.rapAction)
+      switch state.rapButtonState {
+      case .rap:
+        state.raps.insert(state.rapTime, at: 0)
+        state.raps[1] = state.rapTime
+        state.rapTime = 0
+        return .none
+        
+      case .reset:
+        state.buttonState = .start
+        state.rapButtonState = .rap
+        state.currentTime = 0
+        state.rapTime = 0
+        state.raps = []
+        return .none
       }
       
-    case .didTapToggleStartButton:
-      if state.isStartButton {
-        state.isTapStartButton = true
-        state.isTapReStartButton = true
-      } else {
-        state.isTapStopButton = true
-        state.isTapReStartButton = false
+    case .didToggleStartButton:
+      switch state.buttonState {
+      case .start:
+        state.rapButtonState = .rap
+        state.buttonState = .stop
+        state.raps.insert(state.rapTime, at: 0)
+        return .run { send in
+          await send(.stopWatchAction)
+        }
+        
+      case .stop:
+        state.rapButtonState = .reset
+        state.buttonState = .start
+        return .run { send in
+          await send(.stopWatchAction)
+        }
       }
-      state.isStartButton.toggle()
-      return .run { send in
-        await send(.stopWatchAction)
-      }
-      
-    case .rapTimerStart:
-      if state.isStartButton == false {
-        state.raps.append("")
-      }
-      return .run { send in
-        await send(.rapAction)
-      }
-      
-    case .didTapResetButton:
-      state.minuteText = "00"
-      state.secondText = "00"
-      state.millisecondText = "00"
-      state.isStartButton = true
-      state.isTapStartButton = false
-      state.isTapStopButton = false
-      state.isTapReStartButton = false
-      state.stopWatchMilliSecond = 0
-      state.stopWatchSecond = 0
-      state.stopWatchMinute = 0
-      state.raps = []
-      state.savedMilliSeconds = []
-      return .run { send in
-        await send(.didCancelStopWatch)
-        await send(.didCancelRap)
-      }
-      
-    case .didTapReStartButton:
-      state.isTapReStartButton = true
-      return .none
-      
-    case .timerTicked:
-      state.stopWatchMilliSecond += 1
-      state.millisecondText = String(format: "%02d", state.stopWatchMilliSecond % 100)
-      
-      guard state.stopWatchMilliSecond / 100 > 0 else { return .none }
-      state.stopWatchSecond = state.stopWatchMilliSecond / 100
-      state.secondText = String(format: "%02d", state.stopWatchSecond % 60)
-      
-      guard state.stopWatchSecond / 60 > 0 else { return .none }
-      state.stopWatchMinute = state.stopWatchSecond / 60
-      state.minuteText = String(format: "%02d", state.stopWatchMinute % 60)
-      return .none
       
     case .stopWatchAction:
-      return .run { [isStartButton = state.isStartButton] send in
-        guard isStartButton == false else { return }
+      return .run { [buttonState = state.buttonState] send in
+        guard buttonState == .stop else { return }
         for await _ in stopWatchClock.timer(interval: .seconds(0.01)) {
-          await send(.timerTicked)
+          await send(.stopWatchTicked)
         }
       }
       .cancellable(id: CancelID.stopWatch, cancelInFlight: true)
       
-    case .rapAction:
-      return .run { [isStartButton = state.isStartButton] send in
-        guard isStartButton == false else { return }
-        for await _ in rapClock.timer(interval: .seconds(0.01)) {
-          await send(.rapTimerTicked)
-        }
-      }
-      .cancellable(id: CancelID.rap, cancelInFlight: true)
-      
-    case .rapTimerTicked:
-      state.rapMilliSecond += 1
-      state.rapMilliText = String(format: "%02d", state.rapMilliSecond % 100)
-      
-      guard state.rapMilliSecond / 100 > 0 else { return .none }
-      state.rapSecond = state.stopWatchMilliSecond / 100
-      state.rapSecondText = String(format: "%02d", state.rapSecond % 60)
-      
-      guard state.rapSecond / 60 > 0 else { return .none }
-      state.rapMinute = state.rapSecond / 60
-      state.rapMinuteText = String(format: "%02d", state.rapMinute % 60)
+    case .stopWatchTicked:
+      state.currentTime += 1
+      state.rapTime += 1
       return .none
       
     case .didCancelStopWatch:
       return .cancel(id: CancelID.stopWatch)
-      
-    case .didCancelRap:
-      return .cancel(id: CancelID.rap)
     }
   }
 }
@@ -171,26 +146,23 @@ struct StopWatchView: View {
   init() {
     self.store = .init(initialState: .init()) {
       StopWatchCore()
+        ._printChanges()
     }
     self.viewStore = .init(store, observe: { $0 })
   }
   
   var body: some View {
-    VStack(spacing: 0) {
+    VStack {
       ZStack(alignment: .bottom) {
-        // view 깔끔하게 수정 (알아보기 쉽도록) - 큰 컴포넌트 이름으로 보여주기 - 쓸모없는 코드 삭제
         tabView
         buttons
-        .padding(.bottom, 10)
       }
-      Divider()
-        .background(.gray)
+      divider
       rapList
     }
     .padding(.horizontal, 20)
     .onDisappear {
       store.send(.didCancelStopWatch)
-      store.send(.didCancelRap)
     }
   }
 }
@@ -211,79 +183,55 @@ extension StopWatchView {
     }
     .foregroundColor(.white)
     .tabViewStyle(.page)
+    .padding(.bottom, 20)
   }
   
   var stopWatchView: some View {
-    HStack(alignment: .center, spacing: 0) {
-      Text(viewStore.minuteText) // 시간 다시 표현(format)
-        .frame(width: 110)
-      Text(":")
-      Text(viewStore.secondText)
-        .frame(width: 110)
-      Text(".")
-      Text(viewStore.millisecondText)
-        .frame(width: 110)
-    }
-    .fontWeight(.thin)
-    .font(.system(size: UIScreen.main.bounds.width / 5))
-    .frame(maxWidth: .infinity)
+    Text(convertToText(currentTime: viewStore.currentTime))
+      .monospacedDigit()
+      .fontWeight(.thin)
+      .font(.system(size: UIScreen.main.bounds.width / 5))
   }
   
   var clockView: some View {
     AnalogClockView(
-      seconds: viewStore.stopWatchSecond,
-      minute: viewStore.stopWatchMinute
+      seconds: 0,
+      minute: 0
     )
+  }
+  
+  var divider: some View {
+    Divider()
+      .background(.gray)
   }
   
   var buttons: some View {
     HStack(spacing: 0) {
-      if viewStore.isTapReStartButton {
-        StopWatchButton(
-          title: "랩",
-          type: viewStore.isTapStartButton ?.gray : .darkGray
-        ) {
-          store.send(.didTapRapButton)
-        }
-      } else if viewStore.isTapStopButton {
-        StopWatchButton(
-          title: "재설정",
-          type: viewStore.isTapStartButton ?.gray : .darkGray
-        ) {
-          store.send(.didTapResetButton)
-        }
-      } else {
-        StopWatchButton(
-          title: "랩",
-          type: viewStore.isTapStartButton ?.gray : .darkGray
-        ) {
-          store.send(.didTapRapButton)
-        }
+      StopWatchButton(
+        title: viewStore.rapButtonState.title,
+        type: viewStore.rapButtonState.bgColor
+      ) {
+        store.send(.didTapRapButton)
       }
       Spacer()
-      if viewStore.isStartButton {
-        StopWatchButton(title: "시작", type: .green) {
-          store.send(.didTapToggleStartButton)
-          store.send(.rapTimerStart)
-        }
-      } else {
-        StopWatchButton(title: "중단", type: .red) {
-          store.send(.didTapToggleStartButton)
-          store.send(.rapTimerStart)
-        }
+      StopWatchButton(
+        title: viewStore.buttonState.title,
+        type: viewStore.buttonState.bgColor
+      ) {
+        store.send(.didToggleStartButton)
       }
     }
+    .padding(.bottom, 10)
   }
   
   var rapList: some View {
     List {
       ForEach(0 ..< viewStore.raps.count, id: \.self) { index in
-        StopWatchRow( // index == 0일 때만 숫자가 계속 올라감(타이머)
+        StopWatchRow(
           labTime: LabTimeItem(
-            id: index + 1,
-            savedTime: index == 0 ?
-            "\(viewStore.rapMinuteText):\(viewStore.rapSecondText).\(viewStore.rapMilliText)"
-            : viewStore.raps[index]
+            id: viewStore.raps.count - index,
+            savedTime: index == 0 ? convertToText(currentTime: viewStore.rapTime)
+            : convertToText(currentTime: viewStore.raps[index])
           ),
           colorType: .white
         )
@@ -292,5 +240,12 @@ extension StopWatchView {
     }
     .listStyle(.plain)
     .frame(height: UIScreen.main.bounds.height / 3)
+  }
+  
+  private func convertToText(currentTime: Int) -> String {
+    let milliSeconds = currentTime % 100
+    let seconds = currentTime / 100 % 60
+    let minute = currentTime / 100 % 60 / 60
+    return String(format: "%02d:%02d:%02d", minute, seconds, milliSeconds)
   }
 }
