@@ -167,17 +167,15 @@ struct TimerView: View {
   }
   
   var body: some View {
-    NavigationStack {
-      VStack(spacing: 20) {
-        timerView
-        VStack(spacing: 40) {
-          timerButtons
-          TimerSoundRow(title: "타이머 종료 시", selectedName: viewStore.selectedSound) {
-            store.send(.didTapTimerSoundRow)
-          }
+    VStack(spacing: 20) {
+      timerView
+      VStack(spacing: 40) {
+        timerButtons
+        TimerSoundRow(title: "타이머 종료 시", selectedName: viewStore.selectedSound) {
+          store.send(.didTapTimerSoundRow)
         }
-        Spacer(minLength: UIScreen.main.bounds.height / 3)
       }
+      Spacer(minLength: UIScreen.main.bounds.height / 3)
     }
     .padding(.horizontal, 20)
     .animation(.linear, value: viewStore.buttonType)

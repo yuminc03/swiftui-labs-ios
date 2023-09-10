@@ -52,34 +52,38 @@ struct ClockCloneApp: App {
 extension ClockCloneApp {
   
   var tabView: some View {
-    TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: { .didTapTabItem($0) })) {
-      WorldClockView()
-      .tabItem {
-        Image(systemName: TabItem.worldClock.imageName)
-        Text(TabItem.worldClock.label)
+    NavigationStack {
+      TabView(selection: viewStore.binding(get: \.selectedTabIndex, send: { .didTapTabItem($0) })) {
+        WorldClockView()
+          .tabItem {
+            Image(systemName: TabItem.worldClock.imageName)
+            Text(TabItem.worldClock.label)
+          }
+          .tag(0)
+        
+        AlarmView()
+          .tabItem {
+            Image(systemName: TabItem.alarm.imageName)
+            Text(TabItem.alarm.label)
+          }
+          .tag(1)
+        
+        StopWatchView()
+          .tabItem {
+            Image(systemName: TabItem.stopWatch.imageName)
+            Text(TabItem.stopWatch.label)
+          }
+          .tag(2)
+        
+        TimerView()
+          .tabItem {
+            Image(systemName: TabItem.timer.imageName)
+            Text(TabItem.timer.label)
+          }
+          .tag(3)
       }
-      .tag(0)
-      
-      AlarmView()
-        .tabItem {
-          Image(systemName: TabItem.alarm.imageName)
-          Text(TabItem.alarm.label)
-        }
-        .tag(1)
-      
-      StopWatchView()
-        .tabItem {
-          Image(systemName: TabItem.stopWatch.imageName)
-          Text(TabItem.stopWatch.label)
-        }
-        .tag(2)
-      
-      TimerView()
-        .tabItem {
-          Image(systemName: TabItem.timer.imageName)
-          Text(TabItem.timer.label)
-        }
-        .tag(3)
+      .navigationTitle(viewStore.selectedTabIndex == 0 ? "세계 시계" : "")
+      .toolbar(viewStore.selectedTabIndex == 0 ? .visible : .hidden, for: .navigationBar)
     }
     .tint(.orange)
   }

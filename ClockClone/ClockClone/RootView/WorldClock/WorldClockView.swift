@@ -74,47 +74,43 @@ struct WorldClockView: View {
   }
   
   var body: some View {
-    NavigationStack {
-      VStack {
-        if viewStore.worldClocks.isEmpty {
-          Text("세계 시계 없음")
-            .font(.largeTitle)
-            .foregroundColor(Color("gray_424242"))
-        } else {
-          List {
-            ForEach(viewStore.worldClocks) { worldClock in
-              WorldClockRow(
-                worldClockItem: worldClock,
-                isFirstRow: worldClock == viewStore.worldClocks[0],
-                isEditMode: false
-              )
-            }
-            .onDelete { store.send(.onDeleteClock(at: $0)) }
-            .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            .listRowSeparator(.hidden)
+    VStack {
+      if viewStore.worldClocks.isEmpty {
+        Text("세계 시계 없음")
+          .font(.largeTitle)
+          .foregroundColor(Color("gray_424242"))
+      } else {
+        List {
+          ForEach(viewStore.worldClocks) { worldClock in
+            WorldClockRow(
+              worldClockItem: worldClock,
+              isFirstRow: worldClock == viewStore.worldClocks[0],
+              isEditMode: false
+            )
           }
-          .listStyle(.plain)
+          .onDelete { store.send(.onDeleteClock(at: $0)) }
+          .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+          .listRowSeparator(.hidden)
         }
+        .listStyle(.plain)
       }
-      .toolbar {
-        ToolbarItem(placement: .navigationBarTrailing) {
-          Button {
-            store.send(.didTapAddButton)
-          } label: {
-            Image(systemName: "plus")
-          }
-        }
-        if viewStore.worldClocks.isEmpty == false {
-          ToolbarItem(placement: .navigationBarLeading) {
-            EditButton()
-          }
-        }
-      }
-      .foregroundColor(.orange)
-      .navigationTitle("세계 시계")
-//      .environment(\.editMode, viewStore.$editMode)
     }
+    .toolbar {
+      ToolbarItem(placement: .navigationBarTrailing) {
+        Button {
+          store.send(.didTapAddButton)
+        } label: {
+          Image(systemName: "plus")
+        }
+      }
+      if viewStore.worldClocks.isEmpty == false {
+        ToolbarItem(placement: .navigationBarLeading) {
+          EditButton()
+        }
+      }
+    }
+    .foregroundColor(.orange)
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)
     }
