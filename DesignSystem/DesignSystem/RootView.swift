@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct RootView: View {
+  
+  @State private var isShowAlert = false
+  
   var body: some View {
-    VStack(spacing: 20) {
-      showPopupButton(title: "Alert 보이기") {
-        
+    ZStack {
+      VStack(spacing: 20) {
+        showPopupButton(title: "Alert 보이기") {
+          isShowAlert.toggle()
+        }
+        showPopupButton(title: "Confirm 보이기") {
+          
+        }
+        showPopupButton(title: "추가 설명이 있는 Alert 보이기") {
+          
+        }
       }
-      showPopupButton(title: "Confirm 보이기") {
-        
-      }
-      showPopupButton(title: "추가 설명이 있는 Alert 보이기") {
-        
+      if isShowAlert {
+        CustomPopupView()
+          .animation(.spring(), value: isShowAlert)
+          .transition(
+            .asymmetric(
+              insertion: .move(edge: .bottom),
+              removal: .move(edge: .bottom)
+            )
+          )
       }
     }
   }
