@@ -92,12 +92,12 @@
 		05E19ECC2A96DB3B001F8B9B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19ECB2A96DB3B001F8B9B /* PageView.swift */; };
 		05E19ECE2A96E65B001F8B9B /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E19ECD2A96E65B001F8B9B /* PageControl.swift */; };
 		8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */; };
-		8D1BBC1A2AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */; };
 		8D1DAC372A964A9300144888 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC362A964A9300144888 /* Profile.swift */; };
 		8D1DAC392A964B2E00144888 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC382A964B2E00144888 /* ProfileHost.swift */; };
 		8D1DAC3B2A964B6A00144888 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */; };
 		8D1DAC3D2A964CB000144888 /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3C2A964CB000144888 /* HikeBadge.swift */; };
 		8D1DAC3F2A9652F500144888 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3E2A9652F500144888 /* ProfileEditor.swift */; };
+		8D2609352AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2609342AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift */; };
 		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
 		8D2C03D52A8B40F400F0131E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D22A8B40F400F0131E /* CounterFeature.swift */; };
@@ -263,12 +263,12 @@
 		05E19ECB2A96DB3B001F8B9B /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		05E19ECD2A96E65B001F8B9B /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
-		8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftUIPractiseExtampleTests.swift; path = SwiftUIPractiseExtample/SwiftUIPractiseExtampleTests/SwiftUIPractiseExtampleTests.swift; sourceTree = SOURCE_ROOT; };
 		8D1DAC362A964A9300144888 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8D1DAC382A964B2E00144888 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		8D1DAC3C2A964CB000144888 /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
 		8D1DAC3E2A9652F500144888 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		8D2609342AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIPractiseExtampleTests.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 		8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeatureView.swift; sourceTree = "<group>"; };
 		8D2C03D22A8B40F400F0131E /* CounterFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
@@ -634,6 +634,14 @@
 			path = Profiles;
 			sourceTree = "<group>";
 		};
+		8D2609332AAF554000C383E5 /* SwiftUIPractiseExtampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D2609342AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift */,
+			);
+			path = SwiftUIPractiseExtampleTests;
+			sourceTree = "<group>";
+		};
 		8D261E692A8CEAFC0029D7C2 /* ScalingViewToComplementText */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,14 +681,6 @@
 				0514F7692A8C568A000498FD /* NumberFactClient.swift */,
 			);
 			path = Counter;
-			sourceTree = "<group>";
-		};
-		8D2C03DF2A8B57E900F0131E /* SwiftUIPractiseExtampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				8D1BBC192AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift */,
-			);
-			path = SwiftUIPractiseExtampleTests;
 			sourceTree = "<group>";
 		};
 		8D2C03EA2A8B8B1200F0131E /* Contacts */ = {
@@ -793,7 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				8D658A6129EEE30300928C68 /* SwiftUIPractiseExtample */,
-				8D2C03DF2A8B57E900F0131E /* SwiftUIPractiseExtampleTests */,
+				8D2609332AAF554000C383E5 /* SwiftUIPractiseExtampleTests */,
 				8D658A6029EEE30300928C68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1060,7 +1060,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1BBC1A2AACC39B00F2A334 /* SwiftUIPractiseExtampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,6 +1103,7 @@
 				8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */,
 				05A195942A948FB300979DCD /* LandmarksView.swift in Sources */,
 				8DCF2DAD2A8D1834005581DC /* ZeroSpacing.swift in Sources */,
+				8D2609352AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift in Sources */,
 				057D33112A8DB2D800524075 /* RecipeListView.swift in Sources */,
 				054266F32A9593D000DB2D12 /* ModelData.swift in Sources */,
 				8D4AF2382A8B9B050008FEE3 /* DateView.swift in Sources */,

@@ -8,29 +8,24 @@
 import SwiftUI
 
 struct CustomPopupView: View {
+  
+//  private let popupTitle: String
+//  private let popupContents: String
+//  private let description: String
+//  private let leftButtonTitle: String
+//  private let rightButtonTitle: String
+  @State private var popupBackgroundOpacity = 0.0
+  
   var body: some View {
     ZStack {
-      Color.gray.opacity(0.3)
+      Color.gray.opacity(popupBackgroundOpacity)
         .ignoresSafeArea()
       VStack(spacing: 50) {
-        Text("진료 안내")
-          .foregroundColor(.gray)
-        Text("설정중이던 진료조건을 임시저장할까요?")
+        title
+        contents
         HStack(spacing: 10) {
-          Button("취소") {
-            
-          }
-          .padding(.vertical, 20)
-          .frame(maxWidth: .infinity)
-          .background(.gray)
-          .cornerRadius(10)
-          Button("확인") {
-            
-          }
-          .padding(.vertical, 20)
-          .frame(maxWidth: .infinity)
-          .background(.green)
-          .cornerRadius(10)
+          cancelButton
+          confirmButton
         }
         .foregroundColor(.white)
       }
@@ -41,6 +36,12 @@ struct CustomPopupView: View {
           .fill(.white)
       }
       .padding(20)
+      .onAppear {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+          self.popupBackgroundOpacity = 0.6
+        }
+      }
+      .animation(.linear(duration: 1), value: popupBackgroundOpacity)
     }
   }
 }
@@ -52,5 +53,26 @@ struct CustomPopupView_Previews: PreviewProvider {
 }
 
 extension CustomPopupView {
+  var title: some View {
+    Text("안내")
+      .foregroundColor(.gray)
+  }
   
+  var contents: some View {
+    Text("내용")
+  }
+  
+  var cancelButton: some View {
+    Button("취소") {
+      
+    }
+    .customButton(backgroundColor: Color("gray_B7B7B7"))
+  }
+  
+  var confirmButton: some View {
+    Button("확인") {
+      
+    }
+    .customButton(backgroundColor: Color("green_07D329"))
+  }
 }
