@@ -22,7 +22,7 @@ struct SelectCityCore: Reducer {
     case delegate(Delegate)
     
     enum Delegate: Equatable {
-      case save(CityGroup.City)
+      case save(CityGroup, Int)
     }
   }
   
@@ -45,7 +45,7 @@ struct SelectCityCore: Reducer {
       }
       cities.remove(at: index)
       return .run { send in
-        await send(.delegate(.save(group.cities[index])))
+        await send(.delegate(.save(group, index)))
         await dismiss()
       }
       
@@ -73,20 +73,18 @@ struct SelectCityView: View {
         .padding(.horizontal, 20)
         List {
           ForEach(viewStore.cities) { cities in
-            Section {
-              ForEach(0 ..< cities.cities.count, id: \.self) { index in
-                SearchCityRow(city: cities.cities[index])
-                  .onTapGesture {
-                    store.send(.didTapRow(cities, index))
-                  }
-              }
-            } header: {
-              VStack(alignment: .leading, spacing: 5) {
+            if cities.cities.count > 0 {
+              Section {
+                ForEach(0 ..< cities.cities.count, id: \.self) { index in
+                  SearchCityRow(city: cities.cities[index])
+                    .onTapGesture {
+                      store.send(.didTapRow(cities, index))
+                    }
+                }
+              } header: {
                 Text(cities.name)
-                Divider()
-                  .background(.gray)
+                  .padding(.leading, 20)
               }
-              .padding(.leading, 20)
             }
           }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))

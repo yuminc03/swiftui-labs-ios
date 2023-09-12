@@ -16,13 +16,14 @@ struct SearchCityRow: View {
   
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
-      Text(city.name)
-        .font(.body)
-      Divider()
-        .background(.gray)
+      HStack {
+        Text(city.name)
+          .font(.body)
+        Spacer()
+      }
     }
     .padding(.horizontal, 20)
-    .padding(.top, 10)
+    .padding(.vertical, 10)
     .contentShape(Rectangle())
   }
 }

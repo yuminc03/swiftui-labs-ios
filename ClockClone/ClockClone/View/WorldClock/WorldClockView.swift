@@ -39,15 +39,19 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
         state.addCity = SelectCityCore.State(cities: state.cities)
         return .none
         
-      case let .addCity(.presented(.delegate(.save(city)))):
-        state.cities.remove(id: city.id)
+      case let .addCity(.presented(.delegate(.save(group, index)))):
+        guard let cities = state.cities[id: group.id]?.cities else {
+          return .none
+        }
+        
         state.worldClocks.append(
           WorldClockItem(
             parallax: "오늘, +0시간",
-            cityName: city.name.components(separatedBy: ", ").last ?? "",
+            cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
             time: CityTime.randomTime
           )
         )
+        state.cities[id: group.id]?.cities.remove(at: index)
         return .none
         
       case .addCity:
@@ -69,6 +73,7 @@ struct WorldClockView: View {
   init() {
     self.store = Store(initialState: WorldClockCore.State()) {
       WorldClockCore()
+        ._printChanges()
     }
     self.viewStore = ViewStore(store, observe: { $0 })
   }

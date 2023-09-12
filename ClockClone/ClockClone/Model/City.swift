@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct CityGroup: Equatable, Identifiable {
   let id = UUID()
   let name: String
-  let cities: [City]
+  var cities: [City]
   
   struct City: Equatable, Identifiable {
     let id = UUID()

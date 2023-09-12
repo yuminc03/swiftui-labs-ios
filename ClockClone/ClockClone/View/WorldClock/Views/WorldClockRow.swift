@@ -44,6 +44,7 @@ struct WorldClockRow: View {
       }
     }
     .padding(.horizontal, 20)
+    .padding(.bottom, 20)
     .background(Color.black)
   }
 }
