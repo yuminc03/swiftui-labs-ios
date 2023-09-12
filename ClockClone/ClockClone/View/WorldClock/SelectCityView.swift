@@ -73,7 +73,7 @@ struct SelectCityView: View {
         .padding(.horizontal, 20)
         List {
           ForEach(viewStore.cities) { cities in
-            if cities.cities.count > 0 {
+            if viewStore.searchText.isEmpty && cities.cities.count > 0 {
               Section {
                 ForEach(0 ..< cities.cities.count, id: \.self) { index in
                   SearchCityRow(city: cities.cities[index])
@@ -85,9 +85,12 @@ struct SelectCityView: View {
                 Text(cities.name)
                   .padding(.leading, 20)
               }
+            } else {
+              ForEach(cities.cities.filter { $0.hasPrefix(viewStore.searchText) }) { text in
+                Text(text)
+              }
             }
           }
-          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         .listStyle(.plain)
       }
