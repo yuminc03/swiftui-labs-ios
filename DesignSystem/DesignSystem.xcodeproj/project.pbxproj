@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05FD395A2AAFF439004A4FC4 /* PopupContainerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD39592AAFF439004A4FC4 /* PopupContainerModifier.swift */; };
+		05FD395D2AB01FD6004A4FC4 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD395C2AB01FD5004A4FC4 /* PopupModifier.swift */; };
+		05FD395F2AB0430A004A4FC4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */; };
 		8D1AFAF62AAE049B000C763D /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */; };
 		8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */; };
 		8D1BBBF22AACC32D00F2A334 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF12AACC32D00F2A334 /* RootView.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05FD39592AAFF439004A4FC4 /* PopupContainerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerModifier.swift; sourceTree = "<group>"; };
+		05FD395C2AB01FD5004A4FC4 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
+		05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		8D1BBBEC2AACC32D00F2A334 /* DesignSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemApp.swift; sourceTree = "<group>"; };
@@ -77,10 +83,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05FD39582AAFF206004A4FC4 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				05FD395C2AB01FD5004A4FC4 /* PopupModifier.swift */,
+				05FD39592AAFF439004A4FC4 /* PopupContainerModifier.swift */,
+				8D26092F2AAF4DF900C383E5 /* CustomButtonModifier.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
 		8D1AFAF42AAE0470000C763D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D1BBBF12AACC32D00F2A334 /* RootView.swift */,
 				8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */,
+				05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,11 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */,
-				8D1BBBF12AACC32D00F2A334 /* RootView.swift */,
-				8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */,
-				8D26092F2AAF4DF900C383E5 /* CustomButtonModifier.swift */,
+				05FD39582AAFF206004A4FC4 /* ViewModifier */,
 				8D2609312AAF4FCF00C383E5 /* Color+.swift */,
 				8D1AFAF42AAE0470000C763D /* View */,
+				8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */,
 				8D1BBBF52AACC32E00F2A334 /* Preview Content */,
 			);
 			path = DesignSystem;
@@ -278,7 +295,10 @@
 				8D2609322AAF4FCF00C383E5 /* Color+.swift in Sources */,
 				8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */,
 				8D1AFAF62AAE049B000C763D /* CustomPopupView.swift in Sources */,
+				05FD395D2AB01FD6004A4FC4 /* PopupModifier.swift in Sources */,
 				8D2609302AAF4DF900C383E5 /* CustomButtonModifier.swift in Sources */,
+				05FD395F2AB0430A004A4FC4 /* PrimaryButton.swift in Sources */,
+				05FD395A2AAFF439004A4FC4 /* PopupContainerModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignSystem/Preview Content\"";
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -466,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DesignSystem/Preview Content\"";
-				DEVELOPMENT_TEAM = GMHUACJXLZ;
+				DEVELOPMENT_TEAM = 54V3G99LL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

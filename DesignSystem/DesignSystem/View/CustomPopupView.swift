@@ -8,71 +8,135 @@
 import SwiftUI
 
 struct CustomPopupView: View {
-  
-//  private let popupTitle: String
-//  private let popupContents: String
-//  private let description: String
-//  private let leftButtonTitle: String
-//  private let rightButtonTitle: String
+  @Binding private var isPresented: Bool
+  private let title: String
+  private let contents: String
+  private let description: String
+  private let primaryButtonTitle: String
+  private let secondaryButtonTitle: String
+  private let primaryButtonAction: (() -> Void)?
+  private let secondaryButtonAction: (() -> Void)?
   @State private var popupBackgroundOpacity = 0.0
+  @State private var popupYOffset: CGFloat = UIScreen.main.bounds.height
+  
+  init(
+    isPresented: Binding<Bool>,
+    title: String,
+    contents: String,
+    description: String,
+    primaryButtonTitle: String,
+    secondaryButtonTitle: String,
+    primaryButtonAction: (() -> Void)?,
+    secondaryButtonAction: (() -> Void)?
+  ) {
+    self._isPresented = isPresented
+    self.title = title
+    self.contents = contents
+    self.description = description
+    self.primaryButtonTitle = primaryButtonTitle
+    self.secondaryButtonTitle = secondaryButtonTitle
+    self.primaryButtonAction = primaryButtonAction
+    self.secondaryButtonAction = secondaryButtonAction
+  }
   
   var body: some View {
     ZStack {
       Color.gray.opacity(popupBackgroundOpacity)
+        .animation(.linear(duration: 0.2), value: popupBackgroundOpacity)
         .ignoresSafeArea()
-      VStack(spacing: 50) {
-        title
-        contents
-        HStack(spacing: 10) {
-          cancelButton
-          confirmButton
+      if isPresented {
+        VStack(spacing: 40) {
+          titleText
+          contentsView
+          buttonsView
         }
-        .foregroundColor(.white)
-      }
-      .font(.headline)
-      .padding(20)
-      .background {
-        RoundedRectangle(cornerRadius: 20)
-          .fill(.white)
-      }
-      .padding(20)
-      .onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-          self.popupBackgroundOpacity = 0.6
+        .popupContainer()
+        .offset(y: popupYOffset)
+        .onAppear {
+          popupBackgroundOpacity = 0.6
+          popupYOffset = 0
         }
       }
-      .animation(.linear(duration: 1), value: popupBackgroundOpacity)
     }
+    .background(.clear)
+    .animation(.spring(), value: popupYOffset)
   }
 }
 
 struct CustomPopupView_Previews: PreviewProvider {
   static var previews: some View {
-    CustomPopupView()
+    CustomPopupView(
+      isPresented: .constant(true),
+      title: "안내",
+      contents: "...대충 뭐라고 적혀 있는 내용...",
+      description: "",
+      primaryButtonTitle: "확인",
+      secondaryButtonTitle: "취소",
+      primaryButtonAction: nil,
+      secondaryButtonAction: nil
+    )
+    .previewLayout(.sizeThatFits)
   }
 }
 
 extension CustomPopupView {
-  var title: some View {
-    Text("안내")
-      .foregroundColor(.gray)
+  private var titleText: some View {
+    Text(title)
+      .foregroundColor(Color("gray_C7C7C7"))
   }
   
-  var contents: some View {
-    Text("내용")
-  }
-  
-  var cancelButton: some View {
-    Button("취소") {
-      
+  private var contentsView: some View {
+    VStack(spacing: 20) {
+      contentsText
+      if description.isEmpty == false {
+        descriptionText
+      }
     }
-    .customButton(backgroundColor: Color("gray_B7B7B7"))
   }
   
-  var confirmButton: some View {
-    Button("확인") {
-      
+  private var contentsText: some View {
+    Text(contents)
+      .multilineTextAlignment(.center)
+      .frame(minHeight: description.isEmpty ? 84 : .leastNormalMagnitude, alignment: .center)
+      .foregroundColor(Color("black_2F2F2F"))
+  }
+  
+  private var descriptionText: some View {
+    Text(description)
+      .foregroundColor(Color("gray_909090"))
+  }
+  
+  private var buttonsView: some View {
+    HStack(spacing: 10) {
+      if secondaryButtonTitle.isEmpty == false {
+        secondaryButton
+      }
+      primaryButton
     }
-    .customButton(backgroundColor: Color("green_07D329"))
+    .foregroundColor(.white)
+  }
+  
+  private var secondaryButton: some View {
+    PrimaryButton(
+      title: secondaryButtonTitle,
+      backgroundColor: Color("gray_B0B0B0"),
+      disableColor: Color("gray_B0B0B0")
+    ) {
+      dismissAction()
+      secondaryButtonAction?()
+    }
+  }
+  
+  private var primaryButton: some View {
+    PrimaryButton(title: primaryButtonTitle) {
+      dismissAction()
+      primaryButtonAction?()
+    }
+  }
+  
+  private func dismissAction() {
+    isPresented = false
+    popupBackgroundOpacity = 0.0
+    popupYOffset = UIScreen.main.bounds.height
   }
 }
