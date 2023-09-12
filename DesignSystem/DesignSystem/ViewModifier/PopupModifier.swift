@@ -1,5 +1,5 @@
 //
-//  AlertModifier.swift
+//  PopupModifier.swift
 //  DesignSystem
 //
 //  Created by Yumin Chu on 2023/09/12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AlertModifier: ViewModifier {
+struct PopupModifier: ViewModifier {
   @Binding var isPresented: Bool
   let title: String
   let contents: String
@@ -19,7 +19,7 @@ struct AlertModifier: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-    CustomAlertView(
+    CustomPopupView(
       isPresented: $isPresented,
       title: title,
       contents: contents,
@@ -44,7 +44,7 @@ extension View {
     primaryButtonAction: (() -> Void)? = nil,
     secondaryButtonAction: (() -> Void)? = nil
   ) -> some View {
-    modifier(AlertModifier(
+    modifier(PopupModifier(
       isPresented: isPresented,
       title: title,
       contents: contents,
@@ -64,7 +64,7 @@ extension View {
     primaryButtonTitle: String = "확인",
     primaryButtonAction: (() -> Void)? = nil
   ) -> some View {
-    modifier(AlertModifier(
+    modifier(PopupModifier(
       isPresented: isPresented,
       title: title,
       contents: contents,

@@ -1,5 +1,5 @@
 //
-//  CustomAlertView.swift
+//  CustomPopupView.swift
 //  DesignSystem
 //
 //  Created by Yumin Chu on 2023/09/10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomAlertView: View {
+struct CustomPopupView: View {
   @Binding private var isPresented: Bool
   private let title: String
   private let contents: String
@@ -63,9 +63,9 @@ struct CustomAlertView: View {
   }
 }
 
-struct CustomAlertView_Previews: PreviewProvider {
+struct CustomPopupView_Previews: PreviewProvider {
   static var previews: some View {
-    CustomAlertView(
+    CustomPopupView(
       isPresented: .constant(true),
       title: "안내",
       contents: "내용",
@@ -79,7 +79,7 @@ struct CustomAlertView_Previews: PreviewProvider {
   }
 }
 
-extension CustomAlertView {
+extension CustomPopupView {
   private var titleText: some View {
     Text(title)
       .foregroundColor(Color("gray_C7C7C7"))
@@ -117,22 +117,28 @@ extension CustomAlertView {
   }
   
   private var secondaryButton: some View {
-    Button(secondaryButtonTitle) {
-      isPresented = false
-      popupBackgroundOpacity = 0.0
-      popupYOffset = UIScreen.main.bounds.height
+    Button {
+      dismissAction()
       secondaryButtonAction?()
+    } label: {
+      Text(secondaryButtonTitle)
+        .customButtonStyle(backgroundColor: Color("gray_B0B0B0"))
     }
-    .customButtonStyle(backgroundColor: Color("gray_B0B0B0"))
   }
   
   private var primaryButton: some View {
-    Button(primaryButtonTitle) {
-      isPresented = false
-      popupBackgroundOpacity = 0.0
-      popupYOffset = UIScreen.main.bounds.height
+    Button {
+      dismissAction()
       primaryButtonAction?()
+    } label: {
+      Text(primaryButtonTitle)
+        .customButtonStyle(backgroundColor: Color("green_07D329"))
     }
-    .customButtonStyle(backgroundColor: Color("green_07D329"))
+  }
+  
+  private func dismissAction() {
+    isPresented = false
+    popupBackgroundOpacity = 0.0
+    popupYOffset = UIScreen.main.bounds.height
   }
 }

@@ -67,13 +67,13 @@ extension RootView {
     title: String,
     action: @escaping () -> Void
   ) -> some View {
-    Button(title) {
+    Button {
       action()
+    } label: {
+      Text(title)
+        .customButtonStyle(backgroundColor: Color("green_07D329"))
+        .foregroundColor(.white)
     }
-    .fontWeight(.semibold)
-    .foregroundColor(.white)
-    .padding(20)
-    .background(Color("green_07D329"))
-    .cornerRadius(10)
+    .padding(.horizontal, 20)
   }
 }
