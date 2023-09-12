@@ -29,6 +29,7 @@ struct AlertModifier: ViewModifier {
       primaryButtonAction: primaryButtonAction,
       secondaryButtonAction: secondaryButtonAction
     )
+    .animation(.spring(), value: isPresented)
   }
 }
 
