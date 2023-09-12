@@ -21,13 +21,13 @@ struct CustomAlertView: View {
   
   init(
     isPresented: Binding<Bool>,
-    title: String = "안내",
-    contents: String = "내용",
-    description: String = "",
-    primaryButtonTitle: String = "확인",
-    secondaryButtonTitle: String = "취소",
-    primaryButtonAction: (() -> Void)? = nil,
-    secondaryButtonAction: (() -> Void)? = nil
+    title: String,
+    contents: String,
+    description: String,
+    primaryButtonTitle: String,
+    secondaryButtonTitle: String,
+    primaryButtonAction: (() -> Void)?,
+    secondaryButtonAction: (() -> Void)?
   ) {
     self._isPresented = isPresented
     self.title = title
@@ -47,17 +47,8 @@ struct CustomAlertView: View {
       if isPresented {
         VStack(spacing: 40) {
           titleText
-          VStack(spacing: 20) {
-            contentsText
-            if description.isEmpty == false {
-              descriptionText
-            }
-          }
-          HStack(spacing: 10) {
-            secondaryButton
-            primaryButton
-          }
-          .foregroundColor(.white)
+          contentsView
+          buttonsView
         }
         .popupContainer()
         .offset(y: popupYOffset)
@@ -74,8 +65,17 @@ struct CustomAlertView: View {
 
 struct CustomAlertView_Previews: PreviewProvider {
   static var previews: some View {
-    CustomAlertView(isPresented: .constant(true))
-      .previewLayout(.sizeThatFits)
+    CustomAlertView(
+      isPresented: .constant(true),
+      title: "안내",
+      contents: "내용",
+      description: "",
+      primaryButtonTitle: "확인",
+      secondaryButtonTitle: "취소",
+      primaryButtonAction: nil,
+      secondaryButtonAction: nil
+    )
+    .previewLayout(.sizeThatFits)
   }
 }
 
@@ -85,15 +85,35 @@ extension CustomAlertView {
       .foregroundColor(Color("gray_C7C7C7"))
   }
   
+  private var contentsView: some View {
+    VStack(spacing: 20) {
+      contentsText
+      if description.isEmpty == false {
+        descriptionText
+      }
+    }
+  }
+  
   private var contentsText: some View {
     Text(contents)
-      .frame(minHeight: description.isEmpty ? 84 : .leastNormalMagnitude)
+      .multilineTextAlignment(.center)
+      .frame(minHeight: description.isEmpty ? 84 : .leastNormalMagnitude, alignment: .center)
       .foregroundColor(Color("black_2F2F2F"))
   }
   
   private var descriptionText: some View {
     Text(description)
       .foregroundColor(Color("gray_909090"))
+  }
+  
+  private var buttonsView: some View {
+    HStack(spacing: 10) {
+      if secondaryButtonTitle.isEmpty == false {
+        secondaryButton
+      }
+      primaryButton
+    }
+    .foregroundColor(.white)
   }
   
   private var secondaryButton: some View {

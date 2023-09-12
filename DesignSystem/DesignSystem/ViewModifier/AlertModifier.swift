@@ -55,4 +55,24 @@ extension View {
       secondaryButtonAction: secondaryButtonAction
     ))
   }
+  
+  func customConfirm(
+    isPresented: Binding<Bool>,
+    title: String = "안내",
+    contents: String = "내용",
+    description: String = "",
+    primaryButtonTitle: String = "확인",
+    primaryButtonAction: (() -> Void)? = nil
+  ) -> some View {
+    modifier(AlertModifier(
+      isPresented: isPresented,
+      title: title,
+      contents: contents,
+      description: description,
+      primaryButtonTitle: primaryButtonTitle,
+      secondaryButtonTitle: "",
+      primaryButtonAction: primaryButtonAction,
+      secondaryButtonAction: nil
+    ))
+  }
 }

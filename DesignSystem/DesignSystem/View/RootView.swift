@@ -10,6 +10,8 @@ import SwiftUI
 struct RootView: View {
   
   @State private var isShowTreatmentAlert = false
+  @State private var isShowChangeTreatmentConfirm = false
+  @State private var isShowAlertWithDescription = false
   
   var body: some View {
     ZStack {
@@ -18,10 +20,10 @@ struct RootView: View {
           isShowTreatmentAlert = true
         }
         showPopupButton(title: "Confirm 보이기") {
-          
+          isShowChangeTreatmentConfirm = true
         }
         showPopupButton(title: "추가 설명이 있는 Alert 보이기") {
-          
+          isShowAlertWithDescription = true
         }
       }
       .customAlert(
@@ -32,6 +34,22 @@ struct RootView: View {
         isShowTreatmentAlert = false
       } secondaryButtonAction: {
         isShowTreatmentAlert = false
+      }
+      .customConfirm(
+        isPresented: $isShowChangeTreatmentConfirm,
+        contents: "진료과목을 변경하시면 선생님을\n다시 선택하고 예약을 진행하셔야 합니다\n그래도 변경하시겠습니까?"
+      ) {
+        isShowChangeTreatmentConfirm = false
+      }
+      .customAlert(
+        isPresented: $isShowAlertWithDescription,
+        title: "배송선택",
+        contents: "약 수령방법을\n당일배송으로 선택하시겠습니까?",
+        description: "약 3시간 이내 배송"
+      ) {
+        isShowAlertWithDescription = false
+      } secondaryButtonAction: {
+        isShowAlertWithDescription = false
       }
     }
   }
