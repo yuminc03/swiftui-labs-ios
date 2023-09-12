@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05FD395A2AAFF439004A4FC4 /* PopupContainerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD39592AAFF439004A4FC4 /* PopupContainerModifier.swift */; };
 		05FD395D2AB01FD6004A4FC4 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD395C2AB01FD5004A4FC4 /* PopupModifier.swift */; };
+		05FD395F2AB0430A004A4FC4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */; };
 		8D1AFAF62AAE049B000C763D /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */; };
 		8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */; };
 		8D1BBBF22AACC32D00F2A334 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBBF12AACC32D00F2A334 /* RootView.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		05FD39592AAFF439004A4FC4 /* PopupContainerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerModifier.swift; sourceTree = "<group>"; };
 		05FD395C2AB01FD5004A4FC4 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
+		05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		8D1BBBEC2AACC32D00F2A334 /* DesignSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemApp.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				8D1BBBF12AACC32D00F2A334 /* RootView.swift */,
 				8D1AFAF52AAE049B000C763D /* CustomPopupView.swift */,
+				05FD395E2AB0430A004A4FC4 /* PrimaryButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				8D1AFAF62AAE049B000C763D /* CustomPopupView.swift in Sources */,
 				05FD395D2AB01FD6004A4FC4 /* PopupModifier.swift in Sources */,
 				8D2609302AAF4DF900C383E5 /* CustomButtonModifier.swift in Sources */,
+				05FD395F2AB0430A004A4FC4 /* PrimaryButton.swift in Sources */,
 				05FD395A2AAFF439004A4FC4 /* PopupContainerModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

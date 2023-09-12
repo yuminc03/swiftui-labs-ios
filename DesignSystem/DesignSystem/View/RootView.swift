@@ -12,10 +12,37 @@ struct RootView: View {
   @State private var isShowTreatmentAlert = false
   @State private var isShowChangeTreatmentConfirm = false
   @State private var isShowAlertWithDescription = false
+  @State private var sampleText = ""
   
   var body: some View {
     ZStack {
       VStack(spacing: 20) {
+        VStack(spacing: 10) {
+          PrimaryButton {
+            
+          }
+          TextField("textField", text: $sampleText, prompt: Text("입력"))
+          HStack(spacing: 10) {
+            PrimaryButton(
+              title: "취소",
+              backgroundColor: Color("gray_B0B0B0"),
+              disableColor: Color("gray_909090")
+            ) {
+              
+            }
+            PrimaryButton(
+              title: "확인",
+              disableColor: Color("gray_909090")
+            ) {
+              
+            }
+            .disabled(sampleText.count > 5)
+          }
+          PrimaryButton(title: "저장하기", backgroundColor: .blue) {
+            
+          }
+        }
+        .padding(.bottom, 50)
         showPopupButton(title: "Alert 보이기") {
           isShowTreatmentAlert = true
         }
@@ -52,6 +79,7 @@ struct RootView: View {
         isShowAlertWithDescription = false
       }
     }
+    .padding()
   }
 }
 
@@ -74,6 +102,5 @@ extension RootView {
         .customButtonStyle(backgroundColor: Color("green_07D329"))
         .foregroundColor(.white)
     }
-    .padding(.horizontal, 20)
   }
 }

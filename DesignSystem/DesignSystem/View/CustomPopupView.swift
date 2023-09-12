@@ -68,7 +68,7 @@ struct CustomPopupView_Previews: PreviewProvider {
     CustomPopupView(
       isPresented: .constant(true),
       title: "안내",
-      contents: "내용",
+      contents: "...대충 뭐라고 적혀 있는 내용...",
       description: "",
       primaryButtonTitle: "확인",
       secondaryButtonTitle: "취소",
@@ -117,22 +117,20 @@ extension CustomPopupView {
   }
   
   private var secondaryButton: some View {
-    Button {
+    PrimaryButton(
+      title: secondaryButtonTitle,
+      backgroundColor: Color("gray_B0B0B0"),
+      disableColor: Color("gray_B0B0B0")
+    ) {
       dismissAction()
       secondaryButtonAction?()
-    } label: {
-      Text(secondaryButtonTitle)
-        .customButtonStyle(backgroundColor: Color("gray_B0B0B0"))
     }
   }
   
   private var primaryButton: some View {
-    Button {
+    PrimaryButton(title: primaryButtonTitle) {
       dismissAction()
       primaryButtonAction?()
-    } label: {
-      Text(primaryButtonTitle)
-        .customButtonStyle(backgroundColor: Color("green_07D329"))
     }
   }
   
