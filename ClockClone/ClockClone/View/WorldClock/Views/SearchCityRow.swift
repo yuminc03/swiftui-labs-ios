@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct SearchCityRow: View {
-  private let city: City
+  private let city: CityGroup.City
   
-  init(city: City) {
+  init(city: CityGroup.City) {
     self.city = city
   }
   
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
-      Text(city.name)
-        .font(.body)
-      Divider()
-        .background(.gray)
+      HStack {
+        Text(city.name)
+          .font(.body)
+        Spacer()
+      }
     }
     .padding(.horizontal, 20)
-    .padding(.top, 10)
+    .padding(.vertical, 10)
     .contentShape(Rectangle())
   }
 }
 
 struct SearchCityRow_Previews: PreviewProvider {
   static var previews: some View {
-    SearchCityRow(city: City.dummy[0])
+    SearchCityRow(city: CityGroup.dummy[0].cities[0])
       .previewLayout(.sizeThatFits)
   }
 }

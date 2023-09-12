@@ -23,6 +23,7 @@ struct WorldClockRow: View {
       if isFirstRow {
         Divider()
           .background(Color.gray)
+          .padding(.trailing, -20)
       } else {
         Rectangle()
           .fill(.clear)
@@ -41,11 +42,9 @@ struct WorldClockRow: View {
           }
         }
       }
-      .foregroundColor(.white)
-      Divider()
-        .background(Color.gray)
     }
     .padding(.horizontal, 20)
+    .padding(.bottom, 20)
     .background(Color.black)
   }
 }

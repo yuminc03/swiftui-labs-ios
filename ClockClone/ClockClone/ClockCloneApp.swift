@@ -49,6 +49,12 @@ struct ClockCloneApp: App {
   }
 }
 
+struct ClockCloneApp_Previews: PreviewProvider {
+  static var previews: some View {
+    ClockCloneApp().tabView
+  }
+}
+
 extension ClockCloneApp {
   
   var tabView: some View {

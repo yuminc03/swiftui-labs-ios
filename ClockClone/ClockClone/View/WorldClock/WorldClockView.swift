@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
-    var cities = City.dummy
+    var cities = CityGroup.dummy
     @BindingState var editMode: EditMode = .inactive
     @PresentationState var addCity: SelectCityCore.State?
   }
@@ -39,15 +39,19 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
         state.addCity = SelectCityCore.State(cities: state.cities)
         return .none
         
-      case let .addCity(.presented(.delegate(.save(city)))):
-        state.cities.remove(id: city.id)
+      case let .addCity(.presented(.delegate(.save(group, index)))):
+        guard let cities = state.cities[id: group.id]?.cities else {
+          return .none
+        }
+        
         state.worldClocks.append(
           WorldClockItem(
             parallax: "오늘, +0시간",
-            cityName: city.name.components(separatedBy: ", ").last ?? "",
+            cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
             time: CityTime.randomTime
           )
         )
+        state.cities[id: group.id]?.cities.remove(at: index)
         return .none
         
       case .addCity:
@@ -69,6 +73,7 @@ struct WorldClockView: View {
   init() {
     self.store = Store(initialState: WorldClockCore.State()) {
       WorldClockCore()
+        ._printChanges()
     }
     self.viewStore = ViewStore(store, observe: { $0 })
   }
@@ -91,7 +96,6 @@ struct WorldClockView: View {
           .onDelete { store.send(.onDeleteClock(at: $0)) }
           .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-          .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
       }
@@ -110,7 +114,6 @@ struct WorldClockView: View {
         }
       }
     }
-    .foregroundColor(.orange)
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)
     }
