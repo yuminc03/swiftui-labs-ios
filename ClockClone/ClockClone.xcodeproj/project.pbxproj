@@ -225,7 +225,7 @@
 				8DE1A5652AA48FE300AA0294 /* TabItem.swift */,
 				05143F842AA5572A002CA98A /* StopWatchButtonType.swift */,
 				053A8E982AA805E5005A62FE /* Common */,
-				8DE1A56D2AA4D57C00AA0294 /* RootView */,
+				8DE1A56D2AA4D57C00AA0294 /* View */,
 				8DE1A56A2AA4A49C00AA0294 /* Model */,
 				8DE1A5362AA479B600AA0294 /* Assets.xcassets */,
 				8DE1A5382AA479B600AA0294 /* Preview Content */,
@@ -270,7 +270,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8DE1A56D2AA4D57C00AA0294 /* RootView */ = {
+		8DE1A56D2AA4D57C00AA0294 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8D1AFAED2AADE41B000C763D /* WorldClock */,
@@ -278,7 +278,7 @@
 				8D1AFAEF2AADE42A000C763D /* StopWatch */,
 				8D1AFAF02AADE430000C763D /* Timer */,
 			);
-			path = RootView;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

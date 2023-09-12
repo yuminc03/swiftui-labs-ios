@@ -11,18 +11,18 @@ import ComposableArchitecture
 
 struct SelectCityCore: Reducer {
   struct State: Equatable {
-    var cities: IdentifiedArrayOf<City>
+    var cities: IdentifiedArrayOf<CityGroup>
     var searchText = ""
   }
   
   enum Action {
     case didTapCancelButton
     case didChangeSearchText(String)
-    case didTapRow(City)
+    case didTapRow(CityGroup, Int)
     case delegate(Delegate)
     
     enum Delegate: Equatable {
-      case save(City)
+      case save(CityGroup.City)
     }
   }
   
@@ -39,10 +39,13 @@ struct SelectCityCore: Reducer {
       state.searchText = text
       return .none
       
-    case let .didTapRow(city):
-      state.cities.remove(id: city.id)
+    case let .didTapRow(group, index):
+      guard var cities = state.cities[id: group.id]?.cities else {
+        return .none
+      }
+      cities.remove(at: index)
       return .run { send in
-        await send(.delegate(.save(city)))
+        await send(.delegate(.save(group.cities[index])))
         await dismiss()
       }
       
@@ -69,11 +72,22 @@ struct SelectCityView: View {
         }
         .padding(.horizontal, 20)
         List {
-          ForEach(viewStore.cities) { city in
-            SearchCityRow(city: city)
-              .onTapGesture {
-                store.send(.didTapRow(city))
+          ForEach(viewStore.cities) { cities in
+            Section {
+              ForEach(0 ..< cities.cities.count, id: \.self) { index in
+                SearchCityRow(city: cities.cities[index])
+                  .onTapGesture {
+                    store.send(.didTapRow(cities, index))
+                  }
               }
+            } header: {
+              VStack(alignment: .leading, spacing: 5) {
+                Text(cities.name)
+                Divider()
+                  .background(.gray)
+              }
+              .padding(.leading, 20)
+            }
           }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
@@ -86,7 +100,7 @@ struct SelectCityView: View {
 
 struct SelectCityView_Previews: PreviewProvider {
   static var previews: some View {
-    SelectCityView(store: Store(initialState: SelectCityCore.State(cities: City.dummy)) {
+    SelectCityView(store: Store(initialState: SelectCityCore.State(cities: CityGroup.dummy)) {
       SelectCityCore()
     })
   }

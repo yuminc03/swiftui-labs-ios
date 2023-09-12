@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
-    var cities = City.dummy
+    var cities = CityGroup.dummy
     @BindingState var editMode: EditMode = .inactive
     @PresentationState var addCity: SelectCityCore.State?
   }
@@ -91,7 +91,6 @@ struct WorldClockView: View {
           .onDelete { store.send(.onDeleteClock(at: $0)) }
           .onMove { store.send(.onMoveClock(from: $0, to: $1)) }
           .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-          .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
       }
@@ -110,7 +109,6 @@ struct WorldClockView: View {
         }
       }
     }
-    .foregroundColor(.orange)
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)
     }

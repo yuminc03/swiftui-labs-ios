@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SearchCityRow: View {
-  private let city: City
+  private let city: CityGroup.City
   
-  init(city: City) {
+  init(city: CityGroup.City) {
     self.city = city
   }
   
@@ -29,7 +29,7 @@ struct SearchCityRow: View {
 
 struct SearchCityRow_Previews: PreviewProvider {
   static var previews: some View {
-    SearchCityRow(city: City.dummy[0])
+    SearchCityRow(city: CityGroup.dummy[0].cities[0])
       .previewLayout(.sizeThatFits)
   }
 }
