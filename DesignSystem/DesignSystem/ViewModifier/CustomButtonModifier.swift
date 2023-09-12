@@ -16,11 +16,12 @@ struct CustomButtonModifier: ViewModifier {
       .frame(maxWidth: .infinity)
       .background(backgroundColor)
       .cornerRadius(10)
+      .contentShape(RoundedRectangle(cornerRadius: 10))
   }
 }
 
 extension View {
-  func customButton(backgroundColor: Color) -> some View {
+  func customButtonStyle(backgroundColor: Color) -> some View {
     modifier(CustomButtonModifier(backgroundColor: backgroundColor))
   }
 }

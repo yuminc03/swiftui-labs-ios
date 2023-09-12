@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RootView: View {
   
-  @State private var isShowAlert = false
+  @State private var isShowTreatmentAlert = false
   
   var body: some View {
     ZStack {
       VStack(spacing: 20) {
         showPopupButton(title: "Alert 보이기") {
-          isShowAlert.toggle()
+          isShowTreatmentAlert = true
         }
         showPopupButton(title: "Confirm 보이기") {
           
@@ -24,15 +24,14 @@ struct RootView: View {
           
         }
       }
-      if isShowAlert {
-        CustomPopupView()
-          .animation(.spring(), value: isShowAlert)
-          .transition(
-            .asymmetric(
-              insertion: .move(edge: .bottom),
-              removal: .move(edge: .bottom)
-            )
-          )
+      .customAlert(
+        isPresented: $isShowTreatmentAlert,
+        title: "진료안내",
+        contents: "설정중이던 진료조건을 임시저장할까요?"
+      ) {
+        isShowTreatmentAlert = false
+      } secondaryButtonAction: {
+        isShowTreatmentAlert = false
       }
     }
   }
