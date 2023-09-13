@@ -138,10 +138,7 @@ struct TimerCore: Reducer {
           to: Date(),
           wrappingComponents: false
         ) ?? Date()
-        state.endTimerTime = DateFormat.convertTimeToString(
-          date: targetTime,
-          id: CityTime.korean.rawValue
-        )
+        state.endTimerTime = targetTime.toString(id: "Asia/Seoul")
         return .none
         
       case .onDisappear:
