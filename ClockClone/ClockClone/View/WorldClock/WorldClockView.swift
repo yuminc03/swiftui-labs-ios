@@ -13,7 +13,7 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
     var cities = CityGroup.dummy
-    @BindingState var editMode: EditMode = .inactive
+    var editMode: EditMode = .inactive
     @PresentationState var addCity: SelectCityCore.State?
   }
   
@@ -22,6 +22,7 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
     case onMoveClock(from: IndexSet, to: Int)
     case didTapAddButton
     case addCity(PresentationAction<SelectCityCore.Action>)
+    case bindEditMode(EditMode)
   }
   
   var body: some ReducerOf<Self> {
@@ -56,6 +57,10 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
         
       case .addCity:
         return .none
+        
+      case let .bindEditMode(editMode):
+        state.editMode = editMode
+        return .none
       }
     }
     .ifLet(\.$addCity, action: /Action.addCity) {
@@ -67,9 +72,8 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
 struct WorldClockView: View {
   private let store: StoreOf<WorldClockCore>
   @ObservedObject private var viewStore: ViewStoreOf<WorldClockCore>
-  struct ViewState: Equatable {
-    
-  }
+  @Environment(\.editMode) private var editMode
+  
   init() {
     self.store = Store(initialState: WorldClockCore.State()) {
       WorldClockCore()
@@ -90,7 +94,7 @@ struct WorldClockView: View {
             WorldClockRow(
               worldClockItem: worldClock,
               isFirstRow: worldClock == viewStore.worldClocks[0],
-              isEditMode: false
+              isEditMode: viewStore.editMode == .active
             )
           }
           .onDelete { store.send(.onDeleteClock(at: $0)) }
@@ -114,6 +118,10 @@ struct WorldClockView: View {
         }
       }
     }
+    .environment(
+      \.editMode,
+       viewStore.binding(get: \.editMode, send: { .bindEditMode($0) })
+    )
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)
     }
