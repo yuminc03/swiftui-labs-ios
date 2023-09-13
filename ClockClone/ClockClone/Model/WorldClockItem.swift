@@ -19,7 +19,7 @@ struct WorldClockItem: Equatable, Identifiable {
     .init(
       parallax: "오늘, +0시간",
       cityName: "서울",
-      time: DateFormat.convertTimeToString(id: CityTime.korean.rawValue)
+      time: Date().toString(id: "Asia/Seoul")
     )
   ]
 }

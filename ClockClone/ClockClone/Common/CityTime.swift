@@ -10,7 +10,6 @@ import Foundation
 enum CityTime: String, Equatable, CaseIterable {
   case abidjan = "Africa/Abidjan"
   case algiers = "Africa/Algiers"
-  case korean = "Asia/Seoul"
   case anguilla = "America/Anguilla"
   case belize = "America/Belize"
   case english = "GMT"
@@ -19,19 +18,7 @@ enum CityTime: String, Equatable, CaseIterable {
   case gaza = "Asia/Gaza"
   case truk = "Pacific/Truk"
   
-  static var randomTime: String {
-    return CityTime.dummy.randomElement() ?? DateFormat.convertTimeToString(id: CityTime.korean.rawValue)
-  }
-  
-  static let dummy = CityTime.allCases.map { DateFormat.convertTimeToString(id: $0.rawValue) }
-}
-
-class DateFormat {
-  static func convertTimeToString(date: Date = Date(), id: String) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "a h:mm"
-    dateFormatter.locale = Locale(identifier: "ko_KR")
-    dateFormatter.timeZone = TimeZone(identifier: id)
-    return dateFormatter.string(from: date)
+  static var randomID: String {
+    return CityTime.allCases.map { $0 }.randomElement()?.rawValue ?? "Asia/Seoul"
   }
 }

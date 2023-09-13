@@ -9,11 +9,11 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
+struct WorldClockCore: Reducer {
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
     var cities = CityGroup.dummy
-    @BindingState var editMode: EditMode = .inactive
+    var editMode: EditMode = .inactive
     @PresentationState var addCity: SelectCityCore.State?
   }
   
@@ -22,6 +22,7 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
     case onMoveClock(from: IndexSet, to: Int)
     case didTapAddButton
     case addCity(PresentationAction<SelectCityCore.Action>)
+    case bindEditMode(EditMode)
   }
   
   var body: some ReducerOf<Self> {
@@ -44,17 +45,55 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
           return .none
         }
         
+        let koreaDateString = Date().toString(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: "Asia/Seoul"
+        )
+        let koreaDate = koreaDateString.toDate(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: "Asia/Seoul"
+        ) ?? Date()
+        let id = CityTime.randomID
+        let randomDateString = Date().toString(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: id
+        )
+        let randomDate = randomDateString.toDate(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: id
+        ) ?? Date()
+        let parallax: Int
+        switch koreaDate.compare(randomDate) {
+        case .orderedDescending:
+          parallax = Int(randomDate.timeIntervalSince(koreaDate) / 86400)
+
+        case .orderedAscending:
+          parallax = Int(koreaDate.timeIntervalSince(randomDate) / 86400)
+          
+        case .orderedSame:
+          parallax = 0
+        }
+        
+        print("korean: \(koreaDateString)")
+        print("random: \(randomDateString)")
+        print("korean: \(koreaDate)")
+        print("random: \(randomDate)")
+
         state.worldClocks.append(
           WorldClockItem(
-            parallax: "오늘, +0시간",
+            parallax: "오늘, \(koreaDate > randomDate ? "+" : "-")\(parallax)시간",
             cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
-            time: CityTime.randomTime
+            time: Date().toString(id: id)
           )
         )
         state.cities[id: group.id]?.cities.remove(at: index)
         return .none
         
       case .addCity:
+        return .none
+        
+      case let .bindEditMode(editMode):
+        state.editMode = editMode
         return .none
       }
     }
@@ -67,9 +106,8 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
 struct WorldClockView: View {
   private let store: StoreOf<WorldClockCore>
   @ObservedObject private var viewStore: ViewStoreOf<WorldClockCore>
-  struct ViewState: Equatable {
-    
-  }
+  @Environment(\.editMode) private var editMode
+  
   init() {
     self.store = Store(initialState: WorldClockCore.State()) {
       WorldClockCore()
@@ -90,7 +128,7 @@ struct WorldClockView: View {
             WorldClockRow(
               worldClockItem: worldClock,
               isFirstRow: worldClock == viewStore.worldClocks[0],
-              isEditMode: false
+              isEditMode: viewStore.editMode == .active
             )
           }
           .onDelete { store.send(.onDeleteClock(at: $0)) }
@@ -114,6 +152,10 @@ struct WorldClockView: View {
         }
       }
     }
+    .environment(
+      \.editMode,
+       viewStore.binding(get: \.editMode, send: { .bindEditMode($0) })
+    )
     .sheet(store: store.scope(state: \.$addCity, action: { .addCity($0) })) { store in
       SelectCityView(store: store)
     }
@@ -123,5 +165,6 @@ struct WorldClockView: View {
 struct WorldClockView_Previews: PreviewProvider {
   static var previews: some View {
     WorldClockView()
+      .previewLayout(.sizeThatFits)
   }
 }
