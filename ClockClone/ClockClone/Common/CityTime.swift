@@ -19,19 +19,32 @@ enum CityTime: String, Equatable, CaseIterable {
   case gaza = "Asia/Gaza"
   case truk = "Pacific/Truk"
   
-  static var randomTime: String {
-    return CityTime.dummy.randomElement() ?? DateFormat.convertTimeToString(id: CityTime.korean.rawValue)
+//  static var randomTime: String {
+//    return CityTime.dummy.randomElement() ?? DateFormat.convertTimeToString(id: CityTime.korean.rawValue)
+//  }
+  
+  static var randomID: String {
+    return CityTime.allCases.map { $0 }.randomElement()?.rawValue ?? CityTime.korean.rawValue
   }
   
   static let dummy = CityTime.allCases.map { DateFormat.convertTimeToString(id: $0.rawValue) }
 }
 
+
 class DateFormat {
-  static func convertTimeToString(date: Date = Date(), id: String) -> String {
+  static func convertTimeToString(date: Date = Date(), format: String = "a h:mm", id: String) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "a h:mm"
+    dateFormatter.dateFormat = format
     dateFormatter.locale = Locale(identifier: "ko_KR")
     dateFormatter.timeZone = TimeZone(identifier: id)
     return dateFormatter.string(from: date)
+  }
+  
+  static func convertStringToDate(dateString: String, format: String = "a h:mm", id: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    dateFormatter.locale = Locale(identifier: "ko_KR")
+    dateFormatter.timeZone = TimeZone(identifier: id)
+    return dateFormatter.date(from: dateString)
   }
 }

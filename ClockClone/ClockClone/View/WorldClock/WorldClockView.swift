@@ -9,7 +9,7 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
+struct WorldClockCore: Reducer {
   struct State: Equatable {
     var worldClocks = WorldClockItem.dummy
     var cities = CityGroup.dummy
@@ -45,11 +45,32 @@ struct WorldClockCore: Reducer { // section header, 검색 기능, editMode
           return .none
         }
         
+        let id = CityTime.randomID
+        let koreaDateString = DateFormat.convertTimeToString(
+          id: CityTime.korean.rawValue
+        )
+        let koreaDate = DateFormat.convertStringToDate(
+          dateString: koreaDateString,
+          id: CityTime.korean.rawValue
+        ) ?? Date()
+        let randomDateString = DateFormat.convertTimeToString(id: id)
+        let randomDate = DateFormat.convertStringToDate(
+          dateString: randomDateString,
+          id: id
+        ) ?? Date()
+        
+        let parallax: Int
+        if koreaDate > randomDate {
+          parallax = Int((koreaDate - randomDate) / 3600)
+        } else {
+          parallax = Int((randomDate - koreaDate) / 3600)
+        }
+        
         state.worldClocks.append(
           WorldClockItem(
-            parallax: "오늘, +0시간",
+            parallax: "오늘, \(koreaDate > randomDate ? "-" : "+")\(parallax)시간",
             cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
-            time: CityTime.randomTime
+            time: randomDateString
           )
         )
         state.cities[id: group.id]?.cities.remove(at: index)

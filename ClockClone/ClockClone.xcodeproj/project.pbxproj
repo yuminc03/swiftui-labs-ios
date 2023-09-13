@@ -20,6 +20,7 @@
 		053A8EA02AA834EA005A62FE /* FrameDebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */; };
 		053A8EA32AA83682005A62FE /* EndTimerAlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */; };
 		053A8EA52AA85722005A62FE /* TimerProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */; };
+		059E485D2AB197BE004EF214 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059E485C2AB197BE004EF214 /* Date+.swift */; };
 		05ABB3DA2AAA94B2006EFAF0 /* ClassicMusicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */; };
 		05ABB3DE2AAAAA32006EFAF0 /* AlarmSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABB3DD2AAAAA32006EFAF0 /* AlarmSound.swift */; };
 		8D7B24E02AA60BCF002D3A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */; };
@@ -72,6 +73,7 @@
 		053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameDebugModifier.swift; sourceTree = "<group>"; };
 		053A8EA22AA83682005A62FE /* EndTimerAlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTimerAlarmListView.swift; sourceTree = "<group>"; };
 		053A8EA42AA85722005A62FE /* TimerProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProgressBarView.swift; sourceTree = "<group>"; };
+		059E485C2AB197BE004EF214 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		05ABB3D92AAA94B2006EFAF0 /* ClassicMusicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicMusicListView.swift; sourceTree = "<group>"; };
 		05ABB3DD2AAAAA32006EFAF0 /* AlarmSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSound.swift; sourceTree = "<group>"; };
 		8D7B24DF2AA60BCF002D3A6E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				053A8E992AA8061E005A62FE /* RepresentedPickerView.swift */,
 				053A8E9B2AA8166E005A62FE /* StopWatchButton.swift */,
 				053A8E9F2AA834EA005A62FE /* FrameDebugModifier.swift */,
+				059E485C2AB197BE004EF214 /* Date+.swift */,
 				05143F902AA5BB56002CA98A /* CityTime.swift */,
 			);
 			path = Common;
@@ -432,6 +435,7 @@
 				8DE1A5622AA48DC700AA0294 /* StopWatchView.swift in Sources */,
 				053A8E9A2AA8061E005A62FE /* RepresentedPickerView.swift in Sources */,
 				053A8EA52AA85722005A62FE /* TimerProgressBarView.swift in Sources */,
+				059E485D2AB197BE004EF214 /* Date+.swift in Sources */,
 				053A8EA32AA83682005A62FE /* EndTimerAlarmListView.swift in Sources */,
 				053A8EA02AA834EA005A62FE /* FrameDebugModifier.swift in Sources */,
 				05143F912AA5BB56002CA98A /* CityTime.swift in Sources */,
