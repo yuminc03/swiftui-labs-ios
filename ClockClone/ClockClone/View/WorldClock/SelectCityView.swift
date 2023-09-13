@@ -71,25 +71,12 @@ struct SelectCityView: View {
           searchView
         }
         .padding(.horizontal, 20)
-        List {
-          ForEach(viewStore.cities) { cities in
-            if viewStore.searchText.isEmpty {
-              Section {
-                ForEach(0 ..< cities.cities.count, id: \.self) { index in
-                  SearchCityRow(city: cities.cities[index])
-                    .onTapGesture {
-                      store.send(.didTapRow(cities, index))
-                    }
-                }
-              } header: {
-                Text(cities.name)
-                  .padding(.leading, 20)
-              }
-              .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            }
-          }
+        
+        if viewStore.searchText.isEmpty {
+          selectCityList
+        } else {
+          searchResultList
         }
-        .listStyle(.plain)
       }
       .toolbar(.hidden, for: .navigationBar)
     }
@@ -143,5 +130,39 @@ extension SelectCityView {
         .fill(Color("gray_424242"))
     }
     .cornerRadius(10)
+  }
+  
+  var selectCityList: some View {
+    List {
+      ForEach(viewStore.cities) { cities in
+        Section {
+          ForEach(0 ..< cities.cities.count, id: \.self) { index in
+            SearchCityRow(city: cities.cities[index])
+              .onTapGesture {
+                store.send(.didTapRow(cities, index))
+              }
+          }
+        } header: {
+          Text(cities.name)
+            .padding(.leading, 20)
+        }
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+      }
+    }
+    .listStyle(.plain)
+  }
+  
+  var searchResultList: some View {
+    List {
+      Section {
+        ForEach(viewStore.cities) { cities in
+          ForEach(cities.cities.filter { $0.name.contains(viewStore.searchText) }) { city in
+            SearchCityRow(city: city)
+          }
+        }
+      }
+      .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+    }
+    .listStyle(.plain)
   }
 }
