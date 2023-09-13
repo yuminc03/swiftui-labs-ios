@@ -45,32 +45,45 @@ struct WorldClockCore: Reducer {
           return .none
         }
         
-        let id = CityTime.randomID
-        let koreaDateString = DateFormat.convertTimeToString(
-          id: CityTime.korean.rawValue
+        let koreaDateString = Date().toString(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: "Asia/Seoul"
         )
-        let koreaDate = DateFormat.convertStringToDate(
-          dateString: koreaDateString,
-          id: CityTime.korean.rawValue
+        let koreaDate = koreaDateString.toDate(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: "Asia/Seoul"
         ) ?? Date()
-        let randomDateString = DateFormat.convertTimeToString(id: id)
-        let randomDate = DateFormat.convertStringToDate(
-          dateString: randomDateString,
+        let id = CityTime.randomID
+        let randomDateString = Date().toString(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
+          id: id
+        )
+        let randomDate = randomDateString.toDate(
+          format: "yyyy-MM-dd'T'HH:mm:ss",
           id: id
         ) ?? Date()
-        
         let parallax: Int
-        if koreaDate > randomDate {
-          parallax = Int((koreaDate - randomDate) / 3600)
-        } else {
-          parallax = Int((randomDate - koreaDate) / 3600)
+        switch koreaDate.compare(randomDate) {
+        case .orderedDescending:
+          parallax = Int(randomDate.timeIntervalSince(koreaDate) / 86400)
+
+        case .orderedAscending:
+          parallax = Int(koreaDate.timeIntervalSince(randomDate) / 86400)
+          
+        case .orderedSame:
+          parallax = 0
         }
         
+        print("korean: \(koreaDateString)")
+        print("random: \(randomDateString)")
+        print("korean: \(koreaDate)")
+        print("random: \(randomDate)")
+
         state.worldClocks.append(
           WorldClockItem(
-            parallax: "오늘, \(koreaDate > randomDate ? "-" : "+")\(parallax)시간",
+            parallax: "오늘, \(koreaDate > randomDate ? "+" : "-")\(parallax)시간",
             cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
-            time: randomDateString
+            time: Date().toString(id: id)
           )
         )
         state.cities[id: group.id]?.cities.remove(at: index)
@@ -152,5 +165,6 @@ struct WorldClockView: View {
 struct WorldClockView_Previews: PreviewProvider {
   static var previews: some View {
     WorldClockView()
+      .previewLayout(.sizeThatFits)
   }
 }

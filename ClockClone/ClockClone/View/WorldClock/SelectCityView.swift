@@ -54,6 +54,7 @@ struct SelectCityCore: Reducer {
     }
   }
 }
+
 struct SelectCityView: View {
   private let store: StoreOf<SelectCityCore>
   @ObservedObject private var viewStore: ViewStoreOf<SelectCityCore>
