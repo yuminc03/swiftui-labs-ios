@@ -25,6 +25,7 @@
 		055CA4862AA024E800943414 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4852AA024E800943414 /* LineChartView.swift */; };
 		05A3C3DB2AA71102000E746D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C3DA2AA71102000E746D /* ListView.swift */; };
 		05A3C3DD2AA7126D000E746D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3C3DC2AA7126D000E746D /* FormView.swift */; };
+		05E5409E2AB2DE8900488D5E /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E5409D2AB2DE8900488D5E /* StateView.swift */; };
 		8D5053E52AA0C86B00A459DA /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5053E42AA0C86B00A459DA /* ProgressBar.swift */; };
 		8D5053E72AA0DDAA00A459DA /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5053E62AA0DDAA00A459DA /* SpinnerView.swift */; };
 		8DB3DC482AA8A8540049767C /* ShadowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB3DC472AA8A8540049767C /* ShadowsView.swift */; };
@@ -74,6 +75,7 @@
 		055CA4852AA024E800943414 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		05A3C3DA2AA71102000E746D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		05A3C3DC2AA7126D000E746D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		05E5409D2AB2DE8900488D5E /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		8D5053E42AA0C86B00A459DA /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		8D5053E62AA0DDAA00A459DA /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		8DB3DC472AA8A8540049767C /* ShadowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				8DB3DC4B2AA8C0B90049767C /* CirclularView.swift */,
 				8DB3DC4D2AA8C1D30049767C /* LazyGridView.swift */,
 				8DB3DC4F2AA8C5110049767C /* ViewModifierTest.swift */,
+				05E5409D2AB2DE8900488D5E /* StateView.swift */,
 				055CA4592AA00E8A00943414 /* Assets.xcassets */,
 				055CA45B2AA00E8A00943414 /* Preview Content */,
 			);
@@ -330,6 +333,7 @@
 				055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */,
 				055CA4862AA024E800943414 /* LineChartView.swift in Sources */,
 				051959F92AA171C000AA311E /* AnimatePosition.swift in Sources */,
+				05E5409E2AB2DE8900488D5E /* StateView.swift in Sources */,
 				8DB3DC4C2AA8C0B90049767C /* CirclularView.swift in Sources */,
 				8D5053E72AA0DDAA00A459DA /* SpinnerView.swift in Sources */,
 				051959F72AA1700800AA311E /* AnimateViewOpacity.swift in Sources */,
