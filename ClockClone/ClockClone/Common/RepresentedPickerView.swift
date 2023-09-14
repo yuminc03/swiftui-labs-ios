@@ -26,34 +26,30 @@ struct RepresentedPickerView: UIViewRepresentable {
   }
   
   func makeCoordinator() -> Coordinator {
-    Coordinator(items: items, selectedItemIndeces: $selectedItemIndeces)
+    Coordinator(parent: self)
   }
 }
 
 class Coordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
-  let items: [[String]]
-  var selectedItemIndeces: Binding<[Int]>
-  // 이 부분에서 SwiftUI에서 사용할 view를 받아야 함
-//  var parent: RepresentedPickerView
+  var parent: RepresentedPickerView // SwiftUI에서 사용할 view를 받아야 함
   
-  init(items: [[String]], selectedItemIndeces: Binding<[Int]>) {
-    self.items = items
-    self.selectedItemIndeces = selectedItemIndeces
+  init(parent: RepresentedPickerView) {
+    self.parent = parent
   }
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return items.count
+    return parent.items.count
   }
   
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return items[component].count
+    return parent.items[component].count
   }
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return items[component][row]
+    return parent.items[component][row]
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    selectedItemIndeces.wrappedValue[component] = row
+    parent.selectedItemIndeces[component] = row
   }
 }

@@ -60,28 +60,24 @@ struct WorldClockCore: Reducer {
         )
         let randomDate = randomDateString.toDate(
           format: "yyyy-MM-dd'T'HH:mm:ss",
-          id: id
+          id: "Asia/Seoul"
         ) ?? Date()
+        
         let parallax: Int
         switch koreaDate.compare(randomDate) {
         case .orderedDescending:
-          parallax = Int(randomDate.timeIntervalSince(koreaDate) / 86400)
+          parallax = Int((koreaDate - randomDate) / 3600)
 
         case .orderedAscending:
-          parallax = Int(koreaDate.timeIntervalSince(randomDate) / 86400)
+          parallax = Int((randomDate - koreaDate) / 3600)
           
         case .orderedSame:
           parallax = 0
         }
         
-        print("korean: \(koreaDateString)")
-        print("random: \(randomDateString)")
-        print("korean: \(koreaDate)")
-        print("random: \(randomDate)")
-
         state.worldClocks.append(
           WorldClockItem(
-            parallax: "오늘, \(koreaDate > randomDate ? "+" : "-")\(parallax)시간",
+            parallax: "오늘, \(koreaDate > randomDate ? "-" : "+")\(parallax)시간",
             cityName: cities[index].name.components(separatedBy: ", ").last ?? "",
             time: Date().toString(id: id)
           )

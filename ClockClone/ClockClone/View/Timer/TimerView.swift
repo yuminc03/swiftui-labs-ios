@@ -74,7 +74,7 @@ struct TimerCore: Reducer {
     }
   }
     
-  var body: some ReducerOf<Self> { // view frame 크기 박는 것은 최대한 자제하기
+  var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case let .didSelectPickerItems(indeces):
