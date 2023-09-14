@@ -53,6 +53,7 @@ struct RootView: View {
           isShowAlertWithDescription = true
         }
       }
+      .padding(.horizontal, 20)
       .customAlert(
         isPresented: $isShowTreatmentAlert,
         title: "진료안내",
@@ -79,7 +80,6 @@ struct RootView: View {
         isShowAlertWithDescription = false
       }
     }
-    .padding()
   }
 }
 
