@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PopupModifier: ViewModifier {
-  @Binding var isPresented: Bool
+  @Binding var item: Bool
   let title: String
   let contents: String
   let description: String
@@ -18,39 +18,29 @@ struct PopupModifier: ViewModifier {
   let secondaryButtonAction: (() -> Void)?
   
   func body(content: Content) -> some View {
-    content
-    CustomPopupView(
-      isPresented: $isPresented,
-      title: title,
-      contents: contents,
-      description: description,
-      primaryButtonTitle: primaryButtonTitle,
-      secondaryButtonTitle: secondaryButtonTitle,
-      primaryButtonAction: primaryButtonAction,
-      secondaryButtonAction: secondaryButtonAction
-    )
-    .animation(.spring(), value: isPresented)
+    /// zStack을 여기에 넣기
+    ZStack {
+      content
+      CustomPopupView(
+        isPresented: $isPresented,
+        title: title,
+        contents: contents,
+        description: description,
+        primaryButtonTitle: primaryButtonTitle,
+        secondaryButtonTitle: secondaryButtonTitle,
+        primaryButtonAction: primaryButtonAction,
+        secondaryButtonAction: secondaryButtonAction
+      )
+      .animation(.spring(), value: isPresented)
+    }
   }
 }
 
 extension View {
   func customAlert(
-    isPresented: Binding<Bool>,
-    title: String = "안내",
-    contents: String = "내용",
-    description: String = "",
-    primaryButtonTitle: String = "확인",
-    secondaryButtonTitle: String = "취소",
-    primaryButtonAction: (() -> Void)? = nil,
-    secondaryButtonAction: (() -> Void)? = nil
+    item: Binding<AlertItem?>
   ) -> some View {
     modifier(PopupModifier(
-      isPresented: isPresented,
-      title: title,
-      contents: contents,
-      description: description,
-      primaryButtonTitle: primaryButtonTitle,
-      secondaryButtonTitle: secondaryButtonTitle,
       primaryButtonAction: primaryButtonAction,
       secondaryButtonAction: secondaryButtonAction
     ))
@@ -58,19 +48,10 @@ extension View {
   
   func customConfirm(
     isPresented: Binding<Bool>,
-    title: String = "안내",
-    contents: String = "내용",
-    description: String = "",
     primaryButtonTitle: String = "확인",
     primaryButtonAction: (() -> Void)? = nil
   ) -> some View {
     modifier(PopupModifier(
-      isPresented: isPresented,
-      title: title,
-      contents: contents,
-      description: description,
-      primaryButtonTitle: primaryButtonTitle,
-      secondaryButtonTitle: "",
       primaryButtonAction: primaryButtonAction,
       secondaryButtonAction: nil
     ))
