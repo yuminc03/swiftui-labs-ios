@@ -21,7 +21,6 @@ struct RootView: View {
           PrimaryButton {
             
           }
-          TextField("textField", text: $sampleText, prompt: Text("입력"))
           HStack(spacing: 10) {
             PrimaryButton(
               title: "취소",
@@ -36,7 +35,7 @@ struct RootView: View {
             ) {
               
             }
-            .disabled(sampleText.count > 5)
+            .disabled(sampleText.isEmpty)
           }
           PrimaryButton(title: "저장하기", backgroundColor: .blue) {
             
