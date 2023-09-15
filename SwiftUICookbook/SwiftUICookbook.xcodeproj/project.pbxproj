@@ -12,6 +12,10 @@
 		051959F92AA171C000AA311E /* AnimatePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959F82AA171C000AA311E /* AnimatePosition.swift */; };
 		051959FB2AA175BC00AA311E /* AnimateRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959FA2AA175BC00AA311E /* AnimateRotation.swift */; };
 		051959FD2AA176D100AA311E /* AnimateViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051959FC2AA176D100AA311E /* AnimateViewSize.swift */; };
+		05239D512AB3F3C000E596A1 /* ObservableObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239D502AB3F3C000E596A1 /* ObservableObjectView.swift */; };
+		05239D532AB3F88000E596A1 /* EnvironmentObjectViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239D522AB3F88000E596A1 /* EnvironmentObjectViews.swift */; };
+		05239D552AB40C9100E596A1 /* StateObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239D542AB40C9100E596A1 /* StateObjectView.swift */; };
+		05239D572AB416D200E596A1 /* WithCombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239D562AB416D200E596A1 /* WithCombineView.swift */; };
 		055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4552AA00E8800943414 /* SwiftUICookbookApp.swift */; };
 		055CA4582AA00E8800943414 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA4572AA00E8800943414 /* ContentView.swift */; };
 		055CA45A2AA00E8A00943414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055CA4592AA00E8A00943414 /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 		051959F82AA171C000AA311E /* AnimatePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatePosition.swift; sourceTree = "<group>"; };
 		051959FA2AA175BC00AA311E /* AnimateRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateRotation.swift; sourceTree = "<group>"; };
 		051959FC2AA176D100AA311E /* AnimateViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewSize.swift; sourceTree = "<group>"; };
+		05239D502AB3F3C000E596A1 /* ObservableObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectView.swift; sourceTree = "<group>"; };
+		05239D522AB3F88000E596A1 /* EnvironmentObjectViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectViews.swift; sourceTree = "<group>"; };
+		05239D542AB40C9100E596A1 /* StateObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectView.swift; sourceTree = "<group>"; };
+		05239D562AB416D200E596A1 /* WithCombineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCombineView.swift; sourceTree = "<group>"; };
 		055CA4522AA00E8800943414 /* SwiftUICookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055CA4552AA00E8800943414 /* SwiftUICookbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICookbookApp.swift; sourceTree = "<group>"; };
 		055CA4572AA00E8800943414 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 				8DB3DC4D2AA8C1D30049767C /* LazyGridView.swift */,
 				8DB3DC4F2AA8C5110049767C /* ViewModifierTest.swift */,
 				05E5409D2AB2DE8900488D5E /* StateView.swift */,
+				05239D502AB3F3C000E596A1 /* ObservableObjectView.swift */,
+				05239D522AB3F88000E596A1 /* EnvironmentObjectViews.swift */,
+				05239D542AB40C9100E596A1 /* StateObjectView.swift */,
+				05239D562AB416D200E596A1 /* WithCombineView.swift */,
 				055CA4592AA00E8A00943414 /* Assets.xcassets */,
 				055CA45B2AA00E8A00943414 /* Preview Content */,
 			);
@@ -324,12 +336,16 @@
 				055CA4802AA00F2E00943414 /* RocketShape.swift in Sources */,
 				051959FB2AA175BC00AA311E /* AnimateRotation.swift in Sources */,
 				8DB3DC482AA8A8540049767C /* ShadowsView.swift in Sources */,
+				05239D512AB3F3C000E596A1 /* ObservableObjectView.swift in Sources */,
+				05239D552AB40C9100E596A1 /* StateObjectView.swift in Sources */,
 				055CA4822AA01D4700943414 /* OnboardingView.swift in Sources */,
 				8DB3DC4A2AA8B6920049767C /* ClipShapeView.swift in Sources */,
 				8DE1A5252AA468B400AA0294 /* AddImageView.swift in Sources */,
 				8DB3DC502AA8C5110049767C /* ViewModifierTest.swift in Sources */,
 				05A3C3DD2AA7126D000E746D /* FormView.swift in Sources */,
 				055CA4582AA00E8800943414 /* ContentView.swift in Sources */,
+				05239D532AB3F88000E596A1 /* EnvironmentObjectViews.swift in Sources */,
+				05239D572AB416D200E596A1 /* WithCombineView.swift in Sources */,
 				055CA4562AA00E8800943414 /* SwiftUICookbookApp.swift in Sources */,
 				055CA4862AA024E800943414 /* LineChartView.swift in Sources */,
 				051959F92AA171C000AA311E /* AnimatePosition.swift in Sources */,
