@@ -9,26 +9,15 @@ import SwiftUI
 
 struct PrimaryButton: View {
   private let title: String
-  private let titleColor: Color
-  private let titleFont: Font
-  private let backgroundColor: Color
-  private let disableColor: Color
+  private var titleColor: Color = .white
+  private var titleFont: Font = .headline
+  private var backgroundColor: Color = Color("green_07D329")
+  private var disableColor: Color = Color("green_07D329")
   private let action: () -> Void
   @Environment(\.isEnabled) var isEnabled
   
-  init(
-    title: String = "확인",
-    titleColor: Color = .white,
-    titleFont: Font = .headline,
-    backgroundColor: Color = Color("green_07D329"),
-    disableColor: Color = Color("green_07D329"),
-    action: @escaping () -> Void
-  ) {
+  init(title: String = "확인", action: @escaping () -> Void) {
     self.title = title
-    self.titleColor = titleColor
-    self.titleFont = titleFont
-    self.backgroundColor = backgroundColor
-    self.disableColor = disableColor
     self.action = action
   }
   
@@ -37,11 +26,12 @@ struct PrimaryButton: View {
       action()
     } label: {
       Text(title)
-        .customButtonStyle(
-          backgroundColor: isEnabled ? backgroundColor : disableColor,
-          foregroundColor: titleColor,
-          titleFont: titleFont
-        )
+        .foregroundColor(titleColor)
+        .font(titleFont)
+        .padding(.vertical, 20)
+        .frame(maxWidth: .infinity)
+        .background(isEnabled ? backgroundColor : disableColor)
+        .cornerRadius(10)
     }
     .animation(.linear(duration: 0.5), value: isEnabled)
   }
@@ -55,4 +45,8 @@ struct PrimaryButton_Previews: PreviewProvider {
     .disabled(false)
     .previewLayout(.sizeThatFits)
   }
+}
+
+extension PrimaryButton {
+  
 }

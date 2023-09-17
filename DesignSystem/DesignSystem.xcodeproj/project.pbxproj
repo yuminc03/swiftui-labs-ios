@@ -19,7 +19,6 @@
 		8D1BBC0B2AACC32F00F2A334 /* DesignSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBC0A2AACC32F00F2A334 /* DesignSystemUITests.swift */; };
 		8D1BBC0D2AACC32F00F2A334 /* DesignSystemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BBC0C2AACC32F00F2A334 /* DesignSystemUITestsLaunchTests.swift */; };
 		8D2609302AAF4DF900C383E5 /* CustomButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D26092F2AAF4DF900C383E5 /* CustomButtonModifier.swift */; };
-		8D2609322AAF4FCF00C383E5 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2609312AAF4FCF00C383E5 /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 		8D1BBC0A2AACC32F00F2A334 /* DesignSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemUITests.swift; sourceTree = "<group>"; };
 		8D1BBC0C2AACC32F00F2A334 /* DesignSystemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8D26092F2AAF4DF900C383E5 /* CustomButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonModifier.swift; sourceTree = "<group>"; };
-		8D2609312AAF4FCF00C383E5 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +126,6 @@
 			children = (
 				8D1BBBEF2AACC32D00F2A334 /* DesignSystemApp.swift */,
 				05FD39582AAFF206004A4FC4 /* ViewModifier */,
-				8D2609312AAF4FCF00C383E5 /* Color+.swift */,
 				8D1AFAF42AAE0470000C763D /* View */,
 				8D1BBBF32AACC32E00F2A334 /* Assets.xcassets */,
 				8D1BBBF52AACC32E00F2A334 /* Preview Content */,
@@ -292,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1BBBF22AACC32D00F2A334 /* RootView.swift in Sources */,
-				8D2609322AAF4FCF00C383E5 /* Color+.swift in Sources */,
 				8D1BBBF02AACC32D00F2A334 /* DesignSystemApp.swift in Sources */,
 				8D1AFAF62AAE049B000C763D /* CustomPopupView.swift in Sources */,
 				05FD395D2AB01FD6004A4FC4 /* PopupModifier.swift in Sources */,
