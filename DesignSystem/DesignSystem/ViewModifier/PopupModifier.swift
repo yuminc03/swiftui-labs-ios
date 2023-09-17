@@ -13,7 +13,6 @@ struct PopupModifier: ViewModifier {
   let secondaryButtonAction: (() -> Void)?
   
   func body(content: Content) -> some View {
-    /// zStack을 여기에 넣기
     ZStack {
       content
       CustomPopupView(

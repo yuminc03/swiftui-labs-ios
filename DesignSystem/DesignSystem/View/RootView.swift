@@ -108,22 +108,15 @@ struct RootView: View {
           
         }
         HStack(spacing: 10) {
-          PrimaryButton(
-            title: "취소",
-            backgroundColor: Color("gray_B0B0B0"),
-            disableColor: Color("gray_909090")
-          ) {
+          PrimaryButton {
             
           }
-          PrimaryButton(
-            title: "확인",
-            disableColor: Color("gray_909090")
-          ) {
+          PrimaryButton {
             
           }
           .disabled(sampleText.isEmpty)
         }
-        PrimaryButton(title: "저장하기", backgroundColor: .blue) {
+        PrimaryButton {
           
         }
       }

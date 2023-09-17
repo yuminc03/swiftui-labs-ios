@@ -98,18 +98,14 @@ extension CustomPopupView {
   }
   
   private func primaryButton(_ item: PopupItem) -> some View {
-    PrimaryButton(title: item.primaryButtonTitle) {
+    PrimaryButton(title: "확인") {
       dismissAction()
       primaryButtonAction?()
     }
   }
   
   private func secondaryButton(_ item: PopupItem) -> some View {
-    PrimaryButton(
-      title: item.secondaryButtonTitle,
-      backgroundColor: Color("gray_B0B0B0"),
-      disableColor: Color("gray_B0B0B0")
-    ) {
+    PrimaryButton(title: "취소") {
       dismissAction()
       secondaryButtonAction?()
     }
