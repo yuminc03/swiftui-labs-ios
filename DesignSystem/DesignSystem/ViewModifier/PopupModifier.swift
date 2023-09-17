@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct PopupModifier: ViewModifier {
-  @Binding var item: Bool
-  let title: String
-  let contents: String
-  let description: String
-  let primaryButtonTitle: String
-  let secondaryButtonTitle: String
+  @Binding var item: PopupItem?
   let primaryButtonAction: (() -> Void)?
   let secondaryButtonAction: (() -> Void)?
   
@@ -22,36 +17,35 @@ struct PopupModifier: ViewModifier {
     ZStack {
       content
       CustomPopupView(
-        isPresented: $isPresented,
-        title: title,
-        contents: contents,
-        description: description,
-        primaryButtonTitle: primaryButtonTitle,
-        secondaryButtonTitle: secondaryButtonTitle,
+        item: $item,
         primaryButtonAction: primaryButtonAction,
         secondaryButtonAction: secondaryButtonAction
       )
-      .animation(.spring(), value: isPresented)
+      .animation(.spring(), value: item)
     }
   }
 }
 
 extension View {
   func customAlert(
-    item: Binding<AlertItem?>
+    item: Binding<PopupItem?>,
+    primaryButtonAction: (() -> Void)?,
+    secondaryButtonAction: (() -> Void)?
   ) -> some View {
     modifier(PopupModifier(
+      item: item,
       primaryButtonAction: primaryButtonAction,
       secondaryButtonAction: secondaryButtonAction
     ))
   }
   
   func customConfirm(
-    isPresented: Binding<Bool>,
-    primaryButtonTitle: String = "확인",
-    primaryButtonAction: (() -> Void)? = nil
+    item: Binding<PopupItem?>,
+    primaryButtonAction: (() -> Void)?,
+    secondaryButtonAction: (() -> Void)?
   ) -> some View {
     modifier(PopupModifier(
+      item: item,
       primaryButtonAction: primaryButtonAction,
       secondaryButtonAction: nil
     ))
