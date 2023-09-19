@@ -10,7 +10,7 @@ import SwiftUI
 
 class JokeFetcher: ObservableObject {
   @Published var joke: String = ""
-  private var cancellable: AnyCancellable?
+  private var cancelBag: AnyCancellable?
   private let jokes = [
     "Why don't scientists trust atoms? Because they make up everything!",
     "Why did the bicycle fall over? Because it was two tired!",
@@ -25,7 +25,7 @@ class JokeFetcher: ObservableObject {
   }
   
   deinit {
-    cancellable?.cancel()
+    cancelBag?.cancel()
   }
 }
 
