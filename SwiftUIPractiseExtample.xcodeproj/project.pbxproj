@@ -97,6 +97,7 @@
 		8D1DAC3B2A964B6A00144888 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */; };
 		8D1DAC3D2A964CB000144888 /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3C2A964CB000144888 /* HikeBadge.swift */; };
 		8D1DAC3F2A9652F500144888 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DAC3E2A9652F500144888 /* ProfileEditor.swift */; };
+		8D238C922ACBAFEF00D3DFDD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D238C912ACBAFEF00D3DFDD /* XCTest.framework */; };
 		8D2609352AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2609342AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift */; };
 		8D261E6B2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */; };
 		8D2C03D42A8B40F400F0131E /* CounterFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */; };
@@ -268,6 +269,7 @@
 		8D1DAC3A2A964B6A00144888 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		8D1DAC3C2A964CB000144888 /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
 		8D1DAC3E2A9652F500144888 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		8D238C912ACBAFEF00D3DFDD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8D2609342AAF554000C383E5 /* SwiftUIPractiseExtampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIPractiseExtampleTests.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 		8D2C03D12A8B40F400F0131E /* CounterFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterFeatureView.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D238C922ACBAFEF00D3DFDD /* XCTest.framework in Frameworks */,
 				8D6806C62A892B0F000FAC57 /* ComposableArchitecture in Frameworks */,
 				8D4D3D332A3DE29B009A64F6 /* Alamofire in Frameworks */,
 			);
@@ -634,6 +637,14 @@
 			path = Profiles;
 			sourceTree = "<group>";
 		};
+		8D238C902ACBAFEF00D3DFDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D238C912ACBAFEF00D3DFDD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D2609332AAF554000C383E5 /* SwiftUIPractiseExtampleTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +806,7 @@
 				8D658A6129EEE30300928C68 /* SwiftUIPractiseExtample */,
 				8D2609332AAF554000C383E5 /* SwiftUIPractiseExtampleTests */,
 				8D658A6029EEE30300928C68 /* Products */,
+				8D238C902ACBAFEF00D3DFDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1213,7 +1225,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -1235,7 +1247,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 54V3G99LL8;
+				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
