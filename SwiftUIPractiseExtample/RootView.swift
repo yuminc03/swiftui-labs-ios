@@ -106,18 +106,6 @@ struct RootView: View {
                       Text("HikeView")
                   }
                 }
-                Section("🍑 TCA Tutorials") {
-                    NavigationLink {
-                        CounterFeatureView()
-                    } label: {
-                        Text("Counter")
-                    }
-                    NavigationLink {
-                        ContactsFeatureView()
-                    } label: {
-                        Text("Contacts")
-                    }
-                }
                 Section("🍎 iOS Team Challenge") {
                     NavigationLink(destination: RectanglePictureView()) {
                         Text("Rectangle Picture")
