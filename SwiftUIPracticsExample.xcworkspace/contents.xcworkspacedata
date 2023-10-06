@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TCAFruitScore/TCAFruitScore.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TCATutorials/TCATutorials.xcodeproj">
    </FileRef>
    <FileRef
