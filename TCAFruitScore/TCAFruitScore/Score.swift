@@ -14,5 +14,9 @@ struct Score: Identifiable, Equatable {
   let name: String
   let score: Int
   
-  
+  static let dummy: [Score] = [
+    .init(name: "사과는 1점", score: 1),
+    .init(name: "메론은 10점", score: 10),
+    .init(name: "키위는 100점", score: 100)
+  ]
 }
