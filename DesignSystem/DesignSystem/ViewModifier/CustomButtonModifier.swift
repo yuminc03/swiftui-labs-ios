@@ -28,7 +28,16 @@ struct CustomButtonTitleColorModifier: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-      .foregroundColor(color)
+      .buttonStyle(ButtonTitleColor(color: color))
+  }
+}
+
+struct CustomButtonBackgroundColorModifier: ViewModifier {
+  let color: Color
+  
+  func body(content: Content) -> some View {
+    content
+      .background(color)
   }
 }
 
@@ -47,5 +56,9 @@ extension View {
   
   func titleColor(_ color: Color) -> some View {
     modifier(CustomButtonTitleColorModifier(color: color))
+  }
+  
+  func backgroundColor(_ color: Color) -> some View {
+    modifier(CustomButtonBackgroundColorModifier(color: color))
   }
 }
