@@ -109,6 +109,7 @@ extension CustomPopupView {
       dismissAction()
       secondaryButtonAction?()
     }
+    .titleColor(.blue)
   }
   
   private func dismissAction() {

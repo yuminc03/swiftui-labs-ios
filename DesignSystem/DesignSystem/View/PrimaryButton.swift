@@ -37,6 +37,8 @@ struct PrimaryButton: View {
   }
 }
 
+// 버튼 속성을 바꿀 때 메서드로 바꾸는 법
+// PopupItem 바꿔보기
 struct PrimaryButton_Previews: PreviewProvider {
   static var previews: some View {
     PrimaryButton {
@@ -45,8 +47,4 @@ struct PrimaryButton_Previews: PreviewProvider {
     .disabled(false)
     .previewLayout(.sizeThatFits)
   }
-}
-
-extension PrimaryButton {
-  
 }
