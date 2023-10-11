@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */; };
 		8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */; };
 		8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1E2AD571EA0030D21D /* RootView.swift */; };
 		8DBBDB212AD571EA0030D21D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBBDB202AD571EA0030D21D /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +156,9 @@
 			dependencies = (
 			);
 			name = TCAExample;
+			packageProductDependencies = (
+				8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */,
+			);
 			productName = TCAExample;
 			productReference = 8DBBDB192AD571EA0030D21D /* TCAExample.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 8DBBDB102AD571EA0030D21D;
+			packageReferences = (
+				8D62D6F32AD6D54D00C410DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 8DBBDB1A2AD571EA0030D21D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -597,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D62D6F32AD6D54D00C410DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D62D6F32AD6D54D00C410DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DBBDB112AD571EA0030D21D /* Project object */;
 }

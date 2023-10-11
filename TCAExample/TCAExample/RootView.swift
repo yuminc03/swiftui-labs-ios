@@ -13,7 +13,7 @@ struct RootView: View {
       Form {
         Section {
           NavigationLink {
-            CounterView()
+            CounterDemoView()
           } label: {
             Text("Basics")
           }
@@ -22,6 +22,7 @@ struct RootView: View {
           Text("Getting started")
         }
       }
+      .navigationTitle("SwiftUI TCA")
     }
   }
 }
