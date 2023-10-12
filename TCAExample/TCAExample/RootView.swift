@@ -15,9 +15,13 @@ struct RootView: View {
           NavigationLink {
             CounterDemoView()
           } label: {
-            Text("Basics")
+            Text("Basics - Counter")
           }
-          
+          NavigationLink {
+            TwoCountersView()
+          } label: {
+            Text("Combining reducers - Two Counters")
+          }
         } header: {
           Text("Getting started")
         }
