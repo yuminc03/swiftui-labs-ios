@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */; };
+		8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */; };
 		8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */; };
 		8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1E2AD571EA0030D21D /* RootView.swift */; };
 		8DBBDB212AD571EA0030D21D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBBDB202AD571EA0030D21D /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCountersView.swift; sourceTree = "<group>"; };
 		8DBBDB192AD571EA0030D21D /* TCAExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCAExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAExampleApp.swift; sourceTree = "<group>"; };
 		8DBBDB1E2AD571EA0030D21D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				8DBBDB472AD5728F0030D21D /* CounterView.swift */,
+				8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */,
 				8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */,
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
 				8DBBDB482AD5728F0030D21D /* CounterView.swift in Sources */,
