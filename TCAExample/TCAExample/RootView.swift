@@ -22,7 +22,11 @@ struct RootView: View {
           } label: {
             Text("Combining reducers - Two Counters")
           }
-          
+          NavigationLink {
+            BindingBasicsView()
+          } label: {
+            Text("Bindings - Binding Basics")
+          }
         } header: {
           Text("Getting started")
         }
