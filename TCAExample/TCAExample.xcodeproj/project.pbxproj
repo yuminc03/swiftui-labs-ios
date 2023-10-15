@@ -18,6 +18,7 @@
 		8DBBDB3A2AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB392AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift */; };
 		8DBBDB482AD5728F0030D21D /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB472AD5728F0030D21D /* CounterView.swift */; };
 		8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */; };
+		8DFE07EF2ADBBD7500F511E3 /* BindingFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8DBBDB392AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DBBDB472AD5728F0030D21D /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingBasicsView.swift; sourceTree = "<group>"; };
+		8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,8 @@
 				8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */,
 				8DBBDB1E2AD571EA0030D21D /* RootView.swift */,
 				8DBBDB462AD572800030D21D /* Counter */,
+				8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */,
+				8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */,
 				8DBBDB202AD571EA0030D21D /* Assets.xcassets */,
 				8DBBDB222AD571EA0030D21D /* Preview Content */,
 			);
@@ -141,7 +145,6 @@
 			children = (
 				8DBBDB472AD5728F0030D21D /* CounterView.swift */,
 				8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */,
-				8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFE07EF2ADBBD7500F511E3 /* BindingFormView.swift in Sources */,
 				8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */,
 				8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */,
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
