@@ -17,16 +17,25 @@ struct RootView: View {
           } label: {
             Text("Basics - Counter")
           }
+          
           NavigationLink {
             TwoCountersView()
           } label: {
             Text("Combining reducers - Two Counters")
           }
+          
           NavigationLink {
             BindingBasicsView()
           } label: {
             Text("Bindings - Binding Basics")
           }
+          
+          NavigationLink {
+            BindingFormView()
+          } label: {
+            Text("Form binding - Binding form")
+          }
+
         } header: {
           Text("Getting started")
         }
