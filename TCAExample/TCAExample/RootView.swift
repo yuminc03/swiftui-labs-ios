@@ -35,7 +35,14 @@ struct RootView: View {
           } label: {
             Text("Form binding - Binding form")
           }
+          
+          NavigationLink {
+            OptionalBasicsView()
+          } label: {
+            Text("Optional state - Toggle counter state")
+          }
 
+          
         } header: {
           Text("Getting started")
         }
