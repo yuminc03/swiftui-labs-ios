@@ -179,7 +179,12 @@ struct SharedStateView: View {
       }
       
       if viewStore.state == .profile {
-        
+        SharedStateProfileView(
+          store: store.scope(
+            state: \.profile,
+            action: { .profile($0) }
+          )
+        )
       }
     }
     .padding(20)
@@ -188,7 +193,9 @@ struct SharedStateView: View {
 
 struct SharedStateView_Previews: PreviewProvider {
   static var previews: some View {
-    SharedStateView()
+    NavigationView {
+      SharedStateView()
+    }
   }
 }
 
@@ -225,24 +232,46 @@ struct SharedStateCounterView: View {
         } label: {
           Image(systemName: "minus")
         }
-        
         Text("\(viewStore.count)")
           .monospacedDigit()
-        
         Button {
           store.send(.didTapIncrementButton)
         } label: {
           Image(systemName: "plus")
         }
       }
-      
       Button("Is this prime?") {
         viewStore.send(.didTapIsPrimeButton)
       }
-      
       Spacer()
     }
     .navigationTitle("Shared State Demo")
     .alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
+  }
+}
+
+struct SharedStateProfileView: View {
+  private let store: StoreOf<SharedStateCore.Profile>
+  @ObservedObject private var viewStore: ViewStoreOf<SharedStateCore.Profile>
+  
+  init(store: StoreOf<SharedStateCore.Profile>) {
+    self.store = store
+    self.viewStore = ViewStore(store, observe: { $0 })
+  }
+  
+  var body: some View {
+    VStack(spacing: 20) {
+      Spacer()
+      Text("Current count: \(viewStore.count)")
+      Text("Max count: \(viewStore.maxCount)")
+      Text("Min count: \(viewStore.minCount)")
+      Text("Total number of count events: \(viewStore.numberOfCounts)")
+      Button("Reset") {
+        viewStore.send(.reset)
+      }
+      Spacer()
+    }
+    .padding(20)
+    .navigationTitle("Profile")
   }
 }
