@@ -10,6 +10,7 @@
 		8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */; };
 		8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */; };
 		8D8D87402ADD520B007C3C55 /* OptionalBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */; };
+		8D8D87422ADD6A16007C3C55 /* SharedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */; };
 		8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */; };
 		8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1E2AD571EA0030D21D /* RootView.swift */; };
 		8DBBDB212AD571EA0030D21D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBBDB202AD571EA0030D21D /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCountersView.swift; sourceTree = "<group>"; };
 		8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBasicsView.swift; sourceTree = "<group>"; };
+		8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStateView.swift; sourceTree = "<group>"; };
 		8DBBDB192AD571EA0030D21D /* TCAExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCAExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAExampleApp.swift; sourceTree = "<group>"; };
 		8DBBDB1E2AD571EA0030D21D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */,
 				8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */,
 				8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */,
+				8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */,
 				8DBBDB202AD571EA0030D21D /* Assets.xcassets */,
 				8DBBDB222AD571EA0030D21D /* Preview Content */,
 			);
@@ -291,6 +294,7 @@
 				8DFE07EF2ADBBD7500F511E3 /* BindingFormView.swift in Sources */,
 				8D8D87402ADD520B007C3C55 /* OptionalBasicsView.swift in Sources */,
 				8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */,
+				8D8D87422ADD6A16007C3C55 /* SharedStateView.swift in Sources */,
 				8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */,
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
 				8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */,

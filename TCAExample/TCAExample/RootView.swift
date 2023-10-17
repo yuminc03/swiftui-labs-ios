@@ -42,7 +42,12 @@ struct RootView: View {
             Text("Optional state - Toggle counter state")
           }
 
-          
+          NavigationLink {
+            SharedStateView()
+          } label: {
+            Text("Shared state")
+          }
+
         } header: {
           Text("Getting started")
         }
