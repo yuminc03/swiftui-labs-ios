@@ -170,7 +170,12 @@ struct SharedStateView: View {
       .pickerStyle(.segmented)
       
       if viewStore.state == .counter {
-        
+        SharedStateCounterView(
+          store: store.scope(
+            state: \.counter,
+            action: { .counter($0) }
+          )
+        )
       }
       
       if viewStore.state == .profile {
@@ -202,3 +207,42 @@ private func isPrime(_ number: Int) -> Bool {
   return true
 }
 
+struct SharedStateCounterView: View {
+  private let store: StoreOf<SharedStateCore.Counter>
+  @ObservedObject private var viewStore: ViewStoreOf<SharedStateCore.Counter>
+  
+  init(store: StoreOf<SharedStateCore.Counter>) {
+    self.store = store
+    self.viewStore = ViewStore(store, observe: { $0 })
+  }
+  
+  var body: some View {
+    VStack(spacing: 20) {
+      Spacer()
+      HStack(spacing: 10) {
+        Button {
+          store.send(.didTapDecrementButton)
+        } label: {
+          Image(systemName: "minus")
+        }
+        
+        Text("\(viewStore.count)")
+          .monospacedDigit()
+        
+        Button {
+          store.send(.didTapIncrementButton)
+        } label: {
+          Image(systemName: "plus")
+        }
+      }
+      
+      Button("Is this prime?") {
+        viewStore.send(.didTapIsPrimeButton)
+      }
+      
+      Spacer()
+    }
+    .navigationTitle("Shared State Demo")
+    .alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
+  }
+}
