@@ -47,10 +47,21 @@ struct RootView: View {
           } label: {
             Text("Shared state")
           }
-
         } header: {
           Text("Getting started")
         }
+        
+        Section {
+          NavigationLink {
+            EffectBasicsView()
+          } label: {
+            Text("Basics - Fact Button")
+          }
+
+        } header: {
+          Text("Effects")
+        }
+
       }
       .navigationTitle("SwiftUI TCA")
     }
