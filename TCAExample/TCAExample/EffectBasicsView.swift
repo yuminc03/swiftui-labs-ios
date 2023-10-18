@@ -61,7 +61,7 @@ struct EffectBasicsView: View {
       EffectBasicsCore()
     }
     self.store = store
-    self.viewStore = ViewStore(store, observe: { $0 })
+    self.viewStore = .init(store, observe: { $0 })
   }
   
   var body: some View {
