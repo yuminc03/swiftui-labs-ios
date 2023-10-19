@@ -21,6 +21,13 @@ struct EffectBasicsCore: Reducer {
     case didTapPlusButton
     case didTapNumberFactButton
     case numberFactResponse(TaskResult<String>)
+    case decrementDelayResponse
+  }
+  
+  @Dependency(\.factClient) var factClient
+  @Dependency(\.continuousClock) var clock
+  private enum CancelID {
+    case delay
   }
   
   func reduce(into state: inout State, action: Action) -> Effect<Action> {
@@ -28,17 +35,32 @@ struct EffectBasicsCore: Reducer {
     case .didTapMinusButton:
       state.count -= 1
       state.numberFact = nil
-      return .none
+      return state.count >= 0 ? .none : .run { send in
+        try await clock.sleep(for: .seconds(1))
+        await send(.decrementDelayResponse)
+      }
+      .cancellable(id: CancelID.delay)
       
     case .didTapPlusButton:
       state.count += 1
       state.numberFact = nil
       return .none
       
+    case .decrementDelayResponse:
+      if state.count < 0 {
+        state.count += 1
+      }
+      return .none
+      
     case .didTapNumberFactButton:
       state.isNumberFactLoading = true
       state.numberFact = nil
-      return .none
+      return .run { [state] send in
+        await send(.numberFactResponse(TaskResult {
+          try await factClient.fetch(state.count)
+        }))
+      }
+      .cancellable(id: CancelID.delay)
       
     case let .numberFactResponse(.success(fact)):
       state.isNumberFactLoading = false
@@ -91,7 +113,8 @@ struct EffectBasicsView: View {
         .frame(maxWidth: .infinity)
         
         if viewStore.isNumberFactLoading {
-          
+          ProgressView()
+            .frame(maxWidth: .infinity)
         }
 
         if let numberFact = viewStore.numberFact {
