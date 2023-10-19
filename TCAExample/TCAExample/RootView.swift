@@ -55,9 +55,14 @@ struct RootView: View {
           NavigationLink {
             EffectBasicsView()
           } label: {
-            Text("Basics - Fact Button")
+            Text("Basics - Number Fact")
           }
-
+          
+          NavigationLink {
+            EffectsCancellationView()
+          } label: {
+            Text("Cancellation - Stepper Number Fact")
+          }
         } header: {
           Text("Effects")
         }
