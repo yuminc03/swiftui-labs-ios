@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05A0C5F62AE0B617006F1B82 /* FactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0C5F52AE0B617006F1B82 /* FactClient.swift */; };
+		05A0C5F92AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0C5F82AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift */; };
 		8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */; };
 		8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */; };
 		8D8D87402ADD520B007C3C55 /* OptionalBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		05A0C5F52AE0B617006F1B82 /* FactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactClient.swift; sourceTree = "<group>"; };
 		05A0C5F72AE0BB80006F1B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		05A0C5F82AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAndConfirmationDialogView.swift; sourceTree = "<group>"; };
 		8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCountersView.swift; sourceTree = "<group>"; };
 		8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBasicsView.swift; sourceTree = "<group>"; };
 		8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStateView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */,
 				8D8D87442AE01A24007C3C55 /* EffectBasicsView.swift */,
 				8D8D87462AE026B2007C3C55 /* EffectsCancellationView.swift */,
+				05A0C5F82AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift */,
 				05A0C5F52AE0B617006F1B82 /* FactClient.swift */,
 				8DBBDB202AD571EA0030D21D /* Assets.xcassets */,
 				8DBBDB222AD571EA0030D21D /* Preview Content */,
@@ -312,6 +315,7 @@
 				8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */,
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
 				8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */,
+				05A0C5F92AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift in Sources */,
 				8DBBDB482AD5728F0030D21D /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

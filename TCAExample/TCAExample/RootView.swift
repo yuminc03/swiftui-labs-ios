@@ -45,8 +45,15 @@ struct RootView: View {
           NavigationLink {
             SharedStateView()
           } label: {
-            Text("Shared state")
+            Text("Shared state - Two States")
           }
+          
+          NavigationLink {
+            AlertAndConfirmationDialogView()
+          } label: {
+              Text("Alerts and Confirmation Dialogs - Increase & Decrease count")
+          }
+
         } header: {
           Text("Getting started")
         }
