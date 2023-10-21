@@ -70,6 +70,12 @@ struct RootView: View {
           } label: {
             Text("Cancellation - Stepper Number Fact")
           }
+          
+          NavigationLink {
+            RefreshableView()
+          } label: {
+            Text("Refreshable - Refresh Counter")
+          }
         } header: {
           Text("Effects")
         }
