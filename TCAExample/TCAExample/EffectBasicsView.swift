@@ -106,6 +106,7 @@ struct EffectBasicsView: View {
           }
         }
         .frame(maxWidth: .infinity)
+        .buttonStyle(.borderless)
         
         Button("Number fact") {
           viewStore.send(.didTapNumberFactButton)
