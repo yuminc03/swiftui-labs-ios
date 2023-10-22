@@ -80,6 +80,13 @@ struct RootView: View {
           Text("Effects")
         }
 
+        Section {
+          NavigationLink {
+            NavigateAndLoadView()
+          } label: {
+            Text("Navigate and load data")
+          }
+        }
       }
       .navigationTitle("SwiftUI TCA")
     }
