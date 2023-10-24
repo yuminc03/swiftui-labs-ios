@@ -86,6 +86,8 @@ struct RootView: View {
           } label: {
             Text("Navigate and load data")
           }
+        } header: {
+          Text("Stack")
         }
       }
       .navigationTitle("SwiftUI TCA")
