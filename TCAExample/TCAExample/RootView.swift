@@ -53,6 +53,12 @@ struct RootView: View {
           } label: {
               Text("Alerts and Confirmation Dialogs - Increase & Decrease count")
           }
+          
+          NavigationLink {
+            FocusDemoView()
+          } label: {
+            Text("Focus State - Focused TextField")
+          }
 
         } header: {
           Text("Getting started")
