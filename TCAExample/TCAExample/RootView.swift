@@ -59,7 +59,12 @@ struct RootView: View {
           } label: {
             Text("Focus State - Focused TextField")
           }
-
+          
+          NavigationLink {
+            
+          } label: {
+            Text("Animation - Spring Ball")
+          }
         } header: {
           Text("Getting started")
         }
