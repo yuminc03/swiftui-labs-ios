@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
+  @State var isNavigationStackCaseStudyPresented = false
+  
   var body: some View {
     NavigationStack {
       Form {
@@ -59,7 +61,12 @@ struct RootView: View {
           } label: {
             Text("Focus State - Focused TextField")
           }
-
+          
+          NavigationLink {
+            AnimationsView()
+          } label: {
+            Text("Animation - Spring Ball")
+          }
         } header: {
           Text("Getting started")
         }
@@ -78,15 +85,38 @@ struct RootView: View {
           }
           
           NavigationLink {
+            LongLivingEffectsView()
+          } label: {
+            Text("Long-living effects - Screenshot")
+          }
+          
+          NavigationLink {
             RefreshableView()
           } label: {
             Text("Refreshable - Refresh Counter")
+          }
+          
+          NavigationLink {
+            TimersView()
+          } label: {
+            Text("Timers - Rainbow Alalog Clock")
+          }
+          
+          NavigationLink {
+            WebSocketView()
+          } label: {
+            Text("Web socket - Send Message")
           }
         } header: {
           Text("Effects")
         }
 
         Section {
+          Button("Stack") {
+            isNavigationStackCaseStudyPresented = true
+          }
+          .buttonStyle(.plain)
+          
           NavigationLink {
             NavigateAndLoadView()
           } label: {
@@ -97,6 +127,9 @@ struct RootView: View {
         }
       }
       .navigationTitle("SwiftUI TCA")
+      .sheet(isPresented: $isNavigationStackCaseStudyPresented) {
+        NavigationDemoView()
+      }
     }
   }
 }
