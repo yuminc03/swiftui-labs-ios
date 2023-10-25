@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
+  @State var isNavigationStackCaseStudyPresented = false
+  
   var body: some View {
     NavigationStack {
       Form {
@@ -110,6 +112,11 @@ struct RootView: View {
         }
 
         Section {
+          Button("Stack") {
+            isNavigationStackCaseStudyPresented = true
+          }
+          .buttonStyle(.plain)
+          
           NavigationLink {
             NavigateAndLoadView()
           } label: {
@@ -120,6 +127,9 @@ struct RootView: View {
         }
       }
       .navigationTitle("SwiftUI TCA")
+      .sheet(isPresented: $isNavigationStackCaseStudyPresented) {
+        NavigationDemoView()
+      }
     }
   }
 }
