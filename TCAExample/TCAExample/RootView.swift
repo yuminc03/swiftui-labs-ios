@@ -61,7 +61,7 @@ struct RootView: View {
           }
           
           NavigationLink {
-            
+            AnimationsView()
           } label: {
             Text("Animation - Spring Ball")
           }
