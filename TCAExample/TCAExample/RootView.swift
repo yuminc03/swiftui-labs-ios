@@ -99,6 +99,12 @@ struct RootView: View {
           } label: {
             Text("Timers - Rainbow Alalog Clock")
           }
+          
+          NavigationLink {
+            WebSocketView()
+          } label: {
+            Text("Web socket - Send Message")
+          }
         } header: {
           Text("Effects")
         }

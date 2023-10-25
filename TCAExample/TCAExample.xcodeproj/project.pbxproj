@@ -13,6 +13,7 @@
 		05AF34C12AE8A30000B02548 /* LongLivingEffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF34C02AE8A30000B02548 /* LongLivingEffectsView.swift */; };
 		05AF34C32AE8AD3900B02548 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF34C22AE8AD3900B02548 /* TimersView.swift */; };
 		05AF34C52AE8B46700B02548 /* WebSocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF34C42AE8B46700B02548 /* WebSocketView.swift */; };
+		05AF34C92AE8D65A00B02548 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF34C82AE8D65A00B02548 /* WebSocketClient.swift */; };
 		8D2A78A22AE577C10036A3C3 /* NavigateAndLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A12AE577C10036A3C3 /* NavigateAndLoadView.swift */; };
 		8D2A78A52AE7F8EA0036A3C3 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A42AE7F8EA0036A3C3 /* AnimationsView.swift */; };
 		8D5302BE2AE3E35100773910 /* RefreshableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5302BD2AE3E35100773910 /* RefreshableView.swift */; };
@@ -59,6 +60,7 @@
 		05AF34C02AE8A30000B02548 /* LongLivingEffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongLivingEffectsView.swift; sourceTree = "<group>"; };
 		05AF34C22AE8AD3900B02548 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
 		05AF34C42AE8B46700B02548 /* WebSocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketView.swift; sourceTree = "<group>"; };
+		05AF34C82AE8D65A00B02548 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		8D2A78A12AE577C10036A3C3 /* NavigateAndLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateAndLoadView.swift; sourceTree = "<group>"; };
 		8D2A78A42AE7F8EA0036A3C3 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsView.swift; sourceTree = "<group>"; };
 		8D5302BD2AE3E35100773910 /* RefreshableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				05AF34C42AE8B46700B02548 /* WebSocketView.swift */,
 				8D2A78A12AE577C10036A3C3 /* NavigateAndLoadView.swift */,
 				05A0C5F52AE0B617006F1B82 /* FactClient.swift */,
+				05AF34C82AE8D65A00B02548 /* WebSocketClient.swift */,
 				8DBBDB202AD571EA0030D21D /* Assets.xcassets */,
 				8DBBDB222AD571EA0030D21D /* Preview Content */,
 			);
@@ -336,6 +339,7 @@
 				8D8D87422ADD6A16007C3C55 /* SharedStateView.swift in Sources */,
 				05AF34C52AE8B46700B02548 /* WebSocketView.swift in Sources */,
 				05AF34C12AE8A30000B02548 /* LongLivingEffectsView.swift in Sources */,
+				05AF34C92AE8D65A00B02548 /* WebSocketClient.swift in Sources */,
 				8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */,
 				8D2A78A22AE577C10036A3C3 /* NavigateAndLoadView.swift in Sources */,
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
