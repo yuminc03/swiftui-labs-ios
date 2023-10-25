@@ -93,6 +93,12 @@ struct RootView: View {
           } label: {
             Text("Refreshable - Refresh Counter")
           }
+          
+          NavigationLink {
+            TimersView()
+          } label: {
+            Text("Timers - Rainbow Alalog Clock")
+          }
         } header: {
           Text("Effects")
         }
