@@ -83,6 +83,12 @@ struct RootView: View {
           }
           
           NavigationLink {
+            LongLivingEffectsView()
+          } label: {
+            Text("Long-living effects - Screenshot")
+          }
+          
+          NavigationLink {
             RefreshableView()
           } label: {
             Text("Refreshable - Refresh Counter")
