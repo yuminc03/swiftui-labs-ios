@@ -19,6 +19,7 @@
 		8D2A78A22AE577C10036A3C3 /* NavigateAndLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A12AE577C10036A3C3 /* NavigateAndLoadView.swift */; };
 		8D2A78A52AE7F8EA0036A3C3 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A42AE7F8EA0036A3C3 /* AnimationsView.swift */; };
 		8D2A78A82AE9438E0036A3C3 /* ScreenBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A72AE9438E0036A3C3 /* ScreenBView.swift */; };
+		8D2A78AA2AE94C250036A3C3 /* ScreenCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A78A92AE94C240036A3C3 /* ScreenCView.swift */; };
 		8D5302BE2AE3E35100773910 /* RefreshableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5302BD2AE3E35100773910 /* RefreshableView.swift */; };
 		8D62D6F52AD6D54D00C410DD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D62D6F42AD6D54D00C410DD /* ComposableArchitecture */; };
 		8D62D6F92AD6E7C600C410DD /* TwoCountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */; };
@@ -69,6 +70,7 @@
 		8D2A78A12AE577C10036A3C3 /* NavigateAndLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateAndLoadView.swift; sourceTree = "<group>"; };
 		8D2A78A42AE7F8EA0036A3C3 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsView.swift; sourceTree = "<group>"; };
 		8D2A78A72AE9438E0036A3C3 /* ScreenBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBView.swift; sourceTree = "<group>"; };
+		8D2A78A92AE94C240036A3C3 /* ScreenCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCView.swift; sourceTree = "<group>"; };
 		8D5302BD2AE3E35100773910 /* RefreshableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableView.swift; sourceTree = "<group>"; };
 		8D62D6F82AD6E7C600C410DD /* TwoCountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoCountersView.swift; sourceTree = "<group>"; };
 		8D8D873F2ADD520B007C3C55 /* OptionalBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBasicsView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				05AF34CA2AE8F4BC00B02548 /* NavigationDemoView.swift */,
 				05AF34CD2AE8F93500B02548 /* ScreenAView.swift */,
 				8D2A78A72AE9438E0036A3C3 /* ScreenBView.swift */,
+				8D2A78A92AE94C240036A3C3 /* ScreenCView.swift */,
 			);
 			path = NavigationDemo;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */,
 				8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */,
 				05A0C5F92AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift in Sources */,
+				8D2A78AA2AE94C250036A3C3 /* ScreenCView.swift in Sources */,
 				05AF34CB2AE8F4BC00B02548 /* NavigationDemoView.swift in Sources */,
 				8D2A78A52AE7F8EA0036A3C3 /* AnimationsView.swift in Sources */,
 				8DBBDB482AD5728F0030D21D /* CounterView.swift in Sources */,
