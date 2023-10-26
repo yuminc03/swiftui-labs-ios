@@ -149,6 +149,12 @@ struct RootView: View {
         } header: {
           Text("Stack")
         }
+        
+        Section {
+          
+        } header: {
+          Text("Higher-order reducers")
+        }
       }
       .navigationTitle("SwiftUI TCA")
       .sheet(isPresented: $isNavigationStackCaseStudyPresented) {
