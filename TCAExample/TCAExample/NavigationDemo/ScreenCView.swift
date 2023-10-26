@@ -39,10 +39,8 @@ struct ScreenCView: View {
   private let store: StoreOf<ScreenCCore>
   @ObservedObject private var viewStore: ViewStoreOf<ScreenCCore>
   
-  init() {
-    self.store = .init(initialState: ScreenCCore.State()) {
-      ScreenCCore()
-    }
+  init(store: StoreOf<ScreenCCore>) {
+    self.store = store
     self.viewStore = .init(store, observe: { $0 })
   }
   
@@ -72,7 +70,9 @@ struct ScreenCView: View {
 struct ScreenCView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      ScreenCView()
+      ScreenCView(store: .init(initialState: ScreenCCore.State()) {
+        ScreenCCore()
+      })
     }
   }
 }
