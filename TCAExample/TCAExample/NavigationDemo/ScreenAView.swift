@@ -112,7 +112,18 @@ struct ScreenAView: View {
       }
       
       Section {
-        
+        NavigationLink(
+          "Go to screen A",
+          state: NavigationDemoCore.Path.State.screenA(.init(count: viewStore.count))
+        )
+        NavigationLink(
+          "Go to screen B",
+          state: NavigationDemoCore.Path.State.screenB()
+        )
+        NavigationLink(
+          "Go to screen C",
+          state: NavigationDemoCore.Path.State.screenC(.init(count: viewStore.count))
+        )
       }
     }
     .navigationTitle("Screen A")
