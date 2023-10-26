@@ -134,6 +134,13 @@ struct RootView: View {
           } label: {
             Text("Sheets: Present and load data")
           }
+          
+          NavigationLink {
+            LoadThenPresentView()
+          } label: {
+            Text("Sheets: Load data then present")
+          }
+
         } header: {
           Text("Stack")
         }
