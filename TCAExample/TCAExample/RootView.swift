@@ -140,7 +140,12 @@ struct RootView: View {
           } label: {
             Text("Sheets: Load data then present")
           }
-
+          
+          NavigationLink {
+            MultipleDestinationsView()
+          } label: {
+            Text("Multiple destinations")
+          }
         } header: {
           Text("Stack")
         }
