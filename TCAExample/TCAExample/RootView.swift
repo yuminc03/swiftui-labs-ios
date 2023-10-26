@@ -128,6 +128,12 @@ struct RootView: View {
           } label: {
             Text("Lists: Navigate and load data")
           }
+          
+          NavigationLink {
+            PresentAndLoadView()
+          } label: {
+            Text("Sheets: Present and load data")
+          }
         } header: {
           Text("Stack")
         }
