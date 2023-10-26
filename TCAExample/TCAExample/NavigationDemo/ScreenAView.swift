@@ -51,6 +51,7 @@ struct ScreenACore: Reducer {
       }
       
     case let .factResponse(.success(fact)):
+      state.isLoading = false
       state.fact = fact
       return .none
       

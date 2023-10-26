@@ -210,18 +210,18 @@ struct FloatingMenuView: View {
       VStack(alignment: .center) {
         Text("Total count: \(viewStore.total)")
         Button("popup to root") {
-          
+          store.send(.popToRoot, animation: .default)
         }
         Menu("Current state") {
           ForEach(viewStore.currentStack) { screen in
             Button("\(String(describing: screen.id))) \(screen.name)") {
-              
+              store.send(.goBackScreen(id: screen.id))
             }
             .disabled(screen == viewStore.currentStack.first)
           }
           
           Button("Root") {
-            
+            store.send(.popToRoot, animation: .default)
           }
         }
       }
