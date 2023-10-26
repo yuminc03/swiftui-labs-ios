@@ -122,6 +122,12 @@ struct RootView: View {
           } label: {
             Text("Navigate and load data")
           }
+          
+          NavigationLink {
+            NavigateAndLoadListView()
+          } label: {
+            Text("Lists: Navigate and load data")
+          }
         } header: {
           Text("Stack")
         }
