@@ -157,6 +157,11 @@ struct RootView: View {
             Text("Reusable favoriting component - Click Heart")
           }
           
+          NavigationLink {
+            CitiesView()
+          } label: {
+            Text("Reusable offline download component - Map Data")
+          }
         } header: {
           Text("Higher-order reducers")
         }
