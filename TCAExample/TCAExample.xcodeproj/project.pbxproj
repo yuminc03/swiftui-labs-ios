@@ -14,6 +14,7 @@
 		05652D5E2AEB4630001156C8 /* DownloadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05652D5D2AEB4630001156C8 /* DownloadClient.swift */; };
 		05652D602AEB4C81001156C8 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05652D5F2AEB4C81001156C8 /* CircularProgressView.swift */; };
 		05652D622AEB50A0001156C8 /* CityMapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05652D612AEB50A0001156C8 /* CityMapDetailView.swift */; };
+		05652D642AEB5781001156C8 /* NestedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05652D632AEB5781001156C8 /* NestedView.swift */; };
 		05A0C5F62AE0B617006F1B82 /* FactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0C5F52AE0B617006F1B82 /* FactClient.swift */; };
 		05A0C5F92AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0C5F82AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift */; };
 		05AF34BB2AE7A78700B02548 /* FocusDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF34BA2AE7A78700B02548 /* FocusDemoView.swift */; };
@@ -75,6 +76,7 @@
 		05652D5D2AEB4630001156C8 /* DownloadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadClient.swift; sourceTree = "<group>"; };
 		05652D5F2AEB4C81001156C8 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		05652D612AEB50A0001156C8 /* CityMapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapDetailView.swift; sourceTree = "<group>"; };
+		05652D632AEB5781001156C8 /* NestedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedView.swift; sourceTree = "<group>"; };
 		05A0C5F52AE0B617006F1B82 /* FactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactClient.swift; sourceTree = "<group>"; };
 		05A0C5F72AE0BB80006F1B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05A0C5F82AE0C302006F1B82 /* AlertAndConfirmationDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAndConfirmationDialogView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				0512F4662AEA4C9300F14580 /* MultipleDestinationsView.swift */,
 				8D2A78AC2AEA98AC0036A3C3 /* EpisodesView.swift */,
 				05652D572AEB3864001156C8 /* ReusableOfflineDownload */,
+				05652D632AEB5781001156C8 /* NestedView.swift */,
 				8DBBDB202AD571EA0030D21D /* Assets.xcassets */,
 				8DBBDB222AD571EA0030D21D /* Preview Content */,
 			);
@@ -423,6 +426,7 @@
 				05AF34D72AEA489E00B02548 /* LoadThenPresentView.swift in Sources */,
 				8D2A78AA2AE94C250036A3C3 /* ScreenCView.swift in Sources */,
 				05AF34CB2AE8F4BC00B02548 /* NavigationDemoView.swift in Sources */,
+				05652D642AEB5781001156C8 /* NestedView.swift in Sources */,
 				05652D602AEB4C81001156C8 /* CircularProgressView.swift in Sources */,
 				05AF34D32AEA368E00B02548 /* PresentAndLoadView.swift in Sources */,
 				05652D592AEB3D1C001156C8 /* CityMapRowView.swift in Sources */,

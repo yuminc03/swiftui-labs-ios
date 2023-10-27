@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct RootView: View {
   @State var isNavigationStackCaseStudyPresented = false
   
@@ -161,6 +163,14 @@ struct RootView: View {
             CitiesView()
           } label: {
             Text("Reusable offline download component - Map Data")
+          }
+          
+          NavigationLink {
+            NestedView(store: .init(initialState: .mock) {
+              NestedCore()
+            })
+          } label: {
+            Text("Recursive state and actions - Custom NavigationTitle")
           }
         } header: {
           Text("Higher-order reducers")
