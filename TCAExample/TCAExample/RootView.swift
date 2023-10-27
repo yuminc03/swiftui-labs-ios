@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct RootView: View {
   @State var isNavigationStackCaseStudyPresented = false
   
@@ -122,8 +124,56 @@ struct RootView: View {
           } label: {
             Text("Navigate and load data")
           }
+          
+          NavigationLink {
+            NavigateAndLoadListView()
+          } label: {
+            Text("Lists: Navigate and load data")
+          }
+          
+          NavigationLink {
+            PresentAndLoadView()
+          } label: {
+            Text("Sheets: Present and load data")
+          }
+          
+          NavigationLink {
+            LoadThenPresentView()
+          } label: {
+            Text("Sheets: Load data then present")
+          }
+          
+          NavigationLink {
+            MultipleDestinationsView()
+          } label: {
+            Text("Multiple destinations")
+          }
         } header: {
           Text("Stack")
+        }
+        
+        Section {
+          NavigationLink {
+            EpisodesView()
+          } label: {
+            Text("Reusable favoriting component - Click Heart")
+          }
+          
+          NavigationLink {
+            CitiesView()
+          } label: {
+            Text("Reusable offline download component - Map Data")
+          }
+          
+          NavigationLink {
+            NestedView(store: .init(initialState: .mock) {
+              NestedCore()
+            })
+          } label: {
+            Text("Recursive state and actions - Custom NavigationTitle")
+          }
+        } header: {
+          Text("Higher-order reducers")
         }
       }
       .navigationTitle("SwiftUI TCA")

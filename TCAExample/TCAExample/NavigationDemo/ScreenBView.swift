@@ -35,10 +35,8 @@ struct ScreenBCore: Reducer {
 struct ScreenBView: View {
   private let store: StoreOf<ScreenBCore>
   
-  init() {
-    self.store = .init(initialState: ScreenBCore.State()) {
-      ScreenBCore()
-    }
+  init(store: StoreOf<ScreenBCore>) {
+    self.store = store
   }
   
   var body: some View {
@@ -60,7 +58,9 @@ struct ScreenBView: View {
 struct ScreenBView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      ScreenBView()
+      ScreenBView(store: .init(initialState: ScreenBCore.State()) {
+        ScreenBCore()
+      })
     }
   }
 }
