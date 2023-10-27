@@ -35,7 +35,7 @@ struct EpisodesView: View {
   
   init() {
     self.store = .init(initialState: EpisodesCore.State(episodes: .mocks)) {
-      EpisodesCore(favorite: favorite(id:isFavorite:))
+      EpisodesCore(favorite: favorite)
     }
   }
   
