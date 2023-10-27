@@ -151,6 +151,11 @@ struct RootView: View {
         }
         
         Section {
+          NavigationLink {
+            EpisodesView()
+          } label: {
+            Text("Reusable favoriting component - Click Heart")
+          }
           
         } header: {
           Text("Higher-order reducers")

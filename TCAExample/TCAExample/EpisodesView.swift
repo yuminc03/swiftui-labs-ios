@@ -20,7 +20,7 @@ struct EpisodesCore: Reducer {
   
   let favorite: @Sendable (UUID, Bool) async throws -> Bool
   
-  var body: some ReducerOf<Self> {
+  var body: some Reducer<State, Action> {
     Reduce { state, action in
       return .none
     }
@@ -34,17 +34,19 @@ struct EpisodesView: View {
   private let store: StoreOf<EpisodesCore>
   
   init() {
-    self.store = .init(initialState: EpisodesCore.State()) {
-      EpisodesCore()
+    self.store = .init(initialState: EpisodesCore.State(episodes: .mocks)) {
+      EpisodesCore(favorite: favorite(id:isFavorite:))
     }
   }
   
   var body: some View {
     Form {
-      ForEach(store.scope(
+      ForEachStore(store.scope(
         state: \.episodes,
-        action: { .episode(id: $0, action: $1)}
-      ))
+        action: { .episode(id: $0, action: $1) }
+      )) { rowStore in
+        EpisodeView(store: rowStore)
+      }
     }
     .navigationTitle("Favoriting")
   }
@@ -61,7 +63,7 @@ struct EpisodesView_Previews: PreviewProvider {
 // MARK: - Episode
 
 struct EpisodeCore: Reducer {
-  struct State: Equatable {
+  struct State: Equatable, Identifiable {
     var alert: AlertState<FavoritingAction.Alert>?
     let id: UUID
     var isFavorite: Bool
@@ -69,7 +71,7 @@ struct EpisodeCore: Reducer {
     
     var favorite: FavoritingState<ID> {
       get { .init(alert: alert, id: id, isFavorite: isFavorite) }
-      set { (alert, isFavorite) = (newValue.alert, newValue.isFavorite) }
+      set { (self.alert, self.isFavorite) = (newValue.alert, newValue.isFavorite) }
     }
   }
   
@@ -99,7 +101,10 @@ struct EpisodeView: View {
     HStack(alignment: .firstTextBaseline) {
       Text(viewStore.title)
       Spacer()
-      
+      FavoriteButton(store: store.scope(
+        state: \.favorite,
+        action: { .favorite($0) }
+      ))
     }
   }
 }
@@ -188,13 +193,21 @@ struct FavoriteError: LocalizedError, Equatable {
 
 @Sendable func favorite<ID>(id: ID, isFavorite: Bool) async throws -> Bool {
   try await Task.sleep(for: .seconds(1))
-  if .random(in 0 ... 1) > 0.25 {
+  if .random(in: 0 ... 1) > 0.25 {
     return isFavorite
   } else {
-    return FavoriteError()
+    throw FavoriteError()
   }
 }
 
-extension IdentifiedArray where ID == Equatable.State.ID, Element == EpisodeCore {
-  
+extension IdentifiedArray where ID == EpisodeCore.State.ID, Element == EpisodeCore.State {
+  static let mocks: Self = [
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Animals"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Fruits"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Snakes"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Game"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Clean the room"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "iDols"),
+    EpisodeCore.State(id: UUID(), isFavorite: false, title: "Walking")
+  ]
 }
