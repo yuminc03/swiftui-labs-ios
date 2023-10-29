@@ -22,7 +22,7 @@ final class ModelData: ObservableObject {
   }
 }
 
-func loadLandmarkData<T: Decodable>(_ fileName: String) -> T {
+func load<T: Decodable>(_ fileName: String) -> T {
   let data: Data
   
   guard let file = Bundle.main.url(forResource: fileName, withExtension: nil) else {
