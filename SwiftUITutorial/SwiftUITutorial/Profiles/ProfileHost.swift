@@ -37,6 +37,7 @@ struct ProfileHost: View {
           }
       }
     }
+    .padding()
   }
 }
 

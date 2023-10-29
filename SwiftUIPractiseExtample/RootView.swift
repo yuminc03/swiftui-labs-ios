@@ -90,22 +90,6 @@ struct RootView: View {
                         Text("Driving changes in your UI with state and bindings")
                     }
                 }
-                Section("🥝 Introducing SwiftUI") {
-                    NavigationLink {
-                        LandmarksView()
-                    } label: {
-                        Text("Landmarks")
-                    }
-                  NavigationLink {
-                    VStack {
-                      HikeView(hike: ModelData().hikes[0])
-                        .padding()
-                      Spacer()
-                    }
-                  } label: {
-                      Text("HikeView")
-                  }
-                }
                 Section("🍎 iOS Team Challenge") {
                     NavigationLink(destination: RectanglePictureView()) {
                         Text("Rectangle Picture")
