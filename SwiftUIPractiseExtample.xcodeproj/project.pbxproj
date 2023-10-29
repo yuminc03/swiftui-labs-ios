@@ -372,13 +372,6 @@
 			path = AppPrinciples;
 			sourceTree = "<group>";
 		};
-		05A195922A948F2100979DCD /* SwiftUITutorial */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SwiftUITutorial;
-			sourceTree = "<group>";
-		};
 		8D04D1FB2A063160005BD5F0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,7 +407,6 @@
 				8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */,
 				8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */,
 				8DBB147B2A07F42B00E8B3A2 /* ListBootcampView.swift */,
-				05A195922A948F2100979DCD /* SwiftUITutorial */,
 				8D4AF2232A8B96470008FEE3 /* SwiftUIConceptTutorial */,
 			);
 			path = Basic;
