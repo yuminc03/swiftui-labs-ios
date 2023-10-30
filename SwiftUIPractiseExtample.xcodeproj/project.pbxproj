@@ -170,7 +170,7 @@
 		05A3C31729FB9391009839BB /* RectanglePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglePictureView.swift; sourceTree = "<group>"; };
 		8D04D2002A0691BA005BD5F0 /* TextFieldExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExampleView.swift; sourceTree = "<group>"; };
 		8D261E6A2A8CEB270029D7C2 /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
-		8D2A78B12AEE7DBE0036A3C3 /* SwiftUIPractiseExtample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractiseExtample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D2A78B12AEE7DBE0036A3C3 /* SwiftUIPractiseExtample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SwiftUIPractiseExtample.app; path = "/Users/ls-note-00106/Documents/yumin/swift/swiftui-practise-project/build/Debug-iphoneos/SwiftUIPractiseExtample.app"; sourceTree = "<absolute>"; };
 		8D2C03D32A8B40F400F0131E /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		8D2C03D72A8B423600F0131E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D39CAF62A0000440083D6D7 /* ManagementProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementProfileView.swift; sourceTree = "<group>"; };
@@ -509,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				8D658A6129EEE30300928C68 /* SwiftUIPractiseExtample */,
-				8D2A78B12AEE7DBE0036A3C3 /* SwiftUIPractiseExtample.app */,
 			);
 			sourceTree = "<group>";
 		};
