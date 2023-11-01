@@ -181,6 +181,7 @@ struct AppView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     AppView()
+      .previewLayout(.sizeThatFits)
   }
 }
 
