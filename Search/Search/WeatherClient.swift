@@ -16,7 +16,7 @@ struct WeatherClient {
 }
 
 extension DependencyValues {
-  var weatrherClient: WeatherClient {
+  var weatherClient: WeatherClient {
     get { self[WeatherClient.self] }
     set { self[WeatherClient.self] = newValue }
   }
