@@ -14,6 +14,8 @@
 		0549D3F82AF32AC000FBFCC5 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549D3F72AF32AC000FBFCC5 /* SearchTests.swift */; };
 		0549D4022AF32AC000FBFCC5 /* SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549D4012AF32AC000FBFCC5 /* SearchUITests.swift */; };
 		0549D4042AF32AC000FBFCC5 /* SearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549D4032AF32AC000FBFCC5 /* SearchUITestsLaunchTests.swift */; };
+		0549D4122AF32CD700FBFCC5 /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549D4112AF32CD700FBFCC5 /* WeatherClient.swift */; };
+		0549D4152AF32D7E00FBFCC5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0549D4142AF32D7E00FBFCC5 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		0549D3FD2AF32AC000FBFCC5 /* SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0549D4012AF32AC000FBFCC5 /* SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUITests.swift; sourceTree = "<group>"; };
 		0549D4032AF32AC000FBFCC5 /* SearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0549D4112AF32CD700FBFCC5 /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0549D4152AF32D7E00FBFCC5 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 			children = (
 				0549D3E62AF32ABE00FBFCC5 /* SearchApp.swift */,
 				0549D3E82AF32ABE00FBFCC5 /* ContentView.swift */,
+				0549D4112AF32CD700FBFCC5 /* WeatherClient.swift */,
 				0549D3EA2AF32AC000FBFCC5 /* Assets.xcassets */,
 				0549D3EC2AF32AC000FBFCC5 /* Preview Content */,
 			);
@@ -143,6 +148,9 @@
 			dependencies = (
 			);
 			name = Search;
+			packageProductDependencies = (
+				0549D4142AF32D7E00FBFCC5 /* ComposableArchitecture */,
+			);
 			productName = Search;
 			productReference = 0549D3E32AF32ABE00FBFCC5 /* Search.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 0549D3DA2AF32ABE00FBFCC5;
+			packageReferences = (
+				0549D4132AF32D7E00FBFCC5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 0549D3E42AF32ABE00FBFCC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +270,7 @@
 			files = (
 				0549D3E92AF32ABE00FBFCC5 /* ContentView.swift in Sources */,
 				0549D3E72AF32ABE00FBFCC5 /* SearchApp.swift in Sources */,
+				0549D4122AF32CD700FBFCC5 /* WeatherClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -583,6 +595,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0549D4132AF32D7E00FBFCC5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0549D4142AF32D7E00FBFCC5 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0549D4132AF32D7E00FBFCC5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0549D3DB2AF32ABE00FBFCC5 /* Project object */;
 }
