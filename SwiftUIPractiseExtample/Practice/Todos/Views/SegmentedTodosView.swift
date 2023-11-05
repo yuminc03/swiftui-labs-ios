@@ -55,7 +55,7 @@ struct SegmentedTodosView_Previews: PreviewProvider {
 extension SegmentedTodosView {
     var segmentPicker: some View {
         Picker(selection: $selection, label: Text("Picker")) {
-            ForEach(filterOption.indices) { index in
+            ForEach(filterOption.indices, id: \.self) { index in
                 Text(filterOption[index])
                     .tag(filterOption[index])
             }
