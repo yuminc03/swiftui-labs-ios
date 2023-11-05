@@ -8,12 +8,67 @@
 
 /* Begin PBXBuildFile section */
 		8D21113F2AF6AFBE006F517E /* SwiftUIConceptTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21113E2AF6AFBE006F517E /* SwiftUIConceptTutorialApp.swift */; };
-		8D2111412AF6AFBE006F517E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111402AF6AFBE006F517E /* ContentView.swift */; };
+		8D2111412AF6AFBE006F517E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111402AF6AFBE006F517E /* RootView.swift */; };
 		8D2111432AF6AFBF006F517E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111422AF6AFBF006F517E /* Assets.xcassets */; };
 		8D2111462AF6AFBF006F517E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111452AF6AFBF006F517E /* Preview Assets.xcassets */; };
 		8D2111502AF6AFBF006F517E /* SwiftUIConceptTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21114F2AF6AFBF006F517E /* SwiftUIConceptTutorialTests.swift */; };
 		8D21115A2AF6AFBF006F517E /* SwiftUIConceptTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111592AF6AFBF006F517E /* SwiftUIConceptTutorialUITests.swift */; };
 		8D21115C2AF6AFBF006F517E /* SwiftUIConceptTutorialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21115B2AF6AFBF006F517E /* SwiftUIConceptTutorialUITestsLaunchTests.swift */; };
+		8D2111CD2AF7BA4D006F517E /* MaintainAdaptableSizeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111CA2AF7BA4D006F517E /* MaintainAdaptableSizeInView.swift */; };
+		8D2111CE2AF7BC7E006F517E /* ExploringSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21116F2AF7BA4C006F517E /* ExploringSwiftUIApp.swift */; };
+		8D2111CF2AF7BC7E006F517E /* SpecifyingViewHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111702AF7BA4C006F517E /* SpecifyingViewHierarchy.swift */; };
+		8D2111D02AF7BC7E006F517E /* RefactorTheCustomScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111712AF7BA4C006F517E /* RefactorTheCustomScenes.swift */; };
+		8D2111D12AF7BC7E006F517E /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111722AF7BA4C006F517E /* Journal.swift */; };
+		8D2111D22AF7BC7E006F517E /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111732AF7BA4C006F517E /* JournalEntry.swift */; };
+		8D2111D32AF7BC7E006F517E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111752AF7BA4C006F517E /* ContentView.swift */; };
+		8D2111D42AF7BC7E006F517E /* AlternativeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111762AF7BA4C006F517E /* AlternativeContentView.swift */; };
+		8D2111D52AF7BC7E006F517E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111772AF7BA4C006F517E /* DetailView.swift */; };
+		8D2111D62AF7BC7E006F517E /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111782AF7BA4C006F517E /* DateView.swift */; };
+		8D2111D72AF7BC7E006F517E /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111792AF7BA4C006F517E /* JournalEntryView.swift */; };
+		8D2111D82AF7BC7E006F517E /* JournalEntryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21117A2AF7BA4C006F517E /* JournalEntryListItem.swift */; };
+		8D2111D92AF7BC7E006F517E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21117B2AF7BA4C006F517E /* SettingsView.swift */; };
+		8D2111DA2AF7BC7E006F517E /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21117C2AF7BA4C006F517E /* SettingsDetailView.swift */; };
+		8D2111DB2AF7BC7E006F517E /* KeywordBubbleDefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111CB2AF7BA4D006F517E /* KeywordBubbleDefaultPadding.swift */; };
+		8D2111DC2AF7BC7E006F517E /* CaptionedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C72AF7BA4D006F517E /* CaptionedPhoto.swift */; };
+		8D2111DD2AF7BC7E006F517E /* CaptionedPhotoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C82AF7BA4D006F517E /* CaptionedPhotoContentView.swift */; };
+		8D2111DE2AF7BC7E006F517E /* IfElseTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21116C2AF7BA4C006F517E /* IfElseTrain.swift */; };
+		8D2111DF2AF7BC7E006F517E /* IfElseTrainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21116D2AF7BA4C006F517E /* IfElseTrainContentView.swift */; };
+		8D2111E02AF7BC7E006F517E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111692AF7BA4C006F517E /* Event.swift */; };
+		8D2111E12AF7BC7E006F517E /* EventTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21116A2AF7BA4C006F517E /* EventTile.swift */; };
+		8D2111E22AF7BC7E006F517E /* TrainCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111B62AF7BA4D006F517E /* TrainCar.swift */; };
+		8D2111E32AF7BC7E006F517E /* TrainCarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111B72AF7BA4D006F517E /* TrainCarContentView.swift */; };
+		8D2111E42AF7BC7E006F517E /* AddingSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111B82AF7BA4D006F517E /* AddingSpacer.swift */; };
+		8D2111E52AF7BC7E006F517E /* AddingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111B92AF7BA4D006F517E /* AddingPlaceholder.swift */; };
+		8D2111E62AF7BC7E006F517E /* StackingPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111BA2AF7BA4D006F517E /* StackingPlaceholder.swift */; };
+		8D2111E72AF7BC7E006F517E /* DefaultPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111BC2AF7BA4D006F517E /* DefaultPadding.swift */; };
+		8D2111E82AF7BC7E006F517E /* PaddingSomeEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111BD2AF7BA4D006F517E /* PaddingSomeEdges.swift */; };
+		8D2111E92AF7BC7E006F517E /* SpecificPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111BE2AF7BA4D006F517E /* SpecificPadding.swift */; };
+		8D2111EA2AF7BC7E006F517E /* PaddingTheContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111BF2AF7BA4D006F517E /* PaddingTheContainer.swift */; };
+		8D2111EB2AF7BC7E006F517E /* DefaultSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C12AF7BA4D006F517E /* DefaultSpacing.swift */; };
+		8D2111EC2AF7BC7E006F517E /* SpecificSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C22AF7BA4D006F517E /* SpecificSpacing.swift */; };
+		8D2111ED2AF7BC7E006F517E /* ScaledSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C32AF7BA4D006F517E /* ScaledSpacing.swift */; };
+		8D2111EE2AF7BC7E006F517E /* ZeroSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111C42AF7BA4D006F517E /* ZeroSpacing.swift */; };
+		8D2111EF2AF7BC7E006F517E /* RecipesSampleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21117F2AF7BA4C006F517E /* RecipesSampleContentView.swift */; };
+		8D2111F02AF7BC7E006F517E /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111802AF7BA4C006F517E /* StarRating.swift */; };
+		8D2111F12AF7BC7E006F517E /* CompactTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111822AF7BA4C006F517E /* CompactTitleView.swift */; };
+		8D2111F22AF7BC7E006F517E /* RegularTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111832AF7BA4C006F517E /* RegularTitleView.swift */; };
+		8D2111F32AF7BC7E006F517E /* RecipeDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111842AF7BA4C006F517E /* RecipeDetailTitleView.swift */; };
+		8D2111F42AF7BC7E006F517E /* NavigationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111862AF7BA4C006F517E /* NavigationDetailView.swift */; };
+		8D2111F52AF7BC7E006F517E /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111872AF7BA4C006F517E /* SidebarView.swift */; };
+		8D2111F62AF7BC7E006F517E /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111882AF7BA4C006F517E /* ContentListView.swift */; };
+		8D2111F72AF7BC7E006F517E /* RecipeDirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21118A2AF7BA4C006F517E /* RecipeDirectionsView.swift */; };
+		8D2111F82AF7BC7E006F517E /* RecipeIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21118B2AF7BA4C006F517E /* RecipeIngredientsView.swift */; };
+		8D2111F92AF7BC7E006F517E /* RecipeDetailToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21118C2AF7BA4C006F517E /* RecipeDetailToolbar.swift */; };
+		8D2111FA2AF7BC7E006F517E /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21118D2AF7BA4C006F517E /* RecipeDetailView.swift */; };
+		8D2111FB2AF7BC7E006F517E /* RecipeNotSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D21118E2AF7BA4C006F517E /* RecipeNotSelectedView.swift */; };
+		8D2111FC2AF7BC7E006F517E /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111902AF7BA4C006F517E /* RecipeListView.swift */; };
+		8D2111FD2AF7BC7E006F517E /* RecipeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111912AF7BA4C006F517E /* RecipeListItemView.swift */; };
+		8D2111FE2AF7BC7E006F517E /* RecipeEditorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111932AF7BA4C006F517E /* RecipeEditorConfig.swift */; };
+		8D2111FF2AF7BC7E006F517E /* RecipeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111942AF7BA4C006F517E /* RecipeEditor.swift */; };
+		8D2112002AF7BC7E006F517E /* RecipeEditorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111952AF7BA4C006F517E /* RecipeEditorForm.swift */; };
+		8D2112012AF7BC7E006F517E /* ModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111972AF7BA4C006F517E /* ModelHelpers.swift */; };
+		8D2112022AF7BC7E006F517E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111982AF7BA4C006F517E /* Recipe.swift */; };
+		8D2112032AF7BC7E006F517E /* RecipeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111992AF7BA4C006F517E /* RecipeBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +91,7 @@
 /* Begin PBXFileReference section */
 		8D21113B2AF6AFBE006F517E /* SwiftUIConceptTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIConceptTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D21113E2AF6AFBE006F517E /* SwiftUIConceptTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIConceptTutorialApp.swift; sourceTree = "<group>"; };
-		8D2111402AF6AFBE006F517E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D2111402AF6AFBE006F517E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8D2111422AF6AFBF006F517E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D2111452AF6AFBF006F517E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D21114B2AF6AFBF006F517E /* SwiftUIConceptTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIConceptTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +99,86 @@
 		8D2111552AF6AFBF006F517E /* SwiftUIConceptTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIConceptTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2111592AF6AFBF006F517E /* SwiftUIConceptTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIConceptTutorialUITests.swift; sourceTree = "<group>"; };
 		8D21115B2AF6AFBF006F517E /* SwiftUIConceptTutorialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIConceptTutorialUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8D2111692AF7BA4C006F517E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8D21116A2AF7BA4C006F517E /* EventTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTile.swift; sourceTree = "<group>"; };
+		8D21116C2AF7BA4C006F517E /* IfElseTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrain.swift; sourceTree = "<group>"; };
+		8D21116D2AF7BA4C006F517E /* IfElseTrainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfElseTrainContentView.swift; sourceTree = "<group>"; };
+		8D21116F2AF7BA4C006F517E /* ExploringSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringSwiftUIApp.swift; sourceTree = "<group>"; };
+		8D2111702AF7BA4C006F517E /* SpecifyingViewHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecifyingViewHierarchy.swift; sourceTree = "<group>"; };
+		8D2111712AF7BA4C006F517E /* RefactorTheCustomScenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorTheCustomScenes.swift; sourceTree = "<group>"; };
+		8D2111722AF7BA4C006F517E /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		8D2111732AF7BA4C006F517E /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		8D2111752AF7BA4C006F517E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D2111762AF7BA4C006F517E /* AlternativeContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternativeContentView.swift; sourceTree = "<group>"; };
+		8D2111772AF7BA4C006F517E /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8D2111782AF7BA4C006F517E /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		8D2111792AF7BA4C006F517E /* JournalEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
+		8D21117A2AF7BA4C006F517E /* JournalEntryListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryListItem.swift; sourceTree = "<group>"; };
+		8D21117B2AF7BA4C006F517E /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8D21117C2AF7BA4C006F517E /* SettingsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
+		8D21117F2AF7BA4C006F517E /* RecipesSampleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSampleContentView.swift; sourceTree = "<group>"; };
+		8D2111802AF7BA4C006F517E /* StarRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
+		8D2111822AF7BA4C006F517E /* CompactTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactTitleView.swift; sourceTree = "<group>"; };
+		8D2111832AF7BA4C006F517E /* RegularTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTitleView.swift; sourceTree = "<group>"; };
+		8D2111842AF7BA4C006F517E /* RecipeDetailTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailTitleView.swift; sourceTree = "<group>"; };
+		8D2111862AF7BA4C006F517E /* NavigationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDetailView.swift; sourceTree = "<group>"; };
+		8D2111872AF7BA4C006F517E /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		8D2111882AF7BA4C006F517E /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
+		8D21118A2AF7BA4C006F517E /* RecipeDirectionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDirectionsView.swift; sourceTree = "<group>"; };
+		8D21118B2AF7BA4C006F517E /* RecipeIngredientsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsView.swift; sourceTree = "<group>"; };
+		8D21118C2AF7BA4C006F517E /* RecipeDetailToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailToolbar.swift; sourceTree = "<group>"; };
+		8D21118D2AF7BA4C006F517E /* RecipeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		8D21118E2AF7BA4C006F517E /* RecipeNotSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeNotSelectedView.swift; sourceTree = "<group>"; };
+		8D2111902AF7BA4C006F517E /* RecipeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		8D2111912AF7BA4C006F517E /* RecipeListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListItemView.swift; sourceTree = "<group>"; };
+		8D2111932AF7BA4C006F517E /* RecipeEditorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditorConfig.swift; sourceTree = "<group>"; };
+		8D2111942AF7BA4C006F517E /* RecipeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditor.swift; sourceTree = "<group>"; };
+		8D2111952AF7BA4C006F517E /* RecipeEditorForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeEditorForm.swift; sourceTree = "<group>"; };
+		8D2111972AF7BA4C006F517E /* ModelHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelHelpers.swift; sourceTree = "<group>"; };
+		8D2111982AF7BA4C006F517E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8D2111992AF7BA4C006F517E /* RecipeBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeBox.swift; sourceTree = "<group>"; };
+		8D21119B2AF7BA4C006F517E /* VegetableDumplings-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "VegetableDumplings-thumb.jpg"; sourceTree = "<group>"; };
+		8D21119C2AF7BA4C006F517E /* VegetableDumplings-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "VegetableDumplings-small.jpg"; sourceTree = "<group>"; };
+		8D21119D2AF7BA4C006F517E /* MushroomTapioca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MushroomTapioca.jpg; sourceTree = "<group>"; };
+		8D21119E2AF7BA4C006F517E /* ChickpeaCurry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ChickpeaCurry.jpg; sourceTree = "<group>"; };
+		8D21119F2AF7BA4C006F517E /* PassionfruitMangoSorbet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PassionfruitMangoSorbet.jpg; sourceTree = "<group>"; };
+		8D2111A02AF7BA4C006F517E /* VegetableDumplings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = VegetableDumplings.jpg; sourceTree = "<group>"; };
+		8D2111A12AF7BA4C006F517E /* MushroomTapioca-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MushroomTapioca-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111A22AF7BA4C006F517E /* PeanutButterTruffles-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PeanutButterTruffles-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111A32AF7BA4C006F517E /* PeanutButterTruffles-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PeanutButterTruffles-small.jpg"; sourceTree = "<group>"; };
+		8D2111A42AF7BA4C006F517E /* MushroomTapioca-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MushroomTapioca-small.jpg"; sourceTree = "<group>"; };
+		8D2111A52AF7BA4C006F517E /* PassionfruitMangoSorbet-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PassionfruitMangoSorbet-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111A62AF7BA4C006F517E /* PassionfruitMangoSorbet-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PassionfruitMangoSorbet-small.jpg"; sourceTree = "<group>"; };
+		8D2111A72AF7BA4C006F517E /* ThreeBeanSalad-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ThreeBeanSalad-small.jpg"; sourceTree = "<group>"; };
+		8D2111A82AF7BA4C006F517E /* PeanutButterTruffles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PeanutButterTruffles.jpg; sourceTree = "<group>"; };
+		8D2111A92AF7BA4C006F517E /* ThreeBeanSalad-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ThreeBeanSalad-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111AA2AF7BA4C006F517E /* ChickpeaCurry-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ChickpeaCurry-small.jpg"; sourceTree = "<group>"; };
+		8D2111AB2AF7BA4C006F517E /* ChickpeaCurry-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ChickpeaCurry-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111AC2AF7BA4C006F517E /* SpicyTomatoSauce-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SpicyTomatoSauce-small.jpg"; sourceTree = "<group>"; };
+		8D2111AD2AF7BA4C006F517E /* SpicyTomatoSauce-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SpicyTomatoSauce-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111AE2AF7BA4C006F517E /* ThreeBeanSalad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ThreeBeanSalad.jpg; sourceTree = "<group>"; };
+		8D2111AF2AF7BA4C006F517E /* SpicyTomatoSauce.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpicyTomatoSauce.jpg; sourceTree = "<group>"; };
+		8D2111B02AF7BA4C006F517E /* recipeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeData.json; sourceTree = "<group>"; };
+		8D2111B12AF7BA4C006F517E /* AppleCake-thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AppleCake-thumb.jpg"; sourceTree = "<group>"; };
+		8D2111B22AF7BA4C006F517E /* AppleCake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AppleCake.jpg; sourceTree = "<group>"; };
+		8D2111B32AF7BA4C006F517E /* AppleCake-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AppleCake-small.jpg"; sourceTree = "<group>"; };
+		8D2111B62AF7BA4D006F517E /* TrainCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCar.swift; sourceTree = "<group>"; };
+		8D2111B72AF7BA4D006F517E /* TrainCarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCarContentView.swift; sourceTree = "<group>"; };
+		8D2111B82AF7BA4D006F517E /* AddingSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingSpacer.swift; sourceTree = "<group>"; };
+		8D2111B92AF7BA4D006F517E /* AddingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlaceholder.swift; sourceTree = "<group>"; };
+		8D2111BA2AF7BA4D006F517E /* StackingPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingPlaceholder.swift; sourceTree = "<group>"; };
+		8D2111BC2AF7BA4D006F517E /* DefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPadding.swift; sourceTree = "<group>"; };
+		8D2111BD2AF7BA4D006F517E /* PaddingSomeEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingSomeEdges.swift; sourceTree = "<group>"; };
+		8D2111BE2AF7BA4D006F517E /* SpecificPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPadding.swift; sourceTree = "<group>"; };
+		8D2111BF2AF7BA4D006F517E /* PaddingTheContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTheContainer.swift; sourceTree = "<group>"; };
+		8D2111C12AF7BA4D006F517E /* DefaultSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSpacing.swift; sourceTree = "<group>"; };
+		8D2111C22AF7BA4D006F517E /* SpecificSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificSpacing.swift; sourceTree = "<group>"; };
+		8D2111C32AF7BA4D006F517E /* ScaledSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledSpacing.swift; sourceTree = "<group>"; };
+		8D2111C42AF7BA4D006F517E /* ZeroSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSpacing.swift; sourceTree = "<group>"; };
+		8D2111C72AF7BA4D006F517E /* CaptionedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhoto.swift; sourceTree = "<group>"; };
+		8D2111C82AF7BA4D006F517E /* CaptionedPhotoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedPhotoContentView.swift; sourceTree = "<group>"; };
+		8D2111CA2AF7BA4D006F517E /* MaintainAdaptableSizeInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainAdaptableSizeInView.swift; sourceTree = "<group>"; };
+		8D2111CB2AF7BA4D006F517E /* KeywordBubbleDefaultPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordBubbleDefaultPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +230,15 @@
 			isa = PBXGroup;
 			children = (
 				8D21113E2AF6AFBE006F517E /* SwiftUIConceptTutorialApp.swift */,
-				8D2111402AF6AFBE006F517E /* ContentView.swift */,
+				8D2111402AF6AFBE006F517E /* RootView.swift */,
+				8D2111CA2AF7BA4D006F517E /* MaintainAdaptableSizeInView.swift */,
+				8D21117E2AF7BA4C006F517E /* AppPrinciples */,
+				8D2111CC2AF7BA4D006F517E /* ScalingViewToComplementText */,
+				8D2111C92AF7BA4D006F517E /* LayeringContent */,
+				8D21116E2AF7BA4C006F517E /* OrganizingAligningContentStack */,
+				8D21116B2AF7BA4C006F517E /* HideView */,
+				8D2111C62AF7BA4D006F517E /* AdjustingSpaceViews */,
+				8D2111B52AF7BA4C006F517E /* DrivingChangesWithState */,
 				8D2111422AF6AFBF006F517E /* Assets.xcassets */,
 				8D2111442AF6AFBF006F517E /* Preview Content */,
 			);
@@ -125,6 +268,238 @@
 				8D21115B2AF6AFBF006F517E /* SwiftUIConceptTutorialUITestsLaunchTests.swift */,
 			);
 			path = SwiftUIConceptTutorialUITests;
+			sourceTree = "<group>";
+		};
+		8D21116B2AF7BA4C006F517E /* HideView */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111692AF7BA4C006F517E /* Event.swift */,
+				8D21116A2AF7BA4C006F517E /* EventTile.swift */,
+			);
+			path = HideView;
+			sourceTree = "<group>";
+		};
+		8D21116E2AF7BA4C006F517E /* OrganizingAligningContentStack */ = {
+			isa = PBXGroup;
+			children = (
+				8D21116C2AF7BA4C006F517E /* IfElseTrain.swift */,
+				8D21116D2AF7BA4C006F517E /* IfElseTrainContentView.swift */,
+			);
+			path = OrganizingAligningContentStack;
+			sourceTree = "<group>";
+		};
+		8D2111742AF7BA4C006F517E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111722AF7BA4C006F517E /* Journal.swift */,
+				8D2111732AF7BA4C006F517E /* JournalEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D21117D2AF7BA4C006F517E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111752AF7BA4C006F517E /* ContentView.swift */,
+				8D2111762AF7BA4C006F517E /* AlternativeContentView.swift */,
+				8D2111772AF7BA4C006F517E /* DetailView.swift */,
+				8D2111782AF7BA4C006F517E /* DateView.swift */,
+				8D2111792AF7BA4C006F517E /* JournalEntryView.swift */,
+				8D21117A2AF7BA4C006F517E /* JournalEntryListItem.swift */,
+				8D21117B2AF7BA4C006F517E /* SettingsView.swift */,
+				8D21117C2AF7BA4C006F517E /* SettingsDetailView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8D21117E2AF7BA4C006F517E /* AppPrinciples */ = {
+			isa = PBXGroup;
+			children = (
+				8D21116F2AF7BA4C006F517E /* ExploringSwiftUIApp.swift */,
+				8D2111702AF7BA4C006F517E /* SpecifyingViewHierarchy.swift */,
+				8D2111712AF7BA4C006F517E /* RefactorTheCustomScenes.swift */,
+				8D2111742AF7BA4C006F517E /* Models */,
+				8D21117D2AF7BA4C006F517E /* Subviews */,
+			);
+			path = AppPrinciples;
+			sourceTree = "<group>";
+		};
+		8D2111812AF7BA4C006F517E /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111802AF7BA4C006F517E /* StarRating.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		8D2111852AF7BA4C006F517E /* TitleViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111822AF7BA4C006F517E /* CompactTitleView.swift */,
+				8D2111832AF7BA4C006F517E /* RegularTitleView.swift */,
+				8D2111842AF7BA4C006F517E /* RecipeDetailTitleView.swift */,
+			);
+			path = TitleViews;
+			sourceTree = "<group>";
+		};
+		8D2111892AF7BA4C006F517E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111862AF7BA4C006F517E /* NavigationDetailView.swift */,
+				8D2111872AF7BA4C006F517E /* SidebarView.swift */,
+				8D2111882AF7BA4C006F517E /* ContentListView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8D21118F2AF7BA4C006F517E /* RecipeDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D21118A2AF7BA4C006F517E /* RecipeDirectionsView.swift */,
+				8D21118B2AF7BA4C006F517E /* RecipeIngredientsView.swift */,
+				8D21118C2AF7BA4C006F517E /* RecipeDetailToolbar.swift */,
+				8D21118D2AF7BA4C006F517E /* RecipeDetailView.swift */,
+				8D21118E2AF7BA4C006F517E /* RecipeNotSelectedView.swift */,
+			);
+			path = RecipeDetailViews;
+			sourceTree = "<group>";
+		};
+		8D2111922AF7BA4C006F517E /* RecipeContentListViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111902AF7BA4C006F517E /* RecipeListView.swift */,
+				8D2111912AF7BA4C006F517E /* RecipeListItemView.swift */,
+			);
+			path = RecipeContentListViews;
+			sourceTree = "<group>";
+		};
+		8D2111962AF7BA4C006F517E /* RecipeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111932AF7BA4C006F517E /* RecipeEditorConfig.swift */,
+				8D2111942AF7BA4C006F517E /* RecipeEditor.swift */,
+				8D2111952AF7BA4C006F517E /* RecipeEditorForm.swift */,
+			);
+			path = RecipeEditor;
+			sourceTree = "<group>";
+		};
+		8D21119A2AF7BA4C006F517E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111972AF7BA4C006F517E /* ModelHelpers.swift */,
+				8D2111982AF7BA4C006F517E /* Recipe.swift */,
+				8D2111992AF7BA4C006F517E /* RecipeBox.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D2111B42AF7BA4C006F517E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D21119B2AF7BA4C006F517E /* VegetableDumplings-thumb.jpg */,
+				8D21119C2AF7BA4C006F517E /* VegetableDumplings-small.jpg */,
+				8D21119D2AF7BA4C006F517E /* MushroomTapioca.jpg */,
+				8D21119E2AF7BA4C006F517E /* ChickpeaCurry.jpg */,
+				8D21119F2AF7BA4C006F517E /* PassionfruitMangoSorbet.jpg */,
+				8D2111A02AF7BA4C006F517E /* VegetableDumplings.jpg */,
+				8D2111A12AF7BA4C006F517E /* MushroomTapioca-thumb.jpg */,
+				8D2111A22AF7BA4C006F517E /* PeanutButterTruffles-thumb.jpg */,
+				8D2111A32AF7BA4C006F517E /* PeanutButterTruffles-small.jpg */,
+				8D2111A42AF7BA4C006F517E /* MushroomTapioca-small.jpg */,
+				8D2111A52AF7BA4C006F517E /* PassionfruitMangoSorbet-thumb.jpg */,
+				8D2111A62AF7BA4C006F517E /* PassionfruitMangoSorbet-small.jpg */,
+				8D2111A72AF7BA4C006F517E /* ThreeBeanSalad-small.jpg */,
+				8D2111A82AF7BA4C006F517E /* PeanutButterTruffles.jpg */,
+				8D2111A92AF7BA4C006F517E /* ThreeBeanSalad-thumb.jpg */,
+				8D2111AA2AF7BA4C006F517E /* ChickpeaCurry-small.jpg */,
+				8D2111AB2AF7BA4C006F517E /* ChickpeaCurry-thumb.jpg */,
+				8D2111AC2AF7BA4C006F517E /* SpicyTomatoSauce-small.jpg */,
+				8D2111AD2AF7BA4C006F517E /* SpicyTomatoSauce-thumb.jpg */,
+				8D2111AE2AF7BA4C006F517E /* ThreeBeanSalad.jpg */,
+				8D2111AF2AF7BA4C006F517E /* SpicyTomatoSauce.jpg */,
+				8D2111B02AF7BA4C006F517E /* recipeData.json */,
+				8D2111B12AF7BA4C006F517E /* AppleCake-thumb.jpg */,
+				8D2111B22AF7BA4C006F517E /* AppleCake.jpg */,
+				8D2111B32AF7BA4C006F517E /* AppleCake-small.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D2111B52AF7BA4C006F517E /* DrivingChangesWithState */ = {
+			isa = PBXGroup;
+			children = (
+				8D21117F2AF7BA4C006F517E /* RecipesSampleContentView.swift */,
+				8D2111812AF7BA4C006F517E /* CustomControls */,
+				8D2111852AF7BA4C006F517E /* TitleViews */,
+				8D2111892AF7BA4C006F517E /* Navigation */,
+				8D21118F2AF7BA4C006F517E /* RecipeDetailViews */,
+				8D2111922AF7BA4C006F517E /* RecipeContentListViews */,
+				8D2111962AF7BA4C006F517E /* RecipeEditor */,
+				8D21119A2AF7BA4C006F517E /* Models */,
+				8D2111B42AF7BA4C006F517E /* Resources */,
+			);
+			path = DrivingChangesWithState;
+			sourceTree = "<group>";
+		};
+		8D2111BB2AF7BA4D006F517E /* Spacer */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111B82AF7BA4D006F517E /* AddingSpacer.swift */,
+				8D2111B92AF7BA4D006F517E /* AddingPlaceholder.swift */,
+				8D2111BA2AF7BA4D006F517E /* StackingPlaceholder.swift */,
+			);
+			path = Spacer;
+			sourceTree = "<group>";
+		};
+		8D2111C02AF7BA4D006F517E /* Padding */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111BC2AF7BA4D006F517E /* DefaultPadding.swift */,
+				8D2111BD2AF7BA4D006F517E /* PaddingSomeEdges.swift */,
+				8D2111BE2AF7BA4D006F517E /* SpecificPadding.swift */,
+				8D2111BF2AF7BA4D006F517E /* PaddingTheContainer.swift */,
+			);
+			path = Padding;
+			sourceTree = "<group>";
+		};
+		8D2111C52AF7BA4D006F517E /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111C12AF7BA4D006F517E /* DefaultSpacing.swift */,
+				8D2111C22AF7BA4D006F517E /* SpecificSpacing.swift */,
+				8D2111C32AF7BA4D006F517E /* ScaledSpacing.swift */,
+				8D2111C42AF7BA4D006F517E /* ZeroSpacing.swift */,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		8D2111C62AF7BA4D006F517E /* AdjustingSpaceViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111B62AF7BA4D006F517E /* TrainCar.swift */,
+				8D2111B72AF7BA4D006F517E /* TrainCarContentView.swift */,
+				8D2111BB2AF7BA4D006F517E /* Spacer */,
+				8D2111C02AF7BA4D006F517E /* Padding */,
+				8D2111C52AF7BA4D006F517E /* Spacing */,
+			);
+			path = AdjustingSpaceViews;
+			sourceTree = "<group>";
+		};
+		8D2111C92AF7BA4D006F517E /* LayeringContent */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111C72AF7BA4D006F517E /* CaptionedPhoto.swift */,
+				8D2111C82AF7BA4D006F517E /* CaptionedPhotoContentView.swift */,
+			);
+			path = LayeringContent;
+			sourceTree = "<group>";
+		};
+		8D2111CC2AF7BA4D006F517E /* ScalingViewToComplementText */ = {
+			isa = PBXGroup;
+			children = (
+				8D2111CB2AF7BA4D006F517E /* KeywordBubbleDefaultPadding.swift */,
+			);
+			path = ScalingViewToComplementText;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +632,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D2111412AF6AFBE006F517E /* ContentView.swift in Sources */,
+				8D2111CE2AF7BC7E006F517E /* ExploringSwiftUIApp.swift in Sources */,
+				8D2111CF2AF7BC7E006F517E /* SpecifyingViewHierarchy.swift in Sources */,
+				8D2111D02AF7BC7E006F517E /* RefactorTheCustomScenes.swift in Sources */,
+				8D2111D12AF7BC7E006F517E /* Journal.swift in Sources */,
+				8D2111D22AF7BC7E006F517E /* JournalEntry.swift in Sources */,
+				8D2111D32AF7BC7E006F517E /* ContentView.swift in Sources */,
+				8D2111D42AF7BC7E006F517E /* AlternativeContentView.swift in Sources */,
+				8D2111D52AF7BC7E006F517E /* DetailView.swift in Sources */,
+				8D2111D62AF7BC7E006F517E /* DateView.swift in Sources */,
+				8D2111D72AF7BC7E006F517E /* JournalEntryView.swift in Sources */,
+				8D2111D82AF7BC7E006F517E /* JournalEntryListItem.swift in Sources */,
+				8D2111D92AF7BC7E006F517E /* SettingsView.swift in Sources */,
+				8D2111DA2AF7BC7E006F517E /* SettingsDetailView.swift in Sources */,
+				8D2111DB2AF7BC7E006F517E /* KeywordBubbleDefaultPadding.swift in Sources */,
+				8D2111DC2AF7BC7E006F517E /* CaptionedPhoto.swift in Sources */,
+				8D2111DD2AF7BC7E006F517E /* CaptionedPhotoContentView.swift in Sources */,
+				8D2111DE2AF7BC7E006F517E /* IfElseTrain.swift in Sources */,
+				8D2111DF2AF7BC7E006F517E /* IfElseTrainContentView.swift in Sources */,
+				8D2111E02AF7BC7E006F517E /* Event.swift in Sources */,
+				8D2111E12AF7BC7E006F517E /* EventTile.swift in Sources */,
+				8D2111E22AF7BC7E006F517E /* TrainCar.swift in Sources */,
+				8D2111E32AF7BC7E006F517E /* TrainCarContentView.swift in Sources */,
+				8D2111E42AF7BC7E006F517E /* AddingSpacer.swift in Sources */,
+				8D2111E52AF7BC7E006F517E /* AddingPlaceholder.swift in Sources */,
+				8D2111E62AF7BC7E006F517E /* StackingPlaceholder.swift in Sources */,
+				8D2111E72AF7BC7E006F517E /* DefaultPadding.swift in Sources */,
+				8D2111E82AF7BC7E006F517E /* PaddingSomeEdges.swift in Sources */,
+				8D2111E92AF7BC7E006F517E /* SpecificPadding.swift in Sources */,
+				8D2111EA2AF7BC7E006F517E /* PaddingTheContainer.swift in Sources */,
+				8D2111EB2AF7BC7E006F517E /* DefaultSpacing.swift in Sources */,
+				8D2111EC2AF7BC7E006F517E /* SpecificSpacing.swift in Sources */,
+				8D2111ED2AF7BC7E006F517E /* ScaledSpacing.swift in Sources */,
+				8D2111EE2AF7BC7E006F517E /* ZeroSpacing.swift in Sources */,
+				8D2111EF2AF7BC7E006F517E /* RecipesSampleContentView.swift in Sources */,
+				8D2111F02AF7BC7E006F517E /* StarRating.swift in Sources */,
+				8D2111F12AF7BC7E006F517E /* CompactTitleView.swift in Sources */,
+				8D2111F22AF7BC7E006F517E /* RegularTitleView.swift in Sources */,
+				8D2111F32AF7BC7E006F517E /* RecipeDetailTitleView.swift in Sources */,
+				8D2111F42AF7BC7E006F517E /* NavigationDetailView.swift in Sources */,
+				8D2111F52AF7BC7E006F517E /* SidebarView.swift in Sources */,
+				8D2111F62AF7BC7E006F517E /* ContentListView.swift in Sources */,
+				8D2111F72AF7BC7E006F517E /* RecipeDirectionsView.swift in Sources */,
+				8D2111F82AF7BC7E006F517E /* RecipeIngredientsView.swift in Sources */,
+				8D2111F92AF7BC7E006F517E /* RecipeDetailToolbar.swift in Sources */,
+				8D2111FA2AF7BC7E006F517E /* RecipeDetailView.swift in Sources */,
+				8D2111FB2AF7BC7E006F517E /* RecipeNotSelectedView.swift in Sources */,
+				8D2111FC2AF7BC7E006F517E /* RecipeListView.swift in Sources */,
+				8D2111FD2AF7BC7E006F517E /* RecipeListItemView.swift in Sources */,
+				8D2111FE2AF7BC7E006F517E /* RecipeEditorConfig.swift in Sources */,
+				8D2111FF2AF7BC7E006F517E /* RecipeEditor.swift in Sources */,
+				8D2112002AF7BC7E006F517E /* RecipeEditorForm.swift in Sources */,
+				8D2112012AF7BC7E006F517E /* ModelHelpers.swift in Sources */,
+				8D2112022AF7BC7E006F517E /* Recipe.swift in Sources */,
+				8D2112032AF7BC7E006F517E /* RecipeBox.swift in Sources */,
+				8D2111412AF6AFBE006F517E /* RootView.swift in Sources */,
 				8D21113F2AF6AFBE006F517E /* SwiftUIConceptTutorialApp.swift in Sources */,
+				8D2111CD2AF7BA4D006F517E /* MaintainAdaptableSizeInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +860,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +890,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
