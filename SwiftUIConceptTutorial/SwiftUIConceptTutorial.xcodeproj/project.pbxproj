@@ -69,6 +69,31 @@
 		8D2112012AF7BC7E006F517E /* ModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111972AF7BA4C006F517E /* ModelHelpers.swift */; };
 		8D2112022AF7BC7E006F517E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111982AF7BA4C006F517E /* Recipe.swift */; };
 		8D2112032AF7BC7E006F517E /* RecipeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2111992AF7BA4C006F517E /* RecipeBox.swift */; };
+		8D2112042AF7C8EE006F517E /* recipeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111B02AF7BA4C006F517E /* recipeData.json */; };
+		8D2112052AF7C8EE006F517E /* VegetableDumplings-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21119B2AF7BA4C006F517E /* VegetableDumplings-thumb.jpg */; };
+		8D2112062AF7C8EE006F517E /* VegetableDumplings-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21119C2AF7BA4C006F517E /* VegetableDumplings-small.jpg */; };
+		8D2112072AF7C8EE006F517E /* MushroomTapioca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21119D2AF7BA4C006F517E /* MushroomTapioca.jpg */; };
+		8D2112082AF7C8EE006F517E /* ChickpeaCurry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21119E2AF7BA4C006F517E /* ChickpeaCurry.jpg */; };
+		8D2112092AF7C8EE006F517E /* PassionfruitMangoSorbet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21119F2AF7BA4C006F517E /* PassionfruitMangoSorbet.jpg */; };
+		8D21120A2AF7C8EE006F517E /* VegetableDumplings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A02AF7BA4C006F517E /* VegetableDumplings.jpg */; };
+		8D21120B2AF7C8EE006F517E /* MushroomTapioca-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A12AF7BA4C006F517E /* MushroomTapioca-thumb.jpg */; };
+		8D21120C2AF7C8EE006F517E /* PeanutButterTruffles-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A22AF7BA4C006F517E /* PeanutButterTruffles-thumb.jpg */; };
+		8D21120D2AF7C8EE006F517E /* PeanutButterTruffles-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A32AF7BA4C006F517E /* PeanutButterTruffles-small.jpg */; };
+		8D21120E2AF7C8EE006F517E /* MushroomTapioca-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A42AF7BA4C006F517E /* MushroomTapioca-small.jpg */; };
+		8D21120F2AF7C8EE006F517E /* PassionfruitMangoSorbet-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A52AF7BA4C006F517E /* PassionfruitMangoSorbet-thumb.jpg */; };
+		8D2112102AF7C8EE006F517E /* PassionfruitMangoSorbet-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A62AF7BA4C006F517E /* PassionfruitMangoSorbet-small.jpg */; };
+		8D2112112AF7C8EE006F517E /* ThreeBeanSalad-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A72AF7BA4C006F517E /* ThreeBeanSalad-small.jpg */; };
+		8D2112122AF7C8EE006F517E /* PeanutButterTruffles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A82AF7BA4C006F517E /* PeanutButterTruffles.jpg */; };
+		8D2112132AF7C8EE006F517E /* ThreeBeanSalad-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111A92AF7BA4C006F517E /* ThreeBeanSalad-thumb.jpg */; };
+		8D2112142AF7C8EE006F517E /* ChickpeaCurry-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AA2AF7BA4C006F517E /* ChickpeaCurry-small.jpg */; };
+		8D2112152AF7C8EE006F517E /* ChickpeaCurry-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AB2AF7BA4C006F517E /* ChickpeaCurry-thumb.jpg */; };
+		8D2112162AF7C8EE006F517E /* SpicyTomatoSauce-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AC2AF7BA4C006F517E /* SpicyTomatoSauce-small.jpg */; };
+		8D2112172AF7C8EE006F517E /* SpicyTomatoSauce-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AD2AF7BA4C006F517E /* SpicyTomatoSauce-thumb.jpg */; };
+		8D2112182AF7C8EE006F517E /* ThreeBeanSalad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AE2AF7BA4C006F517E /* ThreeBeanSalad.jpg */; };
+		8D2112192AF7C8EE006F517E /* SpicyTomatoSauce.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111AF2AF7BA4C006F517E /* SpicyTomatoSauce.jpg */; };
+		8D21121A2AF7C8EE006F517E /* AppleCake-thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111B12AF7BA4C006F517E /* AppleCake-thumb.jpg */; };
+		8D21121B2AF7C8EE006F517E /* AppleCake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111B22AF7BA4C006F517E /* AppleCake.jpg */; };
+		8D21121C2AF7C8EE006F517E /* AppleCake-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2111B32AF7BA4C006F517E /* AppleCake-small.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +421,7 @@
 		8D2111B42AF7BA4C006F517E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8D2111B02AF7BA4C006F517E /* recipeData.json */,
 				8D21119B2AF7BA4C006F517E /* VegetableDumplings-thumb.jpg */,
 				8D21119C2AF7BA4C006F517E /* VegetableDumplings-small.jpg */,
 				8D21119D2AF7BA4C006F517E /* MushroomTapioca.jpg */,
@@ -417,7 +443,6 @@
 				8D2111AD2AF7BA4C006F517E /* SpicyTomatoSauce-thumb.jpg */,
 				8D2111AE2AF7BA4C006F517E /* ThreeBeanSalad.jpg */,
 				8D2111AF2AF7BA4C006F517E /* SpicyTomatoSauce.jpg */,
-				8D2111B02AF7BA4C006F517E /* recipeData.json */,
 				8D2111B12AF7BA4C006F517E /* AppleCake-thumb.jpg */,
 				8D2111B22AF7BA4C006F517E /* AppleCake.jpg */,
 				8D2111B32AF7BA4C006F517E /* AppleCake-small.jpg */,
@@ -606,6 +631,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D2112042AF7C8EE006F517E /* recipeData.json in Resources */,
+				8D2112052AF7C8EE006F517E /* VegetableDumplings-thumb.jpg in Resources */,
+				8D2112062AF7C8EE006F517E /* VegetableDumplings-small.jpg in Resources */,
+				8D2112072AF7C8EE006F517E /* MushroomTapioca.jpg in Resources */,
+				8D2112082AF7C8EE006F517E /* ChickpeaCurry.jpg in Resources */,
+				8D2112092AF7C8EE006F517E /* PassionfruitMangoSorbet.jpg in Resources */,
+				8D21120A2AF7C8EE006F517E /* VegetableDumplings.jpg in Resources */,
+				8D21120B2AF7C8EE006F517E /* MushroomTapioca-thumb.jpg in Resources */,
+				8D21120C2AF7C8EE006F517E /* PeanutButterTruffles-thumb.jpg in Resources */,
+				8D21120D2AF7C8EE006F517E /* PeanutButterTruffles-small.jpg in Resources */,
+				8D21120E2AF7C8EE006F517E /* MushroomTapioca-small.jpg in Resources */,
+				8D21120F2AF7C8EE006F517E /* PassionfruitMangoSorbet-thumb.jpg in Resources */,
+				8D2112102AF7C8EE006F517E /* PassionfruitMangoSorbet-small.jpg in Resources */,
+				8D2112112AF7C8EE006F517E /* ThreeBeanSalad-small.jpg in Resources */,
+				8D2112122AF7C8EE006F517E /* PeanutButterTruffles.jpg in Resources */,
+				8D2112132AF7C8EE006F517E /* ThreeBeanSalad-thumb.jpg in Resources */,
+				8D2112142AF7C8EE006F517E /* ChickpeaCurry-small.jpg in Resources */,
+				8D2112152AF7C8EE006F517E /* ChickpeaCurry-thumb.jpg in Resources */,
+				8D2112162AF7C8EE006F517E /* SpicyTomatoSauce-small.jpg in Resources */,
+				8D2112172AF7C8EE006F517E /* SpicyTomatoSauce-thumb.jpg in Resources */,
+				8D2112182AF7C8EE006F517E /* ThreeBeanSalad.jpg in Resources */,
+				8D2112192AF7C8EE006F517E /* SpicyTomatoSauce.jpg in Resources */,
+				8D21121A2AF7C8EE006F517E /* AppleCake-thumb.jpg in Resources */,
+				8D21121B2AF7C8EE006F517E /* AppleCake.jpg in Resources */,
+				8D21121C2AF7C8EE006F517E /* AppleCake-small.jpg in Resources */,
 				8D2111462AF6AFBF006F517E /* Preview Assets.xcassets in Resources */,
 				8D2111432AF6AFBF006F517E /* Assets.xcassets in Resources */,
 			);
