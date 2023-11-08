@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FruitScoreView.swift
 //  TCAFruitScore
 //
 //  Created by Yumin Chu on 2023/10/06.
@@ -9,7 +9,7 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct ContentCore: Reducer {
+struct FruitScoreCore: Reducer {
   struct State: Equatable {
     let scores = Score.dummy
     var pushNumber = 0
@@ -23,6 +23,10 @@ struct ContentCore: Reducer {
     case didTapPushButton
     case didTapModalButton
     case didTapClearButton
+    
+    enum Alert {
+      case confirm
+    }
   }
   
   var body: some ReducerOf<Self> {
@@ -43,16 +47,16 @@ struct ContentCore: Reducer {
     }
   }
 }
-struct ContentView: View {
-  let store: StoreOf<ContentCore>
-  @ObservedObject var viewStore: ViewStoreOf<ContentCore>
+
+struct FruitScoreView: View {
+  private let store: StoreOf<FruitScoreCore>
+  @ObservedObject private var viewStore: ViewStoreOf<FruitScoreCore>
   
   init() {
-    let store = Store(initialState: ContentCore.State()) {
-      ContentCore()
+    self.store = .init(initialState: FruitScoreCore.State()) {
+      FruitScoreCore()
     }
-    self.store = store
-    self.viewStore = ViewStore(store, observe: { $0 })
+    self.viewStore = .init(store, observe: { $0 })
   }
   
   var body: some View {
@@ -99,13 +103,31 @@ struct ContentView: View {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
+extension FruitScoreCore {
+  struct Destination: Reducer {
+    enum State: Equatable {
+      case alert(AlertState<FruitScoreCore.Action.Alert>)
+    }
+    
+    enum Action: Equatable {
+      case alert(FruitScoreCore.Action.Alert)
+    }
+    
+    var body: some ReducerOf<Self> {
+      Scope(state: /State.alert, action: /Action.alert) {
+        
+      }
+    }
   }
 }
 
-extension ContentView {
+struct ContentView_Previews: PreviewProvider {
+  static var previews: some View {
+    FruitScoreView()
+  }
+}
+
+extension FruitScoreView {
   
   func blueButton(title: String, action: @escaping () -> Void) -> some View {
     Button(title) {

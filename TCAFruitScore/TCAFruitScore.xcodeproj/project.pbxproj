@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		056A807C2ACF867300C383C4 /* TCAFruitScoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A807B2ACF867300C383C4 /* TCAFruitScoreApp.swift */; };
-		056A807E2ACF867300C383C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A807D2ACF867300C383C4 /* ContentView.swift */; };
+		056A807E2ACF867300C383C4 /* FruitScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A807D2ACF867300C383C4 /* FruitScoreView.swift */; };
 		056A80802ACF867500C383C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056A807F2ACF867500C383C4 /* Assets.xcassets */; };
 		056A80832ACF867500C383C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056A80822ACF867500C383C4 /* Preview Assets.xcassets */; };
 		056A808D2ACF867500C383C4 /* TCAFruitScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A808C2ACF867500C383C4 /* TCAFruitScoreTests.swift */; };
@@ -16,6 +16,7 @@
 		056A80992ACF867500C383C4 /* TCAFruitScoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A80982ACF867500C383C4 /* TCAFruitScoreUITestsLaunchTests.swift */; };
 		05B7307A2ACFAA1E00FCD884 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 05B730792ACFAA1E00FCD884 /* ComposableArchitecture */; };
 		05B7307C2ACFAA8E00FCD884 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7307B2ACFAA8E00FCD884 /* Score.swift */; };
+		8D8274002AFBD29500DB709C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8273FF2AFBD29500DB709C /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		056A80782ACF867300C383C4 /* TCAFruitScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCAFruitScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056A807B2ACF867300C383C4 /* TCAFruitScoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAFruitScoreApp.swift; sourceTree = "<group>"; };
-		056A807D2ACF867300C383C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		056A807D2ACF867300C383C4 /* FruitScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitScoreView.swift; sourceTree = "<group>"; };
 		056A807F2ACF867500C383C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		056A80822ACF867500C383C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		056A80882ACF867500C383C4 /* TCAFruitScoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCAFruitScoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +48,7 @@
 		056A80962ACF867500C383C4 /* TCAFruitScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAFruitScoreUITests.swift; sourceTree = "<group>"; };
 		056A80982ACF867500C383C4 /* TCAFruitScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAFruitScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05B7307B2ACFAA8E00FCD884 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		8D8273FF2AFBD29500DB709C /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				056A807B2ACF867300C383C4 /* TCAFruitScoreApp.swift */,
-				056A807D2ACF867300C383C4 /* ContentView.swift */,
+				056A807D2ACF867300C383C4 /* FruitScoreView.swift */,
+				8D8273FF2AFBD29500DB709C /* ModalView.swift */,
 				05B7307B2ACFAA8E00FCD884 /* Score.swift */,
 				056A807F2ACF867500C383C4 /* Assets.xcassets */,
 				056A80812ACF867500C383C4 /* Preview Content */,
@@ -268,8 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				056A807E2ACF867300C383C4 /* ContentView.swift in Sources */,
+				056A807E2ACF867300C383C4 /* FruitScoreView.swift in Sources */,
 				05B7307C2ACFAA8E00FCD884 /* Score.swift in Sources */,
+				8D8274002AFBD29500DB709C /* ModalView.swift in Sources */,
 				056A807C2ACF867300C383C4 /* TCAFruitScoreApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
