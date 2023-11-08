@@ -11,7 +11,7 @@ import SwiftUI
 struct TCAFruitScoreApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      FruitScoreView()
     }
   }
 }
