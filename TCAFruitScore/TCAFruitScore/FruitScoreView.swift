@@ -15,6 +15,7 @@ struct FruitScoreCore: Reducer {
     var pushNumber = 0
     var alertNumber = 0
     var modalNumber = 0
+    @PresentationState var destination: Destination.State?
 //    var path = StackState<>
   }
   
@@ -23,6 +24,7 @@ struct FruitScoreCore: Reducer {
     case didTapPushButton
     case didTapModalButton
     case didTapClearButton
+    case destination(PresentationAction<Destination.Action>)
     
     enum Alert {
       case confirm
@@ -33,16 +35,64 @@ struct FruitScoreCore: Reducer {
     Reduce { state, action in
       switch action {
       case .didTapAlertButton:
+        state.destination = .alert(
+          AlertState(title: {
+            TextState("Are you sure?")
+          }, actions: {
+            ButtonState(role: .cancel, action: .confirm) {
+              TextState("닫기")
+            }
+          })
+        )
         return .none
         
       case .didTapPushButton:
         return .none
         
       case .didTapModalButton:
+        state.destination = .modal(.init())
         return .none
         
       case .didTapClearButton:
+        state.alertNumber = 0
+        state.modalNumber = 0
+        state.pushNumber = 0
         return .none
+        
+      case .destination(.presented(.alert(.confirm))):
+        state.alertNumber += 1
+        return .none
+        
+      case .destination(.presented(.modal(.delegate(.increase)))):
+        state.modalNumber += 1
+        return .none
+        
+      case .destination:
+        return .none
+      }
+    }
+    .ifLet(\.$destination, action: /Action.destination) {
+      Destination()
+    }
+    
+  }
+}
+
+extension FruitScoreCore {
+  struct Destination: Reducer {
+    enum State: Equatable {
+      case alert(AlertState<FruitScoreCore.Action.Alert>)
+      case modal(ModalCore.State)
+    }
+    
+    enum Action: Equatable {
+      case alert(FruitScoreCore.Action.Alert)
+      case modal(ModalCore.Action)
+    }
+    
+    var body: some ReducerOf<Self> {
+      Scope(state: /State.modal, action: /Action.modal) {
+        ModalCore()
       }
     }
   }
@@ -99,24 +149,21 @@ struct FruitScoreView: View {
         .padding(.horizontal, 20)
       }
     }
-    
-  }
-}
-
-extension FruitScoreCore {
-  struct Destination: Reducer {
-    enum State: Equatable {
-      case alert(AlertState<FruitScoreCore.Action.Alert>)
-    }
-    
-    enum Action: Equatable {
-      case alert(FruitScoreCore.Action.Alert)
-    }
-    
-    var body: some ReducerOf<Self> {
-      Scope(state: /State.alert, action: /Action.alert) {
-        
-      }
+    .alert(
+      store: store.scope(
+        state: \.$destination, action: { .destination($0) }
+      ),
+      state: /FruitScoreCore.Destination.State.alert,
+      action: FruitScoreCore.Destination.Action.alert
+    )
+    .sheet(
+      store: store.scope(
+        state: \.$destination, action: { .destination($0) }
+      ),
+      state: /FruitScoreCore.Destination.State.modal, 
+      action: FruitScoreCore.Destination.Action.modal
+    ) { store in
+      ModalView(store: store)
     }
   }
 }

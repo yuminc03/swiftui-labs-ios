@@ -7,7 +7,7 @@ struct ModalCore: Reducer {
     
   }
   
-  enum Action {
+  enum Action: Equatable {
     case didTapBackButton
     case delegate(Delegate)
     
