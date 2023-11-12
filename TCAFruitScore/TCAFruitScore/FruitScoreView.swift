@@ -16,7 +16,7 @@ struct FruitScoreCore: Reducer {
     var alertNumber = 0
     var modalNumber = 0
     @PresentationState var destination: Destination.State?
-//    var path = StackState<>
+    var path = StackState<DetailCore.State>()
   }
   
   enum Action {
@@ -25,6 +25,7 @@ struct FruitScoreCore: Reducer {
     case didTapModalButton
     case didTapClearButton
     case destination(PresentationAction<Destination.Action>)
+    case path(StackAction<DetailCore.State, DetailCore.Action>)
     
     enum Alert {
       case confirm
@@ -69,12 +70,25 @@ struct FruitScoreCore: Reducer {
         
       case .destination:
         return .none
+        
+      case let .path(.popFrom(id: id)):
+        guard let score = state.path[id: id]?.content.score else {
+          return .none
+        }
+        
+        state.pushNumber += score
+        return .none
+        
+      case .path:
+        return .none
       }
     }
     .ifLet(\.$destination, action: /Action.destination) {
       Destination()
     }
-    
+    .forEach(\.path, action: /Action.path) {
+      DetailCore()
+    }
   }
 }
 
@@ -110,13 +124,11 @@ struct FruitScoreView: View {
   }
   
   var body: some View {
-    NavigationStack {
+    NavigationStackStore(store.scope(state: \.path, action: { .path($0) })) {
       VStack {
         List {
           ForEach(viewStore.scores) { score in
-            NavigationLink {
-              
-            } label: {
+            NavigationLink(state: DetailCore.State(content: score)) {
               Text(score.name)
             }
           }
@@ -148,6 +160,8 @@ struct FruitScoreView: View {
         )
         .padding(.horizontal, 20)
       }
+    } destination: {
+      DetailView(store: $0)
     }
     .alert(
       store: store.scope(
