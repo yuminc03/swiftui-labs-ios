@@ -17,6 +17,7 @@
 		05B7307A2ACFAA1E00FCD884 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 05B730792ACFAA1E00FCD884 /* ComposableArchitecture */; };
 		05B7307C2ACFAA8E00FCD884 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7307B2ACFAA8E00FCD884 /* Score.swift */; };
 		8D8274002AFBD29500DB709C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8273FF2AFBD29500DB709C /* ModalView.swift */; };
+		8DC3BE682B00B8B000C4F1FB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3BE672B00B8B000C4F1FB /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		056A80982ACF867500C383C4 /* TCAFruitScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAFruitScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05B7307B2ACFAA8E00FCD884 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8D8273FF2AFBD29500DB709C /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		8DC3BE672B00B8B000C4F1FB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				056A807B2ACF867300C383C4 /* TCAFruitScoreApp.swift */,
 				056A807D2ACF867300C383C4 /* FruitScoreView.swift */,
 				8D8273FF2AFBD29500DB709C /* ModalView.swift */,
+				8DC3BE672B00B8B000C4F1FB /* DetailView.swift */,
 				05B7307B2ACFAA8E00FCD884 /* Score.swift */,
 				056A807F2ACF867500C383C4 /* Assets.xcassets */,
 				056A80812ACF867500C383C4 /* Preview Content */,
@@ -274,6 +277,7 @@
 				056A807E2ACF867300C383C4 /* FruitScoreView.swift in Sources */,
 				05B7307C2ACFAA8E00FCD884 /* Score.swift in Sources */,
 				8D8274002AFBD29500DB709C /* ModalView.swift in Sources */,
+				8DC3BE682B00B8B000C4F1FB /* DetailView.swift in Sources */,
 				056A807C2ACF867300C383C4 /* TCAFruitScoreApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
