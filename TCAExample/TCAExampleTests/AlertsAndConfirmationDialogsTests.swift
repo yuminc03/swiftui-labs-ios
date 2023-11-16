@@ -58,4 +58,33 @@ final class AlertsAndConfirmationDialogsTests: XCTestCase {
       $0.alert = nil
     }
   }
+  
+  func testConfirm() async {
+    let store = TestStore(initialState: AlertAndConfirmationDialogCore.State()) {
+      AlertAndConfirmationDialogCore()
+    }
+    
+    await store.send(.didTapConfirmationButton) {
+      $0.actionSheet = ConfirmationDialogState {
+        TextState("ConfirmationDialog")
+      } actions: {
+        ButtonState(action: .didTapIncreaseButton) {
+          TextState("Increment")
+        }
+        ButtonState(action: .didTapDecreaseButton) {
+          TextState("Decrement")
+        }
+      } message: {
+        TextState("This is a confirmation dialog.")
+      }
+    }
+    
+    await store.send(.actionSheet(.presented(.didTapIncreaseButton))) {
+      $0.alert = AlertState {
+        TextState("Incremented!🎁")
+      }
+      $0.actionSheet = nil
+      $0.count = 1
+    }
+  }
 }
