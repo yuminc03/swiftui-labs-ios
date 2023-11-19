@@ -34,7 +34,7 @@ struct AnimationsCore: Reducer {
     @PresentationState var alert: AlertState<Action.Alert>?
   }
   
-  enum Action {
+  enum Action: Equatable, Sendable {
     case tapGesture(CGPoint)
     case didChangedCircleScaleToggle(Bool)
     case didTapRainbowButton
@@ -78,7 +78,7 @@ struct AnimationsCore: Reducer {
         } actions: {
           ButtonState(
             role: .destructive,
-            action: .send(.didTapResetConfirmButton)
+            action: .send(.didTapResetConfirmButton, animation: .default)
           ) {
             TextState("Reset")
           }
@@ -100,6 +100,7 @@ struct AnimationsCore: Reducer {
         return .none
       }
     }
+    .ifLet(\.$alert, action: /Action.alert)
   }
 }
 

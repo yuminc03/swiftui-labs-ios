@@ -39,6 +39,9 @@
 		8D8D87422ADD6A16007C3C55 /* SharedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */; };
 		8D8D87452AE01A24007C3C55 /* EffectBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D87442AE01A24007C3C55 /* EffectBasicsView.swift */; };
 		8D8D87472AE026B2007C3C55 /* EffectsCancellationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D87462AE026B2007C3C55 /* EffectsCancellationView.swift */; };
+		8D8F8A302B09159800A15A64 /* AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F8A2F2B09159800A15A64 /* AnimationTests.swift */; };
+		8D8F8A332B0A46D700A15A64 /* BindingFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F8A322B0A46D700A15A64 /* BindingFormTests.swift */; };
+		8DB836AD2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB836AC2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift */; };
 		8DBBDB1D2AD571EA0030D21D /* TCAExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */; };
 		8DBBDB1F2AD571EA0030D21D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB1E2AD571EA0030D21D /* RootView.swift */; };
 		8DBBDB212AD571EA0030D21D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBBDB202AD571EA0030D21D /* Assets.xcassets */; };
@@ -101,6 +104,9 @@
 		8D8D87412ADD6A16007C3C55 /* SharedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStateView.swift; sourceTree = "<group>"; };
 		8D8D87442AE01A24007C3C55 /* EffectBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectBasicsView.swift; sourceTree = "<group>"; };
 		8D8D87462AE026B2007C3C55 /* EffectsCancellationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsCancellationView.swift; sourceTree = "<group>"; };
+		8D8F8A2F2B09159800A15A64 /* AnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTests.swift; sourceTree = "<group>"; };
+		8D8F8A322B0A46D700A15A64 /* BindingFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFormTests.swift; sourceTree = "<group>"; };
+		8DB836AC2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndConfirmationDialogsTests.swift; sourceTree = "<group>"; };
 		8DBBDB192AD571EA0030D21D /* TCAExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCAExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBBDB1C2AD571EA0030D21D /* TCAExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAExampleApp.swift; sourceTree = "<group>"; };
 		8DBBDB1E2AD571EA0030D21D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -251,6 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				8DBBDB2D2AD571EB0030D21D /* TCAExampleTests.swift */,
+				8DB836AC2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift */,
+				8D8F8A2F2B09159800A15A64 /* AnimationTests.swift */,
+				8D8F8A322B0A46D700A15A64 /* BindingFormTests.swift */,
 			);
 			path = TCAExampleTests;
 			sourceTree = "<group>";
@@ -452,7 +461,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8F8A302B09159800A15A64 /* AnimationTests.swift in Sources */,
 				8DBBDB2E2AD571EB0030D21D /* TCAExampleTests.swift in Sources */,
+				8DB836AD2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift in Sources */,
+				8D8F8A332B0A46D700A15A64 /* BindingFormTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
