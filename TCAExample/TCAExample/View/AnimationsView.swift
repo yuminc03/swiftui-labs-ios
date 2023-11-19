@@ -78,7 +78,7 @@ struct AnimationsCore: Reducer {
         } actions: {
           ButtonState(
             role: .destructive,
-            action: .send(.didTapResetConfirmButton)
+            action: .send(.didTapResetConfirmButton, animation: .default)
           ) {
             TextState("Reset")
           }

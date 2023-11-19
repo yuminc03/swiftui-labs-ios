@@ -95,7 +95,7 @@ final class AnimationTests: XCTestCase {
         TextState("Reset state?")
       } actions: {
         ButtonState(
-          role: .destructive, 
+          role: .destructive,
           action: .send(.didTapResetConfirmButton, animation: .default)
         ) {
           TextState("Reset")
