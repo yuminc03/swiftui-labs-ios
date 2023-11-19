@@ -34,7 +34,7 @@ struct AnimationsCore: Reducer {
     @PresentationState var alert: AlertState<Action.Alert>?
   }
   
-  enum Action {
+  enum Action: Equatable, Sendable {
     case tapGesture(CGPoint)
     case didChangedCircleScaleToggle(Bool)
     case didTapRainbowButton
@@ -100,6 +100,7 @@ struct AnimationsCore: Reducer {
         return .none
       }
     }
+    .ifLet(\.$alert, action: /Action.alert)
   }
 }
 
