@@ -103,5 +103,20 @@ final class SharedStateTests: XCTestCase {
     }
   }
   
-  
+  func testIsPrimeWhenNotPrime() async {
+    let store = TestStore(initialState: SharedStateCore.Counter.State(
+      count: 6, maxCount: 0, minCount: 0, numberOfCounts: 0, alert: nil
+    )) {
+      SharedStateCore.Counter()
+    }
+
+    await store.send(.didTapIsPrimeButton) {
+      $0.alert = AlertState {
+        TextState("👎 The number 6 is not prime :(")
+      }
+    }
+    await store.send(.alert(.dismiss)) {
+      $0.alert = nil
+    }
+  }
 }
