@@ -65,5 +65,43 @@ final class SharedStateTests: XCTestCase {
     }
   }
   
+  func testSharedCounts() async {
+    let store = TestStore(initialState: SharedStateCore.State()) {
+      SharedStateCore()
+    }
+    
+    await store.send(.counter(.didTapIncrementButton)) {
+      $0.counter.count = 1
+      $0.counter.maxCount = 1
+      $0.counter.numberOfCounts = 1
+    }
+    await store.send(.counter(.didTapDecrementButton)) {
+      $0.counter.count = 0
+      $0.counter.numberOfCounts = 2
+    }
+    await store.send(.counter(.didTapDecrementButton)) {
+      $0.counter.count = -1
+      $0.counter.minCount = -1
+      $0.counter.numberOfCounts = 3
+    }
+  }
+  
+  func testIsPrimeWhenPrime() async {
+    let store = TestStore(initialState: SharedStateCore.Counter.State(
+      count: 3, maxCount: 0, minCount: 0, numberOfCounts: 0, alert: nil
+    )) {
+      SharedStateCore.Counter()
+    }
+    
+    await store.send(.didTapIsPrimeButton) {
+      $0.alert = AlertState {
+        TextState("👍 The number 3 is prime!")
+      }
+    }
+    await store.send(.alert(.dismiss)) {
+      $0.alert = nil
+    }
+  }
+  
   
 }
