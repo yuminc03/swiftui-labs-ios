@@ -51,6 +51,7 @@
 		8DBBDB3A2AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB392AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift */; };
 		8DBBDB482AD5728F0030D21D /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBDB472AD5728F0030D21D /* CounterView.swift */; };
 		8DC0ADD82B0B90210057BA57 /* SharedStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADD72B0B90210057BA57 /* SharedStateTests.swift */; };
+		8DC0ADDB2B0CE9040057BA57 /* EffectsBasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */; };
 		8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */; };
 		8DFE07EF2ADBBD7500F511E3 /* BindingFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		8DBBDB392AD571EB0030D21D /* TCAExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DBBDB472AD5728F0030D21D /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		8DC0ADD72B0B90210057BA57 /* SharedStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStateTests.swift; sourceTree = "<group>"; };
+		8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsBasicsTests.swift; sourceTree = "<group>"; };
 		8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingBasicsView.swift; sourceTree = "<group>"; };
 		8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +265,7 @@
 				8D8F8A2F2B09159800A15A64 /* AnimationTests.swift */,
 				8D8F8A322B0A46D700A15A64 /* BindingFormTests.swift */,
 				8DC0ADD72B0B90210057BA57 /* SharedStateTests.swift */,
+				8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */,
 			);
 			path = TCAExampleTests;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC0ADD82B0B90210057BA57 /* SharedStateTests.swift in Sources */,
+				8DC0ADDB2B0CE9040057BA57 /* EffectsBasicsTests.swift in Sources */,
 				8D8F8A302B09159800A15A64 /* AnimationTests.swift in Sources */,
 				8DBBDB2E2AD571EB0030D21D /* TCAExampleTests.swift in Sources */,
 				8DB836AD2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift in Sources */,
