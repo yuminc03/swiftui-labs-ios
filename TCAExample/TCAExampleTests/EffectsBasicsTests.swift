@@ -61,4 +61,21 @@ final class EffectsBasicsTests: XCTestCase {
       $0.numberFact = "1 is good number Brent"
     }
   }
+  
+  func testDecrement() async {
+    let store = TestStore(initialState: EffectBasicsCore.State()) {
+      EffectBasicsCore()
+    } withDependencies: {
+      $0.continuousClock = ImmediateClock()
+    }
+
+    await store.send(.didTapMinusButton) {
+      $0.count = -1
+    }
+    await store.receive(.decrementDelayResponse) {
+      $0.count = 0
+    }
+  }
+  
+  
 }
