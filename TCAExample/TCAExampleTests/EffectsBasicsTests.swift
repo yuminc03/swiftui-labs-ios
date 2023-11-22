@@ -77,5 +77,18 @@ final class EffectsBasicsTests: XCTestCase {
     }
   }
   
-  
+  func testDecrementCancellation() async {
+    let store = TestStore(initialState: EffectBasicsCore.State()) {
+      EffectBasicsCore()
+    } withDependencies: {
+      $0.continuousClock = TestClock()
+    }
+
+    await store.send(.didTapMinusButton) {
+      $0.count = -1
+    }
+    await store.send(.didTapPlusButton) {
+      $0.count = 0
+    }
+  }
 }
