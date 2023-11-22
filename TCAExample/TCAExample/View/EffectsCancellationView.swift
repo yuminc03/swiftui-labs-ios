@@ -16,7 +16,7 @@ struct EffectsCancellationCore: Reducer {
     var isNumberFactLoading = false
   }
   
-  enum Action {
+  enum Action: Equatable {
     case didChangeStepper(Int)
     case didTapCancelButton
     case didTapFactButton
