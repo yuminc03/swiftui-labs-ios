@@ -7,6 +7,11 @@
 
 import XCTest
 
+import ComposableArchitecture
+
+@testable import TCAExample
+
+@MainActor
 final class EffectsBasicsTests: XCTestCase {
   
   override func setUpWithError() throws {
@@ -22,5 +27,38 @@ final class EffectsBasicsTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
+  func testCountDown() async {
+    let store = TestStore(initialState: EffectBasicsCore.State()) {
+      EffectBasicsCore()
+    } withDependencies: {
+      $0.continuousClock = ImmediateClock()
+    }
+
+    await store.send(.didTapPlusButton) {
+      $0.count = 1
+    }
+    await store.send(.didTapMinusButton) {
+      $0.count = 0
+    }
+  }
   
+  func testNumberFact() async {
+    let store = TestStore(initialState: EffectBasicsCore.State()) {
+      EffectBasicsCore()
+    } withDependencies: {
+      $0.factClient.fetch = { "\($0) is good number Brent"}
+      $0.continuousClock = ImmediateClock()
+    }
+        
+    await store.send(.didTapPlusButton) {
+      $0.count = 1
+    }
+    await store.send(.didTapNumberFactButton) {
+      $0.isNumberFactLoading = true
+    }
+    await store.receive(.numberFactResponse(.success("1 is good number Brent"))) {
+      $0.isNumberFactLoading = false
+      $0.numberFact = "1 is good number Brent"
+    }
+  }
 }
