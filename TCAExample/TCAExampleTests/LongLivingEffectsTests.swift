@@ -11,6 +11,7 @@ import ComposableArchitecture
 
 @testable import TCAExample
 
+@MainActor
 final class LongLivingEffectsTests: XCTestCase {
   
   override func setUpWithError() throws {
@@ -26,5 +27,20 @@ final class LongLivingEffectsTests: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
-  
+  func testReducer() async {
+    let (screenshots, takeScreenshot) = AsyncStream.makeStream(of: Void.self)
+    let store = TestStore(initialState: LonglivingEffectsCore.State()) {
+      LonglivingEffectsCore()
+    } withDependencies: {
+      $0.screenshots = { screenshots }
+    }
+
+    let task = await store.send(.task)
+    takeScreenshot.yield()
+    await store.receive(.didTaskScreenshot) {
+      $0.screenShotCount = 1
+    }
+    await task.cancel()
+    takeScreenshot.yield()
+  }
 }

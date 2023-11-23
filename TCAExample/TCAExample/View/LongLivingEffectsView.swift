@@ -32,7 +32,7 @@ struct LonglivingEffectsCore: Reducer {
     var screenShotCount = 0
   }
   
-  enum Action {
+  enum Action: Equatable {
     case task
     case didTaskScreenshot
   }
