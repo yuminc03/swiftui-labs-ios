@@ -54,6 +54,7 @@
 		8DC0ADDB2B0CE9040057BA57 /* EffectsBasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */; };
 		8DC0ADDE2B0E45060057BA57 /* EffectsCancellationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADDD2B0E45060057BA57 /* EffectsCancellationTests.swift */; };
 		8DC0ADE42B0F88D60057BA57 /* LongLivingEffectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADE32B0F88D60057BA57 /* LongLivingEffectsTests.swift */; };
+		8DC0ADE62B0F8D1E0057BA57 /* RefreshableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0ADE52B0F8D1E0057BA57 /* RefreshableTests.swift */; };
 		8DFE07EC2ADAC98800F511E3 /* BindingBasicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */; };
 		8DFE07EF2ADBBD7500F511E3 /* BindingFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsBasicsTests.swift; sourceTree = "<group>"; };
 		8DC0ADDD2B0E45060057BA57 /* EffectsCancellationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsCancellationTests.swift; sourceTree = "<group>"; };
 		8DC0ADE32B0F88D60057BA57 /* LongLivingEffectsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongLivingEffectsTests.swift; sourceTree = "<group>"; };
+		8DC0ADE52B0F8D1E0057BA57 /* RefreshableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableTests.swift; sourceTree = "<group>"; };
 		8DFE07EB2ADAC98800F511E3 /* BindingBasicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingBasicsView.swift; sourceTree = "<group>"; };
 		8DFE07EE2ADBBD7500F511E3 /* BindingFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +274,7 @@
 				8DC0ADDA2B0CE9040057BA57 /* EffectsBasicsTests.swift */,
 				8DC0ADDD2B0E45060057BA57 /* EffectsCancellationTests.swift */,
 				8DC0ADE32B0F88D60057BA57 /* LongLivingEffectsTests.swift */,
+				8DC0ADE52B0F8D1E0057BA57 /* RefreshableTests.swift */,
 			);
 			path = TCAExampleTests;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				8DBBDB2E2AD571EB0030D21D /* TCAExampleTests.swift in Sources */,
 				8DC0ADDE2B0E45060057BA57 /* EffectsCancellationTests.swift in Sources */,
 				8DB836AD2B03AC4500B04AD1 /* AlertsAndConfirmationDialogsTests.swift in Sources */,
+				8DC0ADE62B0F8D1E0057BA57 /* RefreshableTests.swift in Sources */,
 				8D8F8A332B0A46D700A15A64 /* BindingFormTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
