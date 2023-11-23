@@ -50,4 +50,57 @@ final class EffectsCancellationTests: XCTestCase {
       $0.isNumberFactLoading = false
     }
   }
+  
+  func testTriviaFailedRequest() async {
+    struct FactError: Equatable, Error { }
+    let store = TestStore(initialState: EffectsCancellationCore.State()) {
+      EffectsCancellationCore()
+    } withDependencies: {
+      $0.factClient.fetch = { _ in
+        throw FactError()
+      }
+    }
+
+    await store.send(.didTapFactButton) {
+      $0.isNumberFactLoading = true
+    }
+    await store.receive(.factResponse(.failure(FactError()))) {
+      $0.isNumberFactLoading = false
+    }
+  }
+  
+  func testTriviaCancelButtonCancelsRequest() async {
+    let store = TestStore(initialState: EffectsCancellationCore.State()) {
+      EffectsCancellationCore()
+    } withDependencies: {
+      $0.factClient.fetch = { _ in
+        try await Task.never()
+      }
+    }
+    
+    await store.send(.didTapFactButton) {
+      $0.isNumberFactLoading = true
+    }
+    await store.send(.didTapCancelButton) {
+      $0.isNumberFactLoading = false
+    }
+  }
+  
+  func testTriviaPlusMinusButtonsCancelsRequest() async {
+    let store = TestStore(initialState: EffectsCancellationCore.State()) {
+      EffectsCancellationCore()
+    } withDependencies: {
+      $0.factClient.fetch = { _ in
+        try await Task.never()
+      }
+    }
+
+    await store.send(.didTapFactButton) {
+      $0.isNumberFactLoading = true
+    }
+    await store.send(.didChangeStepper(1)) {
+      $0.count = 1
+      $0.isNumberFactLoading = false
+    }
+  }
 }

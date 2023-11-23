@@ -33,7 +33,8 @@ struct EffectsCancellationCore: Reducer {
     case let .didChangeStepper(number):
       state.count = number
       state.numberFact = nil
-      return .none
+      state.isNumberFactLoading = false
+      return .cancel(id: CancelID.fact)
       
     case .didTapCancelButton:
       state.isNumberFactLoading = false
