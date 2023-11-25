@@ -16,7 +16,7 @@ struct RefreshableCore: Reducer {
     var factString: String?
   }
   
-  enum Action {
+  enum Action: Equatable {
     case didTapMinusButton
     case didTapPlusButton
     case isLoading(Bool)

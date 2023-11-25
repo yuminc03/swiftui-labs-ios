@@ -16,7 +16,7 @@ struct EffectBasicsCore: Reducer {
     var numberFact: String?
   }
   
-  enum Action {
+  enum Action: Equatable {
     case didTapMinusButton
     case didTapPlusButton
     case didTapNumberFactButton
@@ -44,7 +44,7 @@ struct EffectBasicsCore: Reducer {
     case .didTapPlusButton:
       state.count += 1
       state.numberFact = nil
-      return .none
+      return state.count >= 0 ? .cancel(id: CancelID.delay) : .none
       
     case .decrementDelayResponse:
       if state.count < 0 {
@@ -60,7 +60,6 @@ struct EffectBasicsCore: Reducer {
           try await factClient.fetch(state.count)
         }))
       }
-      .cancellable(id: CancelID.delay)
       
     case let .numberFactResponse(.success(fact)):
       state.isNumberFactLoading = false

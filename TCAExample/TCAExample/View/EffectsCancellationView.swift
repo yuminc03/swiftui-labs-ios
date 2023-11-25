@@ -16,7 +16,7 @@ struct EffectsCancellationCore: Reducer {
     var isNumberFactLoading = false
   }
   
-  enum Action {
+  enum Action: Equatable {
     case didChangeStepper(Int)
     case didTapCancelButton
     case didTapFactButton
@@ -33,7 +33,8 @@ struct EffectsCancellationCore: Reducer {
     case let .didChangeStepper(number):
       state.count = number
       state.numberFact = nil
-      return .none
+      state.isNumberFactLoading = false
+      return .cancel(id: CancelID.fact)
       
     case .didTapCancelButton:
       state.isNumberFactLoading = false
