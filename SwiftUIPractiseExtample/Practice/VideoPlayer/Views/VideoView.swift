@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// 
 struct VideoView: View {
   @State private var videoName = "my_army_log"
   

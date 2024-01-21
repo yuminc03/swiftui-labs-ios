@@ -40,6 +40,13 @@ struct RootView: View {
                         Text("Todos")
                     }
                 }
+              Section("🍒 UIViewRepresentable Prectise") {
+                NavigationLink {
+                  VideoView()
+                } label: {
+                  Text("Represented AVPlayer")
+                }
+              }
             }
             .navigationTitle("SwiftUI Practise")
         }
