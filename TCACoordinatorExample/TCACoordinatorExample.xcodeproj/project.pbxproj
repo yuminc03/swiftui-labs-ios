@@ -94,8 +94,8 @@
 		05155C7E2C22BC6900512190 /* TCACoordinatorExample */ = {
 			isa = PBXGroup;
 			children = (
-				05155C7F2C22BC6900512190 /* TCACoordinatorExampleApp.swift */,
-				05155C812C22BC6900512190 /* ContentView.swift */,
+				05155CA92C22BE2E00512190 /* App */,
+				05155CAA2C22BE3300512190 /* Scene */,
 				05155C832C22BC6B00512190 /* Assets.xcassets */,
 				05155C852C22BC6B00512190 /* Preview Content */,
 			);
@@ -125,6 +125,110 @@
 				05155C9C2C22BC6C00512190 /* TCACoordinatorExampleUITestsLaunchTests.swift */,
 			);
 			path = TCACoordinatorExampleUITests;
+			sourceTree = "<group>";
+		};
+		05155CA92C22BE2E00512190 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				05155C7F2C22BC6900512190 /* TCACoordinatorExampleApp.swift */,
+				05155C812C22BC6900512190 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		05155CAA2C22BE3300512190 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				05155CB42C22BF6800512190 /* MainFeature */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		05155CAB2C22BE8C00512190 /* HomeFeature */ = {
+			isa = PBXGroup;
+			children = (
+				05155CAE2C22BEF800512190 /* Coordinator */,
+				05155CAF2C22BF1100512190 /* Scene */,
+			);
+			path = HomeFeature;
+			sourceTree = "<group>";
+		};
+		05155CAC2C22BEA200512190 /* ClinicHistoryFeature */ = {
+			isa = PBXGroup;
+			children = (
+				05155CB12C22BF3000512190 /* Cooridnator */,
+				05155CB02C22BF2200512190 /* Scene */,
+			);
+			path = ClinicHistoryFeature;
+			sourceTree = "<group>";
+		};
+		05155CAD2C22BEC800512190 /* PrescriptionFeature */ = {
+			isa = PBXGroup;
+			children = (
+				05155CB32C22BF4800512190 /* Coordinator */,
+				05155CB22C22BF4100512190 /* Scene */,
+			);
+			path = PrescriptionFeature;
+			sourceTree = "<group>";
+		};
+		05155CAE2C22BEF800512190 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05155CAF2C22BF1100512190 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		05155CB02C22BF2200512190 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		05155CB12C22BF3000512190 /* Cooridnator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cooridnator;
+			sourceTree = "<group>";
+		};
+		05155CB22C22BF4100512190 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		05155CB32C22BF4800512190 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05155CB42C22BF6800512190 /* MainFeature */ = {
+			isa = PBXGroup;
+			children = (
+				05155CB52C22BF8400512190 /* Coordinator */,
+				05155CAB2C22BE8C00512190 /* HomeFeature */,
+				05155CAC2C22BEA200512190 /* ClinicHistoryFeature */,
+				05155CAD2C22BEC800512190 /* PrescriptionFeature */,
+			);
+			path = MainFeature;
+			sourceTree = "<group>";
+		};
+		05155CB52C22BF8400512190 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
