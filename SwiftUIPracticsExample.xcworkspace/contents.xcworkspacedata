@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TCACoordinatorExample/TCACoordinatorExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftUIConceptTutorial/SwiftUIConceptTutorial.xcodeproj">
    </FileRef>
    <FileRef
