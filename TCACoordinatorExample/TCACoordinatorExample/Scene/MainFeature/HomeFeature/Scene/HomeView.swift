@@ -16,11 +16,16 @@ struct HomeCore: Reducer {
   }
   
   enum Action: Equatable {
-    case tapPushScreenButton
+    case tapPushButton
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
+      switch action {
+      case .tapPushButton:
+        break
+      }
+      
       return .none
     }
   }
@@ -36,14 +41,10 @@ struct HomeView: View {
   }
 
   var body: some View {
-    Button {
-      store.send(.tapPushScreenButton)
-    } label: {
-      Text("Push Screen")
-        .foregroundColor(.white)
-        .padding()
-        .background(.blue)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+    VStack(spacing: 30) {
+      BasicButton(title: "Push") {
+        store.send(.tapPushButton)
+      }
     }
   }
 }

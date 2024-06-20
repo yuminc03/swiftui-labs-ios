@@ -13,7 +13,7 @@ import TCACoordinators
 @Reducer
 struct PrescriptionReservationCoordinator {
   struct State: Equatable, IdentifiedRouterState {
-    static let initialState = State(routes: [.root(.selectDelivery(.init()), withNavigation: false)])
+    static let initialState = State(routes: [.root(.selectDelivery(.init()), embedInNavigationView: false)])
     
     var routes: IdentifiedArrayOf<Route<PrescriptionReservationScreen.State>>
   }

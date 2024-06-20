@@ -13,13 +13,13 @@ import ComposableArchitecture
 struct HomeScreen {
   enum State: Equatable, Identifiable {
     case home(HomeCore.State)
-    case selectPrescriptionDelivery(SelectPrescriptionDeliveryCore.State)
+    case noticeDetail(NoticeDetailCore.State)
     
     var id: UUID {
       switch self {
       case let .home(state):
         return state.id
-      case let .selectPrescriptionDelivery(state):
+      case let .noticeDetail(state):
         return state.id
       }
     }
@@ -27,15 +27,15 @@ struct HomeScreen {
   
   enum Action: Equatable {
     case home(HomeCore.Action)
-    case selectPrescriptionDelivery(SelectPrescriptionDeliveryCore.Action)
+    case noticeDetail(NoticeDetailCore.Action)
   }
   
   var body: some ReducerOf<Self> {
     Scope(state: /State.home, action: /Action.home) {
       HomeCore()
     }
-    Scope(state: /State.selectPrescriptionDelivery, action: /Action.selectPrescriptionDelivery) {
-      SelectPrescriptionDeliveryCore()
+    Scope(state: /State.noticeDetail, action: /Action.noticeDetail) {
+      NoticeDetailCore()
     }
   }
 }

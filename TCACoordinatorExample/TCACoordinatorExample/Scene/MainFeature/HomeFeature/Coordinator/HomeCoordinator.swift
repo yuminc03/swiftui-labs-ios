@@ -13,7 +13,7 @@ import TCACoordinators
 @Reducer
 struct HomeCoordinator {
   struct State: Equatable, IdentifiedRouterState {
-    static let initialState = State(routes: [.root(.home(.init()), withNavigation: true)])
+    static let initialState = State(routes: [.root(.home(.init()), embedInNavigationView: true)])
     
     var routes: IdentifiedArrayOf<Route<HomeScreen.State>>
   }
@@ -26,7 +26,10 @@ struct HomeCoordinator {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-        default: break
+      case .routeAction(_, action: .home(.tapPushButton)):
+        break
+        
+      default: break
       }
       
       return .none
@@ -51,11 +54,11 @@ struct HomeCoordinatorView: View {
              then: HomeView.init
           )
           
-        case .selectPrescriptionDelivery:
+        case .noticeDetail:
           CaseLet(
-            /HomeScreen.State.selectPrescriptionDelivery,
-             action: HomeScreen.Action.selectPrescriptionDelivery,
-             then: SelectPrescriptionDeliveryView.init
+            /HomeScreen.State.noticeDetail,
+             action: HomeScreen.Action.noticeDetail,
+             then: NoticeDetailView.init
           )
         }
       }

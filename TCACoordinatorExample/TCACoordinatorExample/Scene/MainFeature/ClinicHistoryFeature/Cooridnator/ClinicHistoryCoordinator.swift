@@ -13,7 +13,7 @@ import TCACoordinators
 @Reducer
 struct ClinicHistoryCoordinator {
   struct State: Equatable, IdentifiedRouterState {
-    static let initialState = State(routes: [.root(.selectDepartment(.init()), withNavigation: true)])
+    static let initialState = State(routes: [.root(.selectDepartment(.init()), embedInNavigationView: true)])
     
     var routes: IdentifiedArrayOf<Route<ClinicHistoryScreen.State>>
   }

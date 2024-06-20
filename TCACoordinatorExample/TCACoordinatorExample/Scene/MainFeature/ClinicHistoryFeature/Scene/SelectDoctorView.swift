@@ -15,14 +15,18 @@ struct SelectDoctorCore: Reducer {
   }
   
   enum Action: Equatable {
-    
+    case tapPopButton
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
+      switch action {
+      case .tapPopButton:
+        break
+      }
+      
       return .none
     }
-    
   }
 }
 
@@ -36,7 +40,11 @@ struct SelectDoctorView: View {
   }
   
   var body: some View {
-    Text("")
+    VStack(spacing: 30) {
+      BasicButton(title: "Pop") {
+        store.send(.tapPopButton)
+      }
+    }
   }
 }
 

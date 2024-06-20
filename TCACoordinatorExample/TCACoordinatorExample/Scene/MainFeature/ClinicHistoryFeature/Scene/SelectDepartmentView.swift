@@ -15,11 +15,16 @@ struct SelectDepartmentCore: Reducer {
   }
   
   enum Action: Equatable {
-    
+    case tapPushButton
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
+      switch action {
+      case .tapPushButton:
+        break
+      }
+      
       return .none
     }
   }
@@ -35,7 +40,11 @@ struct SelectDepartmentView: View {
   }
   
   var body: some View {
-    Text("")
+    VStack(spacing: 30) {
+      BasicButton(title: "Push") {
+        store.send(.tapPushButton)
+      }
+    }
   }
 }
 
