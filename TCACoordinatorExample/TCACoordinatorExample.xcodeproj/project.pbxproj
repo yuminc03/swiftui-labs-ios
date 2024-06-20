@@ -26,6 +26,9 @@
 		05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */; };
 		05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */; };
 		05EECBA52C23E96C008FC2FA /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA42C23E96C008FC2FA /* BasicButton.swift */; };
+		05EECBA82C23EBAC008FC2FA /* SearchPharmacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA72C23EBAC008FC2FA /* SearchPharmacyView.swift */; };
+		05EECBAB2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */; };
+		05EECBAD2C23EF20008FC2FA /* PrescriptionReservationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartmentView.swift; sourceTree = "<group>"; };
 		05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDoctorView.swift; sourceTree = "<group>"; };
 		05EECBA42C23E96C008FC2FA /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
+		05EECBA72C23EBAC008FC2FA /* SearchPharmacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPharmacyView.swift; sourceTree = "<group>"; };
+		05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationCoordinator.swift; sourceTree = "<group>"; };
+		05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,7 +274,9 @@
 		05EECB942C23BEAC008FC2FA /* PrescriptionReservationFeature */ = {
 			isa = PBXGroup;
 			children = (
+				05EECBA92C23EEDD008FC2FA /* Coordinator */,
 				05EECB972C23BF03008FC2FA /* SelectPrescriptionDelivery */,
+				05EECBA62C23EB8D008FC2FA /* SearchPharmacy */,
 			);
 			path = PrescriptionReservationFeature;
 			sourceTree = "<group>";
@@ -295,6 +303,23 @@
 				05EECBA42C23E96C008FC2FA /* BasicButton.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		05EECBA62C23EB8D008FC2FA /* SearchPharmacy */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBA72C23EBAC008FC2FA /* SearchPharmacyView.swift */,
+			);
+			path = SearchPharmacy;
+			sourceTree = "<group>";
+		};
+		05EECBA92C23EEDD008FC2FA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */,
+				05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,15 +463,18 @@
 				05EECB962C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift in Sources */,
 				05EECB9B2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift in Sources */,
 				05155C822C22BC6900512190 /* AppView.swift in Sources */,
+				05EECBAD2C23EF20008FC2FA /* PrescriptionReservationScreen.swift in Sources */,
 				05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */,
 				05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */,
 				05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */,
 				05EECBA52C23E96C008FC2FA /* BasicButton.swift in Sources */,
 				05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */,
+				05EECBA82C23EBAC008FC2FA /* SearchPharmacyView.swift in Sources */,
 				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
 				05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */,
 				05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */,
+				05EECBAB2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
