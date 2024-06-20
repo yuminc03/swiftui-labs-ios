@@ -16,12 +16,16 @@ struct SearchPharmacyCore: Reducer {
   
   enum Action: Equatable {
     case tapPopButton
+    case tapGotoHomeTab
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .tapPopButton:
+        break
+        
+      case .tapGotoHomeTab:
         break
       }
       
@@ -43,6 +47,9 @@ struct SearchPharmacyView: View {
     VStack(spacing: 30) {
       BasicButton(title: "Pop") {
         store.send(.tapPopButton)
+      }
+      BasicButton(title: "go to Home Tab") {
+        store.send(.tapGotoHomeTab)
       }
     }
   }

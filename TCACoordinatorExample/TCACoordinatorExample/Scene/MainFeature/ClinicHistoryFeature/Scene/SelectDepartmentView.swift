@@ -16,12 +16,16 @@ struct SelectDepartmentCore: Reducer {
   
   enum Action: Equatable {
     case tapPushButton
+    case tapGotoPrescriptionTab
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .tapPushButton:
+        break
+        
+      case .tapGotoPrescriptionTab:
         break
       }
       
@@ -43,6 +47,9 @@ struct SelectDepartmentView: View {
     VStack(spacing: 30) {
       BasicButton(title: "Push") {
         store.send(.tapPushButton)
+      }
+      BasicButton(title: "go to Prescription Tab") {
+        store.send(.tapGotoPrescriptionTab)
       }
     }
   }

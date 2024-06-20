@@ -58,6 +58,25 @@ struct MainTabCoordinator {
         case .prescription:
           state.prescription = .initialState
         }
+        
+      case .home(.routeAction(_, action: .home(.tapGotoClinicTab))):
+        state.tab = .clinicList
+        
+      case .home(.routeAction(_, action: .noticeDetail(.tapGotoClinicTab))):
+        state.tab = .clinicList
+        
+      case .clinicList(.routeAction(_, action: .selectDepartment(.tapGotoPrescriptionTab))):
+        state.tab = .prescription
+        
+      case .clinicList(.routeAction(_, action: .selectDoctor(.tapGotoPrescriptionTab))):
+        state.tab = .prescription
+        
+      case .prescription(.routeAction(_, action: .selectDelivery(.tapGotoHomeTab))):
+        state.tab = .home
+        
+      case .prescription(.routeAction(_, action: .searchPharmacy(.tapGotoHomeTab))):
+        state.tab = .home
+        
       default: break
       }
       

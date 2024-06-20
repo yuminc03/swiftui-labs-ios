@@ -26,6 +26,12 @@ struct PrescriptionReservationCoordinator {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
+      case .routeAction(_, action: .selectDelivery(.tapPushButton)):
+        state.routes.push(.searchPharmacy(.init()))
+        
+      case .routeAction(_, action: .searchPharmacy(.tapPopButton)):
+        state.routes.pop()
+        
         default: break
       }
       

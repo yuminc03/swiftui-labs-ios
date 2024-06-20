@@ -26,6 +26,12 @@ struct ClinicHistoryCoordinator {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
+      case .routeAction(_, action: .selectDepartment(.tapPushButton)):
+        state.routes.push(.selectDoctor(.init()))
+        
+      case .routeAction(_, action: .selectDoctor(.tapPopButton)):
+        state.routes.pop()
+        
         default: break
       }
       

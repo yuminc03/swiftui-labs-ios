@@ -17,12 +17,16 @@ struct HomeCore: Reducer {
   
   enum Action: Equatable {
     case tapPushButton
+    case tapGotoClinicTab
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .tapPushButton:
+        break
+        
+      case .tapGotoClinicTab:
         break
       }
       
@@ -44,6 +48,9 @@ struct HomeView: View {
     VStack(spacing: 30) {
       BasicButton(title: "Push") {
         store.send(.tapPushButton)
+      }
+      BasicButton(title: "go to Clinic Tab") {
+        store.send(.tapGotoClinicTab)
       }
     }
   }

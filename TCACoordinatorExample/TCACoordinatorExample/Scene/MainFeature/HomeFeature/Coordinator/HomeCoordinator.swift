@@ -27,7 +27,10 @@ struct HomeCoordinator {
     Reduce { state, action in
       switch action {
       case .routeAction(_, action: .home(.tapPushButton)):
-        break
+        state.routes.push(.noticeDetail(.init()))
+        
+      case .routeAction(_, action: .noticeDetail(.tapPopButton)):
+        state.routes.pop()
         
       default: break
       }
