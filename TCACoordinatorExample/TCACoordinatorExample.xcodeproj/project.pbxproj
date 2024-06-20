@@ -170,7 +170,6 @@
 		05155CAA2C22BE3300512190 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				05EECB942C23BEAC008FC2FA /* PrescriptionReservationFeature */,
 				05155CB42C22BF6800512190 /* MainFeature */,
 			);
 			path = Scene;
@@ -192,15 +191,6 @@
 				05155CB02C22BF2200512190 /* Scene */,
 			);
 			path = ClinicHistoryFeature;
-			sourceTree = "<group>";
-		};
-		05155CAD2C22BEC800512190 /* PrescriptionFeature */ = {
-			isa = PBXGroup;
-			children = (
-				05155CB32C22BF4800512190 /* Coordinator */,
-				05155CB22C22BF4100512190 /* Scene */,
-			);
-			path = PrescriptionFeature;
 			sourceTree = "<group>";
 		};
 		05155CAE2C22BEF800512190 /* Coordinator */ = {
@@ -238,27 +228,13 @@
 			path = Cooridnator;
 			sourceTree = "<group>";
 		};
-		05155CB22C22BF4100512190 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		05155CB32C22BF4800512190 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		05155CB42C22BF6800512190 /* MainFeature */ = {
 			isa = PBXGroup;
 			children = (
 				05155CB52C22BF8400512190 /* Coordinator */,
 				05155CAB2C22BE8C00512190 /* HomeFeature */,
 				05155CAC2C22BEA200512190 /* ClinicHistoryFeature */,
-				05155CAD2C22BEC800512190 /* PrescriptionFeature */,
+				05EECB942C23BEAC008FC2FA /* PrescriptionReservationFeature */,
 			);
 			path = MainFeature;
 			sourceTree = "<group>";
