@@ -29,6 +29,7 @@
 		05EECBA82C23EBAC008FC2FA /* SearchPharmacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA72C23EBAC008FC2FA /* SearchPharmacyView.swift */; };
 		05EECBAB2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */; };
 		05EECBAD2C23EF20008FC2FA /* PrescriptionReservationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */; };
+		05EECBAF2C23F718008FC2FA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAE2C23F718008FC2FA /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		05EECBA72C23EBAC008FC2FA /* SearchPharmacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPharmacyView.swift; sourceTree = "<group>"; };
 		05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationCoordinator.swift; sourceTree = "<group>"; };
 		05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationScreen.swift; sourceTree = "<group>"; };
+		05EECBAE2C23F718008FC2FA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				05EECBA42C23E96C008FC2FA /* BasicButton.swift */,
+				05EECBB02C23F720008FC2FA /* TabBar */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -296,6 +299,14 @@
 				05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05EECBB02C23F720008FC2FA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBAE2C23F718008FC2FA /* Tab.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +458,7 @@
 				05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */,
 				05EECBA82C23EBAC008FC2FA /* SearchPharmacyView.swift in Sources */,
 				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
+				05EECBAF2C23F718008FC2FA /* Tab.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
 				05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */,
 				05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */,
