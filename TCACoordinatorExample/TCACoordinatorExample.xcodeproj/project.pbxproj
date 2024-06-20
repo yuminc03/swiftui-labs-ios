@@ -25,6 +25,7 @@
 		05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9C2C23CA29008FC2FA /* ClinicHistoryScreen.swift */; };
 		05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */; };
 		05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */; };
+		05EECBA52C23E96C008FC2FA /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA42C23E96C008FC2FA /* BasicButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		05EECB9C2C23CA29008FC2FA /* ClinicHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicHistoryScreen.swift; sourceTree = "<group>"; };
 		05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartmentView.swift; sourceTree = "<group>"; };
 		05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDoctorView.swift; sourceTree = "<group>"; };
+		05EECBA42C23E96C008FC2FA /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				05155CA92C22BE2E00512190 /* App */,
 				05155CAA2C22BE3300512190 /* Scene */,
+				05EECBA22C23E950008FC2FA /* DesignSystem */,
 				05155C832C22BC6B00512190 /* Assets.xcassets */,
 				05155C852C22BC6B00512190 /* Preview Content */,
 			);
@@ -278,6 +281,22 @@
 			path = SelectPrescriptionDelivery;
 			sourceTree = "<group>";
 		};
+		05EECBA22C23E950008FC2FA /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBA32C23E959008FC2FA /* Component */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		05EECBA32C23E959008FC2FA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBA42C23E96C008FC2FA /* BasicButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +441,7 @@
 				05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */,
 				05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */,
 				05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */,
+				05EECBA52C23E96C008FC2FA /* BasicButton.swift in Sources */,
 				05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */,
 				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
