@@ -21,6 +21,10 @@
 		05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB922C23BBFE008FC2FA /* HomeView.swift */; };
 		05EECB962C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB952C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift */; };
 		05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB982C23BF76008FC2FA /* HomeScreen.swift */; };
+		05EECB9B2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9A2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift */; };
+		05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9C2C23CA29008FC2FA /* ClinicHistoryScreen.swift */; };
+		05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */; };
+		05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		05EECB922C23BBFE008FC2FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		05EECB952C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPrescriptionDeliveryView.swift; sourceTree = "<group>"; };
 		05EECB982C23BF76008FC2FA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		05EECB9A2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicHistoryCoordinator.swift; sourceTree = "<group>"; };
+		05EECB9C2C23CA29008FC2FA /* ClinicHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicHistoryScreen.swift; sourceTree = "<group>"; };
+		05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartmentView.swift; sourceTree = "<group>"; };
+		05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDoctorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +214,8 @@
 		05155CB02C22BF2200512190 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB9E2C23CAF4008FC2FA /* SelectDepartmentView.swift */,
+				05EECBA02C23CB5D008FC2FA /* SelectDoctorView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -213,6 +223,8 @@
 		05155CB12C22BF3000512190 /* Cooridnator */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB9A2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift */,
+				05EECB9C2C23CA29008FC2FA /* ClinicHistoryScreen.swift */,
 			);
 			path = Cooridnator;
 			sourceTree = "<group>";
@@ -405,12 +417,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EECB962C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift in Sources */,
+				05EECB9B2C23CA13008FC2FA /* ClinicHistoryCoordinator.swift in Sources */,
 				05155C822C22BC6900512190 /* AppView.swift in Sources */,
 				05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */,
 				05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */,
 				05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */,
+				05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */,
 				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
+				05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */,
+				05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
