@@ -30,6 +30,9 @@
 		05EECBAB2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */; };
 		05EECBAD2C23EF20008FC2FA /* PrescriptionReservationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */; };
 		05EECBAF2C23F718008FC2FA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBAE2C23F718008FC2FA /* Tab.swift */; };
+		05EECBB22C23F8C6008FC2FA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBB12C23F8C6008FC2FA /* CustomTabBar.swift */; };
+		05EECBB42C23FB62008FC2FA /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBB32C23FB62008FC2FA /* StateManager.swift */; };
+		05EECBB72C23FBCF008FC2FA /* NotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECBB62C23FBCF008FC2FA /* NotiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		05EECBAA2C23EEFF008FC2FA /* PrescriptionReservationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationCoordinator.swift; sourceTree = "<group>"; };
 		05EECBAC2C23EF20008FC2FA /* PrescriptionReservationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionReservationScreen.swift; sourceTree = "<group>"; };
 		05EECBAE2C23F718008FC2FA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		05EECBB12C23F8C6008FC2FA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		05EECBB32C23FB62008FC2FA /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		05EECBB62C23FBCF008FC2FA /* NotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				05155CA92C22BE2E00512190 /* App */,
+				05EECBB52C23FBA9008FC2FA /* Service */,
 				05155CAA2C22BE3300512190 /* Scene */,
 				05EECBA22C23E950008FC2FA /* DesignSystem */,
 				05155C832C22BC6B00512190 /* Assets.xcassets */,
@@ -165,6 +172,7 @@
 			children = (
 				05155C7F2C22BC6900512190 /* TCACoordinatorExampleApp.swift */,
 				05155C812C22BC6900512190 /* AppView.swift */,
+				05EECBB32C23FB62008FC2FA /* StateManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -305,8 +313,17 @@
 			isa = PBXGroup;
 			children = (
 				05EECBAE2C23F718008FC2FA /* Tab.swift */,
+				05EECBB12C23F8C6008FC2FA /* CustomTabBar.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		05EECBB52C23FBA9008FC2FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				05EECBB62C23FBCF008FC2FA /* NotiService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,10 +472,13 @@
 				05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */,
 				05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */,
 				05EECBA52C23E96C008FC2FA /* BasicButton.swift in Sources */,
+				05EECBB22C23F8C6008FC2FA /* CustomTabBar.swift in Sources */,
+				05EECBB42C23FB62008FC2FA /* StateManager.swift in Sources */,
 				05EECB9F2C23CAF4008FC2FA /* SelectDepartmentView.swift in Sources */,
 				05EECBA82C23EBAC008FC2FA /* SearchPharmacyView.swift in Sources */,
 				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
 				05EECBAF2C23F718008FC2FA /* Tab.swift in Sources */,
+				05EECBB72C23FBCF008FC2FA /* NotiService.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
 				05EECB9D2C23CA29008FC2FA /* ClinicHistoryScreen.swift in Sources */,
 				05EECBA12C23CB5D008FC2FA /* SelectDoctorView.swift in Sources */,

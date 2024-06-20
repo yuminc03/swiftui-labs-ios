@@ -10,13 +10,13 @@ import Foundation
 enum Tab: Hashable, CaseIterable {
   case home
   case clinicList
-  case prescriptionList
+  case prescription
   
   var title: String {
     switch self {
     case .home: return "홈"
     case .clinicList: return "진료"
-    case .prescriptionList: return "조제"
+    case .prescription: return "조제"
     }
   }
   
@@ -24,7 +24,7 @@ enum Tab: Hashable, CaseIterable {
     switch self {
     case .home: return "house"
     case .clinicList: return "stethoscope.circle"
-    case .prescriptionList: return "pill"
+    case .prescription: return "pill"
     }
   }
   
@@ -32,7 +32,7 @@ enum Tab: Hashable, CaseIterable {
     switch self {
     case .home: return "house.fill"
     case .clinicList: return "stethoscope.circle.fill"
-    case .prescriptionList: return "pill.fill"
+    case .prescription: return "pill.fill"
     }
   }
 }
