@@ -16,6 +16,11 @@
 		05155C9D2C22BC6C00512190 /* TCACoordinatorExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05155C9C2C22BC6C00512190 /* TCACoordinatorExampleUITestsLaunchTests.swift */; };
 		05155CB82C22C09A00512190 /* TCACoordinators in Frameworks */ = {isa = PBXBuildFile; productRef = 05155CB72C22C09A00512190 /* TCACoordinators */; };
 		05155CBB2C22C0E000512190 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 05155CBA2C22C0E000512190 /* ComposableArchitecture */; };
+		05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB8E2C23BA37008FC2FA /* MainTabCoordinator.swift */; };
+		05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB902C23BB57008FC2FA /* HomeCoordinator.swift */; };
+		05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB922C23BBFE008FC2FA /* HomeView.swift */; };
+		05EECB962C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB952C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift */; };
+		05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EECB982C23BF76008FC2FA /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		05155C962C22BC6C00512190 /* TCACoordinatorExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCACoordinatorExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05155C9A2C22BC6C00512190 /* TCACoordinatorExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCACoordinatorExampleUITests.swift; sourceTree = "<group>"; };
 		05155C9C2C22BC6C00512190 /* TCACoordinatorExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCACoordinatorExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05EECB8E2C23BA37008FC2FA /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
+		05EECB902C23BB57008FC2FA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		05EECB922C23BBFE008FC2FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		05EECB952C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPrescriptionDeliveryView.swift; sourceTree = "<group>"; };
+		05EECB982C23BF76008FC2FA /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,7 @@
 		05155CAA2C22BE3300512190 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB942C23BEAC008FC2FA /* PrescriptionReservationFeature */,
 				05155CB42C22BF6800512190 /* MainFeature */,
 			);
 			path = Scene;
@@ -178,6 +189,8 @@
 		05155CAE2C22BEF800512190 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB902C23BB57008FC2FA /* HomeCoordinator.swift */,
+				05EECB982C23BF76008FC2FA /* HomeScreen.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 		05155CAF2C22BF1100512190 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB922C23BBFE008FC2FA /* HomeView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -231,8 +245,25 @@
 		05155CB52C22BF8400512190 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				05EECB8E2C23BA37008FC2FA /* MainTabCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05EECB942C23BEAC008FC2FA /* PrescriptionReservationFeature */ = {
+			isa = PBXGroup;
+			children = (
+				05EECB972C23BF03008FC2FA /* SelectPrescriptionDelivery */,
+			);
+			path = PrescriptionReservationFeature;
+			sourceTree = "<group>";
+		};
+		05EECB972C23BF03008FC2FA /* SelectPrescriptionDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				05EECB952C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift */,
+			);
+			path = SelectPrescriptionDelivery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,7 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EECB962C23BEF6008FC2FA /* SelectPrescriptionDeliveryView.swift in Sources */,
 				05155C822C22BC6900512190 /* AppView.swift in Sources */,
+				05EECB992C23BF76008FC2FA /* HomeScreen.swift in Sources */,
+				05EECB912C23BB57008FC2FA /* HomeCoordinator.swift in Sources */,
+				05EECB8F2C23BA37008FC2FA /* MainTabCoordinator.swift in Sources */,
+				05EECB932C23BBFE008FC2FA /* HomeView.swift in Sources */,
 				05155C802C22BC6900512190 /* TCACoordinatorExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
