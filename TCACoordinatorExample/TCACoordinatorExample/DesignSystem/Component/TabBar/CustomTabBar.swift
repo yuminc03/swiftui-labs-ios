@@ -33,6 +33,7 @@ struct CustomTabBar: View {
     .animation(.easeIn, value: index)
     .frame(height: 60)
     .background(.white)
+    .shadow(radius: 5)
   }
 }
 
