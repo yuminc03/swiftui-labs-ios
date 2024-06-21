@@ -52,6 +52,13 @@ struct SearchPharmacyView: View {
         store.send(.tapGotoHomeTab)
       }
     }
+    .onAppear {
+      print("🩵 SearchPharmacy onAppear")
+      NotiService.post(name: .hideTab)
+    }
+    .onDisappear {
+      print("🩶 SearchPharmacy onDisappear")
+    }
   }
 }
 

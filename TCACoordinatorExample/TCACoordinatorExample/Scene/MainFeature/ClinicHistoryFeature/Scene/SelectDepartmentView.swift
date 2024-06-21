@@ -52,6 +52,13 @@ struct SelectDepartmentView: View {
         store.send(.tapGotoPrescriptionTab)
       }
     }
+    .onAppear {
+      print("🩵 SelectDepartment onAppear")
+      NotiService.post(name: .showTab)
+    }
+    .onDisappear {
+      print("🩶 SelectDepartment onDisappear")
+    }
   }
 }
 

@@ -52,6 +52,13 @@ struct SelectDoctorView: View {
         store.send(.tapGotoPrescriptionTab)
       }
     }
+    .onAppear {
+      print("🩵 SelectDoctor onAppear")
+      NotiService.post(name: .hideTab)
+    }
+    .onDisappear {
+      print("🩶 SelectDoctor onDisappear")
+    }
   }
 }
 

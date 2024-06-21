@@ -53,6 +53,13 @@ struct NoticeDetailView: View {
         store.send(.tapGotoClinicTab)
       }
     }
+    .onAppear {
+      print("🩵 NoticeDetail onAppear")
+      NotiService.post(name: .hideTab)
+    }
+    .onDisappear {
+      print("🩶 NoticeDetail onDisappear")
+    }
   }
 }
 

@@ -27,4 +27,8 @@ enum NotiService {
       .map(\.userInfo)
       .eraseToAnyPublisher()
   }
+  
+  static func post(name: NotiKey, userInfo: [AnyHashable: Any]? = nil) {
+    NotificationCenter.default.post(name: name.name, object: nil, userInfo: userInfo)
+  }
 }

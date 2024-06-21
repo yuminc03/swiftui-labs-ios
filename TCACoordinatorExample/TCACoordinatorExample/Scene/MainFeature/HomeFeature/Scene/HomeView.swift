@@ -53,6 +53,13 @@ struct HomeView: View {
         store.send(.tapGotoClinicTab)
       }
     }
+    .onAppear {
+      print("🩵 Home onAppear")
+      NotiService.post(name: .showTab)
+    }
+    .onDisappear {
+      print("🩶 Home onDisappear")
+    }
   }
 }
 
