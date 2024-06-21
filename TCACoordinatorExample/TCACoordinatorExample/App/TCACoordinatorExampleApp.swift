@@ -11,7 +11,7 @@ import SwiftUI
 struct TCACoordinatorExampleApp: App {
   var body: some Scene {
     WindowGroup {
-      AppView(store: .init(initialState: AppCore.State()) {
+      AppView(store: .init(initialState: AppCore.State(main: .initialState, appState: .main)) {
         AppCore()
       })
     }
