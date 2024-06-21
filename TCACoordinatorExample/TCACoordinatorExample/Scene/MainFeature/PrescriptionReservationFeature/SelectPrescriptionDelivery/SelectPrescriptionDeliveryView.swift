@@ -45,6 +45,7 @@ struct SelectPrescriptionDeliveryView: View {
   
   var body: some View {
     VStack(spacing: 30) {
+      Text("SelectPrescriptionDelivery")
       BasicButton(title: "Push") {
         store.send(.tapPushButton)
       }

@@ -46,6 +46,7 @@ struct NoticeDetailView: View {
 
   var body: some View {
     VStack(spacing: 30) {
+      Text("NoticeDetail")
       BasicButton(title: "Pop") {
         store.send(.tapPopButton)
       }

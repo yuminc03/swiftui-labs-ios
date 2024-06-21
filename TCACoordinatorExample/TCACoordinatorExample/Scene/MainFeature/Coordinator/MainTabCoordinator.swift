@@ -114,6 +114,7 @@ struct MainTabCoordinatorView: View {
         }
       }
     }
+    ._printChanges()
   }
 }
 

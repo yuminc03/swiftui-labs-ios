@@ -46,6 +46,7 @@ struct HomeView: View {
 
   var body: some View {
     VStack(spacing: 30) {
+      Text("Home")
       BasicButton(title: "Push") {
         store.send(.tapPushButton)
       }
