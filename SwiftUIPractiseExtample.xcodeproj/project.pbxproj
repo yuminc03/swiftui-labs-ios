@@ -38,6 +38,7 @@
 		8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */; };
 		8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
+		8DEE42ED2C36E1CC00C2EA6F /* RepresentedNaverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE42EC2C36E1CC00C2EA6F /* RepresentedNaverMap.swift */; };
 		8DEFC9222A8A6938006C7988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */; };
 		8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		8DBB147D2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeAreaRegionsExampleView.swift; sourceTree = "<group>"; };
 		8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePopupExampleView.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
+		8DEE42EC2C36E1CC00C2EA6F /* RepresentedNaverMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentedNaverMap.swift; sourceTree = "<group>"; };
 		8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosGridComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 		8D04D1FB2A063160005BD5F0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				8DEE42EB2C36E1AA00C2EA6F /* NaverMap */,
 				8D60FDCC2B5CED1200E83412 /* VideoPlayer */,
 				8D4D3D2C2A3DE161009A64F6 /* RectanglePicture */,
 				8D4D3D2D2A3DE172009A64F6 /* ManagementProfile */,
@@ -258,6 +261,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8DEE42EB2C36E1AA00C2EA6F /* NaverMap */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE42EC2C36E1CC00C2EA6F /* RepresentedNaverMap.swift */,
+			);
+			path = NaverMap;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +368,7 @@
 				8D4D3D2B2A3DDF5D009A64F6 /* NetworkManager.swift in Sources */,
 				8DBB147C2A07F42B00E8B3A2 /* ListBootcampView.swift in Sources */,
 				8D39CAF72A0000440083D6D7 /* ManagementProfileView.swift in Sources */,
+				8DEE42ED2C36E1CC00C2EA6F /* RepresentedNaverMap.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
