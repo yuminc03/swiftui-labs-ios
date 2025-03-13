@@ -40,6 +40,7 @@
 		8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */; };
 		8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */; };
 		8DEE42ED2C36E1CC00C2EA6F /* RepresentedNaverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE42EC2C36E1CC00C2EA6F /* RepresentedNaverMap.swift */; };
+		8DEF88BA2D830CC100137E28 /* RepresentedCustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF88B92D830CC100137E28 /* RepresentedCustomPicker.swift */; };
 		8DEFC9222A8A6938006C7988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */; };
 		8DFFE4A12A41EB7F001A3DE3 /* TodosGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		8DC8FBDA2A095E6D002558EF /* RoutinePopupExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePopupExampleView.swift; sourceTree = "<group>"; };
 		8DDB211D2A38ED6A009C12D0 /* SegmentedTodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosView.swift; sourceTree = "<group>"; };
 		8DEE42EC2C36E1CC00C2EA6F /* RepresentedNaverMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentedNaverMap.swift; sourceTree = "<group>"; };
+		8DEF88B92D830CC100137E28 /* RepresentedCustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentedCustomPicker.swift; sourceTree = "<group>"; };
 		8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DFFE4A02A41EB7F001A3DE3 /* TodosGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosGridComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				8D9CD6522D5B8F8100063596 /* CustomWheelPicker.swift */,
+				8DEF88B92D830CC100137E28 /* RepresentedCustomPicker.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				8D8638062A246EDD0041A0AC /* RoutineTransitionView.swift in Sources */,
 				8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */,
 				8D4D3D352A3DE5CA009A64F6 /* API.swift in Sources */,
+				8DEF88BA2D830CC100137E28 /* RepresentedCustomPicker.swift in Sources */,
 				8D8638102A24702D0041A0AC /* SaveButtonView.swift in Sources */,
 				8D2C03D62A8B40F400F0131E /* View+.swift in Sources */,
 			);
