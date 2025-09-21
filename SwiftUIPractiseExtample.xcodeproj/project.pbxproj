@@ -20,6 +20,7 @@
 		8D5ABBBA2E7FD0A800E368F3 /* SwiftUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */; };
 		8D5ABBBC2E7FD37400E368F3 /* UIKitStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBBB2E7FD37400E368F3 /* UIKitStackView.swift */; };
 		8D5ABBBF2E7FD39500E368F3 /* RepresentedStackExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBBE2E7FD38800E368F3 /* RepresentedStackExampleView.swift */; };
+		8D5ABBC22E801C3800E368F3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5ABBC12E801C3800E368F3 /* SnapKit */; };
 		8D60FDCE2B5D301100E83412 /* RepresentedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDCD2B5D301100E83412 /* RepresentedPlayerView.swift */; };
 		8D60FDD12B5D313300E83412 /* my_army_log.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D60FDD02B5D313300E83412 /* my_army_log.mp4 */; };
 		8D60FDD42B5D394200E83412 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDD32B5D394200E83412 /* VideoView.swift */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5ABBC22E801C3800E368F3 /* SnapKit in Frameworks */,
 				8D6806C62A892B0F000FAC57 /* ComposableArchitecture in Frameworks */,
 				8D4D3D332A3DE29B009A64F6 /* Alamofire in Frameworks */,
 			);
@@ -327,6 +329,7 @@
 			packageProductDependencies = (
 				8D4D3D322A3DE29B009A64F6 /* Alamofire */,
 				8D6806C52A892B0F000FAC57 /* ComposableArchitecture */,
+				8D5ABBC12E801C3800E368F3 /* SnapKit */,
 			);
 			productName = SwiftUIPractiseExtample;
 			productReference = 8D60FDCB2B5CECA800E83412 /* SwiftUIPractiseExtample.app */;
@@ -359,6 +362,7 @@
 			packageReferences = (
 				8D4D3D312A3DE29A009A64F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8D6806C42A892B0E000FAC57 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				8D5ABBC02E801C3800E368F3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8D658A5629EEE30300928C68;
 			projectDirPath = "";
@@ -649,6 +653,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8D5ABBC02E801C3800E368F3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		8D6806C42A892B0E000FAC57 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -664,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4D3D312A3DE29A009A64F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8D5ABBC12E801C3800E368F3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D5ABBC02E801C3800E368F3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		8D6806C52A892B0F000FAC57 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
