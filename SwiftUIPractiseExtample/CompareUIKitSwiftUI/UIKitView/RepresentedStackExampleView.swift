@@ -8,6 +8,8 @@
 import UIKit
 import SwiftUI
 
+import SnapKit
+
 struct RepresentedStackExampleView: UIViewRepresentable {
   func makeUIView(context: Context) -> UIView {
     return StackExampleView()
@@ -19,7 +21,6 @@ struct RepresentedStackExampleView: UIViewRepresentable {
 final class StackExampleView: UIView {
   private let stackView: UIStackView = {
     let v = UIStackView()
-    v.translatesAutoresizingMaskIntoConstraints = false
     v.axis = .vertical
     v.spacing = 20
     
@@ -28,7 +29,6 @@ final class StackExampleView: UIView {
   
   private let imageView: UIImageView = {
     let v = UIImageView()
-    v.translatesAutoresizingMaskIntoConstraints = false
     v.image = UIImage(systemName: "swift")
     v.contentMode = .scaleAspectFit
     v.tintColor = .systemRed
@@ -38,7 +38,6 @@ final class StackExampleView: UIView {
   
   private let titleLabel: UILabel = {
     let v = UILabel()
-    v.translatesAutoresizingMaskIntoConstraints = false
     v.font = .systemFont(ofSize: 32, weight: .bold)
     v.textAlignment = .center
     v.text = "Answer : Love Myself"
@@ -48,7 +47,6 @@ final class StackExampleView: UIView {
   
   private let messageLabel: UILabel = {
     let v = UILabel()
-    v.translatesAutoresizingMaskIntoConstraints = false
     v.font = .systemFont(ofSize: 20)
     v.numberOfLines = 0
     v.text = "시작의 처음부터 끝의 마지막까지 해답은 오직 하나 왜 자꾸만 감추려고만 해 니 가면 속으로\n내 실수로 생긴 흉터까지 다 내 별자린데 You've shown me I have reasons I should love myself 내 숨 내 걸어온 길 전부로 답해"
@@ -76,12 +74,13 @@ final class StackExampleView: UIView {
   }
   
   private func setupConstraints() {
-    NSLayoutConstraint.activate([
-      stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-      stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-      stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-    ])
+    stackView.snp.makeConstraints {
+      $0.leading.trailing.equalToSuperview().inset(20)
+      $0.centerY.equalToSuperview()
+    }
     
-    imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    imageView.snp.makeConstraints {
+      $0.height.equalTo(100)
+    }
   }
 }
