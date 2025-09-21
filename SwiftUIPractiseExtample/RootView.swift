@@ -49,6 +49,18 @@ struct RootView: View {
           } label: {
             Text("Custom Wheel Picker")
           }
+          
+          NavigationLink {
+            SwiftUIStackView()
+          } label: {
+            Text("SwiftUI StackView")
+          }
+          
+          NavigationLink {
+            UIKitStackView()
+          } label: {
+            Text("UIKit StackView")
+          }
         }
       }
       .navigationTitle("SwiftUI Practise")
