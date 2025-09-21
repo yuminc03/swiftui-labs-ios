@@ -18,6 +18,8 @@
 		8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D3D392A3E0535009A64F6 /* SegmentedTodosVM.swift */; };
 		8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D3D3B2A3E05A1009A64F6 /* TypiCodeAPI.swift */; };
 		8D5ABBBA2E7FD0A800E368F3 /* SwiftUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */; };
+		8D5ABBBC2E7FD37400E368F3 /* UIKitStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBBB2E7FD37400E368F3 /* UIKitStackView.swift */; };
+		8D5ABBBF2E7FD39500E368F3 /* RepresentedStackExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBBE2E7FD38800E368F3 /* RepresentedStackExampleView.swift */; };
 		8D60FDCE2B5D301100E83412 /* RepresentedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDCD2B5D301100E83412 /* RepresentedPlayerView.swift */; };
 		8D60FDD12B5D313300E83412 /* my_army_log.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D60FDD02B5D313300E83412 /* my_army_log.mp4 */; };
 		8D60FDD42B5D394200E83412 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDD32B5D394200E83412 /* VideoView.swift */; };
@@ -58,6 +60,8 @@
 		8D4D3D392A3E0535009A64F6 /* SegmentedTodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosVM.swift; sourceTree = "<group>"; };
 		8D4D3D3B2A3E05A1009A64F6 /* TypiCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypiCodeAPI.swift; sourceTree = "<group>"; };
 		8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStackView.swift; sourceTree = "<group>"; };
+		8D5ABBBB2E7FD37400E368F3 /* UIKitStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitStackView.swift; sourceTree = "<group>"; };
+		8D5ABBBE2E7FD38800E368F3 /* RepresentedStackExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentedStackExampleView.swift; sourceTree = "<group>"; };
 		8D60FDCB2B5CECA800E83412 /* SwiftUIPractiseExtample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractiseExtample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60FDCD2B5D301100E83412 /* RepresentedPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentedPlayerView.swift; sourceTree = "<group>"; };
 		8D60FDD02B5D313300E83412 /* my_army_log.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = my_army_log.mp4; sourceTree = "<group>"; };
@@ -180,9 +184,19 @@
 		8D5ABBB82E7FCF5600E368F3 /* CompareUIKitSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8D5ABBBD2E7FD38000E368F3 /* UIKitView */,
 				8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */,
+				8D5ABBBB2E7FD37400E368F3 /* UIKitStackView.swift */,
 			);
 			path = CompareUIKitSwiftUI;
+			sourceTree = "<group>";
+		};
+		8D5ABBBD2E7FD38000E368F3 /* UIKitView */ = {
+			isa = PBXGroup;
+			children = (
+				8D5ABBBE2E7FD38800E368F3 /* RepresentedStackExampleView.swift */,
+			);
+			path = UIKitView;
 			sourceTree = "<group>";
 		};
 		8D60FDCC2B5CED1200E83412 /* VideoPlayer */ = {
@@ -381,6 +395,7 @@
 				8D04D2012A0691BA005BD5F0 /* TextFieldExampleView.swift in Sources */,
 				8DBB147E2A08042C00E8B3A2 /* SafeAreaRegionsExampleView.swift in Sources */,
 				8D8638122A2470610041A0AC /* RoutineButtonsView.swift in Sources */,
+				8D5ABBBF2E7FD39500E368F3 /* RepresentedStackExampleView.swift in Sources */,
 				8DDB211E2A38ED6A009C12D0 /* SegmentedTodosView.swift in Sources */,
 				8D86380E2A246FE90041A0AC /* TitleView.swift in Sources */,
 				8D9CD6532D5B8F8100063596 /* CustomWheelPicker.swift in Sources */,
@@ -388,6 +403,7 @@
 				8DC8FBDB2A095E6D002558EF /* RoutinePopupExampleView.swift in Sources */,
 				8D4D3D382A3E0477009A64F6 /* TodosModel.swift in Sources */,
 				8D60FDD42B5D394200E83412 /* VideoView.swift in Sources */,
+				8D5ABBBC2E7FD37400E368F3 /* UIKitStackView.swift in Sources */,
 				8D60FDCE2B5D301100E83412 /* RepresentedPlayerView.swift in Sources */,
 				8D8638082A246F100041A0AC /* AlertView.swift in Sources */,
 				8D86380A2A246F590041A0AC /* RoutinePopupVM.swift in Sources */,
