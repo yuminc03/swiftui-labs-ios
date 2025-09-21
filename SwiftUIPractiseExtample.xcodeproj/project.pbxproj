@@ -17,6 +17,7 @@
 		8D4D3D382A3E0477009A64F6 /* TodosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D3D372A3E0477009A64F6 /* TodosModel.swift */; };
 		8D4D3D3A2A3E0535009A64F6 /* SegmentedTodosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D3D392A3E0535009A64F6 /* SegmentedTodosVM.swift */; };
 		8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D3D3B2A3E05A1009A64F6 /* TypiCodeAPI.swift */; };
+		8D5ABBBA2E7FD0A800E368F3 /* SwiftUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */; };
 		8D60FDCE2B5D301100E83412 /* RepresentedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDCD2B5D301100E83412 /* RepresentedPlayerView.swift */; };
 		8D60FDD12B5D313300E83412 /* my_army_log.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D60FDD02B5D313300E83412 /* my_army_log.mp4 */; };
 		8D60FDD42B5D394200E83412 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60FDD32B5D394200E83412 /* VideoView.swift */; };
@@ -56,6 +57,7 @@
 		8D4D3D372A3E0477009A64F6 /* TodosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosModel.swift; sourceTree = "<group>"; };
 		8D4D3D392A3E0535009A64F6 /* SegmentedTodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedTodosVM.swift; sourceTree = "<group>"; };
 		8D4D3D3B2A3E05A1009A64F6 /* TypiCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypiCodeAPI.swift; sourceTree = "<group>"; };
+		8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStackView.swift; sourceTree = "<group>"; };
 		8D60FDCB2B5CECA800E83412 /* SwiftUIPractiseExtample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractiseExtample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60FDCD2B5D301100E83412 /* RepresentedPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentedPlayerView.swift; sourceTree = "<group>"; };
 		8D60FDD02B5D313300E83412 /* my_army_log.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = my_army_log.mp4; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8D5ABBB82E7FCF5600E368F3 /* CompareUIKitSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8D5ABBB92E7FD0A800E368F3 /* SwiftUIStackView.swift */,
+			);
+			path = CompareUIKitSwiftUI;
+			sourceTree = "<group>";
+		};
 		8D60FDCC2B5CED1200E83412 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 				8D2C03CF2A8B3DE400F0131E /* Basic */,
 				8D04D1FB2A063160005BD5F0 /* Practice */,
 				8D9CD64F2D5B8F5C00063596 /* CustomComponents */,
+				8D5ABBB82E7FCF5600E368F3 /* CompareUIKitSwiftUI */,
 				8D658A6629EEE30400928C68 /* Assets.xcassets */,
 				8D658A6829EEE30400928C68 /* Preview Content */,
 				8DEFC9212A8A6938006C7988 /* LaunchScreen.storyboard */,
@@ -385,6 +396,7 @@
 				8D39CAF72A0000440083D6D7 /* ManagementProfileView.swift in Sources */,
 				8DEE42ED2C36E1CC00C2EA6F /* RepresentedNaverMap.swift in Sources */,
 				8D8638022A2469A50041A0AC /* RoutineType.swift in Sources */,
+				8D5ABBBA2E7FD0A800E368F3 /* SwiftUIStackView.swift in Sources */,
 				8D4D3D3C2A3E05A1009A64F6 /* TypiCodeAPI.swift in Sources */,
 				8D658A6329EEE30300928C68 /* SwiftUIPractiseExtampleApp.swift in Sources */,
 				8D8638062A246EDD0041A0AC /* RoutineTransitionView.swift in Sources */,
